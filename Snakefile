@@ -1,6 +1,6 @@
 #Completed on 08/28/2025
 #to run this script:
-#cd /private/groups/russelllab/jodie/merrill_23_wRi_genome/
+#cd /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/
 #conda activate snakemake
 # snakemake --executor slurm --default-resources slurm_partition=medium runtime=720 mem_mb=1000000 -j 10 -s Snakefile
 
@@ -14,7 +14,7 @@ conda: '/private/groups/russelllab/jodie/bootcamp2024/scripts/read_filtering.yam
 
 rule all:
     input:
-        expand('/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}_wRi_M23.assembly.fasta', sample=samples)
+        expand('/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta', sample=samples)
 
 # ==============================================================================
 # SHARED PREPROCESSING STEPS
@@ -110,9 +110,9 @@ rule wri_assembly:
     input:
         wolbachia_fastq = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/{sample}.wRiM23.fastq.gz'
     output:
-        wolbachia_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/wRi/assembly.fasta'
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.fasta'
     params:
-        wolbachia_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/wRi/'
+        wolbachia_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/'
     resources: 
         mem_mb=50000,
         runtime=180  # Shorter runtime for smaller genome
@@ -130,7 +130,7 @@ rule wri_prepare_short_reads:
         wri_r1 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R1.fastq.gz',
         wri_r2 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R2.fastq.gz'
     output:
-        wri_trimmed = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
+        wri_trimmed = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
     threads: 4
     resources:
         mem_mb=10000,
@@ -141,20 +141,19 @@ rule wri_prepare_short_reads:
         conda activate assembly
 
         # Create output directory
-        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/
-        
+        mkdir -p /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/
         # Simply combine R1 and R2 for wRi without trimming
         zcat {input.wri_r1} {input.wri_r2} | gzip > {output.wri_trimmed}
         """
 
 rule wri_polish:
     input:
-        wolbachia_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/wRi/assembly.fasta',
-        wolbachia_short_reads = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.fasta',
+        wolbachia_short_reads = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
     output:    
-        wolbachia_polished = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}_wRi_M23.assembly.fasta'
+        wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta'
     params:
-        wolbachia_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}/wRi/'
+        wolbachia_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}/wRi/'
     resources: 
         mem_mb=50000,
         runtime=180  # Shorter runtime for smaller genome
@@ -200,11 +199,11 @@ rule wri_polish:
 
 # rule wri_busco:
 #     input:
-#         wolbachia_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}_wRi_M23.assembly.fasta'
+#         wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/polished/{sample}_wRi_M23.assembly.fasta'
 #     output:
-#         wolbachia_busco = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/wRi/short_summary.specific.rickettsiales_odb10.txt'
+#         wolbachia_busco = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/short_summary.specific.rickettsiales_odb10.txt'
 #     params:
-#         wolbachia_busco_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/wRi/'
+#         wolbachia_busco_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/'
 #     resources: 
 #         mem_mb=25000,
 #         runtime=120
