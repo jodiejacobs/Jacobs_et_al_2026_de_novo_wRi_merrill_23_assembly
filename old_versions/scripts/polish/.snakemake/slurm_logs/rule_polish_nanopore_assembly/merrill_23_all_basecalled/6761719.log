@@ -1,0 +1,218 @@
+host: phoenix-10.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Mar  6 15:47:47 2025]
+rule polish_nanopore_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/racon_polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/medaka_polished.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, runtime=60
+
+host: phoenix-10.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Mar  6 15:47:48 2025]
+localrule polish_nanopore_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/racon_polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/medaka_polished.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, runtime=60
+
+Activating conda environment: medaka
+[M::mm_idx_gen::0.042*0.77] collected minimizers
+[M::mm_idx_gen::0.047*1.82] sorted minimizers
+[M::main::0.047*1.82] loaded/built the index for 21 target sequence(s)
+[M::mm_mapopt_update::0.050*1.77] mid_occ = 28
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 21
+[M::mm_idx_stat::0.052*1.74] distinct minimizers: 227855 (95.02% are singletons); average occurrences: 1.173; average spacing: 5.326; total length: 1423024
+[M::worker_pipeline::16.722*9.56] mapped 672771 sequences
+[M::main] Version: 2.28-r1209
+[M::main] CMD: minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+[M::main] Real time: 16.751 sec; CPU: 159.932 sec; Peak RSS: 1.491 GB
+[racon::Polisher::initialize] loaded target sequences 0.003582 s
+[racon::Polisher::initialize] loaded sequences 6.316847 s
+[racon::Polisher::initialize] loaded overlaps 1.689079 s
+[racon::Polisher::initialize] aligning overlaps [=>                  ] 1.497000 s[racon::Polisher::initialize] aligning overlaps [==>                 ] 1.497298 s[racon::Polisher::initialize] aligning overlaps [===>                ] 1.497535 s[racon::Polisher::initialize] aligning overlaps [====>               ] 1.497764 s[racon::Polisher::initialize] aligning overlaps [=====>              ] 1.497985 s[racon::Polisher::initialize] aligning overlaps [======>             ] 1.498209 s[racon::Polisher::initialize] aligning overlaps [=======>            ] 1.498419 s[racon::Polisher::initialize] aligning overlaps [========>           ] 1.498640 s[racon::Polisher::initialize] aligning overlaps [=========>          ] 1.498873 s[racon::Polisher::initialize] aligning overlaps [==========>         ] 1.499105 s[racon::Polisher::initialize] aligning overlaps [===========>        ] 1.499330 s[racon::Polisher::initialize] aligning overlaps [============>       ] 1.499553 s[racon::Polisher::initialize] aligning overlaps [=============>      ] 1.499800 s[racon::Polisher::initialize] aligning overlaps [==============>     ] 1.500016 s[racon::Polisher::initialize] aligning overlaps [===============>    ] 1.500225 s[racon::Polisher::initialize] aligning overlaps [================>   ] 1.500424 s[racon::Polisher::initialize] aligning overlaps [=================>  ] 1.500617 s[racon::Polisher::initialize] aligning overlaps [==================> ] 1.500786 s[racon::Polisher::initialize] aligning overlaps [===================>] 1.500934 s[racon::Polisher::initialize] aligning overlaps [====================] 1.501052 s
+[racon::Polisher::initialize] transformed data into windows 0.417884 s
+[racon::Polisher::polish] generating consensus [=>                  ] 3.397352 s[racon::Polisher::polish] generating consensus [==>                 ] 4.070345 s[racon::Polisher::polish] generating consensus [===>                ] 4.754253 s[racon::Polisher::polish] generating consensus [====>               ] 5.366493 s[racon::Polisher::polish] generating consensus [=====>              ] 6.028884 s[racon::Polisher::polish] generating consensus [======>             ] 6.607699 s[racon::Polisher::polish] generating consensus [=======>            ] 70.605934 s[racon::Polisher::polish] generating consensus [========>           ] 70.611451 s[racon::Polisher::polish] generating consensus [=========>          ] 70.615374 s[racon::Polisher::polish] generating consensus [==========>         ] 70.618258 s[racon::Polisher::polish] generating consensus [===========>        ] 70.620955 s[racon::Polisher::polish] generating consensus [============>       ] 70.623488 s[racon::Polisher::polish] generating consensus [=============>      ] 70.625746 s[racon::Polisher::polish] generating consensus [==============>     ] 70.627999 s[racon::Polisher::polish] generating consensus [===============>    ] 70.631637 s[racon::Polisher::polish] generating consensus [================>   ] 70.633321 s[racon::Polisher::polish] generating consensus [=================>  ] 70.635493 s[racon::Polisher::polish] generating consensus [==================> ] 70.636749 s[racon::Polisher::polish] generating consensus [===================>] 70.637932 s[racon::Polisher::polish] generating consensus [====================] 70.639452 s
+[racon::Polisher::] total = 81.121160 s
+[M::mm_idx_gen::0.029*1.05] collected minimizers
+[M::mm_idx_gen::0.033*2.58] sorted minimizers
+[M::main::0.033*2.58] loaded/built the index for 21 target sequence(s)
+[M::mm_mapopt_update::0.036*2.46] mid_occ = 28
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 21
+[M::mm_idx_stat::0.038*2.38] distinct minimizers: 228121 (95.04% are singletons); average occurrences: 1.172; average spacing: 5.325; total length: 1423238
+[M::worker_pipeline::16.223*9.62] mapped 672771 sequences
+[M::main] Version: 2.28-r1209
+[M::main] CMD: minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_1.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+[M::main] Real time: 16.254 sec; CPU: 156.166 sec; Peak RSS: 1.508 GB
+[racon::Polisher::initialize] loaded target sequences 0.003441 s
+[racon::Polisher::initialize] loaded sequences 6.282449 s
+[racon::Polisher::initialize] loaded overlaps 1.687844 s
+[racon::Polisher::initialize] aligning overlaps [=>                  ] 1.485006 s[racon::Polisher::initialize] aligning overlaps [==>                 ] 1.485283 s[racon::Polisher::initialize] aligning overlaps [===>                ] 1.485529 s[racon::Polisher::initialize] aligning overlaps [====>               ] 1.485766 s[racon::Polisher::initialize] aligning overlaps [=====>              ] 1.485995 s[racon::Polisher::initialize] aligning overlaps [======>             ] 1.486214 s[racon::Polisher::initialize] aligning overlaps [=======>            ] 1.486420 s[racon::Polisher::initialize] aligning overlaps [========>           ] 1.486639 s[racon::Polisher::initialize] aligning overlaps [=========>          ] 1.486872 s[racon::Polisher::initialize] aligning overlaps [==========>         ] 1.487096 s[racon::Polisher::initialize] aligning overlaps [===========>        ] 1.487313 s[racon::Polisher::initialize] aligning overlaps [============>       ] 1.487532 s[racon::Polisher::initialize] aligning overlaps [=============>      ] 1.487760 s[racon::Polisher::initialize] aligning overlaps [==============>     ] 1.487975 s[racon::Polisher::initialize] aligning overlaps [===============>    ] 1.488180 s[racon::Polisher::initialize] aligning overlaps [================>   ] 1.488373 s[racon::Polisher::initialize] aligning overlaps [=================>  ] 1.488562 s[racon::Polisher::initialize] aligning overlaps [==================> ] 1.488735 s[racon::Polisher::initialize] aligning overlaps [===================>] 1.488879 s[racon::Polisher::initialize] aligning overlaps [====================] 1.488992 s
+[racon::Polisher::initialize] transformed data into windows 0.419845 s
+[racon::Polisher::polish] generating consensus [=>                  ] 3.290395 s[racon::Polisher::polish] generating consensus [==>                 ] 3.958587 s[racon::Polisher::polish] generating consensus [===>                ] 4.637639 s[racon::Polisher::polish] generating consensus [====>               ] 5.270968 s[racon::Polisher::polish] generating consensus [=====>              ] 5.936324 s[racon::Polisher::polish] generating consensus [======>             ] 6.502962 s[racon::Polisher::polish] generating consensus [=======>            ] 70.622009 s[racon::Polisher::polish] generating consensus [========>           ] 70.627447 s[racon::Polisher::polish] generating consensus [=========>          ] 70.630678 s[racon::Polisher::polish] generating consensus [==========>         ] 70.633223 s[racon::Polisher::polish] generating consensus [===========>        ] 70.635499 s[racon::Polisher::polish] generating consensus [============>       ] 70.637653 s[racon::Polisher::polish] generating consensus [=============>      ] 70.639762 s[racon::Polisher::polish] generating consensus [==============>     ] 70.641686 s[racon::Polisher::polish] generating consensus [===============>    ] 70.645074 s[racon::Polisher::polish] generating consensus [================>   ] 70.646576 s[racon::Polisher::polish] generating consensus [=================>  ] 70.648541 s[racon::Polisher::polish] generating consensus [==================> ] 70.649780 s[racon::Polisher::polish] generating consensus [===================>] 70.651083 s[racon::Polisher::polish] generating consensus [====================] 70.652705 s
+[racon::Polisher::] total = 81.071147 s
+[M::mm_idx_gen::0.048*0.66] collected minimizers
+[M::mm_idx_gen::0.052*1.64] sorted minimizers
+[M::main::0.052*1.64] loaded/built the index for 21 target sequence(s)
+[M::mm_mapopt_update::0.055*1.61] mid_occ = 28
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 21
+[M::mm_idx_stat::0.057*1.59] distinct minimizers: 228178 (95.05% are singletons); average occurrences: 1.172; average spacing: 5.324; total length: 1423474
+[M::worker_pipeline::16.410*9.55] mapped 672771 sequences
+[M::main] Version: 2.28-r1209
+[M::main] CMD: minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_2.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+[M::main] Real time: 16.453 sec; CPU: 156.689 sec; Peak RSS: 1.480 GB
+[racon::Polisher::initialize] loaded target sequences 0.008396 s
+[racon::Polisher::initialize] loaded sequences 6.282312 s
+[racon::Polisher::initialize] loaded overlaps 1.722574 s
+[racon::Polisher::initialize] aligning overlaps [=>                  ] 1.493082 s[racon::Polisher::initialize] aligning overlaps [==>                 ] 1.493380 s[racon::Polisher::initialize] aligning overlaps [===>                ] 1.493611 s[racon::Polisher::initialize] aligning overlaps [====>               ] 1.493835 s[racon::Polisher::initialize] aligning overlaps [=====>              ] 1.494049 s[racon::Polisher::initialize] aligning overlaps [======>             ] 1.494270 s[racon::Polisher::initialize] aligning overlaps [=======>            ] 1.494479 s[racon::Polisher::initialize] aligning overlaps [========>           ] 1.494693 s[racon::Polisher::initialize] aligning overlaps [=========>          ] 1.494915 s[racon::Polisher::initialize] aligning overlaps [==========>         ] 1.495133 s[racon::Polisher::initialize] aligning overlaps [===========>        ] 1.495344 s[racon::Polisher::initialize] aligning overlaps [============>       ] 1.495556 s[racon::Polisher::initialize] aligning overlaps [=============>      ] 1.495773 s[racon::Polisher::initialize] aligning overlaps [==============>     ] 1.495984 s[racon::Polisher::initialize] aligning overlaps [===============>    ] 1.496180 s[racon::Polisher::initialize] aligning overlaps [================>   ] 1.496367 s[racon::Polisher::initialize] aligning overlaps [=================>  ] 1.496550 s[racon::Polisher::initialize] aligning overlaps [==================> ] 1.496713 s[racon::Polisher::initialize] aligning overlaps [===================>] 1.496855 s[racon::Polisher::initialize] aligning overlaps [====================] 1.496964 s
+[racon::Polisher::initialize] transformed data into windows 0.415484 s
+[racon::Polisher::polish] generating consensus [=>                  ] 3.386058 s[racon::Polisher::polish] generating consensus [==>                 ] 4.063288 s[racon::Polisher::polish] generating consensus [===>                ] 4.748030 s[racon::Polisher::polish] generating consensus [====>               ] 5.374457 s[racon::Polisher::polish] generating consensus [=====>              ] 6.040306 s[racon::Polisher::polish] generating consensus [======>             ] 6.616452 s[racon::Polisher::polish] generating consensus [=======>            ] 70.437830 s[racon::Polisher::polish] generating consensus [========>           ] 70.443801 s[racon::Polisher::polish] generating consensus [=========>          ] 70.446782 s[racon::Polisher::polish] generating consensus [==========>         ] 70.449323 s[racon::Polisher::polish] generating consensus [===========>        ] 70.451628 s[racon::Polisher::polish] generating consensus [============>       ] 70.453709 s[racon::Polisher::polish] generating consensus [=============>      ] 70.455664 s[racon::Polisher::polish] generating consensus [==============>     ] 70.457598 s[racon::Polisher::polish] generating consensus [===============>    ] 70.460986 s[racon::Polisher::polish] generating consensus [================>   ] 70.462444 s[racon::Polisher::polish] generating consensus [=================>  ] 70.464397 s[racon::Polisher::polish] generating consensus [==================> ] 70.465676 s[racon::Polisher::polish] generating consensus [===================>] 70.466927 s[racon::Polisher::polish] generating consensus [====================] 70.468459 s
+[racon::Polisher::] total = 80.924341 s
+Failed to interpret 'r10_450bps_sup' as a basecaller model.
+Traceback (most recent call last):
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/medaka/medaka.py", line 35, in __call__
+    model_fp = medaka.models.resolve_model(val)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/medaka/models.py", line 64, in resolve_model
+    raise ValueError(
+ValueError: The model 'r10_450bps_sup' is not a recognised basecaller model or existant file. This could indicate a malformed input file (for which medaka was unable to identify correctly the basecaller meta-information) or simply be that the model is not supported by medaka.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/private/home/jomojaco/mambaforge/envs/medaka/bin/medaka", line 11, in <module>
+    sys.exit(main())
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/medaka/medaka.py", line 823, in main
+    args = parser.parse_args()
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1768, in parse_args
+    args, argv = self.parse_known_args(args, namespace)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1800, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1988, in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1965, in consume_positionals
+    take_action(action, args)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1874, in take_action
+    action(self, namespace, argument_values, option_string)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1159, in __call__
+    subnamespace, arg_strings = parser.parse_known_args(arg_strings, None)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1800, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1988, in _parse_known_args
+    positionals_end_index = consume_positionals(start_index)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1965, in consume_positionals
+    take_action(action, args)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1874, in take_action
+    action(self, namespace, argument_values, option_string)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1159, in __call__
+    subnamespace, arg_strings = parser.parse_known_args(arg_strings, None)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1800, in parse_known_args
+    namespace, args = self._parse_known_args(args, namespace)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 2006, in _parse_known_args
+    start_index = consume_optional(start_index)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1946, in consume_optional
+    take_action(action, args, option_string)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/argparse.py", line 1874, in take_action
+    action(self, namespace, argument_values, option_string)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/medaka/medaka.py", line 38, in __call__
+    raise RuntimeError(msg.format(self.dest, str(e)))
+RuntimeError: Error validating model from '--model' argument: The model 'r10_450bps_sup' is not a recognised basecaller model or existant file. This could indicate a malformed input file (for which medaka was unable to identify correctly the basecaller meta-information) or simply be that the model is not supported by medaka.
+[Thu Mar  6 15:52:49 2025]
+Error in rule polish_nanopore_assembly:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/racon_polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/medaka_polished.fasta
+    conda-env: medaka
+    shell:
+        
+        # Create output directory
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/
+        
+        # First round: Map reads back to assembly
+        minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped.sam
+        
+        # Polish with Racon (3 iterations for better quality)
+        # Iteration 1
+        racon -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped.sam /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_1.fasta
+        
+        # Iteration 2
+        minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_1.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped_2.sam
+        racon -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped_2.sam /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_1.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_2.fasta
+        
+        # Iteration 3
+        minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_2.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped_3.sam
+        racon -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped_3.sam /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_2.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/racon_polished.fasta
+        
+        # Further polish with Medaka
+        medaka_consensus -i /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz -d /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/racon_polished.fasta -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//medaka -t 16 -m r10_450bps_sup
+        
+        # Move the medaka output to expected location
+        cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//medaka/consensus.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/medaka_polished.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job polish_nanopore_assembly since they might be corrupted:
+/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/racon_polished.fasta
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-10: task 0: Exited with exit code 1
+[Thu Mar  6 15:52:50 2025]
+Error in rule polish_nanopore_assembly:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/racon_polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/medaka_polished.fasta
+    conda-env: medaka
+    shell:
+        
+        # Create output directory
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/
+        
+        # First round: Map reads back to assembly
+        minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped.sam
+        
+        # Polish with Racon (3 iterations for better quality)
+        # Iteration 1
+        racon -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped.sam /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_1.fasta
+        
+        # Iteration 2
+        minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_1.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped_2.sam
+        racon -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped_2.sam /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_1.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_2.fasta
+        
+        # Iteration 3
+        minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_2.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped_3.sam
+        racon -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//mapped_3.sam /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//racon_2.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/racon_polished.fasta
+        
+        # Further polish with Medaka
+        medaka_consensus -i /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz -d /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/racon_polished.fasta -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//medaka -t 16 -m r10_450bps_sup
+        
+        # Move the medaka output to expected location
+        cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi//medaka/consensus.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/medaka_polished.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

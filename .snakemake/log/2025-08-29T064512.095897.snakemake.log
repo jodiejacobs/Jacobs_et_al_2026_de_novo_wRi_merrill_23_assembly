@@ -1,0 +1,32 @@
+None
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: df62867e-ea2f-40a4-932e-5653b87b0a34
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job              count
+-------------  -------
+all                  1
+basecalling          1
+separate_bam         1
+sort_bam             1
+wri_assembly         1
+wri_bam2fastq        1
+wri_polish           1
+total                7
+
+Select jobs to execute...
+Execute 1 jobs...
+[Fri Aug 29 06:45:12 2025]
+rule basecalling:
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/pod5
+    output: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    jobid: 6
+    reason: Missing output files: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    threads: 25
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=gpu, runtime=360, slurm_extra=--gpus-per-node=4 --nodes=1 --exclude=phoenix-09 --mail-user=jomojaco@ucsc.edu --mail-type=ALL --output=logs/%x.%j.log
+
+No SLURM account given, trying to guess.
+Unable to guess SLURM account. Trying to proceed without.
+Job 6 has been submitted with SLURM jobid 10705772 (log: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/.snakemake/slurm_logs/rule_basecalling/10705772.log).

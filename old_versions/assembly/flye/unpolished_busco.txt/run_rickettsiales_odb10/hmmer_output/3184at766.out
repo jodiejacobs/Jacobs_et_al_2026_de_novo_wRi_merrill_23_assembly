@@ -1,0 +1,14 @@
+#                                                                                 --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name             accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#     ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_18:208007-208576|+ -            190 3184at766            -            144   5.5e-55  181.6   3.0   1   1   5.9e-58   8.3e-55  181.0   3.0     6   144    33   183    25   183 0.92 contig_18_201 # 208007 # 208576 # 1 # ID=5_201;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.367
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/3184at766.hmm
+# Target file:     private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/run_rickettsiales_odb10/hmmer_output/3184at766.out --cpu 1 /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/3184at766.hmm private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie
+# Date:            Fri Jan 17 16:13:38 2025
+# [ok]

@@ -1,0 +1,17 @@
+#                                                                                 --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name             accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#     ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_18:254984-255532|- -            183 2582at766            -            151   1.2e-50  167.5   0.0   1   1   6.1e-53   2.1e-50  166.7   0.0     1   151     1   178     1   178 0.85 contig_18_253 # 254984 # 255532 # -1 # ID=5_253;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.355
+contig_8:93932-95107|+    -            392 2582at766            -            151   7.8e-05   18.8   0.2   1   1     5e-07   0.00018   17.7   0.2    34   105   203   276   176   312 0.73 contig_8_99 # 93932 # 95107 # 1 # ID=19_99;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.361
+contig_8:138650-139366|+  -            239 2582at766            -            151   0.00017   17.7   0.0   1   1   8.1e-07   0.00028   17.0   0.0    30    99    44   117    35   143 0.81 contig_8_144 # 138650 # 139366 # 1 # ID=19_144;partial=00;start_type=ATG;rbs_motif=AGGAG;rbs_spacer=5-10bp;gc_cont=0.346
+contig_8:825287-825934|-  -            216 2582at766            -            151    0.0074   12.4   0.0   1   1     3e-05     0.011   11.9   0.0    69   130    91   158    33   170 0.73 contig_8_811 # 825287 # 825934 # -1 # ID=19_811;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.293
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/2582at766.hmm
+# Target file:     private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/run_rickettsiales_odb10/hmmer_output/2582at766.out --cpu 1 /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/2582at766.hmm private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie
+# Date:            Fri Jan 17 16:13:38 2025
+# [ok]

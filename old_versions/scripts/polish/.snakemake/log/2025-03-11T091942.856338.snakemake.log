@@ -1,0 +1,180 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: 8030e717-50ca-4c10-873f-2b0f0e314fe5
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Conda environments: ignored
+Job stats:
+job                          count
+-------------------------  -------
+all                              1
+circularize_merged               1
+merge_assemblies                 1
+polish_merged_short_reads        1
+total                            4
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Mar 11 09:19:43 2025]
+rule merge_assemblies:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_AN/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_JJ/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/merged.fasta
+    jobid: 6
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/merged.fasta
+    threads: 32
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=480
+
+No SLURM account given, trying to guess.
+Guessed SLURM account: standard
+Job 6 has been submitted with SLURM jobid 6869471 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_merge_assemblies/6869471.log).
+[Tue Mar 11 09:20:24 2025]
+Error in rule merge_assemblies:
+    message: SLURM-job '6869471' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 6
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_AN/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_JJ/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/merged.fasta
+    log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_merge_assemblies/6869471.log (check log file(s) for error details)
+    shell:
+        
+        # Create output directories
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp/
+        
+        # 1. Identify the best assembly based on BUSCO completeness
+        # Create a list of all polished assemblies
+        ls -1 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_AN/wRi/polished.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_JJ/wRi/polished.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//assembly_list.txt
+        
+        # First, select the most complete assembly as a base
+        # For simplicity, we'll choose the assembly with the most contigs over 10kb
+        BEST_ASSEMBLY=""
+        MAX_CONTIGS=0
+        
+        for ASSEMBLY in /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_AN/wRi/polished.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_JJ/wRi/polished.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta; do
+            ASSEMBLY_NAME=$(basename $(dirname $(dirname $ASSEMBLY)))
+            
+            # Count contigs over 10kb
+            LARGE_CONTIGS=$(awk '/^>/{if(len>10000) count++; len=0; next} {len+=length($0)} END{if(len>10000) count++; print count}' $ASSEMBLY)
+            
+            echo "Assembly $ASSEMBLY_NAME has $LARGE_CONTIGS large contigs" > /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//$ASSEMBLY_NAME.stats
+            
+            if [ "$LARGE_CONTIGS" -gt "$MAX_CONTIGS" ]; then
+                MAX_CONTIGS=$LARGE_CONTIGS
+                BEST_ASSEMBLY=$ASSEMBLY
+            fi
+        done
+        
+        echo "Selected $BEST_ASSEMBLY as base assembly with $MAX_CONTIGS large contigs" > /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//selected_assembly.txt
+        
+        # 2. Use a different approach for merging assemblies since Quickmerge is having issues
+        # First copy the best assembly as the initial merged assembly
+        cp $BEST_ASSEMBLY /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_initial.fasta
+        
+        # Rename contigs in the best assembly to avoid naming conflicts
+        awk '/^>/{print ">primary_contig_" ++i; next}{print}' /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_initial.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//renamed_primary.fasta
+        
+        # Create a fasta file with all other assemblies, with renamed contigs
+        touch /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//all_other_contigs.fasta
+        CONTIG_COUNT=0
+        
+        # Add all other assemblies with renamed contigs
+        for ASSEMBLY in /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_AN/wRi/polished.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_JJ/wRi/polished.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta; do
+            if [ "$ASSEMBLY" != "$BEST_ASSEMBLY" ]; then
+                ASSEMBLY_NAME=$(basename $(dirname $(dirname $ASSEMBLY)))
+                echo "Adding contigs from $ASSEMBLY_NAME..."
+                
+                # Rename contigs from this assembly and append to the combined file
+                awk -v prefix="$ASSEMBLY_NAME" -v count="$CONTIG_COUNT"                     '/^>/{print ">" prefix "_contig_" ++count; next}{print}' $ASSEMBLY                     >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//all_other_contigs.fasta
+                
+                # Update contig count
+                CONTIG_COUNT=$(grep -c "^>" /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//all_other_contigs.fasta)
+            fi
+        done
+        
+        # Use MUMmer to find overlaps between primary assembly and other contigs
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//overlaps
+        
+        # Align all other contigs to the primary assembly
+        nucmer --maxmatch -l 100 -c 500 -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//overlaps/nucmer_all /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//renamed_primary.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//all_other_contigs.fasta
+        
+        # Generate coords file
+        show-coords -r -c -l /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//overlaps/nucmer_all.delta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//overlaps/nucmer_all.coords
+        
+        # Create a manual merged fasta with all contigs
+        # First include all primary contigs
+        cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//renamed_primary.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_manual.fasta
+        
+        # Then add all other contigs that don't have significant overlaps with primary contigs
+        # We'll use a simple approach: if a contig has less than 80% overlap with any primary contig, add it
+        
+        # Parse the coords file to get contigs with low overlap
+        cat /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//overlaps/nucmer_all.coords | grep -v "^=" | awk '{
+            if ($10 > 1000) {  # Only consider alignments longer than 1000bp
+                ref=$12;
+                qry=$13;
+                len=$8-$7;
+                qrylen=$9;
+                overlap=len/qrylen*100;
+                if (!(qry in overlaps) || overlap > overlaps[qry]) {
+                    overlaps[qry] = overlap;
+                }
+            }
+        } END {
+            for (qry in overlaps) {
+                if (overlaps[qry] < 80) {  # Less than 80% overlap
+                    print qry;
+                }
+            }
+        }' > /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//contigs_to_add.txt
+        
+        # Extract these contigs and add them to the merged assembly
+        if [ -s /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//contigs_to_add.txt ]; then
+            seqtk subseq /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//all_other_contigs.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//contigs_to_add.txt >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_manual.fasta
+        fi
+        
+        # Rename the final merged contigs
+        awk '/^>/{print ">wRi_contig_" ++i; next}{print}' /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_manual.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_initial.fasta
+        
+        # 3. Use long reads to try to resolve any remaining gaps with TGS-GapCloser
+        # Map nanopore reads to the merged assembly
+        minimap2 -ax map-ont -t 32 /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_initial.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_mapped.sam
+        
+        # Convert to BAM and sort
+        samtools view -bS /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_mapped.sam | samtools sort -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_mapped.bam -
+        
+        # Index the BAM file
+        samtools index /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_mapped.bam
+        
+        # Use tgsgapcloser if available, otherwise just use the merged assembly
+        if command -v tgsgapcloser &> /dev/null; then
+            # Extract reads
+            samtools fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_mapped.bam > /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//mapped_reads.fasta
+            
+            # Run tgsgapcloser with the correct argument format
+            # The error shows it doesn't recognize --input_scaff, --min_coverage, --threads
+            # So use the basic arguments it does recognize
+            tgsgapcloser                 -i /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_initial.fasta                 -r /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//mapped_reads.fasta                 -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi//gap_closed                 --tgstype ont                 --min_match 300                 --thread 32                 --min_nread 1                 --ne
+                
+            # Check if gap closing was successful
+            if [ -s /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi//gap_closed.scaff_seqs ]; then
+                mv /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi//gap_closed.scaff_seqs /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/merged.fasta
+            else
+                # If gap closing failed, use the merged assembly
+                cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_initial.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/merged.fasta
+            fi
+        else
+            # If tgsgapcloser is not available, use the merged assembly
+            cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp//merged_initial.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/merged.fasta
+        fi
+        
+        # Clean up temporary files
+        rm -rf /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp/
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 6869471
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-11T091942.856338.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

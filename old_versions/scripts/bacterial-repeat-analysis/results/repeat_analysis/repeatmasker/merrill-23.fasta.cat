@@ -1,0 +1,1568 @@
+15 23.16 1.64 5.08 contig_18 350 410 (446882) (AGATATA)n#Simple_repeat 1 59 (0) m_b2s252i0
+
+  contig_18            350 AGCTATAACACATAGAGATATAAGCTATGAAGATATTA-ATACTACTGTA 398
+                             v     v i   -         v   -       v -   -  vvi  
+  (AGATATA)n#Si          1 AGATATAAGATATA-AGATATAAGATAT-AAGATATAAGATA-TAAGATA 47
+
+  contig_18            399 TCTGCTATAAGA 410
+                            vv v       
+  (AGATATA)n#Si         48 TAAGATATAAGA 59
+
+Matrix = Unknown
+Transitions / transversions = 0.22 (2/9)
+Gap_init rate = 0.07 (4 / 60), avg. gap size = 1.00 (4 / 4)
+
+11 14.04 2.04 11.11 contig_18 8550 8598 (438694) (TTTCACT)n#Simple_repeat 1 45 (0) m_b2s252i1
+
+  contig_18           8550 TTTCACTAAATC-CTTTGCAATTTTCATCTTTTCTGCTCTTTTCACTTTT 8598
+                                  -vv  -    v  v      - -   - - v            
+  (TTTCACT)n#Si          1 TTTCACT-TTTCACTTTTCACTTTTCA-C-TTT-T-CACTTTTCACTTTT 45
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.12 (6 / 48), avg. gap size = 1.00 (6 / 6)
+
+12 23.96 4.55 0.00 contig_18 35893 35936 (411356) (TAA)n#Simple_repeat 1 46 (0) m_b2s252i2
+
+  contig_18          35893 TAATATTAGTAGTAAT-TTTATAA-AAAAATTATAATATAAATAAT 35936
+                                v  i  i    -v v    -  v   v      vv      
+  (TAA)n#Simple          1 TAATAATAATAATAATAATAATAATAATAATAATAATAATAATAAT 46
+
+Matrix = Unknown
+Transitions / transversions = 0.29 (2/7)
+Gap_init rate = 0.05 (2 / 43), avg. gap size = 1.00 (2 / 2)
+
+11 13.18 5.71 2.78 contig_18 50491 50525 (396767) (TATAGAT)n#Simple_repeat 1 36 (0) m_b2s252i3
+
+  contig_18          50491 TAAAGATGA-AGA-CATAGATTATAAGAATATAGATT 50525
+                             v    v -   -i         -   v        
+  (TATAGAT)n#Si          1 TATAGATTATAGATTATAGATTAT-AGATTATAGATT 36
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.09 (3 / 34), avg. gap size = 1.00 (3 / 3)
+
+12 24.68 2.56 0.00 contig_18 64283 64321 (382971) (TTATA)n#Simple_repeat 1 40 (0) m_b3s252i0
+
+  contig_18          64283 TTAAATTTTAAGTTAATATATTATA-TATATTATCTAATA 64321
+                              v   v  vvv  v         -        v v   
+  (TTATA)n#Simp          1 TTATATTATATTATATTATATTATATTATATTATATTATA 40
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/8)
+Gap_init rate = 0.03 (1 / 38), avg. gap size = 1.00 (1 / 1)
+
+25 26.81 0.00 0.00 contig_18 77477 77547 (369745) (TCGTCA)n#Simple_repeat 1 71 (0) m_b3s252i1
+
+  contig_18          77477 TCTTCATAGTCATAGTCATCATCTTCGTCTTCGTCATCAAACTCATCATC 77526
+                             v    v     v      i  v     v        ivvv  i     
+  (TCGTCA)n#Sim          1 TCGTCATCGTCATCGTCATCGTCATCGTCATCGTCATCGTCATCGTCATC 50
+
+  contig_18          77527 GTAATCATCGTCTTCATCATC 77547
+                             v   i  i  v     i  
+  (TCGTCA)n#Sim         51 GTCATCGTCATCGTCATCGTC 71
+
+Matrix = Unknown
+Transitions / transversions = 0.60 (6/10)
+Gap_init rate = 0.00 (0 / 70), avg. gap size = 0.0 (0 / 0)
+
+13 18.28 2.56 2.56 contig_18 84483 84521 (362771) (TTATA)n#Simple_repeat 1 39 (0) m_b3s252i2
+
+  contig_18          84483 TTATACTATA-TATATAAATACTCTACTATTTTATATTAT 84521
+                                i    -     -v   i v  i   v         
+  (TTATA)n#Simp          1 TTATATTATATTATAT-TATATTATATTATATTATATTAT 39
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (3/3)
+Gap_init rate = 0.05 (2 / 38), avg. gap size = 1.00 (2 / 2)
+
+14 21.06 0.00 2.56 contig_18 90877 90916 (356376) (TAATA)n#Simple_repeat 1 39 (0) m_b3s252i3
+
+  contig_18          90877 TAATATATTATATTAACAATTTTATATAATATATTATGAT 90916
+                                  v    v - i   v v          v   i  
+  (TAATA)n#Simp          1 TAATATAATATAAT-ATAATATAATATAATATAATATAAT 39
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.03 (1 / 39), avg. gap size = 1.00 (1 / 1)
+
+12 19.94 5.00 0.00 contig_18 95774 95813 (351479) (TTTCAT)n#Simple_repeat 1 42 (0) m_b3s252i4
+
+  contig_18          95774 TTTCATTTTCTTCATCATTTTGCTTTTC--TTTCACTTTGAT 95813
+                                     v iv       vv     --     i   v  
+  (TTTCAT)n#Sim          1 TTTCATTTTCATTTTCATTTTCATTTTCATTTTCATTTTCAT 42
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.03 (1 / 39), avg. gap size = 2.00 (2 / 1)
+
+12 19.94 5.00 0.00 contig_18 103754 103793 (343499) (CTTCAT)n#Simple_repeat 1 42 (0) m_b3s252i5
+
+  contig_18         103754 CTACATCTT-A-CTGCTTCCTCTTCTTCATCTTCACCTTGAT 103793
+                             v      - -  v v  i  v            i   v  
+  (CTTCAT)n#Sim          1 CTTCATCTTCATCTTCATCTTCATCTTCATCTTCATCTTCAT 42
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.05 (2 / 39), avg. gap size = 1.00 (2 / 2)
+
+13 26.35 0.00 0.00 contig_18 112230 112270 (335022) (TCTCTT)n#Simple_repeat 1 41 (0) m_b3s252i6
+
+  contig_18         112230 TCTGTATCTATTTCTCTTTGTTTTTCTCTTGCGGTTTCACT 112270
+                              v v   v         v i        v vv    v  
+  (TCTCTT)n#Sim          1 TCTCTTTCTCTTTCTCTTTCTCTTTCTCTTTCTCTTTCTCT 41
+
+Matrix = Unknown
+Transitions / transversions = 0.12 (1/8)
+Gap_init rate = 0.00 (0 / 40), avg. gap size = 0.0 (0 / 0)
+
+15 16.82 5.77 5.77 contig_18 117414 117465 (329827) (TA)n#Simple_repeat 1 52 (0) m_b4s252i1
+
+  contig_18         117414 TATATTAATATA-ATCATAAATAGATGATATAT-TATCCACAGTATATA- 117460
+                                vv     -  -   v   v  -      -   vi i -      -
+  (TA)n#Simple_          1 TATATATATATATAT-ATATATATAT-ATATATATATATATA-TATATAT 47
+
+  contig_18         117461 ATATA 117465
+                                
+  (TA)n#Simple_         48 ATATA 52
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.12 (6 / 51), avg. gap size = 1.00 (6 / 6)
+
+14 25.81 2.63 5.41 contig_18 117415 117490 (329802) (ATATA)n#Simple_repeat 1 74 (0) m_b4s252i2
+
+  contig_18         117415 ATATTAATATAATCATAA-AT-AGATGATATATTATCCACAGTATATAAT 117462
+                              -         -    -  - v  i     v   -v i vv       
+  (ATATA)n#Simp          1 ATA-TAATATAAT-ATAATATAATATAATATAATAT-AATATAATATAAT 47
+
+  contig_18         117463 ATAAGTCAAACTAGTTTAAACATAATAT 117490
+                               vvi  vv  i v -  i       
+  (ATATA)n#Simp         48 ATAATATAATATAATAT-AATATAATAT 74
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (5/10)
+Gap_init rate = 0.08 (6 / 75), avg. gap size = 1.00 (6 / 6)
+
+12 15.49 3.45 0.00 contig_18 160026 160054 (287238) (AATTG)n#Simple_repeat 1 30 (0) m_b4s252i3
+
+  contig_18         160026 AAGTGAATTG-ATTGAATTTAAAAGAATTG 160054
+                             v       -        v  vv      
+  (AATTG)n#Simp          1 AATTGAATTGAATTGAATTGAATTGAATTG 30
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/4)
+Gap_init rate = 0.04 (1 / 28), avg. gap size = 1.00 (1 / 1)
+
+12 27.30 0.00 4.00 contig_18 180372 180423 (266869) (TTTTAA)n#Simple_repeat 1 50 (0) m_b5s252i0
+
+  contig_18         180372 TTTTAGTATAAAATATTATATTAATTTTTTAATTTTAGTTAAAATTTTCA 180421
+                                i v v  v v v  v    --           i  vv      v 
+  (TTTTAA)n#Sim          1 TTTTAATTTTAATTTTAATTTTAA--TTTTAATTTTAATTTTAATTTTAA 48
+
+  contig_18         180422 TT 180423
+                             
+  (TTTTAA)n#Sim         49 TT 50
+
+Matrix = Unknown
+Transitions / transversions = 0.22 (2/9)
+Gap_init rate = 0.04 (2 / 51), avg. gap size = 1.00 (2 / 2)
+
+33 15.08 4.55 0.00 contig_18 203039 203104 (244188) (TA)n#Simple_repeat 1 69 (0) m_b5s252i1
+
+  contig_18         203039 TATATATA-ATATATATATATA-ATACATATATAAAAATATACACATATA 203086
+                                   -             -   i       v v     i i     
+  (TA)n#Simple_          1 TATATATATATATATATATATATATATATATATATATATATATATATATA 50
+
+  contig_18         203087 TAAAAACATATA-AAATAT 203104
+                             v v i     - v    
+  (TA)n#Simple_         51 TATATATATATATATATAT 69
+
+Matrix = Unknown
+Transitions / transversions = 0.80 (4/5)
+Gap_init rate = 0.05 (3 / 65), avg. gap size = 1.00 (3 / 3)
+
+13 17.36 6.38 2.04 contig_18 206888 206934 (240358) (AGAAAGAG)n#Simple_repeat 1 49 (0) m_b5s252i2
+
+  contig_18         206888 AGAAACAGAACCAAAGA-AAACAGA-AAAGA-AGAAAGTAGAGAACGAGA 206934
+                                v   ivv i   -   v   -     -      -      v    
+  (AGAAAGAG)n#S          1 AGAAAGAGAGAAAGAGAGAAAGAGAGAAAGAGAGAAAG-AGAGAAAGAGA 49
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.09 (4 / 46), avg. gap size = 1.00 (4 / 4)
+
+12 21.81 2.70 0.00 contig_18 213380 213416 (233876) (TATAGCT)n#Simple_repeat 1 38 (0) m_b5s252i3
+
+  contig_18         213380 TATAGC-TATTGCTGATCGTATATTACTTATAGCTTAT 213416
+                                 -   v   v  v iv   vi            
+  (TATAGCT)n#Si          1 TATAGCTTATAGCTTATAGCTTATAGCTTATAGCTTAT 38
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.03 (1 / 36), avg. gap size = 1.00 (1 / 1)
+
+14 22.01 2.38 0.00 contig_18 216007 216048 (231244) (GAAAGA)n#Simple_repeat 1 43 (0) m_b5s252i4
+
+  contig_18         216007 GAAAG-CAAAGACACACAGAAAGAGATAGAGCAGGAAAAAGAG 216048
+                                -v     v v v         v    v i  i      
+  (GAAAGA)n#Sim          1 GAAAGAGAAAGAGAAAGAGAAAGAGAAAGAGAAAGAGAAAGAG 43
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (2/6)
+Gap_init rate = 0.02 (1 / 41), avg. gap size = 1.00 (1 / 1)
+
+12 29.79 0.00 0.00 contig_18 229354 229395 (217897) (TTACTA)n#Simple_repeat 1 42 (0) m_b6s252i0
+
+  contig_18         229354 TTACCACTGCTATTGCTGTAATTATTCTTATTACTATAACTA 229395
+                               i i i     i  i v i    vi         v    
+  (TTACTA)n#Sim          1 TTACTATTACTATTACTATTACTATTACTATTACTATTACTA 42
+
+Matrix = Unknown
+Transitions / transversions = 2.33 (7/3)
+Gap_init rate = 0.00 (0 / 41), avg. gap size = 0.0 (0 / 0)
+
+15 15.89 2.86 0.00 contig_18 234947 234981 (212311) (TTGTTT)n#Simple_repeat 1 36 (0) m_b6s252i1
+
+  contig_18         234947 TTGTTTTTGTTTCTGTATTTGTTGTT-TTATTGATT 234981
+                                       i   v      v  -  v   v  
+  (TTGTTT)n#Sim          1 TTGTTTTTGTTTTTGTTTTTGTTTTTGTTTTTGTTT 36
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (1/4)
+Gap_init rate = 0.03 (1 / 34), avg. gap size = 1.00 (1 / 1)
+
+13 8.48 4.00 0.00 contig_18 244331 244355 (202937) (TTC)n#Simple_repeat 1 26 (0) m_b6s252i2
+
+  contig_18         244331 TTCTTCTTGTT-TTTTTCTTCTTCTT 244355
+                                   v  -  i           
+  (TTC)n#Simple          1 TTCTTCTTCTTCTTCTTCTTCTTCTT 26
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/1)
+Gap_init rate = 0.04 (1 / 24), avg. gap size = 1.00 (1 / 1)
+
+18 26.95 0.00 0.00 contig_18 265527 265579 (181713) (AGC)n#Simple_repeat 1 53 (0) m_b6s252i3
+
+  contig_18         265527 AGCAGCAGCACCAGCAACTCCAGCAACACCCCCAGCAGCAGCTTTGGCAG 265576
+                                     v     i vv     i  v vv          vvii    
+  (AGC)n#Simple          1 AGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAGCAG 50
+
+  contig_18         265577 CAG 265579
+                              
+  (AGC)n#Simple         51 CAG 53
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (4/8)
+Gap_init rate = 0.00 (0 / 52), avg. gap size = 0.0 (0 / 0)
+
+12 15.26 3.45 0.00 contig_18 312188 312216 (135076) (TAATT)n#Simple_repeat 1 30 (0) m_b7s252i0
+
+  contig_18         312188 TAA-TTAAGTAAATTTAGGTTAATTTAATT 312216
+                              -    v v      iv           
+  (TAATT)n#Simp          1 TAATTTAATTTAATTTAATTTAATTTAATT 30
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.04 (1 / 28), avg. gap size = 1.00 (1 / 1)
+
+14 27.61 0.00 6.25 contig_18 315645 315712 (131580) (AATAAA)n#Simple_repeat 1 64 (0) m_b7s252i1
+
+  contig_18         315645 AATAAAAATACAAAATTATAAACAAGAGTTGTAATAAAACTAAATTCAAA 315694
+                                     -    -  v   i  i i viv       v    --v v 
+  (AATAAA)n#Sim          1 AATAAAAATA-AAAA-TAAAAATAAAAATAAAAATAAAAATAAA--AATA 46
+
+  contig_18         315695 AAATTTAAAAAAAACATA 315712
+                              v v    v   v   
+  (AATAAA)n#Sim         47 AAAATAAAAATAAAAATA 64
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (4/10)
+Gap_init rate = 0.06 (4 / 67), avg. gap size = 1.00 (4 / 4)
+
+13 18.85 2.78 0.00 contig_18 327596 327631 (119661) (CCTATCT)n#Simple_repeat 1 37 (0) m_b7s252i2
+
+  contig_18         327596 CCTTTCT-CTATAGCTTCTCTCCTACCTCCTATCTCC 327631
+                              v   -    vv i v       i           
+  (CCTATCT)n#Si          1 CCTATCTCCTATCTCCTATCTCCTATCTCCTATCTCC 37
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (2/4)
+Gap_init rate = 0.03 (1 / 35), avg. gap size = 1.00 (1 / 1)
+
+13 20.56 0.00 8.33 contig_18 337939 337990 (109302) (TAATTT)n#Simple_repeat 1 48 (0) m_b8s252i0
+
+  contig_18         337939 TATTTTTTATTGTGGTTTGTAATTATAATTCTAATCGTTAAACTTTTAAT 337988
+                             v    v   v ii   -     v     i    --  v  -       
+  (TAATTT)n#Sim          1 TAATTTTAATTTTAATTT-TAATTTTAATTTTAAT--TTTAA-TTTTAAT 46
+
+  contig_18         337989 TT 337990
+                             
+  (TAATTT)n#Sim         47 TT 48
+
+Matrix = Unknown
+Transitions / transversions = 0.60 (3/5)
+Gap_init rate = 0.08 (4 / 51), avg. gap size = 1.00 (4 / 4)
+
+12 19.61 0.00 0.00 contig_18 398221 398249 (49043) (TTCCT)n#Simple_repeat 1 29 (0) m_b9s252i0
+
+  contig_18         398221 TTCCCTTCGTTTGTTTTCCTTTCCTGTCC 398249
+                               i   v   vi           v   
+  (TTCCT)n#Simp          1 TTCCTTTCCTTTCCTTTCCTTTCCTTTCC 29
+
+Matrix = Unknown
+Transitions / transversions = 0.67 (2/3)
+Gap_init rate = 0.00 (0 / 28), avg. gap size = 0.0 (0 / 0)
+
+12 9.29 5.00 7.69 contig_18 417283 417322 (29970) (AGATAAA)n#Simple_repeat 1 39 (0) m_b9s252i1
+
+  contig_18         417283 AGATTAAAGA-AAAAGATAAAA-ATACAGTAGGATACAAGAT 417322
+                               v     -           -   - -- i    v     
+  (AGATAAA)n#Si          1 AGATAAAAGATAAAAGATAAAAGATA-A--AAGATAAAAGAT 39
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (1/2)
+Gap_init rate = 0.13 (5 / 39), avg. gap size = 1.00 (5 / 5)
+
+13 11.97 5.00 5.00 contig_18 417283 417322 (29970) (AGATAA)n#Simple_repeat 1 40 (0) m_b9s252i2
+
+  contig_18         417283 AGATTAAAGAAAAAGATAAAAATACAG-T-AGGATACAAGAT 417322
+                              -      v         i   v  - - i    -     
+  (AGATAA)n#Sim          1 AGA-TAAAGATAAAGATAAAGATAAAGATAAAGATA-AAGAT 40
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (2/2)
+Gap_init rate = 0.10 (4 / 39), avg. gap size = 1.00 (4 / 4)
+
+16 8.53 0.00 0.00 contig_18 434260 434284 (13008) (AGC)n#Simple_repeat 1 25 (0) m_b9s252i3
+
+  contig_18         434260 AGCACAAGCAGCAGCAGCAGCAGCA 434284
+                               vv                   
+  (AGC)n#Simple          1 AGCAGCAGCAGCAGCAGCAGCAGCA 25
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/2)
+Gap_init rate = 0.00 (0 / 24), avg. gap size = 0.0 (0 / 0)
+
+12 25.04 6.35 1.52 contig_18 436800 436862 (10430) (ATCTTT)n#Simple_repeat 1 66 (0) m_b9s252i4
+
+  contig_18         436800 ATCTTTATC---ATCTTTAGCTTTTTCGATGAATTTATCTATATCTCCA- 436845
+                                    ---       v    v  vv ivv       v     ii -
+  (ATCTTT)n#Sim          1 ATCTTTATCTTTATCTTTATCTTTATCTTTATCTTTATCTTTATCTTTAT 50
+
+  contig_18         436846 CTTTGCTCTATCTCTTT 436862
+                               -v   v v     
+  (ATCTTT)n#Sim         51 CTTT-ATCTTTATCTTT 66
+
+Matrix = Unknown
+Transitions / transversions = 0.30 (3/10)
+Gap_init rate = 0.05 (3 / 62), avg. gap size = 1.67 (5 / 3)
+
+13 16.98 6.00 3.92 contig_18 438824 438873 (8419) (TAAATT)n#Simple_repeat 1 51 (0) m_b9s252i5
+
+  contig_18         438824 TAAATTT--ATTTAAATTTAACTTT-ATTACAAATTAAAAACAATAAATT 438870
+                                  --            v   - v vi     -v   -vv      
+  (TAAATT)n#Sim          1 TAAATTTAAATTTAAATTTAAATTTAAATTTAAATT-TAAA-TTTAAATT 48
+
+  contig_18         438871 TAA 438873
+                              
+  (TAAATT)n#Sim         49 TAA 51
+
+Matrix = Unknown
+Transitions / transversions = 0.17 (1/6)
+Gap_init rate = 0.08 (4 / 49), avg. gap size = 1.25 (5 / 4)
+
+12 21.82 0.00 9.62 contig_18 439821 439877 (7415) (ATTTTT)n#Simple_repeat 1 52 (0) m_b9s252i6
+
+  contig_18         439821 ATTTTCTTTTTTATTTTGCGACTGTTTATTTTTCATTATCAGTTCCTATA 439870
+                                iv          --v - v         -   v i -  ii   v
+  (ATTTTT)n#Sim          1 ATTTTTATTTTTATTTT--TA-TTTTTATTTTT-ATTTTTA-TTTTTATT 45
+
+  contig_18         439871 TTTATTT 439877
+                                  
+  (ATTTTT)n#Sim         46 TTTATTT 52
+
+Matrix = Unknown
+Transitions / transversions = 0.80 (4/5)
+Gap_init rate = 0.09 (5 / 56), avg. gap size = 1.00 (5 / 5)
+
+12 31.77 0.00 1.92 contig_23 383 435 (5240) (TAAA)n#Simple_repeat 1 52 (0) m_b10s252i4
+
+  contig_23            383 TAATTCAACAAACTTAATCAAAATTTAAATCTAAATTTAAATAAATAAAT 432
+                              v v  i   - v   v  v vv     vv v vv             
+  (TAAA)n#Simpl          1 TAAATAAATAAA-TAAATAAATAAATAAATAAATAAATAAATAAATAAAT 49
+
+  contig_23            433 AAA 435
+                              
+  (TAAA)n#Simpl         50 AAA 52
+
+Matrix = Unknown
+Transitions / transversions = 0.08 (1/12)
+Gap_init rate = 0.02 (1 / 52), avg. gap size = 1.00 (1 / 1)
+
+15 13.48 3.03 0.00 contig_23 392 424 (5251) (AAATTT)n#Simple_repeat 1 34 (0) m_b10s252i5
+
+  contig_23            392 AAACTT-AATCAAAATTTAAATCTAAATTTAAAT 424
+                              i  -   iv          i           
+  (AAATTT)n#Sim          1 AAATTTAAATTTAAATTTAAATTTAAATTTAAAT 34
+
+Matrix = Unknown
+Transitions / transversions = 3.00 (3/1)
+Gap_init rate = 0.03 (1 / 32), avg. gap size = 1.00 (1 / 1)
+
+15 27.86 0.00 0.00 contig_23 403 450 (5225) (AAATAT)n#Simple_repeat 1 48 (0) m_b10s252i6
+
+  contig_23            403 AAATTTAAATCTAAATTTAAATAAATAAATAAAGATATCTAAAGATAT 450
+                               v     v     v      v v v     v   vv  v i    
+  (AAATAT)n#Sim          1 AAATATAAATATAAATATAAATATAAATATAAATATAAATATAAATAT 48
+
+Matrix = Unknown
+Transitions / transversions = 0.10 (1/10)
+Gap_init rate = 0.00 (0 / 47), avg. gap size = 0.0 (0 / 0)
+
+61 8.10 1.06 1.06 contig_23 635 728 (5040) (CAA)n#Simple_repeat 1 94 (0) c_b10s251i2
+
+  contig_23            635 CAACAA-AATCAACAACAACAACAACAACTACAACAGCAGCAACAACAAC 683
+                                 -  -                   v      i  i          
+  (CAA)n#Simple          1 CAACAACAA-CAACAACAACAACAACAACAACAACAACAACAACAACAAC 49
+
+  contig_23            684 AACAACAACAACTACAACAGCAGCAGCAACAACAACAACAACAAC 728
+                                       v      i  i  i                   
+  (CAA)n#Simple         50 AACAACAACAACAACAACAACAACAACAACAACAACAACAACAAC 94
+
+Matrix = Unknown
+Transitions / transversions = 2.50 (5/2)
+Gap_init rate = 0.02 (2 / 93), avg. gap size = 1.00 (2 / 2)
+
+14 20.94 0.00 0.00 contig_23 1627 1659 (4109) (AGA)n#Simple_repeat 1 33 (0) m_b10s252i7
+
+  contig_23           1627 AGAAGAAAATCAGGCAGAAGAAGAAGAGGAAGA 1659
+                                  i vv i v            i     
+  (AGA)n#Simple          1 AGAAGAAGAAGAAGAAGAAGAAGAAGAAGAAGA 33
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (3/3)
+Gap_init rate = 0.00 (0 / 32), avg. gap size = 0.0 (0 / 0)
+
+12 20.54 2.94 0.00 contig_23 2300 2333 (3435) (AAAT)n#Simple_repeat 1 35 (0) m_b10s252i8
+
+  contig_23           2300 AAATACATGAA-AAAGAAATAAATAGACAGATAAA 2333
+                                v  i  -   v         i i i     
+  (AAAT)n#Simpl          1 AAATAAATAAATAAATAAATAAATAAATAAATAAA 35
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (4/2)
+Gap_init rate = 0.03 (1 / 33), avg. gap size = 1.00 (1 / 1)
+
+17 12.41 2.86 0.00 contig_26 1793 1827 (392) (TGTCTTT)n#Simple_repeat 1 36 (0) m_b10s252i3
+
+  contig_26           1793 TGTCTATTGTGTTTTGTCTTTTATCTGTT-TCTTTT 1827
+                                v    v           i   v  -      
+  (TGTCTTT)n#Si          1 TGTCTTTTGTCTTTTGTCTTTTGTCTTTTGTCTTTT 36
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.03 (1 / 34), avg. gap size = 1.00 (1 / 1)
+
+1007 3.87 0.00 0.29 contig_30 1 1043 (2) (ACAACAA)n#Simple_repeat 1 1040 (0) c_b10s251i1
+
+  contig_30              1 ACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAA 50
+                                                                             
+  (ACAACAA)n#Si          1 ACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAA 50
+
+  contig_30             51 CAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAAC 100
+                                                                             
+  (ACAACAA)n#Si         51 CAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAAC 100
+
+  contig_30            101 AACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACA 150
+                                                                             
+  (ACAACAA)n#Si        101 AACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACA 150
+
+  contig_30            151 ACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAA 200
+                                                                             
+  (ACAACAA)n#Si        151 ACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAA 200
+
+  contig_30            201 CAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAAC 250
+                                                                             
+  (ACAACAA)n#Si        201 CAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAAC 250
+
+  contig_30            251 AAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACA 300
+                                                                             
+  (ACAACAA)n#Si        251 AAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACA 300
+
+  contig_30            301 AACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAA 350
+                                                                             
+  (ACAACAA)n#Si        301 AACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAA 350
+
+  contig_30            351 ACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAA 400
+                                                                             
+  (ACAACAA)n#Si        351 ACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAA 400
+
+  contig_30            401 CAACAAACAACAAACAACAAACAACAATCAACAAACAACAAACAACAATC 450
+                                                      v                    v 
+  (ACAACAA)n#Si        401 CAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAAC 450
+
+  contig_30            451 AACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACA 500
+                                                                             
+  (ACAACAA)n#Si        451 AACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACA 500
+
+  contig_30            501 ACAAACAACAAACAACAAACAACAATCAACAATCAACAATCAACAATCAA 550
+                                                    v      v      v      v   
+  (ACAACAA)n#Si        501 ACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAA 550
+
+  contig_30            551 CAAACAACAATCAACAATCAACAATCAACAATCAACAATCAACAATCAAC 600
+                                     v      v      v      v      v      v    
+  (ACAACAA)n#Si        551 CAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAAC 600
+
+  contig_30            601 AATCAACAATCAACAATCAACAATCAACAAACAACAATCAACAAACAACA 650
+                             v      v      v      v             v            
+  (ACAACAA)n#Si        601 AAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACA 650
+
+  contig_30            651 AACAACAATCAACAATCAACAATCAACAAACAACAAACAACAATCAACAA 700
+                                   v      v      v                    v      
+  (ACAACAA)n#Si        651 AACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAA 700
+
+  contig_30            701 TCAACAATCAACAAACAACAATCAACAATCAACAATCAACAATCAACAAT 750
+                           v      v             v      v      v      v      v
+  (ACAACAA)n#Si        701 ACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAA 750
+
+  contig_30            751 CAACAATCAACAATCAACAAACAACAAACAACAAACAACAAACAACAAAC 800
+                                 v      v                                    
+  (ACAACAA)n#Si        751 CAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAAC 800
+
+  contig_30            801 AACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACA 850
+                                                                             
+  (ACAACAA)n#Si        801 AACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACA 850
+
+  contig_30            851 ACAATCAACAAACAACAATCAACAATCAACAATCAACAAACAACAAACAA 900
+                               v             v      v      v                 
+  (ACAACAA)n#Si        851 ACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAA 900
+
+  contig_30            901 CAATCAACAAACAACAATCAACAAACAACAAACAACAAACAACAATCAAC 950
+                              v             v                           v    
+  (ACAACAA)n#Si        901 CAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAAC 950
+
+  contig_30            951 AAACAACAAACAACAATCAACAAACAACAATCAACAAACAACAAACAACA 1000
+                                           v             v                   
+  (ACAACAA)n#Si        951 AAACAACAAACAACAAACAACAAACAACAAACAACAAACAACAAACAACA 1000
+
+  contig_30           1001 AACAACAAACAACAATCAACAACAAACAACAAACAACAAACAA 1043
+                                        - --                          
+  (ACAACAA)n#Si       1001 AACAACAAACAAC-A--AACAACAAACAACAAACAACAAACAA 1040
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/39)
+Gap_init rate = 0.00 (3 / 1042), avg. gap size = 1.00 (3 / 3)
+
+1720 0.27 0.00 0.00 contig_32 599 2074 (0) (AATAGAATTG)n#Simple_repeat 1 1476 (0) c_b10s251i0
+
+  contig_32            599 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 648
+                                                                             
+  (AATAGAATTG)n          1 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 50
+
+  contig_32            649 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 698
+                                                                             
+  (AATAGAATTG)n         51 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 100
+
+  contig_32            699 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 748
+                                                                             
+  (AATAGAATTG)n        101 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 150
+
+  contig_32            749 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 798
+                                                                             
+  (AATAGAATTG)n        151 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 200
+
+  contig_32            799 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 848
+                                                                             
+  (AATAGAATTG)n        201 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 250
+
+  contig_32            849 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 898
+                                                                             
+  (AATAGAATTG)n        251 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 300
+
+  contig_32            899 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 948
+                                                                             
+  (AATAGAATTG)n        301 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 350
+
+  contig_32            949 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 998
+                                                                             
+  (AATAGAATTG)n        351 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 400
+
+  contig_32            999 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1048
+                                                                             
+  (AATAGAATTG)n        401 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 450
+
+  contig_32           1049 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1098
+                                                                             
+  (AATAGAATTG)n        451 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 500
+
+  contig_32           1099 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1148
+                                                                             
+  (AATAGAATTG)n        501 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 550
+
+  contig_32           1149 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1198
+                                                                             
+  (AATAGAATTG)n        551 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 600
+
+  contig_32           1199 AATAGAATAGAATAGAATAGAATAGAATAGAATAGAATTGAATAGAATAG 1248
+                                   v         v         v                   v 
+  (AATAGAATTG)n        601 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 650
+
+  contig_32           1249 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1298
+                                                                             
+  (AATAGAATTG)n        651 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 700
+
+  contig_32           1299 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1348
+                                                                             
+  (AATAGAATTG)n        701 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 750
+
+  contig_32           1349 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1398
+                                                                             
+  (AATAGAATTG)n        751 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 800
+
+  contig_32           1399 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1448
+                                                                             
+  (AATAGAATTG)n        801 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 850
+
+  contig_32           1449 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1498
+                                                                             
+  (AATAGAATTG)n        851 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 900
+
+  contig_32           1499 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1548
+                                                                             
+  (AATAGAATTG)n        901 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 950
+
+  contig_32           1549 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1598
+                                                                             
+  (AATAGAATTG)n        951 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1000
+
+  contig_32           1599 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1648
+                                                                             
+  (AATAGAATTG)n       1001 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1050
+
+  contig_32           1649 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1698
+                                                                             
+  (AATAGAATTG)n       1051 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1100
+
+  contig_32           1699 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1748
+                                                                             
+  (AATAGAATTG)n       1101 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1150
+
+  contig_32           1749 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1798
+                                                                             
+  (AATAGAATTG)n       1151 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1200
+
+  contig_32           1799 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1848
+                                                                             
+  (AATAGAATTG)n       1201 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1250
+
+  contig_32           1849 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1898
+                                                                             
+  (AATAGAATTG)n       1251 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1300
+
+  contig_32           1899 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1948
+                                                                             
+  (AATAGAATTG)n       1301 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1350
+
+  contig_32           1949 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1998
+                                                                             
+  (AATAGAATTG)n       1351 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1400
+
+  contig_32           1999 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 2048
+                                                                             
+  (AATAGAATTG)n       1401 AATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTGAATAGAATTG 1450
+
+  contig_32           2049 AATAGAATTGAATAGAATTGAATAGA 2074
+                                                     
+  (AATAGAATTG)n       1451 AATAGAATTGAATAGAATTGAATAGA 1476
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/4)
+Gap_init rate = 0.00 (0 / 1475), avg. gap size = 0.0 (0 / 0)
+
+16 17.05 4.17 2.04 contig_36 3037 3084 (34925) (TTATATA)n#Simple_repeat 1 49 (0) m_b10s252i0
+
+  contig_36           3037 TTATATATTATATA-TATATAATA-GTAATAAATAATAATAGATAATATA 3084
+                                         -      v  -i  v  v  -  v   v  v     
+  (TTATATA)n#Si          1 TTATATATTATATATTATATATTATATATTATAT-ATTATATATTATATA 49
+
+Matrix = Unknown
+Transitions / transversions = 0.17 (1/6)
+Gap_init rate = 0.06 (3 / 47), avg. gap size = 1.00 (3 / 3)
+
+15 17.34 4.08 4.08 contig_36 23911 23959 (14050) (GAAA)n#Simple_repeat 1 49 (0) m_b10s252i1
+
+  contig_36          23911 GAAAGAAAGGAAGAAATAGA-AAAGAAAGTAATGAATTTAGAGAAA-AAA 23958
+                                    i      v i -        -  v   -vv i     -   
+  (GAAA)n#Simpl          1 GAAAGAAAGAAAGAAAGAAAGAAAGAAAG-AAAGAA-AGAAAGAAAGAAA 48
+
+  contig_36          23959 G 23959
+                            
+  (GAAA)n#Simpl         49 G 49
+
+Matrix = Unknown
+Transitions / transversions = 0.75 (3/4)
+Gap_init rate = 0.08 (4 / 48), avg. gap size = 1.00 (4 / 4)
+
+11 13.18 5.71 2.78 contig_36 30077 30111 (7898) (TAGTATA)n#Simple_repeat 1 36 (0) m_b10s252i2
+
+  contig_36          30077 TAG-ATATAGAATATATTATATAGAATGT-GTAGTAT 30111
+                              -      v     v       v  i -   -   
+  (TAGTATA)n#Si          1 TAGTATATAGTATATAGTATATAGTATATAGTA-TAT 36
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.09 (3 / 34), avg. gap size = 1.00 (3 / 3)
+
+12 32.77 0.00 0.00 contig_39 3219 3268 (21222) (ATAAAA)n#Simple_repeat 1 50 (0) m_b11s252i0
+
+  contig_39           3219 ATTAAAATTTAATTAATCTTTATAATTAAAATAAAAAAAAATATAAAGAT 3268
+                             v     vv  v   vvv v v   v          v   v     i  
+  (ATAAAA)n#Sim          1 ATAAAAATAAAAATAAAAATAAAAATAAAAATAAAAATAAAAATAAAAAT 50
+
+Matrix = Unknown
+Transitions / transversions = 0.08 (1/12)
+Gap_init rate = 0.00 (0 / 49), avg. gap size = 0.0 (0 / 0)
+
+13 18.66 2.08 6.52 contig_39 3881 3928 (20562) (ATATT)n#Simple_repeat 1 46 (0) m_b11s252i1
+
+  contig_39           3881 ATATAATATTATA-AATAATTTTGTTACATTAACTTAAATATTATATTA 3928
+                               v        -v  -   v i   i    vv  --           
+  (ATATT)n#Simp          1 ATATTATATTATATTAT-ATTATATTATATTATATT--ATATTATATTA 46
+
+Matrix = Unknown
+Transitions / transversions = 0.40 (2/5)
+Gap_init rate = 0.09 (4 / 47), avg. gap size = 1.00 (4 / 4)
+
+16 16.59 0.00 2.86 contig_39 4475 4510 (19980) (ATT)n#Simple_repeat 1 35 (0) m_b11s252i2
+
+  contig_39           4475 ATTTTTATTAAAATTATTGAATATTATTATTCTTAT 4510
+                              v      vv      - v          v    
+  (ATT)n#Simple          1 ATTATTATTATTATTATT-ATTATTATTATTATTAT 35
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.03 (1 / 35), avg. gap size = 1.00 (1 / 1)
+
+15 28.81 0.00 0.00 contig_39 5448 5489 (19001) (TT)n#Simple_repeat 1 42 (0) m_b11s252i3
+
+  contig_39           5448 TTTTTTTTTGACATTTATAATTTTTTTTTTACATTTTTTTTT 5489
+                                    vviv   v vv          viv         
+  (TT)n#Simple_          1 TTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTTT 42
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (2/8)
+Gap_init rate = 0.00 (0 / 41), avg. gap size = 0.0 (0 / 0)
+
+15 28.81 0.00 0.00 contig_39 10399 10440 (14050) (AA)n#Simple_repeat 1 42 (0) m_b11s252i4
+
+  contig_39          10399 AAAAAAAAATGTAAAAAAAAAATTATAAATGTCAAAAAAAAA 10440
+                                    viv          vv v   vivv         
+  (AA)n#Simple_          1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 42
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (2/8)
+Gap_init rate = 0.00 (0 / 41), avg. gap size = 0.0 (0 / 0)
+
+15 11.35 7.89 0.00 contig_39 10735 10772 (13718) (TAAAA)n#Simple_repeat 1 41 (0) m_b11s252i5
+
+  contig_39          10735 TAAAATAAAATAAAAT-TATTAAAAT-GTA-AAAATAAAAT 10772
+                                           -v v      -iv -          
+  (TAAAA)n#Simp          1 TAAAATAAAATAAAATAAAATAAAATAAAATAAAATAAAAT 41
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.08 (3 / 37), avg. gap size = 1.00 (3 / 3)
+
+13 20.96 3.77 3.77 contig_39 10772 10824 (13666) (TTATT)n#Simple_repeat 1 53 (0) m_b11s252i6
+
+  contig_39          10772 TTATTTTATAATTTATTTTA-TTTA-ATTACTAAAATGTGATTTATTTTT 10819
+                                    --         -    -v   i vv v v iv        v
+  (TTATT)n#Simp          1 TTATTTTAT--TTTATTTTATTTTATTTTATTTTATTTTATTTTATTTTA 48
+
+  contig_39          10820 TTTTA 10824
+                                
+  (TTATT)n#Simp         49 TTTTA 53
+
+Matrix = Unknown
+Transitions / transversions = 0.29 (2/7)
+Gap_init rate = 0.08 (4 / 52), avg. gap size = 1.00 (4 / 4)
+
+16 16.59 0.00 2.86 contig_39 11378 11413 (13077) (ATA)n#Simple_repeat 1 35 (0) m_b11s252i7
+
+  contig_39          11378 ATAAGAATAATAATATTCAATAATTTTAATAAAAAT 11413
+                               v          v -      vv      v   
+  (ATA)n#Simple          1 ATAATAATAATAATAAT-AATAATAATAATAATAAT 35
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.03 (1 / 35), avg. gap size = 1.00 (1 / 1)
+
+19 16.25 4.00 1.96 contig_39 11711 11760 (12730) (ATTT)n#Simple_repeat 1 51 (0) m_b11s252i8
+
+  contig_39          11711 ATTGATTTAGTT-TTTATTTATTAATTTTTATTATTT-TTTTTCTAATTA 11758
+                              v     v  -          v    v -      -   v i  v   
+  (ATTT)n#Simpl          1 ATTTATTTATTTATTTATTTATTTATTTAT-TTATTTATTTATTTATTTA 49
+
+  contig_39          11759 TT 11760
+                             
+  (ATTT)n#Simpl         50 TT 51
+
+Matrix = Unknown
+Transitions / transversions = 0.17 (1/6)
+Gap_init rate = 0.06 (3 / 49), avg. gap size = 1.00 (3 / 3)
+
+15 12.05 5.88 5.88 contig_39 12619 12669 (11821) (AATTTT)n#Simple_repeat 1 51 (0) m_b11s252i9
+
+  contig_39          12619 AATCTTTATATTTT--TTTTTATTTTAATTATAAAGATTAA-TTAAATTT 12665
+                              -    -     --    v         - v  vv    -  v     
+  (AATTTT)n#Sim          1 AAT-TTTA-ATTTTAATTTTAATTTTAATT-TTAATTTTAATTTTAATTT 47
+
+  contig_39          12666 TAAT 12669
+                               
+  (AATTTT)n#Sim         48 TAAT 51
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.10 (5 / 50), avg. gap size = 1.20 (6 / 5)
+
+11 14.62 7.50 2.38 contig_39 16949 16988 (7502) (AATTAG)n#Simple_repeat 1 42 (0) m_b11s252i10
+
+  contig_39          16949 AATTTGAAGTATAGATTTG--TTTGAATTAGAATTAG-ATTAG 16988
+                               v   v  v -   v --  v             -     
+  (AATTAG)n#Sim          1 AATTAGAATTAGA-ATTAGAATTAGAATTAGAATTAGAATTAG 42
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/5)
+Gap_init rate = 0.08 (3 / 39), avg. gap size = 1.33 (4 / 3)
+
+20 23.29 3.70 3.70 contig_39 17661 17741 (6749) (TTTAT)n#Simple_repeat 1 81 (0) m_b11s252i11
+
+  contig_39          17661 TTTA-TTTA-TTTAATTTCTATTAGTTTATCATGTTTTTTATTAAGTTTA 17708
+                               -    -    v   v v   v     iv i    v -  v v    
+  (TTTAT)n#Simp          1 TTTATTTTATTTTATTTTATTTTATTTTATTTTATTTTAT-TTTATTTTA 49
+
+  contig_39          17709 TATT-TTTTATTAAATAATATAATTTATTTTATT 17741
+                            v  -       --v  v v  v           
+  (TTTAT)n#Simp         50 TTTTATTTTATT--TTATTTTATTTTATTTTATT 81
+
+Matrix = Unknown
+Transitions / transversions = 0.15 (2/13)
+Gap_init rate = 0.07 (6 / 80), avg. gap size = 1.00 (6 / 6)
+
+16 23.74 1.96 1.96 contig_39 17899 17949 (6541) (TTA)n#Simple_repeat 1 51 (0) m_b11s252i12
+
+  contig_39          17899 TTATTA-TACTAGTATTAATGTTTGTTTTATCAATAATATTATTAATTAT 17947
+                                 -  i  v     v i  vv v    i v  v       -     
+  (TTA)n#Simple          1 TTATTATTATTATTATTATTATTATTATTATTATTATTATTATT-ATTAT 49
+
+  contig_39          17948 TA 17949
+                             
+  (TTA)n#Simple         50 TA 51
+
+Matrix = Unknown
+Transitions / transversions = 0.43 (3/7)
+Gap_init rate = 0.04 (2 / 50), avg. gap size = 1.00 (2 / 2)
+
+13 0.00 0.00 0.00 contig_39 18371 18387 (6103) (ATT)n#Simple_repeat 1 17 (0) m_b11s252i13
+
+  contig_39          18371 ATTATTATTATTATTAT 18387
+                                            
+  (ATT)n#Simple          1 ATTATTATTATTATTAT 17
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (0/0)
+Gap_init rate = 0.00 (0 / 16), avg. gap size = 0.0 (0 / 0)
+
+18 20.88 5.36 0.00 contig_39 19310 19365 (5125) (TTTATT)n#Simple_repeat 1 59 (0) m_b11s252i14
+
+  contig_39          19310 TTTAATATTATTTGTATTTTGAATTTTAATTTTA--ATAAATTTT-TTAT 19356
+                               v v      v      v v     v     --v v v    -  v 
+  (TTTATT)n#Sim          1 TTTATTTTTATTTTTATTTTTATTTTTATTTTTATTTTTATTTTTATTTT 50
+
+  contig_39          19357 TATTTTTAT 19365
+                                    
+  (TTTATT)n#Sim         51 TATTTTTAT 59
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/10)
+Gap_init rate = 0.04 (2 / 55), avg. gap size = 1.50 (3 / 2)
+
+18 6.36 8.77 6.90 contig_39 20219 20275 (4215) (TAAT)n#Simple_repeat 1 58 (0) m_b11s252i15
+
+  contig_39          20219 TAATTAATT-ATTAATAAATTTAGTTTAATTAA-T-ATTAATGAAATTAA 20265
+                                    -      v  -   -v        - -      -v      
+  (TAAT)n#Simpl          1 TAATTAATTAATTAATTAA-TTA-ATTAATTAATTAATTAAT-TAATTAA 47
+
+  contig_39          20266 -T-ATTAACTTA 20275
+                           - -     -   
+  (TAAT)n#Simpl         48 TTAATTAA-TTA 58
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/3)
+Gap_init rate = 0.16 (9 / 56), avg. gap size = 1.00 (9 / 9)
+
+14 23.67 3.45 3.45 contig_39 20903 20960 (3530) (TAA)n#Simple_repeat 1 58 (0) m_b11s252i16
+
+  contig_39          20903 TAA-AATAGTAATAATATTACCTAATAAAAATAATGACATATCATATTGA 20951
+                              -    i        v  -v      v      i i -  v   v i 
+  (TAA)n#Simple          1 TAATAATAATAATAATAATA-ATAATAATAATAATAATA-ATAATAATAA 48
+
+  contig_39          20952 TGA-AATCAT 20960
+                            i -   v  
+  (TAA)n#Simple         49 TAATAATAAT 58
+
+Matrix = Unknown
+Transitions / transversions = 0.83 (5/6)
+Gap_init rate = 0.07 (4 / 57), avg. gap size = 1.00 (4 / 4)
+
+21 9.39 0.00 0.00 contig_39 21409 21442 (3048) (TAAAGT)n#Simple_repeat 1 34 (0) m_b11s252i17
+
+  contig_39          21409 TAAAGGTAAAGCTAAAGATAAAGTTAAAGTTAAA 21442
+                                v     i     v                
+  (TAAAGT)n#Sim          1 TAAAGTTAAAGTTAAAGTTAAAGTTAAAGTTAAA 34
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (1/2)
+Gap_init rate = 0.00 (0 / 33), avg. gap size = 0.0 (0 / 0)
+
+17 20.99 1.96 1.96 contig_39 21479 21529 (2961) (ATAAAA)n#Simple_repeat 1 51 (0) m_b11s252i18
+
+  contig_39          21479 ATAAAATTATTAAATAAAATTAATGA-AAATAAAGAAATAAAAATAAAAG 21527
+                                 v  -v        v   vi -   v v i              i
+  (ATAAAA)n#Sim          1 ATAAAAATA-AAAATAAAAATAAAAATAAAAATAAAAATAAAAATAAAAA 49
+
+  contig_39          21528 TA 21529
+                             
+  (ATAAAA)n#Sim         50 TA 51
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (3/6)
+Gap_init rate = 0.04 (2 / 50), avg. gap size = 1.00 (2 / 2)
+
+24 17.14 4.35 2.86 contig_39 21799 21867 (2623) (TAA)n#Simple_repeat 1 70 (0) m_b11s252i19
+
+  contig_39          21799 TAAGAATAATAATTAAT-AGAACAA-AATAA-AATAAATGTAATAGAAAA 21845
+                              v        -    - v  i  -     -     vvi     iv  v
+  (TAA)n#Simple          1 TAATAATAATAA-TAATAATAATAATAATAATAATAATAATAATAATAAT 49
+
+  contig_39          21846 AATAATAAATAATAATAATCAT 21867
+                                 -            v  
+  (TAA)n#Simple         50 AATAAT-AATAATAATAATAAT 70
+
+Matrix = Unknown
+Transitions / transversions = 0.43 (3/7)
+Gap_init rate = 0.07 (5 / 68), avg. gap size = 1.00 (5 / 5)
+
+11 16.86 2.86 2.86 contig_8 5624 5658 (897060) (ATTTTT)n#Simple_repeat 1 35 (0) m_b12s252i0
+
+  contig_8            5624 ATATTTATTTGTTTTTTTTATGTTTA-TCCTATTTT 5658
+                             v       -  v       v    - ii      
+  (ATTTTT)n#Sim          1 ATTTTTATTT-TTATTTTTATTTTTATTTTTATTTT 35
+
+Matrix = Unknown
+Transitions / transversions = 0.67 (2/3)
+Gap_init rate = 0.06 (2 / 34), avg. gap size = 1.00 (2 / 2)
+
+13 12.98 5.56 2.70 contig_8 5627 5662 (897056) (TTTAT)n#Simple_repeat 1 37 (0) m_b12s252i1
+
+  contig_8            5627 TTTA-TTTGTTTT-TTTTATGTTTATCCTATTTTCTTT 5662
+                               -   i    -      -     ii      v   
+  (TTTAT)n#Simp          1 TTTATTTTATTTTATTTTAT-TTTATTTTATTTTATTT 37
+
+Matrix = Unknown
+Transitions / transversions = 3.00 (3/1)
+Gap_init rate = 0.09 (3 / 35), avg. gap size = 1.00 (3 / 3)
+
+12 21.79 0.00 5.13 contig_8 6795 6835 (895883) (CTATA)n#Simple_repeat 1 39 (0) m_b12s252i2
+
+  contig_8            6795 CTAAACTTTAGCTTTACAATACTGATATTAGAATATACTAT 6835
+                              v   v  -  v   v     -   i  v v        
+  (CTATA)n#Simp          1 CTATACTATA-CTATACTATACT-ATACTATACTATACTAT 39
+
+Matrix = Unknown
+Transitions / transversions = 0.17 (1/6)
+Gap_init rate = 0.05 (2 / 40), avg. gap size = 1.00 (2 / 2)
+
+12 22.13 0.00 0.00 contig_8 7417 7448 (895270) (AATATT)n#Simple_repeat 1 32 (0) m_b12s252i3
+
+  contig_8            7417 AATATTCATCAGAATCTTAATATTAAAATTAA 7448
+                                 v  vvv   v          v     
+  (AATATT)n#Sim          1 AATATTAATATTAATATTAATATTAATATTAA 32
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/6)
+Gap_init rate = 0.00 (0 / 31), avg. gap size = 0.0 (0 / 0)
+
+12 20.67 5.13 0.00 contig_8 13508 13546 (889172) (TATAA)n#Simple_repeat 1 41 (0) m_b12s252i4
+
+  contig_8           13508 TATGATCAAATAT-A-ATAATATAATAAAATCTCCTATAAT 13546
+                              i  vv     - -           v   v vv      
+  (TATAA)n#Simp          1 TATAATATAATATAATATAATATAATATAATATAATATAAT 41
+
+Matrix = Unknown
+Transitions / transversions = 0.17 (1/6)
+Gap_init rate = 0.05 (2 / 38), avg. gap size = 1.00 (2 / 2)
+
+11 21.12 8.16 0.00 contig_8 18088 18136 (884582) (ATAAATA)n#Simple_repeat 1 53 (0) m_b12s252i5
+
+  contig_8           18088 ATCAAT-ATAAAGAA-AAAAGAGAAA-AATTGA-AATCTATAATAAATAA 18133
+                             v   -     v  -   vi v   -   vi -   vv           
+  (ATAAATA)n#Si          1 ATAAATAATAAATAATAAATAATAAATAATAAATAATAAATAATAAATAA 50
+
+  contig_8           18134 TAA 18136
+                              
+  (ATAAATA)n#Si         51 TAA 53
+
+Matrix = Unknown
+Transitions / transversions = 0.29 (2/7)
+Gap_init rate = 0.08 (4 / 48), avg. gap size = 1.00 (4 / 4)
+
+12 3.79 3.03 9.68 contig_8 18940 18972 (883746) (GATAAA)n#Simple_repeat 1 31 (0) m_b12s252i6
+
+  contig_8           18940 GATCAAGATAAAGATAATTATGATAAA-ATAAAG 18972
+                              v             -- -      -      
+  (GATAAA)n#Sim          1 GATAAAGATAAAGATAA--A-GATAAAGATAAAG 31
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/1)
+Gap_init rate = 0.12 (4 / 32), avg. gap size = 1.00 (4 / 4)
+
+13 20.67 2.78 8.82 contig_8 28686 28757 (873961) (TTATAAA)n#Simple_repeat 1 68 (0) m_b12s252i7
+
+  contig_8           28686 TTAAAAATT-TAAACTAGCGTTTATAAATTTGTATAATT-TAAGTGTTAA 28733
+                              v     -    i  vviv       -  i  -    -   i vv   
+  (TTATAAA)n#Si          1 TTATAAATTATAAATTATAAATTATAAA-TTATA-AATTATAAATTATAA 48
+
+  contig_8           28734 AATATAGAATTTCTATAAATTATA 28757
+                            v    -  -- -           
+  (TTATAAA)n#Si         49 ATTATA-AA--T-TATAAATTATA 68
+
+Matrix = Unknown
+Transitions / transversions = 0.57 (4/7)
+Gap_init rate = 0.11 (8 / 71), avg. gap size = 1.00 (8 / 8)
+
+13 23.58 6.00 0.00 contig_8 35378 35427 (867291) (TATAA)n#Simple_repeat 1 53 (0) m_b12s252i8
+
+  contig_8           35378 TATTATAGAATTTACT-TAAAGTAA-ATACT-TAATTTAAAATATTATAA 35424
+                              v   v   v  v -   vi   -   v -    v   v   v     
+  (TATAA)n#Simp          1 TATAATATAATATAATATAATATAATATAATATAATATAATATAATATAA 50
+
+  contig_8           35425 TAT 35427
+                              
+  (TATAA)n#Simp         51 TAT 53
+
+Matrix = Unknown
+Transitions / transversions = 0.11 (1/9)
+Gap_init rate = 0.06 (3 / 49), avg. gap size = 1.00 (3 / 3)
+
+13 14.86 3.85 8.00 contig_8 98575 98626 (804092) (TTACTT)n#Simple_repeat 1 50 (0) m_b13s252i0
+
+  contig_8           98575 TTTCTTTTACTTTCTCAGAAATTA-TTTTACCTTTAGCTTCTAC-TTTAC 98622
+                             v          - - -vvv   -      i    -   i   -     
+  (TTACTT)n#Sim          1 TTACTTTTACTTT-T-A-CTTTTACTTTTACTTTTA-CTTTTACTTTTAC 46
+
+  contig_8           98623 TTTT 98626
+                               
+  (TTACTT)n#Sim         47 TTTT 50
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (2/4)
+Gap_init rate = 0.12 (6 / 51), avg. gap size = 1.00 (6 / 6)
+
+14 23.79 0.00 2.22 contig_8 100598 100643 (802075) (ATTTTTT)n#Simple_repeat 1 45 (0) m_b13s252i1
+
+  contig_8          100598 ATTTTTTAATCGTTTATTTTCTATTTTTTCTTCTATAAATGTTATT 100643
+                                  -  iv        i        v  i v  vv v     
+  (ATTTTTT)n#Si          1 ATTTTTT-ATTTTTTATTTTTTATTTTTTATTTTTTATTTTTTATT 45
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (3/6)
+Gap_init rate = 0.02 (1 / 45), avg. gap size = 1.00 (1 / 1)
+
+11 16.89 2.86 2.86 contig_8 120838 120872 (781846) (ATTTCT)n#Simple_repeat 1 35 (0) m_b14s252i0
+
+  contig_8          120838 ATTT-TATTTCTTTTACATAGTTCTCTTTCTACTTC 120872
+                               -       v  v -  v    v      i   
+  (ATTTCT)n#Sim          1 ATTTCTATTTCTATTTC-TATTTCTATTTCTATTTC 35
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (1/4)
+Gap_init rate = 0.06 (2 / 34), avg. gap size = 1.00 (2 / 2)
+
+12 20.13 6.25 2.00 contig_8 152474 152521 (750197) (GAAA)n#Simple_repeat 1 50 (0) m_b14s252i1
+
+  contig_8          152474 GAATGAACTGAAAGAAA-ATATTAAGAATGAACTAAAGAAAG--AGAAAG 152520
+                              v   -v        - v vv     v   vv        --      
+  (GAAA)n#Simpl          1 GAAAGAA-AGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAG 49
+
+  contig_8          152521 A 152521
+                            
+  (GAAA)n#Simpl         50 A 50
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/8)
+Gap_init rate = 0.06 (3 / 47), avg. gap size = 1.33 (4 / 3)
+
+16 15.86 0.00 0.00 contig_8 164043 164070 (738648) (T)n#Simple_repeat 1 28 (0) m_b14s252i2
+
+  contig_8          164043 TTTTTCATTTTTTTTTGTTTATTTTTTT 164070
+                                iv         v   v       
+  (T)n#Simple_r          1 TTTTTTTTTTTTTTTTTTTTTTTTTTTT 28
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.00 (0 / 27), avg. gap size = 0.0 (0 / 0)
+
+12 12.75 5.56 2.70 contig_8 195428 195463 (707255) (TAAAAGC)n#Simple_repeat 1 37 (0) m_b15s252i0
+
+  contig_8          195428 TAAAAGCTAAAA-C-AAAAGAAAGAATGCTAAAAACTA 195463
+                                       - -     vv -  v       i   
+  (TAAAAGC)n#Si          1 TAAAAGCTAAAAGCTAAAAGCTA-AAAGCTAAAAGCTA 37
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.09 (3 / 35), avg. gap size = 1.00 (3 / 3)
+
+12 11.05 0.00 9.38 contig_8 230623 230657 (672061) (AAAATA)n#Simple_repeat 1 32 (0) m_b16s252i0
+
+  contig_8          230623 AAACTAAAAATAAAAAGTATAAAGACAAACATAAA 230657
+                              v            -  -   - i   v     
+  (AAAATA)n#Sim          1 AAAATAAAAATAAAAA-TA-AAA-ATAAAAATAAA 32
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (1/2)
+Gap_init rate = 0.09 (3 / 34), avg. gap size = 1.00 (3 / 3)
+
+12 12.03 3.70 0.00 contig_8 231658 231684 (671034) (AGAAA)n#Simple_repeat 1 28 (0) m_b16s252i1
+
+  contig_8          231658 AGAAAAGAAAATAAAAG-CAAGAGAAGA 231684
+                                      v     -v    i    
+  (AGAAA)n#Simp          1 AGAAAAGAAAAGAAAAGAAAAGAAAAGA 28
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (1/2)
+Gap_init rate = 0.04 (1 / 26), avg. gap size = 1.00 (1 / 1)
+
+16 17.68 7.84 0.00 contig_8 243871 243921 (658797) (AGCAAG)n#Simple_repeat 1 55 (0) m_b16s252i2
+
+  contig_8          243871 AGCAA-AACAAGAGCAAGAGGAA-ACCAA-A-CTTAAACAAGAGCAAGAA 243916
+                                - i            v  - v   - - vvi i           i
+  (AGCAAG)n#Sim          1 AGCAAGAGCAAGAGCAAGAGCAAGAGCAAGAGCAAGAGCAAGAGCAAGAG 50
+
+  contig_8          243917 CAAGA 243921
+                                
+  (AGCAAG)n#Sim         51 CAAGA 55
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (4/4)
+Gap_init rate = 0.08 (4 / 50), avg. gap size = 1.00 (4 / 4)
+
+12 13.86 0.00 0.00 contig_8 247226 247249 (655469) (TTA)n#Simple_repeat 1 24 (0) m_b16s252i3
+
+  contig_8          247226 TTATTATTATTATTCTTGCTATTA 247249
+                                         v  ii     
+  (TTA)n#Simple          1 TTATTATTATTATTATTATTATTA 24
+
+Matrix = Unknown
+Transitions / transversions = 2.00 (2/1)
+Gap_init rate = 0.00 (0 / 23), avg. gap size = 0.0 (0 / 0)
+
+21 25.13 4.21 3.12 contig_8 248620 248714 (654004) (TTAATA)n#Simple_repeat 1 96 (0) m_b16s252i4
+
+  contig_8          248620 TTAATATTAAT-TTCATAATTAACCTTATTATTAATATTTAGCATAAAAT 248668
+                                      -  v  -     iv   v          v vvv   v  
+  (TTAATA)n#Sim          1 TTAATATTAATATTAAT-ATTAATATTAATATTAATATTAATATTAATAT 49
+
+  contig_8          248669 T-ACCTTATTTTTTAACTTTAAT-TTACAGA-AAATTTTAATAGTAATA 248714
+                            - iv   -v v    iv     -   - v -v   v      v     
+  (TTAATA)n#Sim         50 TAATATTA-ATATTAATATTAATATTA-ATATTAATATTAATATTAATA 96
+
+Matrix = Unknown
+Transitions / transversions = 0.19 (3/16)
+Gap_init rate = 0.07 (7 / 94), avg. gap size = 1.00 (7 / 7)
+
+12 20.12 2.94 0.00 contig_8 275362 275395 (627323) (AAG)n#Simple_repeat 1 35 (0) m_b16s252i5
+
+  contig_8          275362 AAGAA-AAAAAGTAGAAGTAGAAGAAGTAAAACAA 275395
+                                -  i   v     v        v i  v  
+  (AAG)n#Simple          1 AAGAAGAAGAAGAAGAAGAAGAAGAAGAAGAAGAA 35
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (2/4)
+Gap_init rate = 0.03 (1 / 33), avg. gap size = 1.00 (1 / 1)
+
+13 16.63 8.16 1.92 contig_8 284559 284607 (618111) (AAAGCA)n#Simple_repeat 1 52 (0) m_b17s252i0
+
+  contig_8          284559 AAAGTAATAACAAAAACCAAAAGC-AACGCAAAA-AAATAG--AAAGCAA 284604
+                               i  -  vv    v       -  v      -v  v  --       
+  (AAAGCA)n#Sim          1 AAAGCAA-AAGCAAAAGCAAAAGCAAAAGCAAAAGCAAAAGCAAAAGCAA 49
+
+  contig_8          284605 AAG 284607
+                              
+  (AAAGCA)n#Sim         50 AAG 52
+
+Matrix = Unknown
+Transitions / transversions = 0.17 (1/6)
+Gap_init rate = 0.08 (4 / 48), avg. gap size = 1.25 (5 / 4)
+
+12 21.55 2.50 2.50 contig_8 292237 292276 (610442) (AAAT)n#Simple_repeat 1 40 (0) m_b17s252i1
+
+  contig_8          292237 AAATAAAGTATAGACCTAAAT-ATTACTTAAATAAATAAAT 292276
+                                  -  v v vv     - v  vv             
+  (AAAT)n#Simpl          1 AAATAAA-TAAATAAATAAATAAATAAATAAATAAATAAAT 40
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/7)
+Gap_init rate = 0.05 (2 / 39), avg. gap size = 1.00 (2 / 2)
+
+12 21.63 3.85 3.85 contig_8 310708 310759 (591959) (ATATCA)n#Simple_repeat 1 52 (0) m_b17s252i2
+
+  contig_8          310708 ATATATATATTAAATTATCACTAAAAAT-TAAATATCAA-ACCAATTTCA 310755
+                               vv   - v  -     v  vv   - v        - i    v   
+  (ATATCA)n#Sim          1 ATATCAATA-TCAA-TATCAATATCAATATCAATATCAATATCAATATCA 48
+
+  contig_8          310756 ATAT 310759
+                               
+  (ATATCA)n#Sim         49 ATAT 52
+
+Matrix = Unknown
+Transitions / transversions = 0.12 (1/8)
+Gap_init rate = 0.08 (4 / 51), avg. gap size = 1.00 (4 / 4)
+
+13 24.22 1.92 3.92 contig_8 372303 372354 (530364) (AATAA)n#Simple_repeat 1 51 (0) m_b18s252i0
+
+  contig_8          372303 AATAAAGTAAAACAATTTAAAAT-AAATAATTATATTATATAAAAACAAT 372351
+                                 i     i  vv      -      -v   vv   -   v v   
+  (AATAA)n#Simp          1 AATAAAATAAAATAAAATAAAATAAAATAA-AATAAAATA-AAATAAAAT 48
+
+  contig_8          372352 GAA 372354
+                           i  
+  (AATAA)n#Simp         49 AAA 51
+
+Matrix = Unknown
+Transitions / transversions = 0.43 (3/7)
+Gap_init rate = 0.06 (3 / 51), avg. gap size = 1.00 (3 / 3)
+
+12 17.40 0.00 5.88 contig_8 377718 377753 (524965) (TTAAA)n#Simple_repeat 1 34 (0) m_b18s252i1
+
+  contig_8          377718 TTAAATATTATTAAAATTGAATTGAGATTAAATTAA 377753
+                                 - v v v     i    - i          
+  (TTAAA)n#Simp          1 TTAAAT-TAAATTAAATTAAATT-AAATTAAATTAA 34
+
+Matrix = Unknown
+Transitions / transversions = 0.67 (2/3)
+Gap_init rate = 0.06 (2 / 35), avg. gap size = 1.00 (2 / 2)
+
+13 25.43 5.36 0.00 contig_8 396585 396640 (506078) (ATAAAT)n#Simple_repeat 1 59 (0) m_b19s252i0
+
+  contig_8          396585 ATAAATA-AACT-TAAATTTTTGTAAAAATTTAAGTTTAAA-CTCAATAT 396631
+                                  -  v -     v vvi  v    v   i v    -v v     
+  (ATAAAT)n#Sim          1 ATAAATATAAATATAAATATAAATATAAATATAAATATAAATATAAATAT 50
+
+  contig_8          396632 AAATAAAAA 396640
+                                v   
+  (ATAAAT)n#Sim         51 AAATATAAA 59
+
+Matrix = Unknown
+Transitions / transversions = 0.20 (2/10)
+Gap_init rate = 0.05 (3 / 55), avg. gap size = 1.00 (3 / 3)
+
+12 13.13 1.89 12.50 contig_8 432300 432352 (470366) (TAATTA)n#Simple_repeat 1 48 (0) m_b19s252i1
+
+  contig_8          432300 TAATTAATATATTATAATTTTACATTCCCAATGTTTAAATTATTATTA-A 432348
+                                -   -         v  -   -vi   - v -      v    - 
+  (TAATTA)n#Sim          1 TAATT-ATA-ATTATAATTATA-ATT-ATAAT-TAT-AATTATAATTATA 44
+
+  contig_8          432349 ATTA 432352
+                               
+  (TAATTA)n#Sim         45 ATTA 48
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (1/4)
+Gap_init rate = 0.13 (7 / 52), avg. gap size = 1.00 (7 / 7)
+
+13 10.73 6.67 0.00 contig_8 451821 451850 (450868) (TTTAT)n#Simple_repeat 1 32 (0) m_b20s252i0
+
+  contig_8          451821 TTTACTTTATATT-TTTT-TATTATTTTATTT 451850
+                               i     v  -    - v           
+  (TTTAT)n#Simp          1 TTTATTTTATTTTATTTTATTTTATTTTATTT 32
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (1/2)
+Gap_init rate = 0.07 (2 / 29), avg. gap size = 1.00 (2 / 2)
+
+12 9.71 0.00 0.00 contig_8 470714 470735 (431983) (TAAA)n#Simple_repeat 1 22 (0) m_b20s252i1
+
+  contig_8          470714 TAAATATATAAATAAATAAGTA 470735
+                                 v            i  
+  (TAAA)n#Simpl          1 TAAATAAATAAATAAATAAATA 22
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/1)
+Gap_init rate = 0.00 (0 / 21), avg. gap size = 0.0 (0 / 0)
+
+13 18.91 0.00 0.00 contig_8 474763 474792 (427926) (TATTT)n#Simple_repeat 1 30 (0) m_b20s252i2
+
+  contig_8          474763 TATTTTATTTGATTTTGTATTCTTTAATTT 474792
+                                     v     i v  v   v    
+  (TATTT)n#Simp          1 TATTTTATTTTATTTTATTTTATTTTATTT 30
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (1/4)
+Gap_init rate = 0.00 (0 / 29), avg. gap size = 0.0 (0 / 0)
+
+12 20.57 4.08 4.08 contig_8 478230 478278 (424440) (TATAAA)n#Simple_repeat 1 49 (0) m_b20s252i3
+
+  contig_8          478230 TATATCTAT-AATAGAAATATAAATTATTAA-AGAAAGCTACAATTTAAA 478277
+                               vv   -    v         -   v  - v   vv  -   v    
+  (TATAAA)n#Sim          1 TATAAATATAAATATAAATATAAA-TATAAATATAAATATA-AATATAAA 48
+
+  contig_8          478278 T 478278
+                            
+  (TATAAA)n#Sim         49 T 49
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/8)
+Gap_init rate = 0.08 (4 / 48), avg. gap size = 1.00 (4 / 4)
+
+16 6.31 5.71 2.78 contig_8 483815 483849 (418869) (ATATT)n#Simple_repeat 1 36 (0) m_b20s252i4
+
+  contig_8          483815 ATATT-T-TTATGTTATATTATTATTAAATTATATTA 483849
+                                - -    i        -     v         
+  (ATATT)n#Simp          1 ATATTATATTATATTATATTA-TATTATATTATATTA 36
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (1/1)
+Gap_init rate = 0.09 (3 / 34), avg. gap size = 1.00 (3 / 3)
+
+12 15.26 3.45 0.00 contig_8 524327 524355 (378363) (TTAT)n#Simple_repeat 1 30 (0) m_b21s252i0
+
+  contig_8          524327 TTATTTATTTCGTTATTTA-TTCCTTATTT 524355
+                                     vv       -  vi      
+  (TTAT)n#Simpl          1 TTATTTATTTATTTATTTATTTATTTATTT 30
+
+Matrix = Unknown
+Transitions / transversions = 0.33 (1/3)
+Gap_init rate = 0.04 (1 / 28), avg. gap size = 1.00 (1 / 1)
+
+13 21.89 0.00 2.63 contig_8 529930 529968 (372750) (AACATA)n#Simple_repeat 1 38 (0) m_b21s252i1
+
+  contig_8          529930 AACACAACAATAACCATAAAACATAAAAATAATCAAAAA 529968
+                               i  vv    v   -         v    v  v   
+  (AACATA)n#Sim          1 AACATAAACATAAACAT-AAACATAAACATAAACATAAA 38
+
+Matrix = Unknown
+Transitions / transversions = 0.17 (1/6)
+Gap_init rate = 0.03 (1 / 38), avg. gap size = 1.00 (1 / 1)
+
+12 17.45 6.12 4.00 contig_8 546309 546357 (356361) (ATTTATAA)n#Simple_repeat 1 50 (0) m_b21s252i2
+
+  contig_8          546309 ATTTATAGATTTA-AAATTTACTAATATCAAGAAA-TCAT-TATTTACAA 546355
+                                  i     -       -   -  iv v   - i  -v     i  
+  (ATTTATAA)n#S          1 ATTTATAAATTTATAAATTTA-TAA-ATTTATAAATTTATAAATTTATAA 48
+
+  contig_8          546356 AT 546357
+                             
+  (ATTTATAA)n#S         49 AT 50
+
+Matrix = Unknown
+Transitions / transversions = 1.33 (4/3)
+Gap_init rate = 0.10 (5 / 48), avg. gap size = 1.00 (5 / 5)
+
+14 10.80 9.30 2.17 contig_8 549100 549142 (353576) (TATCTC)n#Simple_repeat 1 46 (0) m_b21s252i3
+
+  contig_8          549100 TATCTCTATCTCT-TCTCCCGTCTTTATCTC--TCCCT-TCTCTATC 549142
+                                        -   - ii   i      --  i  -        
+  (TATCTC)n#Sim          1 TATCTCTATCTCTATCT-CTATCTCTATCTCTATCTCTATCTCTATC 46
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (4/0)
+Gap_init rate = 0.10 (4 / 42), avg. gap size = 1.25 (5 / 4)
+
+30 33.17 1.45 1.45 contig_8 555919 556056 (346662) (ATC)n#Simple_repeat 1 138 (0) m_b21s252i4
+
+  contig_8          555919 ATCATCAATATCCTCATCTTCAAATTCATCCTCCTCTTCTTCGTCATCAA 555968
+                                  vi   v     v   vvv     v  v  v  v  i      v
+  (ATC)n#Simple          1 ATCATCATCATCATCATCATCATCATCATCATCATCATCATCATCATCAT 50
+
+  contig_8          555969 ACCCATCATCGCTC-TTTTCCTCATCATCAAACCCGTCATCATCATCTTC 556017
+                           vvi       -v  - iv  v         vvvi i           v  
+  (ATC)n#Simple         51 CATCATCATC-ATCATCATCATCATCATCATCATCATCATCATCATCATC 99
+
+  contig_8          556018 AAACTTATCGTCGAT-ATCTTCATCATCAATATCTTCGTC 556056
+                            vvv i   i  -  -   v         vi   v  i  
+  (ATC)n#Simple        100 ATCATCATCATC-ATCATCATCATCATCATCATCATCATC 138
+
+Matrix = Unknown
+Transitions / transversions = 0.38 (10/26)
+Gap_init rate = 0.03 (4 / 137), avg. gap size = 1.00 (4 / 4)
+
+12 28.69 0.00 0.00 contig_8 560074 560115 (342603) (TTTAT)n#Simple_repeat 1 42 (0) m_b21s252i5
+
+  contig_8          560074 TTTCTTTTGGTTTCTCTTCTTCTTTTTTAATTTGTTTTATTT 560115
+                              v    iv   v i  v  i v     v   i        
+  (TTTAT)n#Simp          1 TTTATTTTATTTTATTTTATTTTATTTTATTTTATTTTATTT 42
+
+Matrix = Unknown
+Transitions / transversions = 0.67 (4/6)
+Gap_init rate = 0.00 (0 / 41), avg. gap size = 0.0 (0 / 0)
+
+13 24.72 0.00 0.00 contig_8 560074 560111 (342607) (TTTCTT)n#Simple_repeat 1 38 (0) m_b21s252i6
+
+  contig_8          560074 TTTCTTTTGGTTTCTCTTCTTCTTTTTTAATTTGTTTT 560111
+                                   vv   i    i        ivv   v    
+  (TTTCTT)n#Sim          1 TTTCTTTTTCTTTTTCTTTTTCTTTTTCTTTTTCTTTT 38
+
+Matrix = Unknown
+Transitions / transversions = 0.60 (3/5)
+Gap_init rate = 0.00 (0 / 37), avg. gap size = 0.0 (0 / 0)
+
+13 15.40 5.56 0.00 contig_8 585628 585663 (317055) (AAATAA)n#Simple_repeat 1 38 (0) m_b22s252i0
+
+  contig_8          585628 AAATAAAAAT--AAATGAAAATTTTAATAAAAATTAAA 585663
+                                     --    i     vvv         v   
+  (AAATAA)n#Sim          1 AAATAAAAATAAAAATAAAAATAAAAATAAAAATAAAA 38
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (1/4)
+Gap_init rate = 0.03 (1 / 35), avg. gap size = 2.00 (2 / 1)
+
+12 12.09 0.00 6.90 contig_8 591715 591745 (310973) (ATATT)n#Simple_repeat 1 29 (0) m_b22s252i1
+
+  contig_8          591715 ATATTTAAATTATATTATAAATATAATATAT 591745
+                              -   v          - v    v     
+  (ATATT)n#Simp          1 ATA-TTATATTATATTAT-ATTATATTATAT 29
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/3)
+Gap_init rate = 0.07 (2 / 30), avg. gap size = 1.00 (2 / 2)
+
+12 29.72 0.00 0.00 contig_8 625494 625538 (277180) (GAAATT)n#Simple_repeat 1 45 (0) m_b23s252i0
+
+  contig_8          625494 GAAAATAAAATTGTAATTGAAGTTGATGTTAAAAAAATAATTGAA 625538
+                               v i      v       i    vi  i   vviv       
+  (GAAATT)n#Sim          1 GAAATTGAAATTGAAATTGAAATTGAAATTGAAATTGAAATTGAA 45
+
+Matrix = Unknown
+Transitions / transversions = 0.83 (5/6)
+Gap_init rate = 0.00 (0 / 44), avg. gap size = 0.0 (0 / 0)
+
+11 13.04 8.82 0.00 contig_8 677607 677640 (225078) (AATAAGT)n#Simple_repeat 1 37 (0) m_b24s252i0
+
+  contig_8          677607 AACAAGCAATAAGTAAT--GTTATAAATAATAA-TAA 677640
+                             i   i          --  v    i      -   
+  (AATAAGT)n#Si          1 AATAAGTAATAAGTAATAAGTAATAAGTAATAAGTAA 37
+
+Matrix = Unknown
+Transitions / transversions = 3.00 (3/1)
+Gap_init rate = 0.06 (2 / 33), avg. gap size = 1.50 (3 / 2)
+
+13 14.21 3.23 0.00 contig_8 705552 705582 (197136) (TCTTTT)n#Simple_repeat 1 32 (0) m_b24s252i1
+
+  contig_8          705552 TCTTTTTC-TTCTCTTCATCTTTTTCTTTGTC 705582
+                                   -  i    iv           v  
+  (TCTTTT)n#Sim          1 TCTTTTTCTTTTTCTTTTTCTTTTTCTTTTTC 32
+
+Matrix = Unknown
+Transitions / transversions = 1.00 (2/2)
+Gap_init rate = 0.03 (1 / 30), avg. gap size = 1.00 (1 / 1)
+
+12 20.12 2.94 0.00 contig_8 707884 707917 (194801) (TTA)n#Simple_repeat 1 35 (0) m_b24s252i2
+
+  contig_8          707884 TTA-TATTATTATTATAATCATTAGCCTTAATATT 707917
+                              -            v  i    viv   v    
+  (TTA)n#Simple          1 TTATTATTATTATTATTATTATTATTATTATTATT 35
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (2/4)
+Gap_init rate = 0.03 (1 / 33), avg. gap size = 1.00 (1 / 1)
+
+12 19.66 0.00 0.00 contig_8 717010 717038 (185680) (TTAA)n#Simple_repeat 1 29 (0) m_b24s252i3
+
+  contig_8          717010 TTAGTTAAGATATTAATTAAATAATTAAT 717038
+                              i    vvv         v        
+  (TTAA)n#Simpl          1 TTAATTAATTAATTAATTAATTAATTAAT 29
+
+Matrix = Unknown
+Transitions / transversions = 0.25 (1/4)
+Gap_init rate = 0.00 (0 / 28), avg. gap size = 0.0 (0 / 0)
+
+12 21.93 3.92 3.92 contig_8 733243 733293 (169425) (TTC)n#Simple_repeat 1 51 (0) m_b25s252i0
+
+  contig_8          733243 TTCTTC-TATTGGTCTTCTT-TTCTTCTTACTTGTTTCAGCACCCTCTTC 733290
+                                 - v  vv       -        -   -i   vv vi i     
+  (TTC)n#Simple          1 TTCTTCTTCTTCTTCTTCTTCTTCTTCTT-CTT-CTTCTTCTTCTTCTTC 48
+
+  contig_8          733291 TTC 733293
+                              
+  (TTC)n#Simple         49 TTC 51
+
+Matrix = Unknown
+Transitions / transversions = 0.50 (3/6)
+Gap_init rate = 0.08 (4 / 50), avg. gap size = 1.00 (4 / 4)
+
+17 18.25 1.82 5.66 contig_8 742910 742964 (159754) (AAGAGA)n#Simple_repeat 1 53 (0) m_b25s252i1
+
+  contig_8          742910 AAGAGAAAGAGAAGCAGAAAGACAAAGGGAGGAAGAGTTAAATGAAA-AG 742958
+                                        iv       v   --   i     -v  iv    -  
+  (AAGAGA)n#Sim          1 AAGAGAAAGAGAAAGAGAAAGAGAAA--GAGAAAGAG-AAAGAGAAAGAG 47
+
+  contig_8          742959 AACGAG 742964
+                             v   
+  (AAGAGA)n#Sim         48 AAAGAG 53
+
+Matrix = Unknown
+Transitions / transversions = 0.60 (3/5)
+Gap_init rate = 0.07 (4 / 54), avg. gap size = 1.00 (4 / 4)
+
+12 28.69 0.00 2.27 contig_8 827187 827231 (75487) (ATAA)n#Simple_repeat 1 44 (0) m_b26s252i0
+
+  contig_8          827187 ATAAATACTTAACTTACTAAAAAAATTATATATTTATATAAATAA 827231
+                                  vv   v v v    v   -  v   vv  v        
+  (ATAA)n#Simpl          1 ATAAATAAATAAATAAATAAATAAA-TAAATAAATAAATAAATAA 44
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/10)
+Gap_init rate = 0.02 (1 / 44), avg. gap size = 1.00 (1 / 1)
+
+14 20.39 2.50 0.00 contig_8 890264 890303 (12415) (ATTATAT)n#Simple_repeat 1 41 (0) m_b27s252i0
+
+  contig_8          890264 ATTATCAATTTTATATTATAT-TTATCAATTATATCTTTTA 890303
+                                vv   v          -    vv       v  v  
+  (ATTATAT)n#Si          1 ATTATATATTATATATTATATATTATATATTATATATTATA 41
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/7)
+Gap_init rate = 0.03 (1 / 39), avg. gap size = 1.00 (1 / 1)
+
+16 17.05 4.17 2.04 contig_8 899421 899468 (3250) (TTATATA)n#Simple_repeat 1 49 (0) m_b27s252i1
+
+  contig_8          899421 TTATATATTATATA-TATATAATA-GTAATAAATAATAATAGATAATATA 899468
+                                         -      v  -i  v  v  -  v   v  v     
+  (TTATATA)n#Si          1 TTATATATTATATATTATATATTATATATTATAT-ATTATATATTATATA 49
+
+Matrix = Unknown
+Transitions / transversions = 0.17 (1/6)
+Gap_init rate = 0.06 (3 / 47), avg. gap size = 1.00 (3 / 3)
+
+12 21.55 2.50 2.50 contig_9 4467 4506 (318) (AAAT)n#Simple_repeat 1 40 (0) m_b28s252i0
+
+  contig_9            4467 AAATAAAGTATAGACCTAAAT-ATTACTTAAATAAATAAAT 4506
+                                  -  v v vv     - v  vv             
+  (AAAT)n#Simpl          1 AAATAAA-TAAATAAATAAATAAATAAATAAATAAATAAAT 40
+
+Matrix = Unknown
+Transitions / transversions = 0.00 (0/7)
+Gap_init rate = 0.05 (2 / 39), avg. gap size = 1.00 (2 / 2)
+
+## Batch Overlap Boundaries
+##   contig_18  57660, 55661, 113321, 111322, 168982, 166983, 224643, 222644, 280304, 278305, 335965, 333966, 391626, 389627
+##   contig_8  58293, 56294, 114587, 112588, 170881, 168882, 227175, 225176, 283469, 281470, 339763, 337764, 396057, 394058, 452351, 450352, 508645, 506646, 564939, 562940, 621233, 619234, 677527, 675528, 733821, 731822, 790115, 788116, 846409, 844410
+## Total Sequences: 20
+## Total Length: 1455203
+## Total NonMask ( excluding >20bp runs of N/X bases ): 1455203
+## Total NonSub ( excluding all non ACGT bases ):1455203
+RepeatMasker version 4.1.2-p1 , default mode
+run with rmblastn version 2.14.1+
+RM Library: CONS-Dfam_3.3

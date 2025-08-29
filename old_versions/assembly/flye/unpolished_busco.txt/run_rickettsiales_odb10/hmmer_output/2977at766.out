@@ -1,0 +1,15 @@
+#                                                                                --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name            accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#    ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_11:221-703|-      -            161 2977at766            -            127   1.8e-44  147.4   3.0   1   1   7.5e-47   5.3e-44  145.9   3.0     2   127    13   151    12   151 0.89 contig_11_1 # 221 # 703 # -1 # ID=2_1;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.304
+contig_8:329067-329549|- -            161 2977at766            -            127   1.8e-44  147.4   3.0   1   1   7.5e-47   5.3e-44  145.9   3.0     2   127    13   151    12   151 0.89 contig_8_325 # 329067 # 329549 # -1 # ID=19_325;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.304
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/2977at766.hmm
+# Target file:     private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/run_rickettsiales_odb10/hmmer_output/2977at766.out --cpu 1 /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/2977at766.hmm private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie
+# Date:            Fri Jan 17 16:13:38 2025
+# [ok]

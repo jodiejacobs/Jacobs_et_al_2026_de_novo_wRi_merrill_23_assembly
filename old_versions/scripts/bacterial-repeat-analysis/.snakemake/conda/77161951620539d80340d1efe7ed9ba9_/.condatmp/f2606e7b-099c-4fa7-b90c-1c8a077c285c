@@ -1,0 +1,17 @@
+###########################################################################
+# libssh2 installation details
+###########################################################################
+
+prefix=/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/conda/77161951620539d80340d1efe7ed9ba9_
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: libssh2
+URL: https://www.libssh2.org/
+Description: Library for SSH-based communication
+Version: 1.11.0
+Requires.private: libssl,libcrypto,zlib,zlib
+Libs: -L${libdir} -lssh2 
+Libs.private: 
+Cflags: -I${includedir}

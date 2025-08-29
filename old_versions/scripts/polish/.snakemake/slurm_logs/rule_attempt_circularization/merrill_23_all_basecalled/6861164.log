@@ -1,0 +1,228 @@
+host: phoenix-06.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=120000, mem_mib=114441, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 11:42:07 2025]
+rule attempt_circularization:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 10
+    resources: mem_mb=120000, mem_mib=114441, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=long, runtime=480
+
+host: phoenix-06.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 10
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=120000, mem_mib=114441, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 11:42:08 2025]
+localrule attempt_circularization:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 10
+    resources: mem_mb=120000, mem_mib=114441, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=long, runtime=480
+
+usage: circlator all [options] <assembly.fasta> <reads.fasta/q> <output directory>
+circlator: error: unrecognized arguments: --outdir
+[Mon Mar 10 11:42:10 2025]
+Error in rule attempt_circularization:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+    shell:
+        
+        # Create output and temp directories
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp
+        
+        # Use Circlator to attempt to circularize the Wolbachia genome with optimized settings
+        circlator all --merge_min_id 85 --merge_breaklen 1000 --assemble_spades_k 127             --threads 10             --outdir /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled//circlator_links             /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+        
+        # Check if the assembly was successfully circularized
+        if grep -q "^>" /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled//circlator_links/06.fixstart.fasta; then
+            # Use the LINKS-based circularized genome
+            cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled//circlator_links/06.fixstart.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta
+            echo "Using LINKS-based circularized genome" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        else
+            # Fall back to the non-circularized assembly
+            LINKS_CONTIGS=$(grep -c "^>" /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta)
+            
+            # Use the LINKS assembly
+            cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta
+            echo "Using LINKS assembly (not circularized). Contigs: $LINKS_CONTIGS" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        fi
+        
+        # Generate assembly statistics
+        echo "===== Assembly Statistics =====" > /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        echo "Date: $(date)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        echo "" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        
+        # Count total contigs
+        echo "Total contigs: $(grep -c "^>" /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        
+        # Calculate N50, total size, etc.
+        assembly-stats /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        
+        # Check for circularity using minimap2 (faster than dnadiff)
+        echo "" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        echo "===== Circularity Check =====" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        
+        # Extract sequences to temporary file
+        seqtk seq -a /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/temp.fa
+        
+        # Process each contig sequentially (parallel was causing issues)
+        for SEQ in $(grep "^>" /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/temp.fa | sed 's/>//'); do
+            echo "Checking circularity of contig: $SEQ" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+            
+            # Extract the sequence
+            seqtk subseq /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/temp.fa <(echo "$SEQ") > /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/contig.fa
+            
+            # Get sequence length
+            LENGTH=$(seqtk comp /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/contig.fa | cut -f 2)
+            
+            # Use minimap2 instead of dnadiff (much faster)
+            if [ $LENGTH -gt 2000 ]; then
+                # Extract first and last 1000 bp
+                head -n2 /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/contig.fa | tail -n1 | cut -c 1-1000 > /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/start.fa
+                head -n2 /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/contig.fa | tail -n1 | rev | cut -c 1-1000 | rev > /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/end.fa
+                
+                # Use minimap2 for alignment (much faster than dnadiff)
+                MATCHES=$(minimap2 -c /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/start.fa /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/end.fa 2>/dev/null | wc -l)
+                
+                if [ $MATCHES -gt 0 ]; then
+                    # Calculate approximate identity using minimap2
+                    IDENTITY=$(minimap2 -c /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/start.fa /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/end.fa 2>/dev/null | awk '{ident=$10/$11*100} END {print ident}')
+                    echo "Terminal overlap identity: $IDENTITY%" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+                    
+                    if (( $(echo "$IDENTITY > 95" | bc -l) )); then
+                        echo "Appears to be circular (>95% terminal identity)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+                    else
+                        echo "May not be circular (<95% terminal identity)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+                    fi
+                else
+                    echo "No terminal overlap detected" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+                fi
+            else
+                echo "Contig too small for reliable circularity check (<2000 bp)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+            fi
+            echo "" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        done
+        
+        # Cleanup temporary files
+        rm -rf /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-06: task 0: Exited with exit code 1
+[Mon Mar 10 11:42:10 2025]
+Error in rule attempt_circularization:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+    shell:
+        
+        # Create output and temp directories
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp
+        
+        # Use Circlator to attempt to circularize the Wolbachia genome with optimized settings
+        circlator all --merge_min_id 85 --merge_breaklen 1000 --assemble_spades_k 127             --threads 10             --outdir /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled//circlator_links             /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+        
+        # Check if the assembly was successfully circularized
+        if grep -q "^>" /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled//circlator_links/06.fixstart.fasta; then
+            # Use the LINKS-based circularized genome
+            cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled//circlator_links/06.fixstart.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta
+            echo "Using LINKS-based circularized genome" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        else
+            # Fall back to the non-circularized assembly
+            LINKS_CONTIGS=$(grep -c "^>" /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta)
+            
+            # Use the LINKS assembly
+            cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta
+            echo "Using LINKS assembly (not circularized). Contigs: $LINKS_CONTIGS" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        fi
+        
+        # Generate assembly statistics
+        echo "===== Assembly Statistics =====" > /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        echo "Date: $(date)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        echo "" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        
+        # Count total contigs
+        echo "Total contigs: $(grep -c "^>" /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        
+        # Calculate N50, total size, etc.
+        assembly-stats /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        
+        # Check for circularity using minimap2 (faster than dnadiff)
+        echo "" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        echo "===== Circularity Check =====" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        
+        # Extract sequences to temporary file
+        seqtk seq -a /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta > /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/temp.fa
+        
+        # Process each contig sequentially (parallel was causing issues)
+        for SEQ in $(grep "^>" /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/temp.fa | sed 's/>//'); do
+            echo "Checking circularity of contig: $SEQ" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+            
+            # Extract the sequence
+            seqtk subseq /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/temp.fa <(echo "$SEQ") > /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/contig.fa
+            
+            # Get sequence length
+            LENGTH=$(seqtk comp /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/contig.fa | cut -f 2)
+            
+            # Use minimap2 instead of dnadiff (much faster)
+            if [ $LENGTH -gt 2000 ]; then
+                # Extract first and last 1000 bp
+                head -n2 /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/contig.fa | tail -n1 | cut -c 1-1000 > /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/start.fa
+                head -n2 /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/contig.fa | tail -n1 | rev | cut -c 1-1000 | rev > /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/end.fa
+                
+                # Use minimap2 for alignment (much faster than dnadiff)
+                MATCHES=$(minimap2 -c /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/start.fa /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/end.fa 2>/dev/null | wc -l)
+                
+                if [ $MATCHES -gt 0 ]; then
+                    # Calculate approximate identity using minimap2
+                    IDENTITY=$(minimap2 -c /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/start.fa /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp/end.fa 2>/dev/null | awk '{ident=$10/$11*100} END {print ident}')
+                    echo "Terminal overlap identity: $IDENTITY%" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+                    
+                    if (( $(echo "$IDENTITY > 95" | bc -l) )); then
+                        echo "Appears to be circular (>95% terminal identity)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+                    else
+                        echo "May not be circular (<95% terminal identity)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+                    fi
+                else
+                    echo "No terminal overlap detected" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+                fi
+            else
+                echo "Contig too small for reliable circularity check (<2000 bp)" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+            fi
+            echo "" >> /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+        done
+        
+        # Cleanup temporary files
+        rm -rf /private/groups/russelllab/jodie/merrill_23_wRi_genome/tmp/merrill_23_all_basecalled_circlator_tmp
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

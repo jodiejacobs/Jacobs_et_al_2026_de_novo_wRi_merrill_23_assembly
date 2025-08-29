@@ -1,0 +1,115 @@
+host: phoenix-08.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Mar 25 11:51:08 2025]
+rule polish_nanopore_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa/wRi/polished.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: assembly_name=20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+host: phoenix-08.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Mar 25 11:51:09 2025]
+localrule polish_nanopore_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa/wRi/polished.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: assembly_name=20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=360
+
+[M::mm_idx_gen::0.051*0.85] collected minimizers
+[M::mm_idx_gen::0.063*2.92] sorted minimizers
+[M::main::0.063*2.92] loaded/built the index for 5 target sequence(s)
+[M::mm_mapopt_update::0.071*2.71] mid_occ = 29
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 5
+[M::mm_idx_stat::0.077*2.58] distinct minimizers: 226689 (96.08% are singletons); average occurrences: 1.163; average spacing: 5.318; total length: 1402591
+[M::worker_pipeline::22.528*10.31] mapped 672771 sequences
+[M::main] Version: 2.28-r1209
+[M::main] CMD: minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+[M::main] Real time: 22.558 sec; CPU: 232.404 sec; Peak RSS: 1.433 GB
+[racon::Polisher::initialize] loaded target sequences 0.005514 s
+[racon::Polisher::initialize] loaded sequences 8.525174 s
+[racon::Polisher::initialize] loaded overlaps 1.979522 s
+[racon::Polisher::initialize] aligning overlaps [=>                  ] 2.955257 s[racon::Polisher::initialize] aligning overlaps [==>                 ] 2.955766 s[racon::Polisher::initialize] aligning overlaps [===>                ] 2.956125 s[racon::Polisher::initialize] aligning overlaps [====>               ] 2.956439 s[racon::Polisher::initialize] aligning overlaps [=====>              ] 2.956744 s[racon::Polisher::initialize] aligning overlaps [======>             ] 2.957034 s[racon::Polisher::initialize] aligning overlaps [=======>            ] 2.957333 s[racon::Polisher::initialize] aligning overlaps [========>           ] 2.957652 s[racon::Polisher::initialize] aligning overlaps [=========>          ] 2.958004 s[racon::Polisher::initialize] aligning overlaps [==========>         ] 2.958443 s[racon::Polisher::initialize] aligning overlaps [===========>        ] 2.958834 s[racon::Polisher::initialize] aligning overlaps [============>       ] 2.959189 s[racon::Polisher::initialize] aligning overlaps [=============>      ] 2.959597 s[racon::Polisher::initialize] aligning overlaps [==============>     ] 2.959974 s[racon::Polisher::initialize] aligning overlaps [===============>    ] 2.960320 s[racon::Polisher::initialize] aligning overlaps [================>   ] 2.960700 s[racon::Polisher::initialize] aligning overlaps [=================>  ] 2.961104 s[racon::Polisher::initialize] aligning overlaps [==================> ] 2.961475 s[racon::Polisher::initialize] aligning overlaps [===================>] 2.961831 s[racon::Polisher::initialize] aligning overlaps [====================] 2.962235 s
+[racon::Polisher::initialize] transformed data into windows 0.440021 s
+[racon::Polisher::polish] generating consensus [=>                  ] 1.129957 s[racon::Polisher::polish] generating consensus [==>                 ] 2.130461 s[racon::Polisher::polish] generating consensus [===>                ] 3.295256 s[racon::Polisher::polish] generating consensus [====>               ] 4.270931 s[racon::Polisher::polish] generating consensus [=====>              ] 6.691652 s[racon::Polisher::polish] generating consensus [======>             ] 7.972041 s[racon::Polisher::polish] generating consensus [=======>            ] 8.982645 s[racon::Polisher::polish] generating consensus [========>           ] 9.922050 s[racon::Polisher::polish] generating consensus [=========>          ] 10.870428 s[racon::Polisher::polish] generating consensus [==========>         ] 11.869021 s[racon::Polisher::polish] generating consensus [===========>        ] 12.606628 s[racon::Polisher::polish] generating consensus [============>       ] 13.486312 s[racon::Polisher::polish] generating consensus [=============>      ] 14.324734 s[racon::Polisher::polish] generating consensus [==============>     ] 15.149091 s[racon::Polisher::polish] generating consensus [===============>    ] 15.963122 s[racon::Polisher::polish] generating consensus [================>   ] 16.718993 s[racon::Polisher::polish] generating consensus [=================>  ] 17.514996 s[racon::Polisher::polish] generating consensus [==================> ] 18.392831 s[racon::Polisher::polish] generating consensus [===================>] 19.315423 s[racon::Polisher::polish] generating consensus [====================] 24.488769 s
+[racon::Polisher::] total = 38.996234 s
+[M::mm_idx_gen::0.044*1.06] collected minimizers
+[M::mm_idx_gen::0.057*3.27] sorted minimizers
+[M::main::0.057*3.27] loaded/built the index for 5 target sequence(s)
+[M::mm_mapopt_update::0.063*3.03] mid_occ = 30
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 5
+[M::mm_idx_stat::0.068*2.89] distinct minimizers: 226821 (96.09% are singletons); average occurrences: 1.163; average spacing: 5.324; total length: 1404162
+[M::worker_pipeline::22.296*10.10] mapped 672771 sequences
+[M::main] Version: 2.28-r1209
+[M::main] CMD: minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa/wRi//racon_1.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+[M::main] Real time: 22.331 sec; CPU: 225.196 sec; Peak RSS: 1.436 GB
+[racon::Polisher::initialize] loaded target sequences 0.005362 s
+[racon::Polisher::initialize] loaded sequences 8.682975 s
+[racon::Polisher::initialize] loaded overlaps 1.986692 s
+[racon::Polisher::initialize] aligning overlaps [=>                  ] 3.027626 s[racon::Polisher::initialize] aligning overlaps [==>                 ] 3.028189 s[racon::Polisher::initialize] aligning overlaps [===>                ] 3.028571 s[racon::Polisher::initialize] aligning overlaps [====>               ] 3.028878 s[racon::Polisher::initialize] aligning overlaps [=====>              ] 3.029171 s[racon::Polisher::initialize] aligning overlaps [======>             ] 3.029446 s[racon::Polisher::initialize] aligning overlaps [=======>            ] 3.029708 s[racon::Polisher::initialize] aligning overlaps [========>           ] 3.030040 s[racon::Polisher::initialize] aligning overlaps [=========>          ] 3.030412 s[racon::Polisher::initialize] aligning overlaps [==========>         ] 3.030782 s[racon::Polisher::initialize] aligning overlaps [===========>        ] 3.031112 s[racon::Polisher::initialize] aligning overlaps [============>       ] 3.031450 s[racon::Polisher::initialize] aligning overlaps [=============>      ] 3.031854 s[racon::Polisher::initialize] aligning overlaps [==============>     ] 3.032276 s[racon::Polisher::initialize] aligning overlaps [===============>    ] 3.032621 s[racon::Polisher::initialize] aligning overlaps [================>   ] 3.032996 s[racon::Polisher::initialize] aligning overlaps [=================>  ] 3.033386 s[racon::Polisher::initialize] aligning overlaps [==================> ] 3.033745 s[racon::Polisher::initialize] aligning overlaps [===================>] 3.034087 s[racon::Polisher::initialize] aligning overlaps [====================] 3.034419 s
+[racon::Polisher::initialize] transformed data into windows 0.428449 s
+[racon::Polisher::polish] generating consensus [=>                  ] 0.988482 s[racon::Polisher::polish] generating consensus [==>                 ] 1.918038 s[racon::Polisher::polish] generating consensus [===>                ] 2.961267 s[racon::Polisher::polish] generating consensus [====>               ] 3.989507 s[racon::Polisher::polish] generating consensus [=====>              ] 6.513044 s[racon::Polisher::polish] generating consensus [======>             ] 7.753532 s[racon::Polisher::polish] generating consensus [=======>            ] 8.714091 s[racon::Polisher::polish] generating consensus [========>           ] 9.686139 s[racon::Polisher::polish] generating consensus [=========>          ] 10.640781 s[racon::Polisher::polish] generating consensus [==========>         ] 11.476429 s[racon::Polisher::polish] generating consensus [===========>        ] 12.387526 s[racon::Polisher::polish] generating consensus [============>       ] 13.165945 s[racon::Polisher::polish] generating consensus [=============>      ] 14.012463 s[racon::Polisher::polish] generating consensus [==============>     ] 14.740234 s[racon::Polisher::polish] generating consensus [===============>    ] 15.532261 s[racon::Polisher::polish] generating consensus [================>   ] 16.394714 s[racon::Polisher::polish] generating consensus [=================>  ] 17.104552 s[racon::Polisher::polish] generating consensus [==================> ] 17.940781 s[racon::Polisher::polish] generating consensus [===================>] 18.826693 s[racon::Polisher::polish] generating consensus [====================] 23.476266 s
+[racon::Polisher::] total = 38.191366 s
+[M::mm_idx_gen::0.043*1.06] collected minimizers
+[M::mm_idx_gen::0.055*3.24] sorted minimizers
+[M::main::0.055*3.24] loaded/built the index for 5 target sequence(s)
+[M::mm_mapopt_update::0.060*3.06] mid_occ = 30
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 5
+[M::mm_idx_stat::0.063*2.96] distinct minimizers: 227095 (96.19% are singletons); average occurrences: 1.163; average spacing: 5.319; total length: 1404375
+[M::worker_pipeline::22.852*10.02] mapped 672771 sequences
+[M::main] Version: 2.28-r1209
+[M::main] CMD: minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa/wRi//racon_2.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+[M::main] Real time: 22.885 sec; CPU: 229.106 sec; Peak RSS: 1.519 GB
+[racon::Polisher::initialize] loaded target sequences 0.009746 s
+[racon::Polisher::initialize] loaded sequences 8.863594 s
+[racon::Polisher::initialize] loaded overlaps 2.010831 s
+[racon::Polisher::initialize] aligning overlaps [=>                  ] 3.036091 s[racon::Polisher::initialize] aligning overlaps [==>                 ] 3.036642 s[racon::Polisher::initialize] aligning overlaps [===>                ] 3.037040 s[racon::Polisher::initialize] aligning overlaps [====>               ] 3.037386 s[racon::Polisher::initialize] aligning overlaps [=====>              ] 3.037721 s[racon::Polisher::initialize] aligning overlaps [======>             ] 3.038034 s[racon::Polisher::initialize] aligning overlaps [=======>            ] 3.038327 s[racon::Polisher::initialize] aligning overlaps [========>           ] 3.038667 s[racon::Polisher::initialize] aligning overlaps [=========>          ] 3.039000 s[racon::Polisher::initialize] aligning overlaps [==========>         ] 3.039360 s[racon::Polisher::initialize] aligning overlaps [===========>        ] 3.039685 s[racon::Polisher::initialize] aligning overlaps [============>       ] 3.040013 s[racon::Polisher::initialize] aligning overlaps [=============>      ] 3.040345 s[racon::Polisher::initialize] aligning overlaps [==============>     ] 3.040713 s[racon::Polisher::initialize] aligning overlaps [===============>    ] 3.041039 s[racon::Polisher::initialize] aligning overlaps [================>   ] 3.041416 s[racon::Polisher::initialize] aligning overlaps [=================>  ] 3.041831 s[racon::Polisher::initialize] aligning overlaps [==================> ] 3.042195 s[racon::Polisher::initialize] aligning overlaps [===================>] 3.042557 s[racon::Polisher::initialize] aligning overlaps [====================] 3.042901 s
+[racon::Polisher::initialize] transformed data into windows 0.425437 s
+[racon::Polisher::polish] generating consensus [=>                  ] 1.081674 s[racon::Polisher::polish] generating consensus [==>                 ] 1.981834 s[racon::Polisher::polish] generating consensus [===>                ] 2.925435 s[racon::Polisher::polish] generating consensus [====>               ] 3.923912 s[racon::Polisher::polish] generating consensus [=====>              ] 6.442067 s[racon::Polisher::polish] generating consensus [======>             ] 7.688811 s[racon::Polisher::polish] generating consensus [=======>            ] 8.644142 s[racon::Polisher::polish] generating consensus [========>           ] 9.611824 s[racon::Polisher::polish] generating consensus [=========>          ] 10.594770 s[racon::Polisher::polish] generating consensus [==========>         ] 11.458552 s[racon::Polisher::polish] generating consensus [===========>        ] 12.320554 s[racon::Polisher::polish] generating consensus [============>       ] 13.093611 s[racon::Polisher::polish] generating consensus [=============>      ] 13.935019 s[racon::Polisher::polish] generating consensus [==============>     ] 14.677381 s[racon::Polisher::polish] generating consensus [===============>    ] 15.454030 s[racon::Polisher::polish] generating consensus [================>   ] 16.348938 s[racon::Polisher::polish] generating consensus [=================>  ] 17.085999 s[racon::Polisher::polish] generating consensus [==================> ] 17.842556 s[racon::Polisher::polish] generating consensus [===================>] 18.814072 s[racon::Polisher::polish] generating consensus [====================] 23.558850 s
+[racon::Polisher::] total = 38.456311 s
+[M::mm_idx_gen::0.051*1.04] collected minimizers
+[M::mm_idx_gen::0.063*3.05] sorted minimizers
+[M::main::0.063*3.05] loaded/built the index for 5 target sequence(s)
+[M::mm_mapopt_update::0.068*2.91] mid_occ = 30
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 5
+[M::mm_idx_stat::0.071*2.82] distinct minimizers: 227065 (96.18% are singletons); average occurrences: 1.162; average spacing: 5.323; total length: 1404343
+[M::worker_pipeline::23.105*10.00] mapped 672771 sequences
+[M::main] Version: 2.28-r1209
+[M::main] CMD: minimap2 -ax map-ont -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa/wRi//racon_3.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+[M::main] Real time: 23.135 sec; CPU: 230.992 sec; Peak RSS: 1.518 GB
+[racon::Polisher::initialize] loaded target sequences 0.005653 s
+[racon::Polisher::initialize] loaded sequences 9.001863 s
+[racon::Polisher::initialize] loaded overlaps 2.020311 s
+[racon::Polisher::initialize] aligning overlaps [=>                  ] 2.969153 s[racon::Polisher::initialize] aligning overlaps [==>                 ] 2.969665 s[racon::Polisher::initialize] aligning overlaps [===>                ] 2.970020 s[racon::Polisher::initialize] aligning overlaps [====>               ] 2.970350 s[racon::Polisher::initialize] aligning overlaps [=====>              ] 2.970651 s[racon::Polisher::initialize] aligning overlaps [======>             ] 2.970930 s[racon::Polisher::initialize] aligning overlaps [=======>            ] 2.971186 s[racon::Polisher::initialize] aligning overlaps [========>           ] 2.971498 s[racon::Polisher::initialize] aligning overlaps [=========>          ] 2.971832 s[racon::Polisher::initialize] aligning overlaps [==========>         ] 2.972190 s[racon::Polisher::initialize] aligning overlaps [===========>        ] 2.972518 s[racon::Polisher::initialize] aligning overlaps [============>       ] 2.972844 s[racon::Polisher::initialize] aligning overlaps [=============>      ] 2.973179 s[racon::Polisher::initialize] aligning overlaps [==============>     ] 2.973516 s[racon::Polisher::initialize] aligning overlaps [===============>    ] 2.973851 s[racon::Polisher::initialize] aligning overlaps [================>   ] 2.974224 s[racon::Polisher::initialize] aligning overlaps [=================>  ] 2.974624 s[racon::Polisher::initialize] aligning overlaps [==================> ] 2.974969 s[racon::Polisher::initialize] aligning overlaps [===================>] 2.975301 s[racon::Polisher::initialize] aligning overlaps [====================] 2.975626 s
+[racon::Polisher::initialize] transformed data into windows 0.423634 s
+[racon::Polisher::polish] generating consensus [=>                  ] 1.060760 s[racon::Polisher::polish] generating consensus [==>                 ] 1.991439 s[racon::Polisher::polish] generating consensus [===>                ] 3.020344 s[racon::Polisher::polish] generating consensus [====>               ] 3.949061 s[racon::Polisher::polish] generating consensus [=====>              ] 6.138311 s[racon::Polisher::polish] generating consensus [======>             ] 7.462037 s[racon::Polisher::polish] generating consensus [=======>            ] 8.355398 s[racon::Polisher::polish] generating consensus [========>           ] 9.212509 s[racon::Polisher::polish] generating consensus [=========>          ] 10.224792 s[racon::Polisher::polish] generating consensus [==========>         ] 11.187346 s[racon::Polisher::polish] generating consensus [===========>        ] 11.955469 s[racon::Polisher::polish] generating consensus [============>       ] 12.819708 s[racon::Polisher::polish] generating consensus [=============>      ] 13.614366 s[racon::Polisher::polish] generating consensus [==============>     ] 14.402884 s[racon::Polisher::polish] generating consensus [===============>    ] 15.104029 s[racon::Polisher::polish] generating consensus [================>   ] 15.911839 s[racon::Polisher::polish] generating consensus [=================>  ] 16.683205 s[racon::Polisher::polish] generating consensus [==================> ] 17.533630 s[racon::Polisher::polish] generating consensus [===================>] 18.412479 s[racon::Polisher::polish] generating consensus [====================] 23.589587 s
+[racon::Polisher::] total = 38.586534 s
+[Tue Mar 25 11:55:16 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.
+[Tue Mar 25 11:55:17 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.

@@ -1,0 +1,591 @@
+#Completed on 3/10/25 (Modified)
+#to run this script:
+#cd /private/groups/russelllab/jodie/merrill_23_wRi_genome/
+#conda activate snakemake_v8 
+#snakemake --executor slurm --default-resources slurm_partition=medium runtime=720 mem_mb=1000000 -j 10 -s Snakefile
+
+#Global Variables:
+
+import os  
+import glob
+
+data = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data'
+short_reads_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/data/short_reads'
+
+# Define multiple assembly sources - ADD YOUR ASSEMBLY PATHS HERE
+assembly_sources = {
+    "assembly_AN": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/anne_assembly/consensus_assembly.fasta",
+    "assembly_JJ": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta",
+    "longest_contigs_bridge": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/assembly/flye/longest_contigs_bridge.fasta",
+    "20250310_JD_wRi_Mer23_Flye_Assembly2.fasta": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250310_JD_wRi_Mer23_Flye_Assembly2.fasta",
+    "20250305_EG_wRI_Mer23_Flye_Assembly2.fasta": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250305_EG_wRI_Mer23_Flye_Assembly2.fasta",
+    "20250205_DL_wRi_Mer23_wtdbg2_assembly1.fa": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250205_DL_wRi_Mer23_wtdbg2_assembly1.fa", 
+    "20250205_DL_wRi_Mer23_wtdbg2_assembly2.fa": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250205_DL_wRi_Mer23_wtdbg2_assembly2.fa", 
+    "20250314_EG_wRi_Mer23_Canu_assemblycontig.fasta": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250314_EG_wRi_Mer23_Canu_assemblycontig.fasta", 
+    "20250314_EG_wRi_Mer23_Canu_assemblyunassembled.fasta": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250314_EG_wRi_Mer23_Canu_assemblyunassembled.fasta",   
+    "20250314_EG_wRi_Mer23_Canu_assemblycontig2.fasta": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250314_EG_wRi_Mer23_Canu_assemblycontig2.fasta",   
+    "20250314_EG_wRi_Mer23_Canu_assemblyunassembled2.fasta": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250314_EG_wRi_Mer23_Canu_assemblyunassembled2.fasta", 
+    "20250305_EG_wRI_Mer23_Flye_Assembly2_filtered.fasta": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250305_EG_wRI_Mer23_Flye_Assembly2_filtered.fasta", 
+    "20250314_EG_wRi_Mer23_Canu_assemblycontig2_filtered.fasta": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250314_EG_wRi_Mer23_Canu_assemblycontig2_filtered.fasta",
+    "20250310_JD_wRi_Mer23_Flye_Assembly2_filtered.fasta": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250310_JD_wRi_Mer23_Flye_Assembly2_filtered.fasta",
+    "20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250205_DL_wRi_Mer23_wtdbg2_assembly1_filtered.fa",
+    "20250205_DL_wRi_Mer23_wtdbg2_assembly2_filtered.fa": "/private/groups/russelllab/jodie/merrill_23_wRi_genome/assemblies/20250205_DL_wRi_Mer23_wtdbg2_assembly2_filtered.fa" }
+    
+   # Add more assemblies as needed
+    # "assembly_NAME": "/path/to/assembly.fasta",
+
+# Define short read sample patterns to capture all replicates
+short_read_samples = [
+    "WT-DsimwRi-line5A-0123",
+    "WT-DsimwRi-line5B-0123",
+    "WT-DsimwRi-line6A-0123",
+    "WT-DsimwRi-line6B-0123",
+    "WT-DsimwRi-line7A-0123", 
+    "WT-DsimwRi-line7B-0123",
+    "WT-DsimwRi-line8A-0123",
+    "WT-DsimwRi-line8B-0123"
+]
+
+# Get all the lanes for each sample
+lanes = ["L002", "L003"]
+
+rule all:
+        input:
+            # Polish all assemblies
+            expand('/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{assembly_name}/wRi/polished.fasta', 
+                  assembly_name=assembly_sources.keys()),
+            # # BUSCO on all polished assemblies
+            # expand('busco/{assembly_name}/polished/wRi/short_summary.specific.fasta', 
+            #       assembly_name=assembly_sources.keys()),
+            # Final merged and polished assembly
+            '/private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merged/wRi_final_merged_polished_circular.fasta',
+            '/private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merged/assembly_stats.txt'
+
+rule polish_nanopore_assembly:
+    input:
+        wolbachia_assembly = lambda wildcards: assembly_sources[wildcards.assembly_name],
+        nanopore_reads = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz'
+    output:
+        polished = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{assembly_name}/wRi/polished.fasta'
+    params:
+        out_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{assembly_name}/wRi/'
+    resources:
+        mem_mb=100000,
+        runtime=360
+    threads: 16
+    shell:
+        '''
+        # Create output directory
+        mkdir -p {params.out_dir}
+        
+        # First round: Map reads back to assembly
+        minimap2 -ax map-ont -t {threads} {input.wolbachia_assembly} {input.nanopore_reads} > {params.out_dir}/mapped.sam
+        
+        # Polish with Racon (4 iterations for better quality)
+        # Iteration 1
+        racon -t {threads} {input.nanopore_reads} {params.out_dir}/mapped.sam {input.wolbachia_assembly} > {params.out_dir}/racon_1.fasta
+        
+        # Iteration 2
+        minimap2 -ax map-ont -t {threads} {params.out_dir}/racon_1.fasta {input.nanopore_reads} > {params.out_dir}/mapped_2.sam
+        racon -t {threads} {input.nanopore_reads} {params.out_dir}/mapped_2.sam {params.out_dir}/racon_1.fasta > {params.out_dir}/racon_2.fasta
+        
+        # Iteration 3
+        minimap2 -ax map-ont -t {threads} {params.out_dir}/racon_2.fasta {input.nanopore_reads} > {params.out_dir}/mapped_3.sam
+        racon -t {threads} {input.nanopore_reads} {params.out_dir}/mapped_3.sam {params.out_dir}/racon_2.fasta > {params.out_dir}/racon_3.fasta
+        
+        # Iteration 4
+        minimap2 -ax map-ont -t {threads} {params.out_dir}/racon_3.fasta {input.nanopore_reads} > {params.out_dir}/mapped_4.sam
+        racon -t {threads} {input.nanopore_reads} {params.out_dir}/mapped_4.sam {params.out_dir}/racon_3.fasta > {output.polished}
+        '''
+
+rule BUSCO_polished:
+    input:
+        wolbachia_polished = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{assembly_name}/wRi/polished.fasta'
+    output:
+        wolbachia_busco = 'busco/{assembly_name}/polished/wRi/short_summary.specific.fasta'
+    params:
+        wolbachia_busco = 'busco/{assembly_name}/polished/wRi/'
+    resources:
+        mem_mb=100000,
+        runtime=60
+    conda:
+        "busco"
+    threads: 16
+    shell:
+        ''' 
+            mkdir -p {params.wolbachia_busco}
+            busco -i {input.wolbachia_polished} -o {params.wolbachia_busco} -l rickettsiales_odb10 -m genome --cpu 16
+        '''
+
+rule merge_assemblies:
+    input:
+        polished_assemblies = expand('/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{assembly_name}/wRi/polished.fasta', 
+                                    assembly_name=assembly_sources.keys()),
+        nanopore_reads = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz'
+    output:
+        merged_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/merged.fasta'
+    params:
+        out_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/',
+        tmp_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/tmp/'
+    resources:
+        mem_mb=100000,
+        runtime=480
+    threads: 32
+    shell:
+        '''
+        # Create output directories
+        mkdir -p {params.out_dir}
+        mkdir -p {params.tmp_dir}
+        
+        # 1. Identify the best assembly based on BUSCO completeness
+        # Create a list of all polished assemblies
+        ls -1 {input.polished_assemblies} > {params.tmp_dir}/assembly_list.txt
+        
+        # First, select the most complete assembly as a base
+        # For simplicity, we'll choose the assembly with the most contigs over 10kb
+        BEST_ASSEMBLY=""
+        MAX_CONTIGS=0
+        
+        for ASSEMBLY in {input.polished_assemblies}; do
+            ASSEMBLY_NAME=$(basename $(dirname $(dirname $ASSEMBLY)))
+            
+            # Count contigs over 10kb
+            LARGE_CONTIGS=$(awk '/^>/{{if(len>10000) count++; len=0; next}} {{len+=length($0)}} END{{if(len>10000) count++; print count}}' $ASSEMBLY)
+            
+            echo "Assembly $ASSEMBLY_NAME has $LARGE_CONTIGS large contigs" > {params.tmp_dir}/$ASSEMBLY_NAME.stats
+            
+            if [ "$LARGE_CONTIGS" -gt "$MAX_CONTIGS" ]; then
+                MAX_CONTIGS=$LARGE_CONTIGS
+                BEST_ASSEMBLY=$ASSEMBLY
+            fi
+        done
+        
+        echo "Selected $BEST_ASSEMBLY as base assembly with $MAX_CONTIGS large contigs" > {params.tmp_dir}/selected_assembly.txt
+        
+        # 2. Use a different approach for merging assemblies since Quickmerge is having issues
+        # First copy the best assembly as the initial merged assembly
+        cp $BEST_ASSEMBLY {params.tmp_dir}/merged_initial.fasta
+        
+        # Rename contigs in the best assembly to avoid naming conflicts
+        awk '/^>/{{print ">primary_contig_" ++i; next}}{{print}}' {params.tmp_dir}/merged_initial.fasta > {params.tmp_dir}/renamed_primary.fasta
+        
+        # Create a fasta file with all other assemblies, with renamed contigs
+        touch {params.tmp_dir}/all_other_contigs.fasta
+        CONTIG_COUNT=0
+        
+        # Add all other assemblies with renamed contigs
+        for ASSEMBLY in {input.polished_assemblies}; do
+            if [ "$ASSEMBLY" != "$BEST_ASSEMBLY" ]; then
+                ASSEMBLY_NAME=$(basename $(dirname $(dirname $ASSEMBLY)))
+                echo "Adding contigs from $ASSEMBLY_NAME..."
+                
+                # Rename contigs from this assembly and append to the combined file
+                awk -v prefix="$ASSEMBLY_NAME" -v count="$CONTIG_COUNT" \
+                    '/^>/{{print ">" prefix "_contig_" ++count; next}}{{print}}' $ASSEMBLY \
+                    >> {params.tmp_dir}/all_other_contigs.fasta
+                
+                # Update contig count
+                CONTIG_COUNT=$(grep -c "^>" {params.tmp_dir}/all_other_contigs.fasta)
+            fi
+        done
+        
+        # Use MUMmer to find overlaps between primary assembly and other contigs
+        mkdir -p {params.tmp_dir}/overlaps
+        
+        # Align all other contigs to the primary assembly
+        nucmer --maxmatch -l 100 -c 500 -p {params.tmp_dir}/overlaps/nucmer_all {params.tmp_dir}/renamed_primary.fasta {params.tmp_dir}/all_other_contigs.fasta
+        
+        # Generate coords file
+        show-coords -r -c -l {params.tmp_dir}/overlaps/nucmer_all.delta > {params.tmp_dir}/overlaps/nucmer_all.coords
+        
+        # Create a manual merged fasta with all contigs
+        # First include all primary contigs
+        cp {params.tmp_dir}/renamed_primary.fasta {params.tmp_dir}/merged_manual.fasta
+        
+        # Then add all other contigs that don't have significant overlaps with primary contigs
+        # We'll use a simple approach: if a contig has less than 80% overlap with any primary contig, add it
+        
+        # Parse the coords file to get contigs with low overlap
+        cat {params.tmp_dir}/overlaps/nucmer_all.coords | grep -v "^=" | awk '{{
+            if ($10 > 1000) {{  # Only consider alignments longer than 1000bp
+                ref=$12;
+                qry=$13;
+                len=$8-$7;
+                qrylen=$9;
+                overlap=len/qrylen*100;
+                if (!(qry in overlaps) || overlap > overlaps[qry]) {{
+                    overlaps[qry] = overlap;
+                }}
+            }}
+        }} END {{
+            for (qry in overlaps) {{
+                if (overlaps[qry] < 80) {{  # Less than 80% overlap
+                    print qry;
+                }}
+            }}
+        }}' > {params.tmp_dir}/contigs_to_add.txt
+        
+        # Extract these contigs and add them to the merged assembly
+        if [ -s {params.tmp_dir}/contigs_to_add.txt ]; then
+            seqtk subseq {params.tmp_dir}/all_other_contigs.fasta {params.tmp_dir}/contigs_to_add.txt >> {params.tmp_dir}/merged_manual.fasta
+        fi
+        
+        # Rename the final merged contigs
+        awk '/^>/{{print ">wRi_contig_" ++i; next}}{{print}}' {params.tmp_dir}/merged_manual.fasta > {params.tmp_dir}/merged_initial.fasta
+        
+        # 3. Use long reads to try to resolve any remaining gaps with TGS-GapCloser
+        # Map nanopore reads to the merged assembly
+        minimap2 -ax map-ont -t {threads} {params.tmp_dir}/merged_initial.fasta {input.nanopore_reads} > {params.tmp_dir}/merged_mapped.sam
+        
+        # Convert to BAM and sort
+        samtools view -bS {params.tmp_dir}/merged_mapped.sam | samtools sort -o {params.tmp_dir}/merged_mapped.bam -
+        
+        # Index the BAM file
+        samtools index {params.tmp_dir}/merged_mapped.bam
+        
+        # Use tgsgapcloser if available, otherwise just use the merged assembly
+        if command -v tgsgapcloser &> /dev/null; then
+            # Extract reads
+            samtools fasta {params.tmp_dir}/merged_mapped.bam > {params.tmp_dir}/mapped_reads.fasta
+            
+            # More extensive cleanup of previous tgsgapcloser runs
+            # Clean up in output directory
+            rm -f {params.out_dir}/gap_closed.* {params.out_dir}/done_*_tag
+            # Clean up in current directory
+            rm -f ./gap_closed.* ./done_*_tag
+            # Clean up in tmp directory
+            rm -f {params.tmp_dir}/gap_closed.* {params.tmp_dir}/done_*_tag
+            # Clean up in any directories referred to in error
+            find /private/groups/russelllab/jodie/merrill_23_wRi_genome/ -name "done_step1_tag" -delete
+
+            # Now run tgsgapcloser
+            tgsgapcloser \
+                --scaff {params.tmp_dir}/merged_initial.fasta \
+                --reads {params.tmp_dir}/mapped_reads.fasta \
+                --output {params.tmp_dir}/gap_closed \
+                --tgstype ont \
+                --min_match 300 \
+                --thread 16 \
+                --min_nread 1 \
+                --ne
+                
+            # Check if gap closing was successful
+            if [ -s {params.out_dir}/gap_closed.scaff_seqs ]; then
+                mv {params.out_dir}/gap_closed.scaff_seqs {output.merged_assembly}
+            else
+                # If gap closing failed, use the merged assembly
+                cp {params.tmp_dir}/merged_initial.fasta {output.merged_assembly}
+            fi
+        else
+            # If tgsgapcloser is not available, use the merged assembly
+            cp {params.tmp_dir}/merged_initial.fasta {output.merged_assembly}
+        fi
+        
+        # Clean up temporary files
+        rm -rf {params.tmp_dir}
+        '''
+
+rule polish_merged_short_reads:
+    input:
+        merged_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/merged.fasta',
+        wolbachia_r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz',
+        wolbachia_r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz'
+    output:
+        links_polished = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_polished/wRi/merged_pilon.fasta'
+    params:
+        out_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_polished/wRi/'
+    resources:
+        mem_mb=100000,
+        runtime=360
+    threads: 16
+    shell:
+        '''
+        # Create output directory
+        mkdir -p {params.out_dir}
+        
+        # Rename contigs to have simple identifiers
+        awk '/^>/{{print ">wRi_contig_" ++i; next}}{{print}}' {input.merged_assembly} > {params.out_dir}/renamed.fasta
+        
+        # Index the renamed assembly
+        bwa index {params.out_dir}/renamed.fasta
+        
+        # Map reads to merged assembly
+        bwa mem -t {threads} {params.out_dir}/renamed.fasta {input.wolbachia_r1} {input.wolbachia_r2} | \
+            samtools sort -@ {threads} -o {params.out_dir}/merged_sorted.bam
+        samtools index -@ {threads} {params.out_dir}/merged_sorted.bam
+        
+        # Polish with Pilon - multiple iterations for better results
+        pilon --genome {params.out_dir}/renamed.fasta \
+              --frags {params.out_dir}/merged_sorted.bam \
+              --output merged_pilon_1 \
+              --outdir {params.out_dir} \
+              --threads {threads} \
+              --changes --vcf
+              
+        # Second iteration
+        bwa index {params.out_dir}/merged_pilon_1.fasta
+        bwa mem -t {threads} {params.out_dir}/merged_pilon_1.fasta {input.wolbachia_r1} {input.wolbachia_r2} | \
+            samtools sort -@ {threads} -o {params.out_dir}/merged_sorted_2.bam
+        samtools index -@ {threads} {params.out_dir}/merged_sorted_2.bam
+        
+        pilon --genome {params.out_dir}/merged_pilon_1.fasta \
+              --frags {params.out_dir}/merged_sorted_2.bam \
+              --output merged_pilon \
+              --outdir {params.out_dir} \
+              --threads {threads} \
+              --changes --vcf
+        '''
+
+rule circularize_merged:
+    input:
+        merged_polished = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_polished/wRi/merged_pilon.fasta',
+        nanopore_reads = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz'
+    output:
+        final_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merged/wRi_final_merged_polished_circular.fasta',
+        assembly_stats = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merged/assembly_stats.txt'
+    params:
+        out_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merged/',
+        tmp_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merged/tmp/'
+    resources:
+        mem_mb=100000,
+        runtime=480
+    threads: 32
+    conda:
+        "circlator_fix"
+    shell:
+        '''
+        # Create output directories
+        mkdir -p {params.out_dir}
+        mkdir -p {params.tmp_dir}
+        
+        # Try to circularize with Circlator
+        circlator all --threads {threads} {input.merged_polished} {input.nanopore_reads} {params.tmp_dir}/circlator_out
+        
+        # Check if circlator produced a circularized genome
+        if [ -s {params.tmp_dir}/circlator_out/06.fixstart.fasta ]; then
+            # Use the circularized genome
+            cp {params.tmp_dir}/circlator_out/06.fixstart.fasta {output.final_assembly}
+            echo "Successfully circularized genome using Circlator" > {params.tmp_dir}/circular_status.txt
+        else
+            # Alternative approach: check for circularity manually
+            # Extract sequences to temporary file
+            seqtk seq -a {input.merged_polished} > {params.tmp_dir}/polished.fa
+            
+            # Find the longest contig (likely the Wolbachia genome)
+            LONGEST_CONTIG=$(seqtk comp {params.tmp_dir}/polished.fa | sort -k2,2nr | head -n1 | cut -f1)
+            
+            # Extract the longest contig
+            seqtk subseq {params.tmp_dir}/polished.fa <(echo "$LONGEST_CONTIG") > {params.tmp_dir}/longest_contig.fa
+            
+            # Get sequence length
+            LENGTH=$(seqtk comp {params.tmp_dir}/longest_contig.fa | cut -f2)
+            
+            # Check for circularity of the longest contig
+            if [ $LENGTH -gt 10000 ]; then
+                # Extract first and last 1000 bp
+                head -n2 {params.tmp_dir}/longest_contig.fa | tail -n1 | cut -c 1-1000 > {params.tmp_dir}/start.fa
+                head -n2 {params.tmp_dir}/longest_contig.fa | tail -n1 | rev | cut -c 1-1000 | rev > {params.tmp_dir}/end.fa
+                
+                # Use minimap2 for alignment
+                MATCHES=$(minimap2 -c {params.tmp_dir}/start.fa {params.tmp_dir}/end.fa 2>/dev/null | wc -l)
+                
+                if [ $MATCHES -gt 0 ]; then
+                    # Calculate identity using minimap2
+                    IDENTITY=$(minimap2 -c {params.tmp_dir}/start.fa {params.tmp_dir}/end.fa 2>/dev/null | awk '{{ident=$10/$11*100}} END {{print ident}}')
+                    
+                    if (( $(echo "$IDENTITY > 95" | bc -l) )); then
+                        # If circular, attempt to fix start position to dnaA gene
+                        echo "Detected circular contig in merged assembly" > {params.tmp_dir}/circular_status.txt
+                        
+                        # Find dnaA gene position (if available)
+                        prodigal -i {params.tmp_dir}/longest_contig.fa -a {params.tmp_dir}/proteins.faa -d {params.tmp_dir}/genes.fna -o {params.tmp_dir}/genes.gff
+                        
+                        # Look for dnaA gene
+                        if grep -q "dnaA" {params.tmp_dir}/proteins.faa; then
+                            # Extract the dnaA gene coordinates
+                            DNAA_COORDS=$(grep "dnaA" {params.tmp_dir}/genes.gff | head -n1 | cut -f4,5)
+                            START_POS=$(echo $DNAA_COORDS | cut -d' ' -f1)
+                            
+                            # Reorient the sequence to start at dnaA
+                            if [ ! -z "$START_POS" ]; then
+                                # Get the full sequence
+                                SEQ=$(tail -n+2 {params.tmp_dir}/longest_contig.fa)
+                                
+                                # Reorient to start at dnaA
+                                REORIENTED_SEQ="${{SEQ:$START_POS}}${{SEQ:0:$START_POS}}"
+                                
+                                # Write the reoriented sequence
+                                echo ">$LONGEST_CONTIG circular=true" > {params.tmp_dir}/reoriented.fa
+                                echo "$REORIENTED_SEQ" >> {params.tmp_dir}/reoriented.fa
+                                
+                                # Create the final assembly with just the circular chromosome
+                                cp {params.tmp_dir}/reoriented.fa {output.final_assembly}
+                                echo "Successfully reoriented circular genome to start at dnaA gene" >> {params.tmp_dir}/circular_status.txt
+                            else
+                                # If dnaA not found, use the original sequence but mark as circular
+                                awk '{{if(NR==1) print $0 " circular=true"; else print $0}}' {params.tmp_dir}/longest_contig.fa > {output.final_assembly}
+                                echo "Found circular genome but couldn't locate dnaA gene for reorientation" >> {params.tmp_dir}/circular_status.txt
+                            fi
+                        else
+                            # If dnaA not found, use the original sequence but mark as circular
+                            awk '{{if(NR==1) print $0 " circular=true"; else print $0}}' {params.tmp_dir}/longest_contig.fa > {output.final_assembly}
+                            echo "Found circular genome but couldn't locate dnaA gene for reorientation" >> {params.tmp_dir}/circular_status.txt
+                        fi
+                    else
+                        # Not circular, use merged assembly as is
+                        cp {input.merged_polished} {output.final_assembly}
+                        echo "Contig appears non-circular (<95% terminal identity)" > {params.tmp_dir}/circular_status.txt
+                    fi
+                else
+                    # Not circular, use merged assembly as is
+                    cp {input.merged_polished} {output.final_assembly}
+                    echo "No terminal repeat detected, likely non-circular" > {params.tmp_dir}/circular_status.txt
+                fi
+            else
+                # Too small, use merged assembly as is
+                cp {input.merged_polished} {output.final_assembly}
+                echo "Contig too small for reliable circularity assessment" > {params.tmp_dir}/circular_status.txt
+            fi
+        fi
+        
+        # Generate assembly statistics
+        echo "===== Assembly Statistics =====" > {output.assembly_stats}
+        echo "Date: $(date)" >> {output.assembly_stats}
+        echo "" >> {output.assembly_stats}
+        
+        # Circularity status
+        echo "===== Circularity Status =====" >> {output.assembly_stats}
+        cat {params.tmp_dir}/circular_status.txt >> {output.assembly_stats}
+        echo "" >> {output.assembly_stats}
+        
+        # # BUSCO statistics for the final assembly
+        # mkdir -p {params.tmp_dir}/busco
+        # busco -i {output.final_assembly} -o {params.tmp_dir}/busco -l rickettsiales_odb10 -m genome --cpu {threads}
+        
+        # # Add BUSCO results to stats
+        # echo "===== BUSCO Assessment =====" >> {output.assembly_stats}
+        # grep "C:" {params.tmp_dir}/busco/short_summary*.txt >> {output.assembly_stats}
+        # echo "" >> {output.assembly_stats}
+        
+        # # Count total contigs
+        # echo "Total contigs: $(grep -c "^>" {output.final_assembly})" >> {output.assembly_stats}
+        
+        # # Calculate N50, total size, etc.
+        # echo "===== Assembly Metrics =====" >> {output.assembly_stats}
+        # assembly-stats {output.final_assembly} >> {output.assembly_stats}
+        
+        # # Run a final BUSCO for completeness
+        # echo "" >> {output.assembly_stats}
+        # echo "===== Final Assembly BUSCO =====" >> {output.assembly_stats}
+        # busco -i {output.final_assembly} -o {params.tmp_dir}/final_busco -l rickettsiales_odb10 -m genome --cpu {threads}
+        # grep "Complete:" {params.tmp_dir}/final_busco/short_summary*.txt >> {output.assembly_stats}
+        
+        # Clean up temporary files
+        # rm -rf {params.tmp_dir}
+        '''
+
+# Keep other rules from original pipeline below, they may be used by the new workflow
+
+rule collect_short_reads:
+    output:
+        r1_fastqs = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R1.fastq.gz',
+        r2_fastqs = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R2.fastq.gz'
+    params:
+        short_reads_dir = short_reads_dir
+    resources:
+        mem_mb=10000,
+        runtime=120
+    threads: 4
+    shell:
+        '''
+        # Create output directory if it doesn't exist
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/
+        
+        # Merge all R1 files
+        find {params.short_reads_dir} -name "*_R1_*.fastq.gz" | sort | xargs cat > {output.r1_fastqs}
+        
+        # Merge all R2 files
+        find {params.short_reads_dir} -name "*_R2_*.fastq.gz" | sort | xargs cat > {output.r2_fastqs}
+        '''
+
+rule trim_short_reads:
+    input:
+        r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R1.fastq.gz',
+        r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R2.fastq.gz'
+    output:
+        r1_trimmed = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz',
+        r2_trimmed = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz'
+    resources:
+        mem_mb=20000,
+        runtime=180
+    threads: 8
+    shell:
+        '''
+        # Trim adapters and low quality bases
+        trimmomatic PE -threads {threads} \
+            {input.r1} {input.r2} \
+            {output.r1_trimmed} /dev/null \
+            {output.r2_trimmed} /dev/null \
+            ILLUMINACLIP:/private/groups/russelllab/jodie/sequencing_data/TruSeq3-PE.fa:2:30:10 \
+            LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+        '''
+
+rule align_short_reads:
+    input:
+        r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz',
+        r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz',
+        dsim_ref = '/private/groups/russelllab/jodie/reference_genomes/fastas/Drosophila_simulans_ref/data/GCF_016746395.2/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna'
+    output:
+        bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam'
+    resources:
+        mem_mb=40000,
+        runtime=240
+    threads: 16
+    shell:
+        '''
+        # Align to Drosophila simulans reference
+        bwa mem -t {threads} {input.dsim_ref} {input.r1} {input.r2} | \
+            samtools view -@ {threads} -b | \
+            samtools sort -@ {threads} -o {output.bam}
+        
+        # Index the BAM file
+        samtools index -@ {threads} {output.bam}
+        '''
+
+rule separate_bam_illumina:
+    input:
+        bam =  '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam'
+    output:
+        host_bam =  '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/dsim.bam',
+        wolbachia_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi.bam'
+    resources: 
+        mem_mb=100000,
+        runtime=200
+    threads: 8  
+    shell:
+        '''
+            samtools view -@ 8 -b -f 4 {input.bam} > {output.wolbachia_bam}
+            samtools view -@ 8 -b -F 4 {input.bam} > {output.host_bam}
+        '''
+
+rule bam2fastq_illumina:
+    input:
+        wolbachia_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi.bam'
+    output:
+        r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz',
+        r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz',
+        singleton = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_singleton.fastq.gz'
+    resources: 
+        mem_mb=100000,
+        runtime=200
+    threads: 8  
+    shell:
+        '''
+        samtools collate -@ {threads} -O {input.wolbachia_bam} | \
+        samtools fastq -@ {threads} \
+            -1 {output.r1} \
+            -2 {output.r2} \
+            -s {output.singleton} \
+            -0 /dev/null \
+            -n
+        '''

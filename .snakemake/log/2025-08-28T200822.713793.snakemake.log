@@ -1,0 +1,65 @@
+None
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: cdf266ba-ad1f-49d2-8b04-1b362d18f8c8
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+basecalling                    1
+separate_bam                   1
+sort_bam                       1
+wri_assembly                   1
+wri_bam2fastq                  1
+wri_polish                     1
+wri_prepare_short_reads        1
+total                          8
+
+Select jobs to execute...
+Execute 2 jobs...
+[Thu Aug 28 20:08:22 2025]
+rule basecalling:
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/pod5
+    output: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    jobid: 6
+    reason: Missing output files: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    threads: 25
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=gpu, runtime=360, slurm_extra=--gpus-per-node=4 --nodes=1 --exclude=phoenix-09 --mail-user=jomojaco@ucsc.edu --mail-type=ALL --output=logs/%x.%j.log
+
+No SLURM account given, trying to guess.
+Unable to guess SLURM account. Trying to proceed without.
+Job 6 has been submitted with SLURM jobid 10692437 (log: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/.snakemake/slurm_logs/rule_basecalling/10692437.log).
+[Thu Aug 28 20:08:25 2025]
+rule wri_prepare_short_reads:
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/20250828_Nanopore.wri.trimmed.filtered.fastq.gz
+    jobid: 7
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/20250828_Nanopore.wri.trimmed.filtered.fastq.gz
+    wildcards: sample=20250828_Nanopore
+    threads: 4
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=30
+
+Job 7 has been submitted with SLURM jobid 10692438 (log: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/.snakemake/slurm_logs/rule_wri_prepare_short_reads/20250828_Nanopore/10692438.log).
+[Thu Aug 28 20:09:02 2025]
+Error in rule wri_prepare_short_reads:
+    message: SLURM-job '10692438' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 7
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/20250828_Nanopore.wri.trimmed.filtered.fastq.gz
+    log: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/.snakemake/slurm_logs/rule_wri_prepare_short_reads/20250828_Nanopore/10692438.log (check log file(s) for error details)
+    shell:
+        
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate flye
+
+        # Create output directory
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/
+        
+        # Simply combine R1 and R2 for wRi without trimming
+        zcat /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R1.fastq.gz /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R2.fastq.gz | gzip > /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/20250828_Nanopore.wri.trimmed.filtered.fastq.gz
+        
+        (command exited with non-zero exit code)
+    external_jobid: 10692438
+Terminating processes on user request, this might take some time.

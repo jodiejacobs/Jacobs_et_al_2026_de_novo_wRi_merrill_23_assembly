@@ -1,0 +1,354 @@
+##gff-version 3
+contig_18	ISEScan	insertion_sequence	11629	13114	.	-	.	ID=contig_18_IS_1;family=IS110;cluster=IS110_219
+contig_18	ISEScan	terminal_inverted_repeat	11629	11633	.	-	.	ID=contig_18_IS_1_TIR;parent=contig_18_IS_1
+contig_18	ISEScan	terminal_inverted_repeat	13110	13114	.	-	.	ID=contig_18_IS_1_TIR;parent=contig_18_IS_1
+contig_18	ISEScan	insertion_sequence	14227	15708	.	+	.	ID=contig_18_IS_2;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	14227	14246	.	+	.	ID=contig_18_IS_2_TIR;parent=contig_18_IS_2
+contig_18	ISEScan	terminal_inverted_repeat	15689	15708	.	+	.	ID=contig_18_IS_2_TIR;parent=contig_18_IS_2
+contig_18	ISEScan	insertion_sequence	18664	20149	.		.	ID=contig_18_IS_3;family=IS110;cluster=IS110_219
+contig_18	ISEScan	terminal_inverted_repeat	18664	18668	.		.	ID=contig_18_IS_3_TIR;parent=contig_18_IS_3
+contig_18	ISEScan	terminal_inverted_repeat	20145	20149	.		.	ID=contig_18_IS_3_TIR;parent=contig_18_IS_3
+contig_18	ISEScan	insertion_sequence	36148	37606	.	-	.	ID=contig_18_IS_4;family=IS110;cluster=IS110_219
+contig_18	ISEScan	terminal_inverted_repeat	36148	36154	.	-	.	ID=contig_18_IS_4_TIR;parent=contig_18_IS_4
+contig_18	ISEScan	terminal_inverted_repeat	37600	37606	.	-	.	ID=contig_18_IS_4_TIR;parent=contig_18_IS_4
+contig_18	ISEScan	insertion_sequence	55427	56910	.	-	.	ID=contig_18_IS_5;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	55427	55447	.	-	.	ID=contig_18_IS_5_TIR;parent=contig_18_IS_5
+contig_18	ISEScan	terminal_inverted_repeat	56890	56910	.	-	.	ID=contig_18_IS_5_TIR;parent=contig_18_IS_5
+contig_18	ISEScan	insertion_sequence	66277	67762	.	-	.	ID=contig_18_IS_6;family=IS110;cluster=IS110_219
+contig_18	ISEScan	terminal_inverted_repeat	66277	66281	.	-	.	ID=contig_18_IS_6_TIR;parent=contig_18_IS_6
+contig_18	ISEScan	terminal_inverted_repeat	67758	67762	.	-	.	ID=contig_18_IS_6_TIR;parent=contig_18_IS_6
+contig_18	ISEScan	insertion_sequence	68680	69723	.	+	.	ID=contig_18_IS_7;family=IS110;cluster=IS110_184
+contig_18	ISEScan	terminal_inverted_repeat	68680	68708	.	+	.	ID=contig_18_IS_7_TIR;parent=contig_18_IS_7
+contig_18	ISEScan	terminal_inverted_repeat	69695	69723	.	+	.	ID=contig_18_IS_7_TIR;parent=contig_18_IS_7
+contig_18	ISEScan	insertion_sequence	69912	70798	.		.	ID=contig_18_IS_8;family=IS481;cluster=IS481_213
+contig_18	ISEScan	terminal_inverted_repeat	69912	69918	.		.	ID=contig_18_IS_8_TIR;parent=contig_18_IS_8
+contig_18	ISEScan	terminal_inverted_repeat	70792	70798	.		.	ID=contig_18_IS_8_TIR;parent=contig_18_IS_8
+contig_18	ISEScan	insertion_sequence	100669	101689	.	+	.	ID=contig_18_IS_9;family=IS110;cluster=IS110_219
+contig_18	ISEScan	terminal_inverted_repeat	100669	100712	.	+	.	ID=contig_18_IS_9_TIR;parent=contig_18_IS_9
+contig_18	ISEScan	terminal_inverted_repeat	101647	101689	.	+	.	ID=contig_18_IS_9_TIR;parent=contig_18_IS_9
+contig_18	ISEScan	insertion_sequence	107167	109238	.	+	.	ID=contig_18_IS_10;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	107167	107180	.	+	.	ID=contig_18_IS_10_TIR;parent=contig_18_IS_10
+contig_18	ISEScan	terminal_inverted_repeat	109225	109238	.	+	.	ID=contig_18_IS_10_TIR;parent=contig_18_IS_10
+contig_18	ISEScan	insertion_sequence	108970	110451	.	-	.	ID=contig_18_IS_11;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	108970	108989	.	-	.	ID=contig_18_IS_11_TIR;parent=contig_18_IS_11
+contig_18	ISEScan	terminal_inverted_repeat	110432	110451	.	-	.	ID=contig_18_IS_11_TIR;parent=contig_18_IS_11
+contig_18	ISEScan	insertion_sequence	114642	115559	.		.	ID=contig_18_IS_12;family=IS5;cluster=IS5_197
+contig_18	ISEScan	terminal_inverted_repeat	114642	114665	.		.	ID=contig_18_IS_12_TIR;parent=contig_18_IS_12
+contig_18	ISEScan	terminal_inverted_repeat	115536	115559	.		.	ID=contig_18_IS_12_TIR;parent=contig_18_IS_12
+contig_18	ISEScan	insertion_sequence	142349	143266	.		.	ID=contig_18_IS_13;family=IS5;cluster=IS5_197
+contig_18	ISEScan	terminal_inverted_repeat	142349	142372	.		.	ID=contig_18_IS_13_TIR;parent=contig_18_IS_13
+contig_18	ISEScan	terminal_inverted_repeat	143243	143266	.		.	ID=contig_18_IS_13_TIR;parent=contig_18_IS_13
+contig_18	ISEScan	insertion_sequence	157385	158867	.	+	.	ID=contig_18_IS_14;family=IS110;cluster=IS110_219
+contig_18	ISEScan	terminal_inverted_repeat	157385	157389	.	+	.	ID=contig_18_IS_14_TIR;parent=contig_18_IS_14
+contig_18	ISEScan	terminal_inverted_repeat	158863	158867	.	+	.	ID=contig_18_IS_14_TIR;parent=contig_18_IS_14
+contig_18	ISEScan	insertion_sequence	163985	165164	.	+	.	ID=contig_18_IS_15;family=IS5;cluster=IS5_222
+contig_18	ISEScan	terminal_inverted_repeat	163985	164009	.	+	.	ID=contig_18_IS_15_TIR;parent=contig_18_IS_15
+contig_18	ISEScan	terminal_inverted_repeat	165140	165164	.	+	.	ID=contig_18_IS_15_TIR;parent=contig_18_IS_15
+contig_18	ISEScan	insertion_sequence	204833	206318	.	-	.	ID=contig_18_IS_16;family=IS110;cluster=IS110_219
+contig_18	ISEScan	terminal_inverted_repeat	204833	204837	.	-	.	ID=contig_18_IS_16_TIR;parent=contig_18_IS_16
+contig_18	ISEScan	terminal_inverted_repeat	206314	206318	.	-	.	ID=contig_18_IS_16_TIR;parent=contig_18_IS_16
+contig_18	ISEScan	insertion_sequence	213745	215234	.		.	ID=contig_18_IS_17;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	213745	213768	.		.	ID=contig_18_IS_17_TIR;parent=contig_18_IS_17
+contig_18	ISEScan	terminal_inverted_repeat	215211	215234	.		.	ID=contig_18_IS_17_TIR;parent=contig_18_IS_17
+contig_18	ISEScan	insertion_sequence	231974	232891	.	+	.	ID=contig_18_IS_18;family=IS5;cluster=IS5_197
+contig_18	ISEScan	terminal_inverted_repeat	231974	231997	.	+	.	ID=contig_18_IS_18_TIR;parent=contig_18_IS_18
+contig_18	ISEScan	terminal_inverted_repeat	232868	232891	.	+	.	ID=contig_18_IS_18_TIR;parent=contig_18_IS_18
+contig_18	ISEScan	insertion_sequence	242485	243966	.		.	ID=contig_18_IS_19;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	242485	242504	.		.	ID=contig_18_IS_19_TIR;parent=contig_18_IS_19
+contig_18	ISEScan	terminal_inverted_repeat	243947	243966	.		.	ID=contig_18_IS_19_TIR;parent=contig_18_IS_19
+contig_18	ISEScan	insertion_sequence	246629	247902	.	+	.	ID=contig_18_IS_20;family=IS110;cluster=IS110_184
+contig_18	ISEScan	terminal_inverted_repeat	246629	246644	.	+	.	ID=contig_18_IS_20_TIR;parent=contig_18_IS_20
+contig_18	ISEScan	terminal_inverted_repeat	247887	247902	.	+	.	ID=contig_18_IS_20_TIR;parent=contig_18_IS_20
+contig_18	ISEScan	insertion_sequence	253134	254615	.		.	ID=contig_18_IS_21;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	253134	253153	.		.	ID=contig_18_IS_21_TIR;parent=contig_18_IS_21
+contig_18	ISEScan	terminal_inverted_repeat	254596	254615	.		.	ID=contig_18_IS_21_TIR;parent=contig_18_IS_21
+contig_18	ISEScan	insertion_sequence	285900	287570	.	-	.	ID=contig_18_IS_22;family=IS66;cluster=IS66_79
+contig_18	ISEScan	terminal_inverted_repeat	285900	285929	.	-	.	ID=contig_18_IS_22_TIR;parent=contig_18_IS_22
+contig_18	ISEScan	terminal_inverted_repeat	287541	287570	.	-	.	ID=contig_18_IS_22_TIR;parent=contig_18_IS_22
+contig_18	ISEScan	insertion_sequence	290159	291497	.	-	.	ID=contig_18_IS_23;family=IS5;cluster=IS5_222
+contig_18	ISEScan	terminal_inverted_repeat	290159	290175	.	-	.	ID=contig_18_IS_23_TIR;parent=contig_18_IS_23
+contig_18	ISEScan	terminal_inverted_repeat	291481	291497	.	-	.	ID=contig_18_IS_23_TIR;parent=contig_18_IS_23
+contig_18	ISEScan	insertion_sequence	292829	293746	.		.	ID=contig_18_IS_24;family=IS5;cluster=IS5_197
+contig_18	ISEScan	terminal_inverted_repeat	292829	292852	.		.	ID=contig_18_IS_24_TIR;parent=contig_18_IS_24
+contig_18	ISEScan	terminal_inverted_repeat	293723	293746	.		.	ID=contig_18_IS_24_TIR;parent=contig_18_IS_24
+contig_18	ISEScan	insertion_sequence	304692	306578	.	-	.	ID=contig_18_IS_25;family=IS630;cluster=IS630_386
+contig_18	ISEScan	terminal_inverted_repeat	304692	304722	.	-	.	ID=contig_18_IS_25_TIR;parent=contig_18_IS_25
+contig_18	ISEScan	terminal_inverted_repeat	306548	306578	.	-	.	ID=contig_18_IS_25_TIR;parent=contig_18_IS_25
+contig_18	ISEScan	insertion_sequence	306268	307185	.		.	ID=contig_18_IS_26;family=IS5;cluster=IS5_197
+contig_18	ISEScan	terminal_inverted_repeat	306268	306291	.		.	ID=contig_18_IS_26_TIR;parent=contig_18_IS_26
+contig_18	ISEScan	terminal_inverted_repeat	307162	307185	.		.	ID=contig_18_IS_26_TIR;parent=contig_18_IS_26
+contig_18	ISEScan	insertion_sequence	312944	314433	.	-	.	ID=contig_18_IS_27;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	312944	312967	.	-	.	ID=contig_18_IS_27_TIR;parent=contig_18_IS_27
+contig_18	ISEScan	terminal_inverted_repeat	314410	314433	.	-	.	ID=contig_18_IS_27_TIR;parent=contig_18_IS_27
+contig_18	ISEScan	insertion_sequence	338538	339433	.		.	ID=contig_18_IS_28;family=IS481;cluster=IS481_213
+contig_18	ISEScan	terminal_inverted_repeat	338538	338544	.		.	ID=contig_18_IS_28_TIR;parent=contig_18_IS_28
+contig_18	ISEScan	terminal_inverted_repeat	339427	339433	.		.	ID=contig_18_IS_28_TIR;parent=contig_18_IS_28
+contig_18	ISEScan	insertion_sequence	347242	348544	.	+	.	ID=contig_18_IS_29;family=IS110;cluster=IS110_219
+contig_18	ISEScan	terminal_inverted_repeat	347242	347269	.	+	.	ID=contig_18_IS_29_TIR;parent=contig_18_IS_29
+contig_18	ISEScan	terminal_inverted_repeat	348517	348544	.	+	.	ID=contig_18_IS_29_TIR;parent=contig_18_IS_29
+contig_18	ISEScan	insertion_sequence	353180	353383	.	+	.	ID=contig_18_IS_30;family=IS5;cluster=IS5_197
+contig_18	ISEScan	insertion_sequence	354082	355730	.	-	.	ID=contig_18_IS_31;family=IS481;cluster=IS481_213
+contig_18	ISEScan	terminal_inverted_repeat	354082	354123	.	-	.	ID=contig_18_IS_31_TIR;parent=contig_18_IS_31
+contig_18	ISEScan	terminal_inverted_repeat	355689	355730	.	-	.	ID=contig_18_IS_31_TIR;parent=contig_18_IS_31
+contig_18	ISEScan	insertion_sequence	355437	356354	.		.	ID=contig_18_IS_32;family=IS5;cluster=IS5_197
+contig_18	ISEScan	terminal_inverted_repeat	355437	355460	.		.	ID=contig_18_IS_32_TIR;parent=contig_18_IS_32
+contig_18	ISEScan	terminal_inverted_repeat	356331	356354	.		.	ID=contig_18_IS_32_TIR;parent=contig_18_IS_32
+contig_18	ISEScan	insertion_sequence	356354	357255	.	-	.	ID=contig_18_IS_33;family=IS481;cluster=IS481_213
+contig_18	ISEScan	terminal_inverted_repeat	356354	356360	.	-	.	ID=contig_18_IS_33_TIR;parent=contig_18_IS_33
+contig_18	ISEScan	terminal_inverted_repeat	357249	357255	.	-	.	ID=contig_18_IS_33_TIR;parent=contig_18_IS_33
+contig_18	ISEScan	insertion_sequence	357439	358356	.		.	ID=contig_18_IS_34;family=IS5;cluster=IS5_197
+contig_18	ISEScan	terminal_inverted_repeat	357439	357462	.		.	ID=contig_18_IS_34_TIR;parent=contig_18_IS_34
+contig_18	ISEScan	terminal_inverted_repeat	358333	358356	.		.	ID=contig_18_IS_34_TIR;parent=contig_18_IS_34
+contig_18	ISEScan	insertion_sequence	372557	374038	.	+	.	ID=contig_18_IS_35;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	372557	372576	.	+	.	ID=contig_18_IS_35_TIR;parent=contig_18_IS_35
+contig_18	ISEScan	terminal_inverted_repeat	374019	374038	.	+	.	ID=contig_18_IS_35_TIR;parent=contig_18_IS_35
+contig_18	ISEScan	insertion_sequence	401992	403202	.	-	.	ID=contig_18_IS_36;family=IS3;cluster=IS3_168
+contig_18	ISEScan	terminal_inverted_repeat	401992	402042	.	-	.	ID=contig_18_IS_36_TIR;parent=contig_18_IS_36
+contig_18	ISEScan	terminal_inverted_repeat	403151	403202	.	-	.	ID=contig_18_IS_36_TIR;parent=contig_18_IS_36
+contig_18	ISEScan	insertion_sequence	414369	415850	.	+	.	ID=contig_18_IS_37;family=IS66;cluster=IS66_78
+contig_18	ISEScan	terminal_inverted_repeat	414369	414388	.	+	.	ID=contig_18_IS_37_TIR;parent=contig_18_IS_37
+contig_18	ISEScan	terminal_inverted_repeat	415831	415850	.	+	.	ID=contig_18_IS_37_TIR;parent=contig_18_IS_37
+contig_18	ISEScan	insertion_sequence	416015	416779	.		.	ID=contig_18_IS_38;family=IS5;cluster=IS5_197
+contig_18	ISEScan	terminal_inverted_repeat	416015	416024	.		.	ID=contig_18_IS_38_TIR;parent=contig_18_IS_38
+contig_18	ISEScan	terminal_inverted_repeat	416770	416779	.		.	ID=contig_18_IS_38_TIR;parent=contig_18_IS_38
+contig_18	ISEScan	insertion_sequence	417411	418328	.		.	ID=contig_18_IS_39;family=IS5;cluster=IS5_197
+contig_18	ISEScan	terminal_inverted_repeat	417411	417434	.		.	ID=contig_18_IS_39_TIR;parent=contig_18_IS_39
+contig_18	ISEScan	terminal_inverted_repeat	418305	418328	.		.	ID=contig_18_IS_39_TIR;parent=contig_18_IS_39
+contig_18	ISEScan	insertion_sequence	434904	436362	.	+	.	ID=contig_18_IS_40;family=IS110;cluster=IS110_219
+contig_18	ISEScan	terminal_inverted_repeat	434904	434910	.	+	.	ID=contig_18_IS_40_TIR;parent=contig_18_IS_40
+contig_18	ISEScan	terminal_inverted_repeat	436356	436362	.	+	.	ID=contig_18_IS_40_TIR;parent=contig_18_IS_40
+contig_36	ISEScan	insertion_sequence	23932	27095	.	+	.	ID=contig_36_IS_1;family=IS5;cluster=IS5_197
+contig_36	ISEScan	terminal_inverted_repeat	23932	23958	.	+	.	ID=contig_36_IS_1_TIR;parent=contig_36_IS_1
+contig_36	ISEScan	terminal_inverted_repeat	27069	27095	.	+	.	ID=contig_36_IS_1_TIR;parent=contig_36_IS_1
+contig_8	ISEScan	insertion_sequence	3170	4651	.	+	.	ID=contig_8_IS_1;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	3170	3189	.	+	.	ID=contig_8_IS_1_TIR;parent=contig_8_IS_1
+contig_8	ISEScan	terminal_inverted_repeat	4632	4651	.	+	.	ID=contig_8_IS_1_TIR;parent=contig_8_IS_1
+contig_8	ISEScan	insertion_sequence	33104	34304	.		.	ID=contig_8_IS_2;family=IS3;cluster=IS3_176
+contig_8	ISEScan	terminal_inverted_repeat	33104	33146	.		.	ID=contig_8_IS_2_TIR;parent=contig_8_IS_2
+contig_8	ISEScan	terminal_inverted_repeat	34262	34304	.		.	ID=contig_8_IS_2_TIR;parent=contig_8_IS_2
+contig_8	ISEScan	insertion_sequence	42509	43811	.	-	.	ID=contig_8_IS_3;family=IS5;cluster=IS5_222
+contig_8	ISEScan	terminal_inverted_repeat	42509	42599	.	-	.	ID=contig_8_IS_3_TIR;parent=contig_8_IS_3
+contig_8	ISEScan	terminal_inverted_repeat	43722	43811	.	-	.	ID=contig_8_IS_3_TIR;parent=contig_8_IS_3
+contig_8	ISEScan	insertion_sequence	63242	64700	.		.	ID=contig_8_IS_4;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	63242	63248	.		.	ID=contig_8_IS_4_TIR;parent=contig_8_IS_4
+contig_8	ISEScan	terminal_inverted_repeat	64694	64700	.		.	ID=contig_8_IS_4_TIR;parent=contig_8_IS_4
+contig_8	ISEScan	insertion_sequence	71825	72986	.	-	.	ID=contig_8_IS_5;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	71825	71831	.	-	.	ID=contig_8_IS_5_TIR;parent=contig_8_IS_5
+contig_8	ISEScan	terminal_inverted_repeat	72980	72986	.	-	.	ID=contig_8_IS_5_TIR;parent=contig_8_IS_5
+contig_8	ISEScan	insertion_sequence	73259	74744	.		.	ID=contig_8_IS_6;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	73259	73263	.		.	ID=contig_8_IS_6_TIR;parent=contig_8_IS_6
+contig_8	ISEScan	terminal_inverted_repeat	74740	74744	.		.	ID=contig_8_IS_6_TIR;parent=contig_8_IS_6
+contig_8	ISEScan	insertion_sequence	82835	83658	.	-	.	ID=contig_8_IS_7;family=IS5;cluster=IS5_500|IS5||protein:plasmid:155312
+contig_8	ISEScan	terminal_inverted_repeat	82835	82850	.	-	.	ID=contig_8_IS_7_TIR;parent=contig_8_IS_7
+contig_8	ISEScan	terminal_inverted_repeat	83643	83658	.	-	.	ID=contig_8_IS_7_TIR;parent=contig_8_IS_7
+contig_8	ISEScan	insertion_sequence	87454	88656	.		.	ID=contig_8_IS_8;family=IS3;cluster=IS3_176
+contig_8	ISEScan	terminal_inverted_repeat	87454	87496	.		.	ID=contig_8_IS_8_TIR;parent=contig_8_IS_8
+contig_8	ISEScan	terminal_inverted_repeat	88614	88656	.		.	ID=contig_8_IS_8_TIR;parent=contig_8_IS_8
+contig_8	ISEScan	insertion_sequence	113220	114413	.		.	ID=contig_8_IS_9;family=IS3;cluster=IS3_176
+contig_8	ISEScan	terminal_inverted_repeat	113220	113262	.		.	ID=contig_8_IS_9_TIR;parent=contig_8_IS_9
+contig_8	ISEScan	terminal_inverted_repeat	114371	114413	.		.	ID=contig_8_IS_9_TIR;parent=contig_8_IS_9
+contig_8	ISEScan	insertion_sequence	127703	129161	.	+	.	ID=contig_8_IS_10;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	127703	127709	.	+	.	ID=contig_8_IS_10_TIR;parent=contig_8_IS_10
+contig_8	ISEScan	terminal_inverted_repeat	129155	129161	.	+	.	ID=contig_8_IS_10_TIR;parent=contig_8_IS_10
+contig_8	ISEScan	insertion_sequence	129170	130087	.		.	ID=contig_8_IS_11;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	129170	129193	.		.	ID=contig_8_IS_11_TIR;parent=contig_8_IS_11
+contig_8	ISEScan	terminal_inverted_repeat	130064	130087	.		.	ID=contig_8_IS_11_TIR;parent=contig_8_IS_11
+contig_8	ISEScan	insertion_sequence	131178	132095	.		.	ID=contig_8_IS_12;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	131178	131201	.		.	ID=contig_8_IS_12_TIR;parent=contig_8_IS_12
+contig_8	ISEScan	terminal_inverted_repeat	132072	132095	.		.	ID=contig_8_IS_12_TIR;parent=contig_8_IS_12
+contig_8	ISEScan	insertion_sequence	140823	141697	.		.	ID=contig_8_IS_13;family=ISNCY;cluster=ISNCY_191
+contig_8	ISEScan	terminal_inverted_repeat	140823	140837	.		.	ID=contig_8_IS_13_TIR;parent=contig_8_IS_13
+contig_8	ISEScan	terminal_inverted_repeat	141683	141697	.		.	ID=contig_8_IS_13_TIR;parent=contig_8_IS_13
+contig_8	ISEScan	insertion_sequence	141726	143208	.	+	.	ID=contig_8_IS_14;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	141726	141730	.	+	.	ID=contig_8_IS_14_TIR;parent=contig_8_IS_14
+contig_8	ISEScan	terminal_inverted_repeat	143204	143208	.	+	.	ID=contig_8_IS_14_TIR;parent=contig_8_IS_14
+contig_8	ISEScan	insertion_sequence	143236	145515	.		.	ID=contig_8_IS_15;family=ISNCY;cluster=ISNCY_191
+contig_8	ISEScan	terminal_inverted_repeat	143236	143240	.		.	ID=contig_8_IS_15_TIR;parent=contig_8_IS_15
+contig_8	ISEScan	terminal_inverted_repeat	145511	145515	.		.	ID=contig_8_IS_15_TIR;parent=contig_8_IS_15
+contig_8	ISEScan	insertion_sequence	154546	155755	.		.	ID=contig_8_IS_16;family=IS3;cluster=IS3_176
+contig_8	ISEScan	terminal_inverted_repeat	154546	154588	.		.	ID=contig_8_IS_16_TIR;parent=contig_8_IS_16
+contig_8	ISEScan	terminal_inverted_repeat	155713	155755	.		.	ID=contig_8_IS_16_TIR;parent=contig_8_IS_16
+contig_8	ISEScan	insertion_sequence	162237	163425	.	-	.	ID=contig_8_IS_17;family=IS481;cluster=IS481_213
+contig_8	ISEScan	terminal_inverted_repeat	162237	162262	.	-	.	ID=contig_8_IS_17_TIR;parent=contig_8_IS_17
+contig_8	ISEScan	terminal_inverted_repeat	163400	163425	.	-	.	ID=contig_8_IS_17_TIR;parent=contig_8_IS_17
+contig_8	ISEScan	insertion_sequence	164349	167263	.		.	ID=contig_8_IS_18;family=ISNCY;cluster=ISNCY_191
+contig_8	ISEScan	terminal_inverted_repeat	164349	164356	.		.	ID=contig_8_IS_18_TIR;parent=contig_8_IS_18
+contig_8	ISEScan	terminal_inverted_repeat	167256	167263	.		.	ID=contig_8_IS_18_TIR;parent=contig_8_IS_18
+contig_8	ISEScan	insertion_sequence	168239	169433	.		.	ID=contig_8_IS_19;family=IS481;cluster=IS481_213
+contig_8	ISEScan	terminal_inverted_repeat	168239	168267	.		.	ID=contig_8_IS_19_TIR;parent=contig_8_IS_19
+contig_8	ISEScan	terminal_inverted_repeat	169405	169433	.		.	ID=contig_8_IS_19_TIR;parent=contig_8_IS_19
+contig_8	ISEScan	insertion_sequence	171580	173061	.	+	.	ID=contig_8_IS_20;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	171580	171599	.	+	.	ID=contig_8_IS_20_TIR;parent=contig_8_IS_20
+contig_8	ISEScan	terminal_inverted_repeat	173042	173061	.	+	.	ID=contig_8_IS_20_TIR;parent=contig_8_IS_20
+contig_8	ISEScan	insertion_sequence	176627	177544	.	-	.	ID=contig_8_IS_21;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	176627	176650	.	-	.	ID=contig_8_IS_21_TIR;parent=contig_8_IS_21
+contig_8	ISEScan	terminal_inverted_repeat	177521	177544	.	-	.	ID=contig_8_IS_21_TIR;parent=contig_8_IS_21
+contig_8	ISEScan	insertion_sequence	185719	186636	.		.	ID=contig_8_IS_22;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	185719	185742	.		.	ID=contig_8_IS_22_TIR;parent=contig_8_IS_22
+contig_8	ISEScan	terminal_inverted_repeat	186613	186636	.		.	ID=contig_8_IS_22_TIR;parent=contig_8_IS_22
+contig_8	ISEScan	insertion_sequence	186966	190022	.	-	.	ID=contig_8_IS_23;family=ISNCY;cluster=ISNCY_191
+contig_8	ISEScan	terminal_inverted_repeat	186966	186970	.	-	.	ID=contig_8_IS_23_TIR;parent=contig_8_IS_23
+contig_8	ISEScan	terminal_inverted_repeat	190018	190022	.	-	.	ID=contig_8_IS_23_TIR;parent=contig_8_IS_23
+contig_8	ISEScan	insertion_sequence	199988	201189	.		.	ID=contig_8_IS_24;family=IS3;cluster=IS3_176
+contig_8	ISEScan	terminal_inverted_repeat	199988	200030	.		.	ID=contig_8_IS_24_TIR;parent=contig_8_IS_24
+contig_8	ISEScan	terminal_inverted_repeat	201147	201189	.		.	ID=contig_8_IS_24_TIR;parent=contig_8_IS_24
+contig_8	ISEScan	insertion_sequence	245471	246952	.	-	.	ID=contig_8_IS_25;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	245471	245490	.	-	.	ID=contig_8_IS_25_TIR;parent=contig_8_IS_25
+contig_8	ISEScan	terminal_inverted_repeat	246933	246952	.	-	.	ID=contig_8_IS_25_TIR;parent=contig_8_IS_25
+contig_8	ISEScan	insertion_sequence	248716	250197	.	+	.	ID=contig_8_IS_26;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	248716	248735	.	+	.	ID=contig_8_IS_26_TIR;parent=contig_8_IS_26
+contig_8	ISEScan	terminal_inverted_repeat	250178	250197	.	+	.	ID=contig_8_IS_26_TIR;parent=contig_8_IS_26
+contig_8	ISEScan	insertion_sequence	256208	257689	.	+	.	ID=contig_8_IS_27;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	256208	256227	.	+	.	ID=contig_8_IS_27_TIR;parent=contig_8_IS_27
+contig_8	ISEScan	terminal_inverted_repeat	257670	257689	.	+	.	ID=contig_8_IS_27_TIR;parent=contig_8_IS_27
+contig_8	ISEScan	insertion_sequence	286292	287750	.	+	.	ID=contig_8_IS_28;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	286292	286298	.	+	.	ID=contig_8_IS_28_TIR;parent=contig_8_IS_28
+contig_8	ISEScan	terminal_inverted_repeat	287744	287750	.	+	.	ID=contig_8_IS_28_TIR;parent=contig_8_IS_28
+contig_8	ISEScan	insertion_sequence	292586	294068	.	+	.	ID=contig_8_IS_29;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	292586	292590	.	+	.	ID=contig_8_IS_29_TIR;parent=contig_8_IS_29
+contig_8	ISEScan	terminal_inverted_repeat	294064	294068	.	+	.	ID=contig_8_IS_29_TIR;parent=contig_8_IS_29
+contig_8	ISEScan	insertion_sequence	297666	299147	.	-	.	ID=contig_8_IS_30;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	297666	297685	.	-	.	ID=contig_8_IS_30_TIR;parent=contig_8_IS_30
+contig_8	ISEScan	terminal_inverted_repeat	299128	299147	.	-	.	ID=contig_8_IS_30_TIR;parent=contig_8_IS_30
+contig_8	ISEScan	insertion_sequence	307688	309169	.	+	.	ID=contig_8_IS_31;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	307688	307707	.	+	.	ID=contig_8_IS_31_TIR;parent=contig_8_IS_31
+contig_8	ISEScan	terminal_inverted_repeat	309150	309169	.	+	.	ID=contig_8_IS_31_TIR;parent=contig_8_IS_31
+contig_8	ISEScan	insertion_sequence	314955	316352	.		.	ID=contig_8_IS_32;family=IS4;cluster=IS4_64
+contig_8	ISEScan	terminal_inverted_repeat	314955	314972	.		.	ID=contig_8_IS_32_TIR;parent=contig_8_IS_32
+contig_8	ISEScan	terminal_inverted_repeat	316335	316352	.		.	ID=contig_8_IS_32_TIR;parent=contig_8_IS_32
+contig_8	ISEScan	insertion_sequence	316346	317638	.	+	.	ID=contig_8_IS_33;family=IS4;cluster=IS4_64
+contig_8	ISEScan	terminal_inverted_repeat	316346	316369	.	+	.	ID=contig_8_IS_33_TIR;parent=contig_8_IS_33
+contig_8	ISEScan	terminal_inverted_repeat	317615	317638	.	+	.	ID=contig_8_IS_33_TIR;parent=contig_8_IS_33
+contig_8	ISEScan	insertion_sequence	318757	319886	.	-	.	ID=contig_8_IS_34;family=IS3;cluster=IS3_168
+contig_8	ISEScan	terminal_inverted_repeat	318757	318790	.	-	.	ID=contig_8_IS_34_TIR;parent=contig_8_IS_34
+contig_8	ISEScan	terminal_inverted_repeat	319853	319886	.	-	.	ID=contig_8_IS_34_TIR;parent=contig_8_IS_34
+contig_8	ISEScan	insertion_sequence	327370	328851	.		.	ID=contig_8_IS_35;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	327370	327389	.		.	ID=contig_8_IS_35_TIR;parent=contig_8_IS_35
+contig_8	ISEScan	terminal_inverted_repeat	328832	328851	.		.	ID=contig_8_IS_35_TIR;parent=contig_8_IS_35
+contig_8	ISEScan	insertion_sequence	332380	333861	.		.	ID=contig_8_IS_36;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	332380	332399	.		.	ID=contig_8_IS_36_TIR;parent=contig_8_IS_36
+contig_8	ISEScan	terminal_inverted_repeat	333842	333861	.		.	ID=contig_8_IS_36_TIR;parent=contig_8_IS_36
+contig_8	ISEScan	insertion_sequence	364869	365998	.	+	.	ID=contig_8_IS_37;family=IS3;cluster=IS3_168
+contig_8	ISEScan	terminal_inverted_repeat	364869	364902	.	+	.	ID=contig_8_IS_37_TIR;parent=contig_8_IS_37
+contig_8	ISEScan	terminal_inverted_repeat	365965	365998	.	+	.	ID=contig_8_IS_37_TIR;parent=contig_8_IS_37
+contig_8	ISEScan	insertion_sequence	366439	367920	.		.	ID=contig_8_IS_38;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	366439	366458	.		.	ID=contig_8_IS_38_TIR;parent=contig_8_IS_38
+contig_8	ISEScan	terminal_inverted_repeat	367901	367920	.		.	ID=contig_8_IS_38_TIR;parent=contig_8_IS_38
+contig_8	ISEScan	insertion_sequence	368003	369164	.	+	.	ID=contig_8_IS_39;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	368003	368009	.	+	.	ID=contig_8_IS_39_TIR;parent=contig_8_IS_39
+contig_8	ISEScan	terminal_inverted_repeat	369158	369164	.	+	.	ID=contig_8_IS_39_TIR;parent=contig_8_IS_39
+contig_8	ISEScan	insertion_sequence	373223	374704	.	+	.	ID=contig_8_IS_40;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	373223	373242	.	+	.	ID=contig_8_IS_40_TIR;parent=contig_8_IS_40
+contig_8	ISEScan	terminal_inverted_repeat	374685	374704	.	+	.	ID=contig_8_IS_40_TIR;parent=contig_8_IS_40
+contig_8	ISEScan	insertion_sequence	394114	395316	.	-	.	ID=contig_8_IS_41;family=IS3;cluster=IS3_176
+contig_8	ISEScan	terminal_inverted_repeat	394114	394168	.	-	.	ID=contig_8_IS_41_TIR;parent=contig_8_IS_41
+contig_8	ISEScan	terminal_inverted_repeat	395262	395316	.	-	.	ID=contig_8_IS_41_TIR;parent=contig_8_IS_41
+contig_8	ISEScan	insertion_sequence	401573	402702	.	-	.	ID=contig_8_IS_42;family=IS3;cluster=IS3_168
+contig_8	ISEScan	terminal_inverted_repeat	401573	401606	.	-	.	ID=contig_8_IS_42_TIR;parent=contig_8_IS_42
+contig_8	ISEScan	terminal_inverted_repeat	402669	402702	.	-	.	ID=contig_8_IS_42_TIR;parent=contig_8_IS_42
+contig_8	ISEScan	insertion_sequence	426755	427956	.		.	ID=contig_8_IS_43;family=IS3;cluster=IS3_176
+contig_8	ISEScan	terminal_inverted_repeat	426755	426797	.		.	ID=contig_8_IS_43_TIR;parent=contig_8_IS_43
+contig_8	ISEScan	terminal_inverted_repeat	427914	427956	.		.	ID=contig_8_IS_43_TIR;parent=contig_8_IS_43
+contig_8	ISEScan	insertion_sequence	428140	429537	.		.	ID=contig_8_IS_44;family=IS4;cluster=IS4_64
+contig_8	ISEScan	terminal_inverted_repeat	428140	428157	.		.	ID=contig_8_IS_44_TIR;parent=contig_8_IS_44
+contig_8	ISEScan	terminal_inverted_repeat	429520	429537	.		.	ID=contig_8_IS_44_TIR;parent=contig_8_IS_44
+contig_8	ISEScan	insertion_sequence	433559	435749	.		.	ID=contig_8_IS_45;family=ISNCY;cluster=ISNCY_191
+contig_8	ISEScan	terminal_inverted_repeat	433559	433579	.		.	ID=contig_8_IS_45_TIR;parent=contig_8_IS_45
+contig_8	ISEScan	terminal_inverted_repeat	435730	435749	.		.	ID=contig_8_IS_45_TIR;parent=contig_8_IS_45
+contig_8	ISEScan	insertion_sequence	452290	453748	.	-	.	ID=contig_8_IS_46;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	452290	452296	.	-	.	ID=contig_8_IS_46_TIR;parent=contig_8_IS_46
+contig_8	ISEScan	terminal_inverted_repeat	453742	453748	.	-	.	ID=contig_8_IS_46_TIR;parent=contig_8_IS_46
+contig_8	ISEScan	insertion_sequence	454353	455834	.	+	.	ID=contig_8_IS_47;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	454353	454372	.	+	.	ID=contig_8_IS_47_TIR;parent=contig_8_IS_47
+contig_8	ISEScan	terminal_inverted_repeat	455815	455834	.	+	.	ID=contig_8_IS_47_TIR;parent=contig_8_IS_47
+contig_8	ISEScan	insertion_sequence	485051	486071	.	-	.	ID=contig_8_IS_48;family=IS481;cluster=IS481_240
+contig_8	ISEScan	terminal_inverted_repeat	485051	485094	.	-	.	ID=contig_8_IS_48_TIR;parent=contig_8_IS_48
+contig_8	ISEScan	terminal_inverted_repeat	486029	486071	.	-	.	ID=contig_8_IS_48_TIR;parent=contig_8_IS_48
+contig_8	ISEScan	insertion_sequence	490134	490761	.		.	ID=contig_8_IS_49;family=IS3;cluster=IS3_176
+contig_8	ISEScan	insertion_sequence	490761	491866	.		.	ID=contig_8_IS_50;family=IS630;cluster=IS630_386
+contig_8	ISEScan	terminal_inverted_repeat	490761	490775	.		.	ID=contig_8_IS_50_TIR;parent=contig_8_IS_50
+contig_8	ISEScan	terminal_inverted_repeat	491852	491866	.		.	ID=contig_8_IS_50_TIR;parent=contig_8_IS_50
+contig_8	ISEScan	insertion_sequence	491868	492785	.		.	ID=contig_8_IS_51;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	491868	491891	.		.	ID=contig_8_IS_51_TIR;parent=contig_8_IS_51
+contig_8	ISEScan	terminal_inverted_repeat	492762	492785	.		.	ID=contig_8_IS_51_TIR;parent=contig_8_IS_51
+contig_8	ISEScan	insertion_sequence	492790	493338	.		.	ID=contig_8_IS_52;family=IS3;cluster=IS3_176
+contig_8	ISEScan	terminal_inverted_repeat	492790	492803	.		.	ID=contig_8_IS_52_TIR;parent=contig_8_IS_52
+contig_8	ISEScan	terminal_inverted_repeat	493325	493338	.		.	ID=contig_8_IS_52_TIR;parent=contig_8_IS_52
+contig_8	ISEScan	insertion_sequence	495773	496961	.		.	ID=contig_8_IS_53;family=IS481;cluster=IS481_213
+contig_8	ISEScan	terminal_inverted_repeat	495773	495798	.		.	ID=contig_8_IS_53_TIR;parent=contig_8_IS_53
+contig_8	ISEScan	terminal_inverted_repeat	496936	496961	.		.	ID=contig_8_IS_53_TIR;parent=contig_8_IS_53
+contig_8	ISEScan	insertion_sequence	505663	506732	.		.	ID=contig_8_IS_54;family=IS3;cluster=IS3_176
+contig_8	ISEScan	terminal_inverted_repeat	505663	505678	.		.	ID=contig_8_IS_54_TIR;parent=contig_8_IS_54
+contig_8	ISEScan	terminal_inverted_repeat	506717	506732	.		.	ID=contig_8_IS_54_TIR;parent=contig_8_IS_54
+contig_8	ISEScan	insertion_sequence	506743	507660	.		.	ID=contig_8_IS_55;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	506743	506766	.		.	ID=contig_8_IS_55_TIR;parent=contig_8_IS_55
+contig_8	ISEScan	terminal_inverted_repeat	507637	507660	.		.	ID=contig_8_IS_55_TIR;parent=contig_8_IS_55
+contig_8	ISEScan	insertion_sequence	516879	518329	.	+	.	ID=contig_8_IS_56;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	516879	516917	.	+	.	ID=contig_8_IS_56_TIR;parent=contig_8_IS_56
+contig_8	ISEScan	terminal_inverted_repeat	518291	518329	.	+	.	ID=contig_8_IS_56_TIR;parent=contig_8_IS_56
+contig_8	ISEScan	insertion_sequence	518175	519651	.	+	.	ID=contig_8_IS_57;family=IS110;cluster=IS110_236
+contig_8	ISEScan	terminal_inverted_repeat	518175	518208	.	+	.	ID=contig_8_IS_57_TIR;parent=contig_8_IS_57
+contig_8	ISEScan	terminal_inverted_repeat	519618	519651	.	+	.	ID=contig_8_IS_57_TIR;parent=contig_8_IS_57
+contig_8	ISEScan	insertion_sequence	564323	566047	.	-	.	ID=contig_8_IS_58;family=IS21;cluster=IS21_259
+contig_8	ISEScan	terminal_inverted_repeat	564323	564359	.	-	.	ID=contig_8_IS_58_TIR;parent=contig_8_IS_58
+contig_8	ISEScan	terminal_inverted_repeat	566011	566047	.	-	.	ID=contig_8_IS_58_TIR;parent=contig_8_IS_58
+contig_8	ISEScan	insertion_sequence	576563	578044	.	-	.	ID=contig_8_IS_59;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	576563	576582	.	-	.	ID=contig_8_IS_59_TIR;parent=contig_8_IS_59
+contig_8	ISEScan	terminal_inverted_repeat	578025	578044	.	-	.	ID=contig_8_IS_59_TIR;parent=contig_8_IS_59
+contig_8	ISEScan	insertion_sequence	604703	606188	.	-	.	ID=contig_8_IS_60;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	604703	604707	.	-	.	ID=contig_8_IS_60_TIR;parent=contig_8_IS_60
+contig_8	ISEScan	terminal_inverted_repeat	606184	606188	.	-	.	ID=contig_8_IS_60_TIR;parent=contig_8_IS_60
+contig_8	ISEScan	insertion_sequence	651048	652530	.	+	.	ID=contig_8_IS_61;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	651048	651052	.	+	.	ID=contig_8_IS_61_TIR;parent=contig_8_IS_61
+contig_8	ISEScan	terminal_inverted_repeat	652526	652530	.	+	.	ID=contig_8_IS_61_TIR;parent=contig_8_IS_61
+contig_8	ISEScan	insertion_sequence	663231	665793	.	+	.	ID=contig_8_IS_62;family=IS110;cluster=IS110_113
+contig_8	ISEScan	terminal_inverted_repeat	663231	663251	.	+	.	ID=contig_8_IS_62_TIR;parent=contig_8_IS_62
+contig_8	ISEScan	terminal_inverted_repeat	665773	665793	.	+	.	ID=contig_8_IS_62_TIR;parent=contig_8_IS_62
+contig_8	ISEScan	insertion_sequence	665797	666714	.		.	ID=contig_8_IS_63;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	665797	665820	.		.	ID=contig_8_IS_63_TIR;parent=contig_8_IS_63
+contig_8	ISEScan	terminal_inverted_repeat	666691	666714	.		.	ID=contig_8_IS_63_TIR;parent=contig_8_IS_63
+contig_8	ISEScan	insertion_sequence	666716	667821	.	-	.	ID=contig_8_IS_64;family=IS630;cluster=IS630_386
+contig_8	ISEScan	terminal_inverted_repeat	666716	666730	.	-	.	ID=contig_8_IS_64_TIR;parent=contig_8_IS_64
+contig_8	ISEScan	terminal_inverted_repeat	667807	667821	.	-	.	ID=contig_8_IS_64_TIR;parent=contig_8_IS_64
+contig_8	ISEScan	insertion_sequence	744183	745100	.		.	ID=contig_8_IS_65;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	744183	744206	.		.	ID=contig_8_IS_65_TIR;parent=contig_8_IS_65
+contig_8	ISEScan	terminal_inverted_repeat	745077	745100	.		.	ID=contig_8_IS_65_TIR;parent=contig_8_IS_65
+contig_8	ISEScan	insertion_sequence	745100	746055	.	-	.	ID=contig_8_IS_66;family=IS630;cluster=IS630_247
+contig_8	ISEScan	terminal_inverted_repeat	745100	745124	.	-	.	ID=contig_8_IS_66_TIR;parent=contig_8_IS_66
+contig_8	ISEScan	terminal_inverted_repeat	746031	746055	.	-	.	ID=contig_8_IS_66_TIR;parent=contig_8_IS_66
+contig_8	ISEScan	insertion_sequence	749048	750530	.	+	.	ID=contig_8_IS_67;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	749048	749052	.	+	.	ID=contig_8_IS_67_TIR;parent=contig_8_IS_67
+contig_8	ISEScan	terminal_inverted_repeat	750526	750530	.	+	.	ID=contig_8_IS_67_TIR;parent=contig_8_IS_67
+contig_8	ISEScan	insertion_sequence	750609	752090	.	-	.	ID=contig_8_IS_68;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	750609	750628	.	-	.	ID=contig_8_IS_68_TIR;parent=contig_8_IS_68
+contig_8	ISEScan	terminal_inverted_repeat	752071	752090	.	-	.	ID=contig_8_IS_68_TIR;parent=contig_8_IS_68
+contig_8	ISEScan	insertion_sequence	755684	757165	.	+	.	ID=contig_8_IS_69;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	755684	755703	.	+	.	ID=contig_8_IS_69_TIR;parent=contig_8_IS_69
+contig_8	ISEScan	terminal_inverted_repeat	757146	757165	.	+	.	ID=contig_8_IS_69_TIR;parent=contig_8_IS_69
+contig_8	ISEScan	insertion_sequence	816412	817893	.	+	.	ID=contig_8_IS_70;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	816412	816431	.	+	.	ID=contig_8_IS_70_TIR;parent=contig_8_IS_70
+contig_8	ISEScan	terminal_inverted_repeat	817874	817893	.	+	.	ID=contig_8_IS_70_TIR;parent=contig_8_IS_70
+contig_8	ISEScan	insertion_sequence	830884	831995	.	-	.	ID=contig_8_IS_71;family=IS630;cluster=IS630_386
+contig_8	ISEScan	terminal_inverted_repeat	830884	830901	.	-	.	ID=contig_8_IS_71_TIR;parent=contig_8_IS_71
+contig_8	ISEScan	terminal_inverted_repeat	831978	831995	.	-	.	ID=contig_8_IS_71_TIR;parent=contig_8_IS_71
+contig_8	ISEScan	insertion_sequence	831994	832911	.		.	ID=contig_8_IS_72;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	831994	832017	.		.	ID=contig_8_IS_72_TIR;parent=contig_8_IS_72
+contig_8	ISEScan	terminal_inverted_repeat	832888	832911	.		.	ID=contig_8_IS_72_TIR;parent=contig_8_IS_72
+contig_8	ISEScan	insertion_sequence	842777	843694	.		.	ID=contig_8_IS_73;family=IS5;cluster=IS5_342
+contig_8	ISEScan	terminal_inverted_repeat	842777	842800	.		.	ID=contig_8_IS_73_TIR;parent=contig_8_IS_73
+contig_8	ISEScan	terminal_inverted_repeat	843671	843694	.		.	ID=contig_8_IS_73_TIR;parent=contig_8_IS_73
+contig_8	ISEScan	insertion_sequence	848844	850321	.	-	.	ID=contig_8_IS_74;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	848844	848848	.	-	.	ID=contig_8_IS_74_TIR;parent=contig_8_IS_74
+contig_8	ISEScan	terminal_inverted_repeat	850317	850321	.	-	.	ID=contig_8_IS_74_TIR;parent=contig_8_IS_74
+contig_8	ISEScan	insertion_sequence	853784	855269	.	-	.	ID=contig_8_IS_75;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	853784	853788	.	-	.	ID=contig_8_IS_75_TIR;parent=contig_8_IS_75
+contig_8	ISEScan	terminal_inverted_repeat	855265	855269	.	-	.	ID=contig_8_IS_75_TIR;parent=contig_8_IS_75
+contig_8	ISEScan	insertion_sequence	859692	861177	.	-	.	ID=contig_8_IS_76;family=IS110;cluster=IS110_219
+contig_8	ISEScan	terminal_inverted_repeat	859692	859696	.	-	.	ID=contig_8_IS_76_TIR;parent=contig_8_IS_76
+contig_8	ISEScan	terminal_inverted_repeat	861173	861177	.	-	.	ID=contig_8_IS_76_TIR;parent=contig_8_IS_76
+contig_8	ISEScan	insertion_sequence	867719	870788	.		.	ID=contig_8_IS_77;family=ISNCY;cluster=ISNCY_191
+contig_8	ISEScan	terminal_inverted_repeat	867719	867729	.		.	ID=contig_8_IS_77_TIR;parent=contig_8_IS_77
+contig_8	ISEScan	terminal_inverted_repeat	870778	870788	.		.	ID=contig_8_IS_77_TIR;parent=contig_8_IS_77
+contig_8	ISEScan	insertion_sequence	894908	896389	.	-	.	ID=contig_8_IS_78;family=IS66;cluster=IS66_78
+contig_8	ISEScan	terminal_inverted_repeat	894908	894927	.	-	.	ID=contig_8_IS_78_TIR;parent=contig_8_IS_78
+contig_8	ISEScan	terminal_inverted_repeat	896370	896389	.	-	.	ID=contig_8_IS_78_TIR;parent=contig_8_IS_78

@@ -1,0 +1,2 @@
+read 'contig_25' of length 910 in file '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/assembly.fasta' - too short, skipping.
+read 'contig_6' of length 444 in file '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/assembly.fasta' - too short, skipping.

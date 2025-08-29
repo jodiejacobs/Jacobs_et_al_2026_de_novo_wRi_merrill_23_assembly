@@ -1,0 +1,101 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: 5f33fb69-6928-472e-9a8c-00457fd41df6
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Conda environments: ignored
+Job stats:
+job                          count
+-------------------------  -------
+BUSCO_polished                   3
+all                              1
+circularize_merged               1
+merge_assemblies                 1
+polish_merged_short_reads        1
+polish_nanopore_assembly         3
+total                           10
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Mon Mar 10 15:09:06 2025]
+rule polish_nanopore_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/anne_assembly/consensus_assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_AN/wRi/polished.fasta
+    jobid: 1
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_AN/wRi/polished.fasta
+    wildcards: assembly_name=assembly_AN
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+No SLURM account given, trying to guess.
+Guessed SLURM account: standard
+Job 1 has been submitted with SLURM jobid 6863429 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_polish_nanopore_assembly/assembly_AN/6863429.log).
+
+[Mon Mar 10 15:09:06 2025]
+rule polish_nanopore_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/assembly/flye/longest_contigs_bridge.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta
+    jobid: 3
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta
+    wildcards: assembly_name=longest_contigs_bridge
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+Job 3 has been submitted with SLURM jobid 6863430 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_polish_nanopore_assembly/longest_contigs_bridge/6863430.log).
+
+[Mon Mar 10 15:09:06 2025]
+rule polish_nanopore_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_JJ/wRi/polished.fasta
+    jobid: 2
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/assembly_JJ/wRi/polished.fasta
+    wildcards: assembly_name=assembly_JJ
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+Job 2 has been submitted with SLURM jobid 6863431 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_polish_nanopore_assembly/assembly_JJ/6863431.log).
+[Mon Mar 10 15:15:38 2025]
+Finished job 3.
+1 of 10 steps (10%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 15:15:38 2025]
+rule BUSCO_polished:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta
+    output: busco/longest_contigs_bridge/polished/wRi/short_summary.specific.fasta
+    jobid: 6
+    reason: Missing output files: busco/longest_contigs_bridge/polished/wRi/short_summary.specific.fasta; Input files updated by another job: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta
+    wildcards: assembly_name=longest_contigs_bridge
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=60
+
+Job 6 has been submitted with SLURM jobid 6863452 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_BUSCO_polished/longest_contigs_bridge/6863452.log).
+[Mon Mar 10 15:16:07 2025]
+Error in rule BUSCO_polished:
+    message: SLURM-job '6863452' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 6
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta
+    output: busco/longest_contigs_bridge/polished/wRi/short_summary.specific.fasta
+    log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_BUSCO_polished/longest_contigs_bridge/6863452.log (check log file(s) for error details)
+    conda-env: busco
+    shell:
+         
+            mkdir -p busco/longest_contigs_bridge/polished/wRi/
+            busco -i /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/longest_contigs_bridge/wRi/polished.fasta -o busco/longest_contigs_bridge/polished/wRi/ -l rickettsiales_odb10 -m genome --cpu 16
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 6863452
+
+[Mon Mar 10 15:18:08 2025]
+Finished job 1.
+2 of 10 steps (20%) done
+[Mon Mar 10 15:27:19 2025]
+Finished job 2.
+3 of 10 steps (30%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-10T150905.536905.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/conda/77161951620539d80340d1efe7ed9ba9_
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: libpcre
+Description: PCRE - Perl compatible regular expressions C library with 8 bit character support
+Version: 8.45
+Libs: -L${libdir} -lpcre
+Libs.private:  
+Cflags: -I${includedir} 

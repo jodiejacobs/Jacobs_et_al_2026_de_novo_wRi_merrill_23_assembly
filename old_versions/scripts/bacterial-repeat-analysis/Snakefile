@@ -1,0 +1,217 @@
+# Snakefile for bacterial genome repeat analysis
+# This pipeline analyzes bacterial genomes for repetitive elements,
+# insertion sequences, mobile elements, and other repeat sequences
+
+import os
+from os.path import join
+
+# Configuration
+configfile: "config/config.yaml"
+
+# Input genome assembly
+ASSEMBLY = config["assembly"]
+OUTDIR = config["output_dir"]
+THREADS = config["threads"]
+
+# Create output directories
+os.makedirs(join(OUTDIR, "repeatmasker"), exist_ok=True)
+os.makedirs(join(OUTDIR, "isescan"), exist_ok=True)
+os.makedirs(join(OUTDIR, "red"), exist_ok=True)
+os.makedirs(join(OUTDIR, "interspersed_repeats"), exist_ok=True)
+os.makedirs(join(OUTDIR, "plots"), exist_ok=True)
+
+# Target rule
+rule all:
+    input:
+        # RepeatMasker output
+        join(OUTDIR, "repeatmasker", os.path.basename(ASSEMBLY) + ".masked"),
+        # ISEScan output (bacterial IS elements) - Updated path
+        join(OUTDIR, "isescan", "output", "genomes", os.path.basename(ASSEMBLY) + ".tsv"),
+        join(OUTDIR, "isescan", "output", "genomes", os.path.basename(ASSEMBLY) + ".gff"),
+        # RED output for de novo repeat detection
+        join(OUTDIR, "red", "merrill-23.msk"),
+        # Interspersed repeat finder output
+        join(OUTDIR, "interspersed_repeats", "repeats.gff"),
+        # Combined summary report
+        join(OUTDIR, "repeat_summary_report.html"),
+        # Genome plot with repeats
+        join(OUTDIR, "plots", "genome_with_repeats.pdf"),
+        # Density plot showing repeat distribution
+        join(OUTDIR, "plots", "genome_with_repeats_density.pdf")
+
+# RepeatMasker for bacterial genomes
+rule run_repeatmasker:
+    input:
+        genome = ASSEMBLY
+    output:
+        masked = join(OUTDIR, "repeatmasker", os.path.basename(ASSEMBLY) + ".masked"),
+        out = join(OUTDIR, "repeatmasker", os.path.basename(ASSEMBLY) + ".out"),
+        tbl = join(OUTDIR, "repeatmasker", os.path.basename(ASSEMBLY) + ".tbl")
+    params:
+        outdir = join(OUTDIR, "repeatmasker"),
+        species = config.get("species", "bacteria"),
+        options = lambda wildcards, threads: config.get("repeatmasker_options", "-xsmall -pa {} -species bacteria -noint").format(threads)
+    threads: THREADS
+    resources:
+        mem_mb = lambda wildcards, attempt: attempt * 8000,
+        time = lambda wildcards, attempt: attempt * 240
+    conda:
+        "repeatmasker"
+    shell:
+        """
+        # Optimized for bacterial genomes
+        # First, ensure RepBase is properly configured for bacteria
+        RepeatMasker {params.options} \
+            -dir {params.outdir} \
+            {input.genome}
+        """
+
+# ISEScan for bacterial insertion sequences
+rule run_isescan:
+    input:
+        genome = ASSEMBLY
+    output:
+        tsv = join(OUTDIR, "isescan", "output", "genomes", os.path.basename(ASSEMBLY) + ".tsv"),
+        gff = join(OUTDIR, "isescan", "output", "genomes", os.path.basename(ASSEMBLY) + ".gff")
+    params:
+        proteome = join(OUTDIR, "isescan", "proteome"),
+        hmm = join(OUTDIR, "isescan", "hmm"),
+        output = join(OUTDIR, "isescan", "output")
+    threads: THREADS
+    resources:
+        mem_mb = lambda wildcards, attempt: attempt * 6000,
+        time = lambda wildcards, attempt: attempt * 180
+    conda:
+        "isescan"
+    shell:
+        """
+        mkdir -p {params.output}
+        
+        # Run ISEScan with optimized parameters for bacterial genomes
+        # ISEScan is already designed for bacteria, but we'll ensure optimal settings
+        isescan.py --seqfile {input.genome} \
+            --output {params.output} 
+        """
+
+# RED (Repeat Explorer) for de novo repeat detection in bacterial genomes
+rule run_red:
+    input:
+        genome = ASSEMBLY
+    output: 
+        repeats = join(OUTDIR, "red", os.path.basename(ASSEMBLY) + ".msk")
+    params:
+        genome = os.path.dirname(ASSEMBLY),
+        outdir = join(OUTDIR, "red"),
+        options = config.get("red_options", "-frp=0.1")
+    threads: THREADS
+    resources:
+        mem_mb = lambda wildcards, attempt: attempt * 6000,
+        time = lambda wildcards, attempt: attempt * 180
+    conda:
+        "red"
+    shell:
+        """
+        # Run RED for de novo repeat detection
+         Red -gnm {params.genome} -msk {params.output} -rpt  {params.output}
+        
+        # Red -gnm {input.genome} {params.options} -o {params.outdir} -t {threads}
+        """
+
+# Find interspersed repeats using custom script
+rule find_interspersed_repeats:
+    input:
+        genome = ASSEMBLY
+    output:
+        repeats = join(OUTDIR, "interspersed_repeats", "repeats.gff")
+    params:
+        outdir = join(OUTDIR, "interspersed_repeats"),
+        min_length = config.get("min_repeat_length", 50),
+        min_identity = config.get("min_repeat_identity", 90)
+    threads: THREADS
+    resources:
+        mem_mb = lambda wildcards, attempt: attempt * 4000,
+        time = lambda wildcards, attempt: attempt * 120
+    conda:
+        "blast"
+    shell:
+        """
+        # Create blast database
+        makeblastdb -in {input.genome} -dbtype nucl -out {params.outdir}/self_blast
+        
+        # Self-blastn to find repeats with bacterial-optimized parameters
+        blastn -query {input.genome} \
+            -db {params.outdir}/self_blast \
+            -outfmt "6 qseqid qstart qend sseqid sstart send pident length" \
+            -word_size {config[blast_word_size]} \
+            -perc_identity {params.min_identity} \
+            -reward 1 \
+            -penalty -1 \
+            -gapopen 2 \
+            -gapextend 1 \
+            -dust yes \
+            -num_threads {threads} \
+            -out {params.outdir}/self_blast.out
+            
+        # Filter repeats and convert to GFF
+        python scripts/filter_self_blast.py \
+            --input {params.outdir}/self_blast.out \
+            --output {output.repeats} \
+            --min_length {params.min_length} \
+            --min_identity {params.min_identity}
+        """
+
+# Generate summary report of all repeat analyses
+rule generate_summary_report:
+    input:
+        repeatmasker = join(OUTDIR, "repeatmasker", os.path.basename(ASSEMBLY) + ".out"),
+        isescan_tsv = join(OUTDIR, "isescan", "output", "genomes", os.path.basename(ASSEMBLY) + ".tsv"),
+        isescan_gff = join(OUTDIR, "isescan", "output", "genomes", os.path.basename(ASSEMBLY) + ".gff"),
+        red = join(OUTDIR, "red", "merrill-23.msk"),
+        interspersed = join(OUTDIR, "interspersed_repeats", "repeats.gff")
+    output:
+        report = join(OUTDIR, "repeat_summary_report.html")
+    params:
+        assembly = ASSEMBLY,
+        outdir = OUTDIR
+    conda:
+        "report"
+    shell:
+        """
+        python scripts/generate_report.py \
+            --assembly {params.assembly} \
+            --repeatmasker {input.repeatmasker} \
+            --isescan_tsv {input.isescan_tsv} \
+            --isescan_gff {input.isescan_gff} \
+            --red {input.red} \
+            --interspersed {input.interspersed} \
+            --output {output.report}
+        """
+
+# Generate genome plot with repeats
+rule generate_genome_plot:
+    input:
+        repeatmasker = join(OUTDIR, "repeatmasker", os.path.basename(ASSEMBLY) + ".out"),
+        isescan_tsv = join(OUTDIR, "isescan", "output", "genomes", os.path.basename(ASSEMBLY) + ".tsv"),
+        isescan_gff = join(OUTDIR, "isescan", "output", "genomes", os.path.basename(ASSEMBLY) + ".gff"),
+        red = join(OUTDIR, "red", "merrill-23.msk"),
+        interspersed = join(OUTDIR, "interspersed_repeats", "repeats.gff")
+    output:
+        plot = join(OUTDIR, "plots", "genome_with_repeats.pdf"),
+        density_plot = join(OUTDIR, "plots", "genome_with_repeats_density.pdf")
+    params:
+        assembly = ASSEMBLY,
+        outdir = join(OUTDIR, "plots")
+    conda:
+        "plotting"
+    shell:
+        """
+        python scripts/plot_genome.py \
+            --assembly {params.assembly} \
+            --repeatmasker {input.repeatmasker} \
+            --isescan_tsv {input.isescan_tsv} \
+            --isescan_gff {input.isescan_gff} \
+            --red {input.red} \
+            --interspersed {input.interspersed} \
+            --output {output.plot} \
+            --density_output {output.density_plot}
+        """

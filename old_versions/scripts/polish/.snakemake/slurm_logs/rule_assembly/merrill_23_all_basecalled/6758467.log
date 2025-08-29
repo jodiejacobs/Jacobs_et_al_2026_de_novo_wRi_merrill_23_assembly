@@ -1,0 +1,110 @@
+host: phoenix-23.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=9969, disk_mib=9508
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Mar  6 10:55:26 2025]
+rule assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.Dsim.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=9969, disk_mib=9508, tmpdir=<TBD>, slurm_partition=medium, runtime=200
+
+host: phoenix-23.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=9969, disk_mib=9508
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Mar  6 10:55:27 2025]
+localrule assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.Dsim.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=9969, disk_mib=9508, tmpdir=/data/tmp, slurm_partition=medium, runtime=200
+
+[2025-03-06 10:55:27] INFO: Starting Flye 2.9.5-b1801
+[2025-03-06 10:55:27] INFO: >>>STAGE: configure
+[2025-03-06 10:55:27] INFO: Configuring run
+[2025-03-06 10:56:43] INFO: Total read length: 5702836847
+[2025-03-06 10:56:43] INFO: Input genome size: 180000000
+[2025-03-06 10:56:43] INFO: Estimated coverage: 31
+[2025-03-06 10:56:43] INFO: Reads N50/N90: 2017 / 444
+[2025-03-06 10:56:43] INFO: Minimum overlap set to 1000
+[2025-03-06 10:56:43] INFO: >>>STAGE: assembly
+[2025-03-06 10:56:43] INFO: Assembling disjointigs
+[2025-03-06 10:56:49] INFO: Reading sequences
+[2025-03-06 10:57:55] INFO: Building minimizer index
+[2025-03-06 10:57:55] INFO: Pre-calculating index storage
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2025-03-06 10:58:20] INFO: Filling index
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2025-03-06 10:58:50] INFO: Extending reads
+[2025-03-06 10:58:58] INFO: Overlap-based coverage: 20
+[2025-03-06 10:58:58] INFO: Median overlap divergence: 0.0292056
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2025-03-06 11:07:18] INFO: Assembled 2600 disjointigs
+[2025-03-06 11:07:19] INFO: Generating sequence
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2025-03-06 11:07:26] INFO: Filtering contained disjointigs
+0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100% 
+[2025-03-06 11:07:36] INFO: Contained seqs: 495
+[2025-03-06 11:07:40] INFO: >>>STAGE: consensus
+[2025-03-06 11:07:40] INFO: Running Minimap2
+[E::bgzf_read] Read block operation failed with error 2 after 0 of 4 bytes
+samtools index: failed to create index for "/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/10-consensus/minimap.bam"
+[2025-03-06 11:20:14] ERROR: Error running minimap2, terminating. See the alignment error log  for details: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/10-consensus/minimap.stderr
+[2025-03-06 11:20:14] ERROR: Cmd: flye-minimap2 '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/00-assembly/draft_assembly.fasta' '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.Dsim.fastq.gz' -x map-ont -t 16 -k 17 -a -p 0.5 -N 10 --sam-hit-only -L -K 5G -z 1000 -Q --secondary-seq -I 64G | flye-samtools view -T '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/00-assembly/draft_assembly.fasta' -u - | flye-samtools sort -T '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/10-consensus/sort_250306_110740' -O bam -@ 4 -l 1 -m 4G -o '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/10-consensus/minimap.bam'
+[2025-03-06 11:20:14] ERROR: Command 'flye-samtools index -@ 4 '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/10-consensus/minimap.bam'' returned non-zero exit status 1.
+[2025-03-06 11:20:14] ERROR: Pipeline aborted
+[Thu Mar  6 11:20:14 2025]
+Error in rule assembly:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.Dsim.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    shell:
+         
+            mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/
+            mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/   
+            flye --nano-hq /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.Dsim.fastq.gz -t 16 --out-dir /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/ --genome-size 180m
+            flye --nano-hq /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz -t 16 --out-dir /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/ --genome-size 1.3m
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-23: task 0: Exited with exit code 1
+[Thu Mar  6 11:20:14 2025]
+Error in rule assembly:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.Dsim.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    shell:
+         
+            mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/
+            mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/   
+            flye --nano-hq /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.Dsim.fastq.gz -t 16 --out-dir /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/ --genome-size 180m
+            flye --nano-hq /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz -t 16 --out-dir /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/ --genome-size 1.3m
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

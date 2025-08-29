@@ -1,0 +1,204 @@
+host: phoenix-21.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Mar  7 21:04:16 2025]
+rule polish_scaffolded_with_short_reads:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/links_pilon.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/tgs_pilon.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+host: phoenix-21.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Mar  7 21:04:17 2025]
+localrule polish_scaffolded_with_short_reads:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/links_pilon.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/tgs_pilon.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=360
+
+[bwa_index] Pack FASTA... 0.01 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 0.25 seconds elapse.
+[bwa_index] Update BWT... 0.01 sec
+[bwa_index] Pack forward-only FASTA... 0.00 sec
+[bwa_index] Construct SA from BWT and Occ... 0.12 sec
+[main] Version: 0.7.18-r1243-dirty
+[main] CMD: bwa index /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta
+[main] Real time: 0.642 sec; CPU: 0.386 sec
+[bwa_index] Pack FASTA... 0.01 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 0.28 seconds elapse.
+[bwa_index] Update BWT... 0.01 sec
+[bwa_index] Pack forward-only FASTA... 0.00 sec
+[bwa_index] Construct SA from BWT and Occ... 0.12 sec
+[main] Version: 0.7.18-r1243-dirty
+[main] CMD: bwa index /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta
+[main] Real time: 1.158 sec; CPU: 0.428 sec
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 1067714 sequences (160000067 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4904, 329519, 82, 4709)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (247, 420, 1001)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2509)
+[M::mem_pestat] mean and std.dev: (564.55, 497.33)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3263)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (263, 324, 402)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 680)
+[M::mem_pestat] mean and std.dev: (336.47, 96.90)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 819)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (104, 445, 2141)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6215)
+[M::mem_pestat] mean and std.dev: (1132.88, 1620.51)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 8252)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (247, 419, 1017)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2557)
+[M::mem_pestat] mean and std.dev: (574.54, 499.59)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3327)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::process] read 631502 sequences (94666914 bp)...
+[M::mem_process_seqs] Processed 1067714 reads in 140.746 CPU sec, 16.523 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (2935, 194792, 63, 2816)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (251, 417, 1064)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2690)
+[M::mem_pestat] mean and std.dev: (587.79, 538.78)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3503)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (263, 324, 402)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 680)
+[M::mem_pestat] mean and std.dev: (336.44, 96.82)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 819)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (104, 614, 2122)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 6158)
+[M::mem_pestat] mean and std.dev: (1298.10, 1726.86)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 8206)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (246, 412, 988)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2472)
+[M::mem_pestat] mean and std.dev: (558.54, 469.03)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3214)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 631502 reads in 86.484 CPU sec, 7.606 real sec
+[main] Version: 0.7.18-r1243-dirty
+[main] CMD: bwa mem -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+[main] Real time: 26.469 sec; CPU: 229.540 sec
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+Pilon version 1.24 Thu Jan 28 13:00:45 2021 -0500
+Exception in thread "main" htsjdk.samtools.SAMException: Sequence name 'scaffold1,936908,f20Z607258k3081a0m1815_r21z291604k29a0m-4_f17z38046' doesn't match regex: '[0-9A-Za-z!#$%&+./:;?@^_|~-][0-9A-Za-z!#$%&*+./:;=?@^_|~-]*' 
+	at htsjdk.samtools.SAMSequenceRecord.validateSequenceName(SAMSequenceRecord.java:210)
+	at htsjdk.samtools.SAMSequenceRecord.<init>(SAMSequenceRecord.java:93)
+	at htsjdk.samtools.SAMTextHeaderCodec.parseSQLine(SAMTextHeaderCodec.java:214)
+	at htsjdk.samtools.SAMTextHeaderCodec.decode(SAMTextHeaderCodec.java:113)
+	at htsjdk.samtools.BAMFileReader.readHeader(BAMFileReader.java:704)
+	at htsjdk.samtools.BAMFileReader.<init>(BAMFileReader.java:298)
+	at htsjdk.samtools.BAMFileReader.<init>(BAMFileReader.java:176)
+	at htsjdk.samtools.SamReaderFactory$SamReaderFactoryImpl.open(SamReaderFactory.java:396)
+	at htsjdk.samtools.SamReaderFactory$SamReaderFactoryImpl.open(SamReaderFactory.java:208)
+	at org.broadinstitute.pilon.BamFile.reader(BamFile.scala:51)
+	at org.broadinstitute.pilon.BamFile.<init>(BamFile.scala:57)
+	at org.broadinstitute.pilon.Pilon$.optionParse(Pilon.scala:165)
+	at org.broadinstitute.pilon.Pilon$.optionParse(Pilon.scala:172)
+	at org.broadinstitute.pilon.Pilon$.main(Pilon.scala:84)
+	at org.broadinstitute.pilon.Pilon.main(Pilon.scala)
+[Fri Mar  7 21:04:48 2025]
+Error in rule polish_scaffolded_with_short_reads:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/links_pilon.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/tgs_pilon.fasta
+    shell:
+        
+        # Create output directory
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/
+        
+        # Index the scaffolded assemblies
+        bwa index /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta
+        bwa index /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta
+        
+        # Map reads to LINKS scaffolds and polish
+        bwa mem -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz |             samtools sort -@ 16 -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//links_sorted.bam
+        samtools index -@ 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//links_sorted.bam
+        
+        pilon --genome /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta               --frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//links_sorted.bam               --output links_pilon               --outdir /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/               --threads 16               --changes --vcf
+              
+        # Map reads to TGS scaffolds and polish
+        bwa mem -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz |             samtools sort -@ 16 -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//tgs_sorted.bam
+        samtools index -@ 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//tgs_sorted.bam
+        
+        pilon --genome /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta               --frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//tgs_sorted.bam               --output tgs_pilon               --outdir /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/               --threads 16               --changes --vcf
+        
+        # Rename outputs to match expected paths
+        mv /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//links_pilon.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/links_pilon.fasta
+        mv /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//tgs_pilon.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/tgs_pilon.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-21: task 0: Exited with exit code 1
+[Fri Mar  7 21:04:48 2025]
+Error in rule polish_scaffolded_with_short_reads:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/links_pilon.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/tgs_pilon.fasta
+    shell:
+        
+        # Create output directory
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/
+        
+        # Index the scaffolded assemblies
+        bwa index /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta
+        bwa index /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta
+        
+        # Map reads to LINKS scaffolds and polish
+        bwa mem -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz |             samtools sort -@ 16 -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//links_sorted.bam
+        samtools index -@ 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//links_sorted.bam
+        
+        pilon --genome /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta               --frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//links_sorted.bam               --output links_pilon               --outdir /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/               --threads 16               --changes --vcf
+              
+        # Map reads to TGS scaffolds and polish
+        bwa mem -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz |             samtools sort -@ 16 -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//tgs_sorted.bam
+        samtools index -@ 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//tgs_sorted.bam
+        
+        pilon --genome /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/tgs_scaffolded.fasta               --frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//tgs_sorted.bam               --output tgs_pilon               --outdir /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/               --threads 16               --changes --vcf
+        
+        # Rename outputs to match expected paths
+        mv /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//links_pilon.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/links_pilon.fasta
+        mv /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi//tgs_pilon.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled/wRi/tgs_pilon.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

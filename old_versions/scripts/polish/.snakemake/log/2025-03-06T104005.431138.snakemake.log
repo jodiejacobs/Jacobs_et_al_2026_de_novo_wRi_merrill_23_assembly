@@ -1,0 +1,31 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: dadbb531-cee4-42fb-bb82-820dac60ee43
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                        count
+-----------------------  -------
+BUSCO                          1
+BUSCO_polished                 1
+align_short_reads              1
+all                            1
+assembly                       1
+collect_short_reads            1
+polish_with_short_reads        1
+separate_short_reads           1
+short_reads_bam2fastq          1
+trim_short_reads               1
+total                         10
+
+Select jobs to execute...
+InputFunctionException in rule collect_short_reads in file /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/Snakefile, line 136:
+Error:
+  WorkflowError:
+    Failed to evaluate resources value '48:00:00'.
+        String arguments may need additional quoting. E.g.: --default-resources "tmpdir='/home/user/tmp'" or --set-resources "somerule:someresource='--nice=100'". This also holds for setting resources inside of a profile, where you might have to enclose them in single and double quotes, i.e. someresource: "'--nice=100'".
+    SyntaxError: invalid syntax (<string>, line 1)
+Wildcards:
+
+Traceback:
+ (rule collect_short_reads, line 265, /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/Snakefile)

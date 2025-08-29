@@ -1,0 +1,166 @@
+host: phoenix-23.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:52:49 2025]
+rule scaffold_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+host: phoenix-23.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:52:50 2025]
+localrule scaffold_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=360
+
+
+Running Command: LINKS-make LINKS draft=/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta readsFof=/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/read_list.txt  k=19 t=5       b=/private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links     
+LINKS_CPP -f /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta -s /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/read_list.txt   -d 4000 -k 19 -t 5 -j 3 -l 5 -o 0 -e 0.1 -z 500 -p 0.001 -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links -v 0 -x 0
+
+LINKS running options:
+  -f /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta
+  -s /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/read_list.txt
+  -d 4000
+  -k 19
+  -j 3
+  -t 5
+  -o 0
+  -e 0.1
+  -l 5
+  -a 0.3
+  -z 500
+  -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links
+  -r 
+  -p 0.001
+  -x 0
+  -v 0
+
+STAGE: Bloom filter construction/read
+- Number of BF Elements: 1484169
+- Input file path: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links
+- Input file: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta
+- kmersize: 19
+- m: 21338776
+- fpr: 0.001
+- hashFct: 9
+- Filter output file : 19
+
+
+Writing Bloom filter to disk (/private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links.bloom)
+Bloom filter generated or loaded in: 0h 0m 0s 341ms
+
+STAGE: Reading sequence reads
+Reading: /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+Processed read count: 100000 - 200000 - 300000 - 400000 - 500000 - 600000 - 672771
+Read fasta stage completed in: 0h 0m 4s 948ms
+
+STAGE: Reading contigs
+Reading: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta
+Processed read count: 14
+Read contig stage completed in: 0h 0m 0s 937ms
+
+STAGE: Pairing contigs
+All contig pairs traversed
+
+===========PAIRED K-MER STATS===========
+At least one sequence/pair missing from contigs: 22
+Ambiguous kmer pairs (both kmers are ambiguous): 659369
+Assembled pairs: 0 (0 sequences)
+	Satisfied in distance/logic within contigs (i.e. -> <-, distance on target): 1209762
+	Unsatisfied in distance within contigs (i.e. distance out-of-bounds): 10351
+	Unsatisfied pairing logic within contigs (i.e. illogical pairing ->->, <-<- or <-->): 53866
+	---
+	Satisfied in distance/logic within a given contig pair (pre-scaffold): 12
+	Unsatisfied in distance within a given contig pair (i.e. calculated distances out-of-bounds): 6323
+	---
+Total satisfied: 1209774	unsatisfied: 70540
+============================================
+
+Pair contig stage completed in: 0h 0m 1s 99ms
+
+touch empty.fof
+LINKS.pl -f /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta -s empty.fof -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links -l 5 -a 0.3 -e 0.1 -z 500 -p 0.001 -v 0
+
+Running: /private/home/jomojaco/mambaforge/envs/snakemake_v8/bin/LINKS.pl [v1.8.6]
+-f /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta
+-m 0
+-d 4000
+-k 15
+-e 0.1
+-l 5
+-a 0.3
+-t 2
+-o 0
+-z 500
+-b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links
+-r 
+-p 0.001
+-x 0
+
+----------------- Verifying files -----------------
+
+Checking sequence target file /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta...ok
+
+
+Scaffolding mid-point files:
+/private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links.tigpair_checkpoint.tsv
+/private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links.simplepair_checkpoint.tsv
+detected; LINKS will skip contig pairing and use info from files instead : Mon Mar 10 02:52:58 PM PDT 2025
+
+Reading sequences from /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta : Mon Mar 10 02:52:58 PM PDT 2025
+
+done.
+Reading sequence pairs from /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links.tigpair_checkpoint.tsv : Mon Mar 10 02:52:58 PM PDT 2025
+
+done.
+Building scaffolds : Mon Mar 10 02:52:58 PM PDT 2025
+
+done.
+Building .gv graph : Mon Mar 10 02:52:59 PM PDT 2025
+
+
+=>Scaffolding ended : Mon Mar 10 02:52:59 PM PDT 2025
+Scaffolds layout in: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links.scaffolds
+Scaffold graph in: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links.gv
+
+
+=>Making FASTA file : Mon Mar 10 02:52:59 PM PDT 2025
+Scaffolds FASTA in : /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links.scaffolds.fa
+
+
+=>Wrote correspondence file tracking LINKScontigID <=> OriginalContigNames : /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links.assembly_correspondence.tsv
+
+Scaffolding executed normally Mon Mar 10 02:52:59 PM PDT 2025
+/private/home/jomojaco/mambaforge/envs/snakemake_v8/bin/LINKS.pl [v1.8.6] terminated successfully on Mon Mar 10 02:52:59 PM PDT 2025
+[Mon Mar 10 14:52:59 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.
+[Mon Mar 10 14:53:00 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.

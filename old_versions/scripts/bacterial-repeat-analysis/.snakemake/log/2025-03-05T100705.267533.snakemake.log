@@ -1,0 +1,7 @@
+host: emerald.prism
+Building DAG of jobs...
+MissingInputException in rule run_repeatmasker in file /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/Snakefile, line 42:
+Missing input files for rule run_repeatmasker:
+    output: results/repeat_analysis/repeatmasker/merrill-23.fasta.masked, results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/repeatmasker/merrill-23.fasta.tbl
+    affected files:
+        data/genomes/merrill-23.fasta

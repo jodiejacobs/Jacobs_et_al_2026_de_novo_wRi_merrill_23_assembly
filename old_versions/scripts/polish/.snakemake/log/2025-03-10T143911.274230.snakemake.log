@@ -1,0 +1,118 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: ae0f8073-2d32-4bcc-8ebe-239e6924b8c7
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Conda environments: ignored
+Job stats:
+job                                   count
+----------------------------------  -------
+all                                       1
+attempt_circularization                   1
+close_gaps                                1
+polish_nanopore_assembly                  1
+polish_scaffolded_with_short_reads        1
+scaffold_assembly                         1
+total                                     6
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:39:11 2025]
+rule polish_nanopore_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/anne_assembly/consensus_assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta
+    jobid: 5
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+No SLURM account given, trying to guess.
+Guessed SLURM account: standard
+Job 5 has been submitted with SLURM jobid 6863267 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_polish_nanopore_assembly/merrill_23_all_basecalled_AN/6863267.log).
+[Mon Mar 10 14:52:44 2025]
+Finished job 5.
+1 of 6 steps (17%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:52:44 2025]
+rule scaffold_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta
+    jobid: 4
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta; Input files updated by another job: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled_AN/wRi/polished.fasta
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+Job 4 has been submitted with SLURM jobid 6863349 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_scaffold_assembly/merrill_23_all_basecalled_AN/6863349.log).
+[Mon Mar 10 14:53:13 2025]
+Finished job 4.
+2 of 6 steps (33%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:53:13 2025]
+rule polish_scaffolded_with_short_reads:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+    jobid: 3
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta; Input files updated by another job: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+Job 3 has been submitted with SLURM jobid 6863352 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_polish_scaffolded_with_short_reads/merrill_23_all_basecalled_AN/6863352.log).
+[Mon Mar 10 14:55:44 2025]
+Finished job 3.
+3 of 6 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:55:44 2025]
+rule close_gaps:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled_AN/wRi/links_gapfilled.fasta
+    jobid: 2
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled_AN/wRi/links_gapfilled.fasta; Input files updated by another job: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 4
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=30
+
+Job 2 has been submitted with SLURM jobid 6863361 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_close_gaps/merrill_23_all_basecalled_AN/6863361.log).
+[Mon Mar 10 14:56:14 2025]
+Finished job 2.
+4 of 6 steps (67%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:56:14 2025]
+rule attempt_circularization:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled_AN/wRi/links_gapfilled.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled_AN/wRi_final_polished_circular.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled_AN/assembly_stats.txt
+    jobid: 1
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled_AN/wRi_final_polished_circular.fasta; Input files updated by another job: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled_AN/wRi/links_gapfilled.fasta
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 10
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=240
+
+Job 1 has been submitted with SLURM jobid 6863363 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_attempt_circularization/merrill_23_all_basecalled_AN/6863363.log).
+[Mon Mar 10 14:56:24 2025]
+Finished job 1.
+5 of 6 steps (83%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:56:24 2025]
+localrule all:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled_AN/wRi_final_polished_circular.fasta
+    jobid: 0
+    reason: Input files updated by another job: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled_AN/wRi_final_polished_circular.fasta
+    resources: mem_mb=1000000, mem_mib=953675, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=720
+
+[Mon Mar 10 14:56:24 2025]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2025-03-10T143911.274230.snakemake.log

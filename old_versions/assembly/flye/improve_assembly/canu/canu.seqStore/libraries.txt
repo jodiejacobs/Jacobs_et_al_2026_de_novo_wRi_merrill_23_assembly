@@ -1,0 +1,3 @@
+ID         technology  name
+---- ----------------  ------------------------------
+1            Nanopore  assembly

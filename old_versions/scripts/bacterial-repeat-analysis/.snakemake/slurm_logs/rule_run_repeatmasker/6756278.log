@@ -1,0 +1,80 @@
+host: phoenix-08.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=8000, mem_mib=7630, time=240
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar  5 11:07:01 2025]
+rule run_repeatmasker:
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/repeatmasker/merrill-23.fasta.masked, results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/repeatmasker/merrill-23.fasta.tbl
+    jobid: 0
+    reason: Forced execution
+    threads: 8
+    resources: mem_mb=8000, mem_mib=7630, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, time=240
+
+host: phoenix-08.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=8000, mem_mib=7630, disk_mb=1000, disk_mib=954, time=240
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar  5 11:07:03 2025]
+localrule run_repeatmasker:
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/repeatmasker/merrill-23.fasta.masked, results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/repeatmasker/merrill-23.fasta.tbl
+    jobid: 0
+    reason: Forced execution
+    threads: 8
+    resources: mem_mb=8000, mem_mib=7630, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, time=240
+
+Activating conda environment: repeatmasker
+RepeatMasker version 4.1.2-p1
+Search Engine: NCBI/RMBLAST [ 2.14.1+ ]
+The custom library (-lib) option may not be combined with the
+species (-species) option.
+
+[Wed Mar  5 11:07:06 2025]
+Error in rule run_repeatmasker:
+    jobid: 0
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/repeatmasker/merrill-23.fasta.masked, results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/repeatmasker/merrill-23.fasta.tbl
+    conda-env: repeatmasker
+    shell:
+        
+        # Optimized for bacterial genomes
+        # First, ensure RepBase is properly configured for bacteria
+        RepeatMasker -xsmall -pa 8 -species bacteria -noint             -lib $(dirname $(which RepeatMasker))/Libraries/RepeatMaskerLib.embl             -dir results/repeat_analysis/repeatmasker             data/genomes/merrill-23.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-08: task 0: Exited with exit code 1
+[Wed Mar  5 11:07:06 2025]
+Error in rule run_repeatmasker:
+    jobid: 0
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/repeatmasker/merrill-23.fasta.masked, results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/repeatmasker/merrill-23.fasta.tbl
+    conda-env: repeatmasker
+    shell:
+        
+        # Optimized for bacterial genomes
+        # First, ensure RepBase is properly configured for bacteria
+        RepeatMasker -xsmall -pa 8 -species bacteria -noint             -lib $(dirname $(which RepeatMasker))/Libraries/RepeatMaskerLib.embl             -dir results/repeat_analysis/repeatmasker             data/genomes/merrill-23.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

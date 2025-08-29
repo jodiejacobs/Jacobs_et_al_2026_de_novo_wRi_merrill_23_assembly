@@ -1,0 +1,8 @@
+name: red
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - red
+  - python=3.8

@@ -1,0 +1,73 @@
+host: phoenix-10.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Mar  6 15:43:28 2025]
+rule BUSCO_raw:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/short_summary.specific.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, runtime=60
+
+host: phoenix-10.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Mar  6 15:43:29 2025]
+localrule BUSCO_raw:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/short_summary.specific.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, runtime=60
+
+/usr/bin/bash: line 3: busco: command not found
+[Thu Mar  6 15:43:29 2025]
+Error in rule BUSCO_raw:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/short_summary.specific.fasta
+    shell:
+         
+            mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/
+            busco -i /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/ -l rickettsiales_odb10 -m genome --cpu 16
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-10: task 0: Exited with exit code 1
+[Thu Mar  6 15:43:29 2025]
+Error in rule BUSCO_raw:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/short_summary.specific.fasta
+    shell:
+         
+            mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/
+            busco -i /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/ -l rickettsiales_odb10 -m genome --cpu 16
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

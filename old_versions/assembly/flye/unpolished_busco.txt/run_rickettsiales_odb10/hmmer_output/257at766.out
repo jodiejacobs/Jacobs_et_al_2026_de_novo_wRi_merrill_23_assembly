@@ -1,0 +1,23 @@
+#                                                                                --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name            accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#    ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_8:690395-692233|+ -            613 257at766             -            501  1.1e-260  861.8  12.1   1   1  7.5e-262  1.5e-259  858.1  12.1    47   501   105   593    30   593 0.93 contig_8_680 # 690395 # 692233 # 1 # ID=19_680;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.372
+contig_8:259645-260742|- -            366 257at766             -            501   1.4e-59  198.4   0.0   1   1   8.4e-62   1.7e-59  198.2   0.0    49   337    49   353     2   362 0.80 contig_8_257 # 259645 # 260742 # -1 # ID=19_257;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.360
+contig_8:273987-274718|+ -            244 257at766             -            501   1.2e-31  106.3   0.1   1   1   7.5e-34   1.5e-31  106.0   0.1   131   310     3   178     1   193 0.86 contig_8_271 # 273987 # 274718 # 1 # ID=19_271;partial=00;start_type=TTG;rbs_motif=AGGA;rbs_spacer=5-10bp;gc_cont=0.339
+contig_8:53958-55235|+   -            426 257at766             -            501   1.1e-08   30.6   0.0   1   1   9.1e-11   1.8e-08   29.9   0.0   126   199   117   196    79   221 0.80 contig_8_64 # 53958 # 55235 # 1 # ID=19_64;partial=00;start_type=ATG;rbs_motif=GGA/GAG/AGG;rbs_spacer=5-10bp;gc_cont=0.367
+contig_8:55251-57704|+   -            818 257at766             -            501   3.4e-07   25.6   0.5   1   3   7.5e-09   1.5e-06   23.5   0.0    89   156   329   393   313   447 0.68 contig_8_65 # 55251 # 57704 # 1 # ID=19_65;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.363
+contig_8:55251-57704|+   -            818 257at766             -            501   3.4e-07   25.6   0.5   2   3      0.27        55   -1.4   0.0   451   484   556   589   551   593 0.83 contig_8_65 # 55251 # 57704 # 1 # ID=19_65;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.363
+contig_8:55251-57704|+   -            818 257at766             -            501   3.4e-07   25.6   0.5   3   3       1.2   2.4e+02   -3.5   0.0   227   249   763   785   761   787 0.90 contig_8_65 # 55251 # 57704 # 1 # ID=19_65;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.363
+contig_8:757236-758726|- -            497 257at766             -            501   5.2e-07   25.1   0.1   1   2   7.1e-09   1.4e-06   23.6   0.0   123   178   109   166    83   173 0.91 contig_8_742 # 757236 # 758726 # -1 # ID=19_742;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.371
+contig_8:757236-758726|- -            497 257at766             -            501   5.2e-07   25.1   0.1   2   2      0.99     2e+02   -3.3   0.0   185   196   305   316   302   329 0.79 contig_8_742 # 757236 # 758726 # -1 # ID=19_742;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.371
+contig_8:635509-636483|+ -            325 257at766             -            501   0.00098   14.2   0.0   1   1   7.4e-06    0.0015   13.7   0.0   126   157    53    84    20   117 0.84 contig_8_620 # 635509 # 636483 # 1 # ID=19_620;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.389
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/257at766.hmm
+# Target file:     private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/run_rickettsiales_odb10/hmmer_output/257at766.out --cpu 1 /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/257at766.hmm private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie
+# Date:            Fri Jan 17 16:13:38 2025
+# [ok]

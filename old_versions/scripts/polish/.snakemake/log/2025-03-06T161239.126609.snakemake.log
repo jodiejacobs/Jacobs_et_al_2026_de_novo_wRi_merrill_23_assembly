@@ -1,0 +1,125 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: cc57f28e-a640-4aff-885c-a011ef35242c
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Conda environments: ignored
+Job stats:
+job                                   count
+----------------------------------  -------
+BUSCO_polished                            1
+BUSCO_raw                                 1
+all                                       1
+attempt_circularization                   1
+close_gaps                                1
+polish_scaffolded_with_short_reads        1
+scaffold_assembly                         1
+total                                     7
+
+Select jobs to execute...
+Execute 3 jobs...
+
+[Thu Mar  6 16:12:40 2025]
+rule BUSCO_raw:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/short_summary.specific.fasta
+    jobid: 7
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/short_summary.specific.fasta
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=60
+
+No SLURM account given, trying to guess.
+Guessed SLURM account: standard
+Job 7 has been submitted with SLURM jobid 6761797 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_BUSCO_raw/merrill_23_all_basecalled/6761797.log).
+
+[Thu Mar  6 16:12:40 2025]
+rule scaffold_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+    jobid: 11
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=60
+
+Job 11 has been submitted with SLURM jobid 6761798 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_scaffold_assembly/merrill_23_all_basecalled/6761798.log).
+
+[Thu Mar  6 16:12:40 2025]
+rule BUSCO_polished:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/polished/wRi/short_summary.specific.fasta
+    jobid: 1
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/polished/wRi/short_summary.specific.fasta
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=60
+
+Job 1 has been submitted with SLURM jobid 6761799 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_BUSCO_polished/merrill_23_all_basecalled/6761799.log).
+[Thu Mar  6 16:13:20 2025]
+Error in rule BUSCO_raw:
+    message: SLURM-job '6761797' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 7
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/short_summary.specific.fasta
+    log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_BUSCO_raw/merrill_23_all_basecalled/6761797.log (check log file(s) for error details)
+    conda-env: busco
+    shell:
+         
+            mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/
+            busco -i /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/ -l rickettsiales_odb10 -m genome --cpu 16
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 6761797
+
+[Thu Mar  6 16:13:20 2025]
+Error in rule scaffold_assembly:
+    message: SLURM-job '6761798' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 11
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+    log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_scaffold_assembly/merrill_23_all_basecalled/6761798.log (check log file(s) for error details)
+    shell:
+        
+        # Create output directory
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/
+        
+        # Extract reads from gzipped file
+        zcat /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq
+        
+        # Approach 1: LINKS scaffolder
+        LINKS -f /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta -s /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links -t 5 -k 19
+        
+        # Move the final LINKS output to expected location
+        cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links.scaffolds.fa /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta
+        
+        # Approach 2: SSPACE-LongRead
+        perl SSPACE-LongRead.pl -c /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace
+        
+        # Move the SSPACE output to expected location
+        cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace.final.scaffolds.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 6761798
+
+[Thu Mar  6 16:13:20 2025]
+Error in rule BUSCO_polished:
+    message: SLURM-job '6761799' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/polished/wRi/short_summary.specific.fasta
+    log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_BUSCO_polished/merrill_23_all_basecalled/6761799.log (check log file(s) for error details)
+    conda-env: busco
+    shell:
+         
+            mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/polished/wRi/
+            busco -i /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/polished/wRi/ -l rickettsiales_odb10 -m genome --cpu 16
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 6761799
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-06T161239.126609.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

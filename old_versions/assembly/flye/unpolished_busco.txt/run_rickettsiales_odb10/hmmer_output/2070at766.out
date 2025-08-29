@@ -1,0 +1,16 @@
+#                                                                                 --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name             accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#     ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_18:206968-207945|+ -            326 2070at766            -            261  5.9e-104  343.6   1.1   1   1  1.8e-106  8.4e-104  343.1   1.1     8   257    36   316    29   322 0.88 contig_18_200 # 206968 # 207945 # 1 # ID=5_200;partial=00;start_type=ATG;rbs_motif=3Base/5BMM;rbs_spacer=13-15bp;gc_cont=0.348
+contig_14:1867-2658|+     -            264 2070at766            -            261   1.3e-39  132.7   2.0   1   1   3.8e-42   1.8e-39  132.3   2.0    10   194    28   233    21   240 0.86 contig_14_3 # 1867 # 2658 # 1 # ID=3_3;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.374
+contig_8:753952-754743|+  -            264 2070at766            -            261   1.3e-39  132.7   2.0   1   1   3.8e-42   1.8e-39  132.3   2.0    10   194    28   233    21   240 0.86 contig_8_739 # 753952 # 754743 # 1 # ID=19_739;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.374
+#
+# Program:         hmmsearch
+# Version:         3.1b2 (February 2015)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/2070at766.hmm
+# Target file:     private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/run_rickettsiales_odb10/hmmer_output/2070at766.out --cpu 1 /private/groups/russelllab/jodie/busco_downloads/lineages/rickettsiales_odb10/hmms/2070at766.hmm private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/unpolished_busco.txt/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie
+# Date:            Fri Jan 17 16:13:37 2025
+# [ok]

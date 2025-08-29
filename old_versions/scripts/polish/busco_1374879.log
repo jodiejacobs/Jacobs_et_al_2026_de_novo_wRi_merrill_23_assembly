@@ -1,0 +1,27 @@
+2025-03-07 14:35:14 DEBUG:busco.run_BUSCO	Command line: /private/home/jomojaco/mambaforge/envs/medaka/bin/busco -i /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta -o //private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi/ -l rickettsiales_odb10 -m genome --cpu 16
+2025-03-07 14:35:14 INFO:busco.run_BUSCO	***** Start a BUSCO v5.8.2 analysis, current time: 03/07/2025 14:35:14 *****
+2025-03-07 14:35:14 DEBUG:busco.ConfigManager	Getting config file
+2025-03-07 14:35:14 INFO:busco.ConfigManager	Configuring BUSCO with local environment
+2025-03-07 14:35:14 INFO:busco.BuscoConfig	Running genome mode
+2025-03-07 14:35:14 ERROR:busco.BuscoRunner	A run with the name private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi already exists...
+	If you are sure you wish to overwrite existing files, please use the -f (force) option
+2025-03-07 14:35:14 DEBUG:busco.BuscoRunner	A run with the name private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi already exists...
+	If you are sure you wish to overwrite existing files, please use the -f (force) option
+Traceback (most recent call last):
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/busco/run_BUSCO.py", line 68, in run
+    self.load_config()
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/busco/run_BUSCO.py", line 60, in load_config
+    self.config_manager.load_busco_config_main()
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/busco/BuscoLogger.py", line 62, in wrapped_func
+    self.retval = func(*args, **kwargs)
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/busco/ConfigManager.py", line 63, in load_busco_config_main
+    self.config_main.validate()
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/busco/BuscoConfig.py", line 658, in validate
+    self._check_no_previous_run()
+  File "/private/home/jomojaco/mambaforge/envs/medaka/lib/python3.8/site-packages/busco/BuscoConfig.py", line 863, in _check_no_previous_run
+    raise BatchFatalError(
+busco.Exceptions.BatchFatalError: A run with the name private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/merrill_23_all_basecalled/raw/wRi already exists...
+	If you are sure you wish to overwrite existing files, please use the -f (force) option
+2025-03-07 14:35:14 ERROR:busco.BuscoRunner	BUSCO analysis failed!
+2025-03-07 14:35:14 ERROR:busco.BuscoRunner	Check the logs, read the user guide (https://busco.ezlab.org/busco_userguide.html), and check the BUSCO issue board on https://gitlab.com/ezlab/busco/issues
+

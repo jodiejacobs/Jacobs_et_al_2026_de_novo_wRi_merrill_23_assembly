@@ -1,0 +1,36 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: 01239c7f-5cdf-4753-9196-a3ed2f9583ab
+Using shell: /usr/bin/bash
+Provided remote nodes: 100
+Job stats:
+job                        count
+-----------------------  -------
+BUSCO                          1
+BUSCO_polished                 1
+align_short_reads              1
+all                            1
+assembly                       1
+collect_short_reads            1
+polish_with_short_reads        1
+separate_short_reads           1
+short_reads_bam2fastq          1
+trim_short_reads               1
+total                         10
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Mar  6 10:37:08 2025]
+rule collect_short_reads:
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R2.fastq.gz
+    jobid: 12
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R2.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R1.fastq.gz
+    threads: 4
+    resources: tmpdir=<TBD>, mem_mb=10000, mem_mib=9537, runtime=120
+
+No SLURM account given, trying to guess.
+Unable to guess SLURM account. Trying to proceed without.
+WorkflowError:
+SLURM job submission failed. The error message was sbatch: error: Batch job submission failed: Requested time limit is invalid (missing or exceeds some limit)
+

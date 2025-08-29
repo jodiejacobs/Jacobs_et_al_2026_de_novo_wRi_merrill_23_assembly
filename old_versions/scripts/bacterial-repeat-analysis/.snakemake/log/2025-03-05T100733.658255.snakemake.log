@@ -1,0 +1,6 @@
+host: emerald.prism
+Building DAG of jobs...
+MissingInputException in rule all in file /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/Snakefile, line 24:
+Missing input files for rule all:
+    affected files:
+        results/repeat_analysis/plots/genome_with_repeats_density.pdf

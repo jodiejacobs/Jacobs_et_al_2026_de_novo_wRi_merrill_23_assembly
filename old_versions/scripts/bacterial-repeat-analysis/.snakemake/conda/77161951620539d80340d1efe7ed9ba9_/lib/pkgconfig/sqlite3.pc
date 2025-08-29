@@ -1,0 +1,13 @@
+# Package Information for pkg-config
+
+prefix=/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/conda/77161951620539d80340d1efe7ed9ba9_
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: SQLite
+Description: SQL database engine
+Version: 3.46.0
+Libs: -L${libdir} -lsqlite3
+Libs.private: -lz -lm -ldl -lpthread 
+Cflags: -I${includedir}

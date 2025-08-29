@@ -1,0 +1,46 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: 8637230b-3568-49aa-98d8-975dd4993164
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Conda environments: ignored
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+attempt_circularization        1
+total                          2
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 13:37:31 2025]
+rule attempt_circularization:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+    jobid: 1
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 10
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=240
+
+No SLURM account given, trying to guess.
+Guessed SLURM account: standard
+Job 1 has been submitted with SLURM jobid 6862726 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_attempt_circularization/merrill_23_all_basecalled/6862726.log).
+[Mon Mar 10 13:38:20 2025]
+Finished job 1.
+1 of 2 steps (50%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 13:38:20 2025]
+localrule all:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta
+    jobid: 0
+    reason: Input files updated by another job: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta
+    resources: mem_mb=1000000, mem_mib=953675, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=720
+
+[Mon Mar 10 13:38:20 2025]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2025-03-10T133729.386379.snakemake.log

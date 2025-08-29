@@ -1,0 +1,81 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: f64285bb-8bd6-403f-9095-dad1bb1b6d8b
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                        count
+-----------------------  -------
+BUSCO                          1
+BUSCO_polished                 1
+align_short_reads              1
+all                            1
+assembly                       1
+polish_with_short_reads        1
+separate_short_reads           1
+short_reads_bam2fastq          1
+trim_short_reads               1
+total                          9
+
+Select jobs to execute...
+Execute 2 jobs...
+
+[Thu Mar  6 10:55:23 2025]
+rule assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.Dsim.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta
+    jobid: 2
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/wRi/assembly.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merrill_23_all_basecalled/Dsim/assembly.fasta
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=9969, disk_mib=9508, tmpdir=<TBD>, slurm_partition=medium, runtime=200
+
+No SLURM account given, trying to guess.
+Guessed SLURM account: standard
+Job 2 has been submitted with SLURM jobid 6758467 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_assembly/merrill_23_all_basecalled/6758467.log).
+
+[Thu Mar  6 10:55:24 2025]
+rule trim_short_reads:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz
+    jobid: 11
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz
+    threads: 8
+    resources: mem_mb=20000, mem_mib=19074, disk_mb=8508, disk_mib=8114, tmpdir=<TBD>, slurm_partition=medium, runtime=180
+
+Job 11 has been submitted with SLURM jobid 6758468 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_trim_short_reads/6758468.log).
+[Thu Mar  6 11:11:06 2025]
+Finished job 11.
+1 of 9 steps (11%) done
+Select jobs to execute...
+Execute 1 jobs...
+
+[Thu Mar  6 11:11:06 2025]
+rule align_short_reads:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz, /private/groups/russelllab/jodie/reference_genomes/fastas/Drosophila_simulans_ref/data/GCF_016746395.2/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam
+    jobid: 10
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam; Input files updated by another job: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz
+    threads: 16
+    resources: mem_mb=40000, mem_mib=38147, disk_mb=6856, disk_mib=6539, tmpdir=<TBD>, slurm_partition=medium, runtime=240
+
+Job 10 has been submitted with SLURM jobid 6758481 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_align_short_reads/6758481.log).
+[Thu Mar  6 11:11:16 2025]
+Error in rule align_short_reads:
+    message: SLURM-job '6758481' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 10
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz, /private/groups/russelllab/jodie/reference_genomes/fastas/Drosophila_simulans_ref/data/GCF_016746395.2/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam
+    log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_align_short_reads/6758481.log (check log file(s) for error details)
+    shell:
+        
+        # Align to Drosophila simulans reference
+        bwa mem -t 16 /private/groups/russelllab/jodie/reference_genomes/fastas/Drosophila_simulans_ref/data/GCF_016746395.2/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz |             samtools view -@ 16 -b |             samtools sort -@ 16 -o /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam
+        
+        # Index the BAM file
+        samtools index -@ 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 6758481
+
+Terminating processes on user request, this might take some time.

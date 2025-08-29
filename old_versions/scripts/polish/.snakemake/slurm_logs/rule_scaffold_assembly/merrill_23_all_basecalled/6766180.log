@@ -1,0 +1,150 @@
+host: phoenix-24.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Mar  7 14:39:39 2025]
+rule scaffold_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=60
+
+host: phoenix-24.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Mar  7 14:39:40 2025]
+localrule scaffold_assembly:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=60
+
+
+Running Command: LINKS-make LINKS draft=/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta readsFof=/private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq  k=19 t=5       b=/private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links     
+LINKS_CPP -f /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta -s /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq   -d 4000 -k 19 -t 5 -j 3 -l 5 -o 0 -e 0.1 -z 500 -p 0.001 -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links -v 0 -x 0
+
+LINKS running options:
+  -f /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta
+  -s /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq
+  -d 4000
+  -k 19
+  -j 3
+  -t 5
+  -o 0
+  -e 0.1
+  -l 5
+  -a 0.3
+  -z 500
+  -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links
+  -r 
+  -p 0.001
+  -x 0
+  -v 0
+
+cat: @9b884c85-b3fa-4d41-9963-ef3c9143f18f: No such file or directory
+STAGE: Bloom filter construction/read
+- Number of BF Elements: 1424239
+- Input file path: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links
+- Input file: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta
+- kmersize: 19
+- m: 20477128
+- fpr: 0.001
+- hashFct: 9
+- Filter output file : 19
+
+
+Writing Bloom filter to disk (/private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links.bloom)
+Bloom filter generated or loaded in: 0h 0m 0s 442ms
+
+STAGE: Reading sequence reads
+[2025-03-07 14:39:49][33m[WARNING] [0m@9b884c85-b3fa-4d41-9963-ef3c9143f18f is empty.
+Reading: @9b884c85-b3fa-4d41-9963-ef3c9143f18f
+[2025-03-07 14:39:49][31m[ERROR] [0mA helper process has finished unsuccessfully:
+PID: 3140979
+Outcome: exited with status 1
+[2025-03-07 14:39:49][31m[ERROR] [0mProcess pipeline: Communication failure.
+[2025-03-07 14:39:49][31m[ERROR] [0mProcess pipeline: Spawner process failed.
+make: *** [/private/home/jomojaco/mambaforge/envs/snakemake_v8/bin/LINKS-make-real:122: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links.tigpair_checkpoint.tsv] Error 1
+[Fri Mar  7 14:39:49 2025]
+Error in rule scaffold_assembly:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+    shell:
+        
+        # Create output directory
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/
+        
+        # Extract reads from gzipped file
+        zcat /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq
+        
+        # Approach 1: LINKS scaffolder
+        LINKS -f /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta -s /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links -t 5 -k 19
+        
+        # Move the final LINKS output to expected location
+        cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links.scaffolds.fa /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta
+        
+        # Approach 2: SSPACE-LongRead
+        perl SSPACE-LongRead.pl -c /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace
+        
+        # Move the SSPACE output to expected location
+        cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace.final.scaffolds.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-24: task 0: Exited with exit code 1
+[Fri Mar  7 14:39:49 2025]
+Error in rule scaffold_assembly:
+    jobid: 0
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+    shell:
+        
+        # Create output directory
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/
+        
+        # Extract reads from gzipped file
+        zcat /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz > /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq
+        
+        # Approach 1: LINKS scaffolder
+        LINKS -f /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta -s /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links -t 5 -k 19
+        
+        # Move the final LINKS output to expected location
+        cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links.scaffolds.fa /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/links_scaffolded.fasta
+        
+        # Approach 2: SSPACE-LongRead
+        perl SSPACE-LongRead.pl -c /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/merrill_23_all_basecalled/wRi/polished.fasta -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq -b /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace
+        
+        # Move the SSPACE output to expected location
+        cp /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace.final.scaffolds.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi/sspace_scaffolded.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

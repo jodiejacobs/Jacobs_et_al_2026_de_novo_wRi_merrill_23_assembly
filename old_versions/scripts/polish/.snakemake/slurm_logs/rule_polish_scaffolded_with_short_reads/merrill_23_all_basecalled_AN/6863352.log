@@ -1,0 +1,406 @@
+host: phoenix-23.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:53:19 2025]
+rule polish_scaffolded_with_short_reads:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+host: phoenix-23.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:53:20 2025]
+localrule polish_scaffolded_with_short_reads:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=360
+
+[bwa_index] Pack FASTA... 0.01 sec
+[bwa_index] Construct BWT for the packed sequence...
+[bwa_index] 0.19 seconds elapse.
+[bwa_index] Update BWT... 0.00 sec
+[bwa_index] Pack forward-only FASTA... 0.00 sec
+[bwa_index] Construct SA from BWT and Occ... 0.07 sec
+[main] Version: 0.7.18-r1243-dirty
+[main] CMD: bwa index /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta
+[main] Real time: 0.497 sec; CPU: 0.273 sec
+[M::bwa_idx_load_from_disk] read 0 ALT contigs
+[M::process] read 1067714 sequences (160000067 bp)...
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (4530, 310238, 213, 4388)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (249, 429, 1036)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2610)
+[M::mem_pestat] mean and std.dev: (579.43, 516.43)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3397)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (263, 324, 402)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 680)
+[M::mem_pestat] mean and std.dev: (336.10, 96.81)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 819)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (1358, 5761, 5872)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 14900)
+[M::mem_pestat] mean and std.dev: (4171.20, 2538.85)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 19414)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (248, 428, 1039)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2621)
+[M::mem_pestat] mean and std.dev: (588.76, 517.75)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3412)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::process] read 631502 sequences (94666914 bp)...
+[M::mem_process_seqs] Processed 1067714 reads in 94.219 CPU sec, 10.332 real sec
+[M::mem_pestat] # candidate unique pairs for (FF, FR, RF, RR): (2676, 183272, 137, 2640)
+[M::mem_pestat] analyzing insert size distribution for orientation FF...
+[M::mem_pestat] (25, 50, 75) percentile: (249, 429, 1097)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2793)
+[M::mem_pestat] mean and std.dev: (607.75, 561.00)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3641)
+[M::mem_pestat] analyzing insert size distribution for orientation FR...
+[M::mem_pestat] (25, 50, 75) percentile: (263, 324, 402)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 680)
+[M::mem_pestat] mean and std.dev: (336.11, 96.71)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 819)
+[M::mem_pestat] analyzing insert size distribution for orientation RF...
+[M::mem_pestat] (25, 50, 75) percentile: (856, 5728, 5865)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 15883)
+[M::mem_pestat] mean and std.dev: (3995.04, 2589.64)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 20892)
+[M::mem_pestat] analyzing insert size distribution for orientation RR...
+[M::mem_pestat] (25, 50, 75) percentile: (247, 424, 1025)
+[M::mem_pestat] low and high boundaries for computing mean and std.dev: (1, 2581)
+[M::mem_pestat] mean and std.dev: (572.00, 484.27)
+[M::mem_pestat] low and high boundaries for proper pairs: (1, 3359)
+[M::mem_pestat] skip orientation FF
+[M::mem_pestat] skip orientation RF
+[M::mem_pestat] skip orientation RR
+[M::mem_process_seqs] Processed 631502 reads in 56.902 CPU sec, 5.005 real sec
+[main] Version: 0.7.18-r1243-dirty
+[main] CMD: bwa mem -t 16 /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+[main] Real time: 17.292 sec; CPU: 152.743 sec
+[bam_sort_core] merging from 0 files and 16 in-memory blocks...
+Pilon version 1.24 Thu Jan 28 13:00:45 2021 -0500
+--threads argument no longer supported; ignoring!
+Genome: /private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled_AN/wRi/links_scaffolded_renamed.fasta
+Fixing snps, indels, gaps, local
+Input genome size: 1483809
+Scanning BAMs
+/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: 1731900 reads, 0 filtered, 1509543 mapped, 1421885 proper, 67830 stray, FR 100% 339+/-102, max 1733
+Processing wRi_scaffold_1:1-941752
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 119
+Total Reads: 926237, Coverage: 119, minDepth: 12
+Confirmed 939564 of 941752 bases (99.77%)
+Corrected 0 snps; 0 ambiguous bases; corrected 2 small insertions totaling 4 bases, 338 small deletions totaling 462 bases
+Large collapsed region: wRi_scaffold_1:52137-91487 size 39351
+Large collapsed region: wRi_scaffold_1:818736-840060 size 21325
+# Attempting to fix local continuity breaks
+# fix break: wRi_scaffold_1:33974-34015 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:35488-35520 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:40482-40517 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:40985-41018 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:43480-43524 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:44488-44517 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:45973-46012 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:46978-47022 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:48496 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:51478-51515 0 -0 +0 NoSolution
+fix break: wRi_scaffold_1:55190-55218 55000 -500 +498 BreakFix
+# fix break: wRi_scaffold_1:92952-93000 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:94955-95003 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:99470-99497 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:101471-101510 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:103467-103517 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:104960-105004 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:114311-114347 0 -0 +0 NoSolution TandemRepeat 678
+# fix break: wRi_scaffold_1:116190-116441 0 -0 +0 NoSolution TandemRepeat 678
+# fix break: wRi_scaffold_1:123988-124043 0 -0 +0 NoSolution TandemRepeat 150
+# fix break: wRi_scaffold_1:125177-125200 0 -0 +0 NoSolution TandemRepeat 150
+# fix break: wRi_scaffold_1:126423-126940 0 -0 +0 NoSolution TandemRepeat 150
+# fix break: wRi_scaffold_1:157759-157769 0 -0 +0 NoSolution
+fix break: wRi_scaffold_1:194463-194541 194463 -80 +0 BreakFix
+# fix break: wRi_scaffold_1:223850-223917 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:224516-224565 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:307508-307683 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:368376 0 -0 +0 NoSolution TandemRepeat 335
+# fix break: wRi_scaffold_1:369504-369527 0 -0 +0 NoSolution TandemRepeat 3846
+# fix break: wRi_scaffold_1:371152-371703 0 -0 +0 NoSolution TandemRepeat 3846
+# fix break: wRi_scaffold_1:394552 0 -0 +0 NoSolution TandemRepeat 1341
+# fix break: wRi_scaffold_1:394780-394994 0 -0 +0 NoSolution TandemRepeat 1341
+# fix break: wRi_scaffold_1:396306-396565 0 -0 +0 NoSolution TandemRepeat 1341
+# fix break: wRi_scaffold_1:438794-438797 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:472617-473009 0 -0 +0 NoSolution TandemRepeat 81
+# fix break: wRi_scaffold_1:474057 0 -0 +0 NoSolution TandemRepeat 81
+# fix break: wRi_scaffold_1:476446-476663 0 -0 +0 NoSolution TandemRepeat 81
+# fix break: wRi_scaffold_1:491036-491154 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:509930-509962 0 -0 +0 NoSolution TandemRepeat 747
+# fix break: wRi_scaffold_1:510202-510255 0 -0 +0 NoSolution TandemRepeat 747
+# fix break: wRi_scaffold_1:520147-520383 0 -0 +0 NoSolution TandemRepeat 76
+# fix break: wRi_scaffold_1:522007-522030 0 -0 +0 NoSolution TandemRepeat 76
+# fix break: wRi_scaffold_1:547486-547948 0 -0 +0 NoSolution TandemRepeat 2777
+# fix break: wRi_scaffold_1:548316-548945 0 -0 +0 NoSolution TandemRepeat 2777
+# fix break: wRi_scaffold_1:559788-559918 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:597102-597453 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:600407-600503 0 -0 +0 NoSolution
+fix break: wRi_scaffold_1:609545-609685 609453 -507 +500 BreakFix
+# fix break: wRi_scaffold_1:646400-646509 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:665889-665989 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:687425-687456 0 -0 +0 NoSolution
+fix break: wRi_scaffold_1:694949-695214 694954 -502 +500 BreakFix
+fix break: wRi_scaffold_1:722858-723233 722961 -503 +500 BreakFix
+# fix break: wRi_scaffold_1:724225-724508 0 -0 +0 NoSolution TandemRepeat 3440
+# fix break: wRi_scaffold_1:725792-725867 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:737929-737972 0 -0 +0 NoSolution TandemRepeat 255
+# fix break: wRi_scaffold_1:739975-739976 0 -0 +0 NoSolution TandemRepeat 255
+# fix break: wRi_scaffold_1:762616-763372 0 -0 +0 NoSolution TandemRepeat 372
+# fix break: wRi_scaffold_1:792484-792601 0 -0 +0 NoSolution TandemRepeat 630
+# fix break: wRi_scaffold_1:808576-808625 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:811350-811746 0 -0 +0 NoSolution TandemRepeat 400
+# fix break: wRi_scaffold_1:811950-812432 0 -0 +0 NoSolution TandemRepeat 400
+# fix break: wRi_scaffold_1:812644-812654 0 -0 +0 NoSolution TandemRepeat 400
+# fix break: wRi_scaffold_1:821670-821680 0 -0 +0 NoSolution TandemRepeat 72
+# fix break: wRi_scaffold_1:822919-822947 0 -0 +0 NoSolution TandemRepeat 72
+# fix break: wRi_scaffold_1:824420-824475 0 -0 +0 NoSolution TandemRepeat 141
+# fix break: wRi_scaffold_1:825876-825885 0 -0 +0 NoSolution TandemRepeat 141
+# fix break: wRi_scaffold_1:826463-826507 0 -0 +0 NoSolution TandemRepeat 141
+# fix break: wRi_scaffold_1:826836-827061 0 -0 +0 NoSolution TandemRepeat 141
+# fix break: wRi_scaffold_1:827363-827372 0 -0 +0 NoSolution TandemRepeat 80
+# fix break: wRi_scaffold_1:827663-827902 0 -0 +0 NoSolution TandemRepeat 80
+# fix break: wRi_scaffold_1:828276-828684 0 -0 +0 NoSolution TandemRepeat 80
+# fix break: wRi_scaffold_1:829002-829621 0 -0 +0 NoSolution TandemRepeat 80
+# fix break: wRi_scaffold_1:844673-844734 0 -0 +0 NoSolution TandemRepeat 2008
+# fix break: wRi_scaffold_1:861100-861121 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_1:907118 0 -0 +0 NoSolution TandemRepeat 103
+# fix break: wRi_scaffold_1:928291-929179 0 -0 +0 NoSolution TandemRepeat 266
+# fix break: wRi_scaffold_1:930123-930124 0 -0 +0 NoSolution TandemRepeat 266
+fix break: wRi_scaffold_1:939290-939739 939502 -26 +26 BreakFix
+# fix break: wRi_scaffold_1:939946-940710 0 -0 +0 NoSolution TandemRepeat 3273
+wRi_scaffold_1:1-941752 log:
+Finished processing wRi_scaffold_1:1-941752
+Processing wRi_scaffold_2:1-476124
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 119
+Total Reads: 469227, Coverage: 119, minDepth: 12
+Confirmed 473177 of 476124 bases (99.38%)
+Corrected 3 snps; 0 ambiguous bases; corrected 1 small insertions totaling 1 bases, 166 small deletions totaling 229 bases
+# Attempting to fix local continuity breaks
+# fix break: wRi_scaffold_2:7480-7517 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:8989-9015 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:11435-11514 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:14971-15029 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:17456-17547 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:35754-36383 0 -0 +0 NoSolution TandemRepeat 99
+# fix break: wRi_scaffold_2:39483-39552 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:58964-59051 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:63248-63426 0 -0 +0 NoSolution TandemRepeat 499
+# fix break: wRi_scaffold_2:90233-90253 0 -0 +0 NoSolution TandemRepeat 112
+# fix break: wRi_scaffold_2:111037-111039 0 -0 +0 NoSolution TandemRepeat 140
+# fix break: wRi_scaffold_2:111477-111586 0 -0 +0 NoSolution TandemRepeat 140
+# fix break: wRi_scaffold_2:113130-113182 0 -0 +0 NoSolution TandemRepeat 140
+# fix break: wRi_scaffold_2:145502-145566 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:229312-229493 0 -0 +0 NoSolution TandemRepeat 3343
+# fix break: wRi_scaffold_2:229756-229890 0 -0 +0 NoSolution TandemRepeat 3343
+# fix break: wRi_scaffold_2:231281-231464 0 -0 +0 NoSolution TandemRepeat 3343
+# fix break: wRi_scaffold_2:294349-294667 0 -0 +0 NoSolution TandemRepeat 213
+# fix break: wRi_scaffold_2:295473-295687 0 -0 +0 NoSolution TandemRepeat 213
+# fix break: wRi_scaffold_2:296550-296568 0 -0 +0 NoSolution TandemRepeat 213
+# fix break: wRi_scaffold_2:299820-300021 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:301519 0 -0 +0 NoSolution TandemRepeat 5265
+# fix break: wRi_scaffold_2:303326-303466 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:308514-308538 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:347439-348452 0 -0 +0 NoSolution TandemRepeat 70
+# fix break: wRi_scaffold_2:350514-350539 0 -0 +0 NoSolution
+fix break: wRi_scaffold_2:379326-379650 379041 -501 +499 BreakFix
+# fix break: wRi_scaffold_2:418696-419035 0 -0 +0 NoSolution TandemRepeat 93
+# fix break: wRi_scaffold_2:419275-420231 0 -0 +0 NoSolution TandemRepeat 93
+# fix break: wRi_scaffold_2:420501 0 -0 +0 NoSolution TandemRepeat 93
+# fix break: wRi_scaffold_2:421042-421584 0 -0 +0 NoSolution TandemRepeat 93
+# fix break: wRi_scaffold_2:450990-451029 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:453007-453044 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:463372-463468 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:465353-465408 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:467317-467551 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:467931-468030 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:468366-468487 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:468832-468916 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:469191-469648 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:470949-471007 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:471668-471787 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:472248-472398 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:473437-473497 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:474108-474136 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:474749-474796 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_2:475280-475659 0 -0 +0 NoSolution
+wRi_scaffold_2:1-476124 log:
+Finished processing wRi_scaffold_2:1-476124
+Processing wRi_scaffold_3:1-22679
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 458
+Total Reads: 84536, Coverage: 458, minDepth: 46
+Confirmed 19918 of 22679 bases (87.83%)
+Corrected 0 snps; 0 ambiguous bases; corrected 2 small insertions totaling 2 bases, 31 small deletions totaling 64 bases
+Large collapsed region: wRi_scaffold_3:5950-16563 size 10614
+# Attempting to fix local continuity breaks
+# fix break: wRi_scaffold_3:477-682 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_3:1490-1729 0 -0 +0 NoSolution TandemRepeat 466
+# fix break: wRi_scaffold_3:3065-3111 0 -0 +0 NoSolution TandemRepeat 293
+# fix break: wRi_scaffold_3:4353-4370 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_3:6998-7000 0 -0 +0 NoSolution
+fix break: wRi_scaffold_3:8000 7980 -21 +20 BreakFix
+# fix break: wRi_scaffold_3:8537-8599 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_3:16732-16766 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_3:17493-17520 0 -0 +0 NoSolution
+# fix break: wRi_scaffold_3:19010-19525 0 -0 +0 NoSolution
+wRi_scaffold_3:1-22679 log:
+Finished processing wRi_scaffold_3:1-22679
+Processing wRi_scaffold_4:1-11469
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 6
+Total Reads: 608, Coverage: 6, minDepth: 5
+Confirmed 1908 of 11294 bases (16.89%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+# Attempting to fill gaps
+wRi_scaffold_4:1-11469 log:
+Finished processing wRi_scaffold_4:1-11469
+Processing wRi_scaffold_5:1-7180
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 22
+Total Reads: 1294, Coverage: 22, minDepth: 5
+Confirmed 1809 of 7180 bases (25.19%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+wRi_scaffold_5:1-7180 log:
+Finished processing wRi_scaffold_5:1-7180
+Processing wRi_scaffold_6:1-6217
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 210
+Total Reads: 10690, Coverage: 210, minDepth: 21
+Confirmed 6132 of 6217 bases (98.63%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 5 small deletions totaling 16 bases
+# Attempting to fix local continuity breaks
+# fix break: wRi_scaffold_6:3152-3200 0 -0 +0 NoSolution
+wRi_scaffold_6:1-6217 log:
+Finished processing wRi_scaffold_6:1-6217
+Processing wRi_scaffold_7:1-5735
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 7
+Total Reads: 355, Coverage: 7, minDepth: 5
+Confirmed 1435 of 5735 bases (25.02%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+# fix break: wRi_scaffold_7:580-1956 0 -0 +0 NoSolution
+wRi_scaffold_7:1-5735 log:
+Finished processing wRi_scaffold_7:1-5735
+Processing wRi_scaffold_8:1-5025
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 9
+Total Reads: 431, Coverage: 9, minDepth: 5
+Confirmed 1550 of 5025 bases (30.85%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+# fix break: wRi_scaffold_8:1456-1985 0 -0 +0 NoSolution
+wRi_scaffold_8:1-5025 log:
+Finished processing wRi_scaffold_8:1-5025
+Processing wRi_scaffold_9:1-2377
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 337
+Total Reads: 6727, Coverage: 337, minDepth: 34
+Confirmed 2073 of 2377 bases (87.21%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 2 small deletions totaling 3 bases
+# Attempting to fix local continuity breaks
+wRi_scaffold_9:1-2377 log:
+Finished processing wRi_scaffold_9:1-2377
+Processing wRi_scaffold_10:1-2308
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 488
+Total Reads: 10056, Coverage: 488, minDepth: 49
+Confirmed 2306 of 2308 bases (99.91%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 1 small deletions totaling 1 bases
+wRi_scaffold_10:1-2308 log:
+Finished processing wRi_scaffold_10:1-2308
+Processing wRi_scaffold_11:1-2241
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 49
+Total Reads: 976, Coverage: 49, minDepth: 5
+Confirmed 2125 of 2241 bases (94.82%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+# Attempting to fix local continuity breaks
+# fix break: wRi_scaffold_11:980-1027 0 -0 +0 NoSolution
+wRi_scaffold_11:1-2241 log:
+Finished processing wRi_scaffold_11:1-2241
+Processing wRi_scaffold_12:1-461
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 2
+Total Reads: 7, Coverage: 2, minDepth: 5
+Confirmed 0 of 461 bases (0.00%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+wRi_scaffold_12:1-461 log:
+Finished processing wRi_scaffold_12:1-461
+Processing wRi_scaffold_13:1-241
+frags /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_sorted.bam: coverage 0
+Total Reads: 0, Coverage: 0, minDepth: 5
+Confirmed 0 of 241 bases (0.00%)
+Corrected 0 snps; 0 ambiguous bases; corrected 0 small insertions totaling 0 bases, 0 small deletions totaling 0 bases
+wRi_scaffold_13:1-241 log:
+Finished processing wRi_scaffold_13:1-241
+Writing wRi_scaffold_1:1-941752 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_1:1-941752 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_1_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_2:1-476124 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_2:1-476124 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_2_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_3:1-22679 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_3:1-22679 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_3_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_4:1-11469 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_4:1-11469 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_4_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_5:1-7180 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_5:1-7180 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_5_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_6:1-6217 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_6:1-6217 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_6_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_7:1-5735 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_7:1-5735 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_7_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_8:1-5025 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_8:1-5025 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_8_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_9:1-2377 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_9:1-2377 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_9_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_10:1-2308 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_10:1-2308 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_10_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_11:1-2241 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_11:1-2241 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_11_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_12:1-461 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_12:1-461 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_12_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Writing wRi_scaffold_13:1-241 VCF to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.vcf
+Writing wRi_scaffold_13:1-241 changes to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.changes
+Writing updated wRi_scaffold_13_pilon to /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+Mean frags coverage: 123
+Mean total coverage: 123
+[Mon Mar 10 14:54:55 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.
+[Mon Mar 10 14:54:55 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.

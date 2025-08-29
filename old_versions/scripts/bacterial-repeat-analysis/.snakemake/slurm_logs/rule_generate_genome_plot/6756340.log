@@ -1,0 +1,80 @@
+host: phoenix-08.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar  5 12:08:07 2025]
+rule generate_genome_plot:
+    input: results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.tsv, results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.gff, results/repeat_analysis/red/merrill-23.msk, results/repeat_analysis/interspersed_repeats/repeats.gff
+    output: results/repeat_analysis/plots/genome_with_repeats.pdf, results/repeat_analysis/plots/genome_with_repeats_density.pdf
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=<TBD>
+
+host: phoenix-08.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar  5 12:08:09 2025]
+localrule generate_genome_plot:
+    input: results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.tsv, results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.gff, results/repeat_analysis/red/merrill-23.msk, results/repeat_analysis/interspersed_repeats/repeats.gff
+    output: results/repeat_analysis/plots/genome_with_repeats.pdf, results/repeat_analysis/plots/genome_with_repeats_density.pdf
+    jobid: 0
+    reason: Forced execution
+    resources: mem_mb=1000, mem_mib=954, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp
+
+Activating conda environment: plotting
+Traceback (most recent call last):
+  File "/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/scripts/plot_genome.py", line 15, in <module>
+    from dna_features_viewer import CircularGraphicRecord, GraphicFeature
+  File "/private/home/jomojaco/mambaforge/envs/plotting/lib/python3.9/site-packages/dna_features_viewer/__init__.py", line 3, in <module>
+    from .GraphicRecord import GraphicRecord
+  File "/private/home/jomojaco/mambaforge/envs/plotting/lib/python3.9/site-packages/dna_features_viewer/GraphicRecord/__init__.py", line 1, in <module>
+    from .GraphicRecord import GraphicRecord
+  File "/private/home/jomojaco/mambaforge/envs/plotting/lib/python3.9/site-packages/dna_features_viewer/GraphicRecord/GraphicRecord.py", line 2, in <module>
+    from ..biotools import find_narrowest_text_wrap
+  File "/private/home/jomojaco/mambaforge/envs/plotting/lib/python3.9/site-packages/dna_features_viewer/biotools.py", line 38, in <module>
+    _aa1: _aa3[0] + _aa3[1:].lower() for (_aa1, _aa3) in zip(aa1 + "*", aa3 + ["*"])
+TypeError: can only concatenate tuple (not "str") to tuple
+[Wed Mar  5 12:08:14 2025]
+Error in rule generate_genome_plot:
+    jobid: 0
+    input: results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.tsv, results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.gff, results/repeat_analysis/red/merrill-23.msk, results/repeat_analysis/interspersed_repeats/repeats.gff
+    output: results/repeat_analysis/plots/genome_with_repeats.pdf, results/repeat_analysis/plots/genome_with_repeats_density.pdf
+    conda-env: plotting
+    shell:
+        
+        python scripts/plot_genome.py             --assembly data/genomes/merrill-23.fasta             --repeatmasker results/repeat_analysis/repeatmasker/merrill-23.fasta.out             --isescan_tsv results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.tsv             --isescan_gff results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.gff             --red results/repeat_analysis/red/merrill-23.msk             --interspersed results/repeat_analysis/interspersed_repeats/repeats.gff             --output results/repeat_analysis/plots/genome_with_repeats.pdf             --density_output results/repeat_analysis/plots/genome_with_repeats_density.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-08: task 0: Exited with exit code 1
+[Wed Mar  5 12:08:14 2025]
+Error in rule generate_genome_plot:
+    jobid: 0
+    input: results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.tsv, results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.gff, results/repeat_analysis/red/merrill-23.msk, results/repeat_analysis/interspersed_repeats/repeats.gff
+    output: results/repeat_analysis/plots/genome_with_repeats.pdf, results/repeat_analysis/plots/genome_with_repeats_density.pdf
+    conda-env: plotting
+    shell:
+        
+        python scripts/plot_genome.py             --assembly data/genomes/merrill-23.fasta             --repeatmasker results/repeat_analysis/repeatmasker/merrill-23.fasta.out             --isescan_tsv results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.tsv             --isescan_gff results/repeat_analysis/isescan/output/genomes/merrill-23.fasta.gff             --red results/repeat_analysis/red/merrill-23.msk             --interspersed results/repeat_analysis/interspersed_repeats/repeats.gff             --output results/repeat_analysis/plots/genome_with_repeats.pdf             --density_output results/repeat_analysis/plots/genome_with_repeats_density.pdf
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

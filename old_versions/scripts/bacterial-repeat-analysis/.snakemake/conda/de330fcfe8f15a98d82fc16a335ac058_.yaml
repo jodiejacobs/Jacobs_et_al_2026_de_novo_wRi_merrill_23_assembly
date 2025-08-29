@@ -1,0 +1,14 @@
+name: plotting
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pandas=1.5.3
+  - matplotlib=3.7.1
+  - biopython=1.81
+  - bcbio-gff=0.7.0
+  - pip=23.0.1
+  - pip:
+    - dna-features-viewer==3.1.1

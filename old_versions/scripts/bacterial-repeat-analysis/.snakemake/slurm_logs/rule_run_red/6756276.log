@@ -1,0 +1,120 @@
+host: phoenix-18.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=6000, mem_mib=5723, time=180
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar  5 11:07:04 2025]
+rule run_red:
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/red/red_repeats.txt
+    jobid: 0
+    reason: Forced execution
+    threads: 8
+    resources: mem_mb=6000, mem_mib=5723, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, time=180
+
+host: phoenix-18.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=6000, mem_mib=5723, disk_mb=1000, disk_mib=954, time=180
+Select jobs to execute...
+Execute 1 jobs...
+
+[Wed Mar  5 11:07:05 2025]
+localrule run_red:
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/red/red_repeats.txt
+    jobid: 0
+    reason: Forced execution
+    threads: 8
+    resources: mem_mb=6000, mem_mib=5723, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, time=180
+
+Activating conda environment: red
+
+
+This is Red (REpeat Detector) designed and developed by Hani Zakaria Girgis, PhD.
+
+Version: 2.0
+
+Invalid argument: -frp=0.01 -k=13
+Valid argument pairs:
+	-gnm input genome directory, required.
+		Files with ".fa" extension in this directory are used for completing the table of the adjusted counts.
+		These Files are scanned for repeats.
+	-dir directory including additional input sequences, optional.
+		Files with ".fa" extension in this directory are NOT used for completing the table.
+		These Files MUST have different names from those in the genome directory.
+		These Files are scanned for repeats.
+	-len word length equals k defining the k-mer. The default is floor(log_4(genome size)).
+	-ord order of the background Markov chain. The default is floor(k/2)-1.
+	-gau half width of the mask. The default is based on the GC content.
+		20 if the GC content > 33% and < 67%, 40 otherwise.
+	-thr the threshold score of the low adjusted scores of non-repeats. The default is 2.
+	-min the minimum number of the observed k-mers. The default is 3.
+	-tbl file where the table of the adjusted counts is written, optional.
+	-sco directory where scores are saved, optional.
+		Score files have the ".scr" extension.
+	-cnd directory where candidate regions are saved, optional.
+		Candidates files have the ".cnd" extension.
+	-rpt directory where repeats locations are saved, optional.
+		Repeats files have the ".rpt" extension.
+	-msk directory where masked sequences are saved, optional.
+		Masked sequences files have the ".msk" extension.
+	-frm the format of the output: 1 (chrName:start-end) or 2 (chrName	start	end).
+		The output format are zero based and the end is exclusive.
+	-hmo file where the HMM is saved, optional.
+	-cor integer of the number of threads, optional.
+		The more threads, the higher the memory requirement.
+		The defaul is the number of cores - 1, or 1 if single core is found.
+
+Examples:
+	The following command runs Red with the defaults and generates the masked sequences.
+	Red -gnm genome_directory -msk output_directory
+
+	The following command runs Red with the defaults and generates the masked sequences and the locations of repeats.
+	Red -gnm genome_directory -msk output_directory -rpt output_directory
+
+
+[Wed Mar  5 11:07:09 2025]
+Error in rule run_red:
+    jobid: 0
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/red/red_repeats.txt
+    conda-env: red
+    shell:
+        
+        # Run RED for de novo repeat detection
+        Red -gnm data/genomes/merrill-23.fasta -frp=0.01 -k=13 -tel=0 -itr=1 -o results/repeat_analysis/red -t 8
+        mv results/repeat_analysis/red/*_repeats.txt results/repeat_analysis/red/red_repeats.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-18: task 0: Exited with exit code 1
+[Wed Mar  5 11:07:09 2025]
+Error in rule run_red:
+    jobid: 0
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/red/red_repeats.txt
+    conda-env: red
+    shell:
+        
+        # Run RED for de novo repeat detection
+        Red -gnm data/genomes/merrill-23.fasta -frp=0.01 -k=13 -tel=0 -itr=1 -o results/repeat_analysis/red -t 8
+        mv results/repeat_analysis/red/*_repeats.txt results/repeat_analysis/red/red_repeats.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.

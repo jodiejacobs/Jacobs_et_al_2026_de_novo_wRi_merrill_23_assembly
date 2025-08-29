@@ -1,0 +1,132 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: 36d0ea40-2d28-41f1-902f-20b003d2bcd7
+Using shell: /usr/bin/bash
+Provided remote nodes: 100
+Job stats:
+job                          count
+-------------------------  -------
+all                              1
+find_interspersed_repeats        1
+generate_genome_plot             1
+generate_summary_report          1
+run_isescan                      1
+run_red                          1
+run_repeatmasker                 1
+total                            7
+
+Select jobs to execute...
+Execute 4 jobs...
+
+[Wed Mar  5 11:06:27 2025]
+rule find_interspersed_repeats:
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/interspersed_repeats/repeats.gff
+    jobid: 4
+    reason: Missing output files: results/repeat_analysis/interspersed_repeats/repeats.gff
+    threads: 8
+    resources: tmpdir=<TBD>, mem_mb=4000, mem_mib=3815, time=120
+
+No SLURM account given, trying to guess.
+Unable to guess SLURM account. Trying to proceed without.
+No wall time information given. This might or might not work on your cluster. If not, specify the resource runtime in your rule or as a reasonable default via --default-resources.
+Job 4 has been submitted with SLURM jobid 6756275 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/slurm_logs/rule_find_interspersed_repeats/6756275.log).
+
+[Wed Mar  5 11:06:34 2025]
+rule run_red:
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/red/red_repeats.txt
+    jobid: 3
+    reason: Missing output files: results/repeat_analysis/red/red_repeats.txt
+    threads: 8
+    resources: tmpdir=<TBD>, mem_mb=6000, mem_mib=5723, time=180
+
+No wall time information given. This might or might not work on your cluster. If not, specify the resource runtime in your rule or as a reasonable default via --default-resources.
+Job 3 has been submitted with SLURM jobid 6756276 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/slurm_logs/rule_run_red/6756276.log).
+
+[Wed Mar  5 11:06:34 2025]
+rule run_isescan:
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/isescan/output/merrill-23.fasta.features
+    jobid: 2
+    reason: Missing output files: results/repeat_analysis/isescan/output/merrill-23.fasta.features
+    threads: 8
+    resources: tmpdir=<TBD>, mem_mb=6000, mem_mib=5723, time=180
+
+No wall time information given. This might or might not work on your cluster. If not, specify the resource runtime in your rule or as a reasonable default via --default-resources.
+Job 2 has been submitted with SLURM jobid 6756277 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/slurm_logs/rule_run_isescan/6756277.log).
+
+[Wed Mar  5 11:06:34 2025]
+rule run_repeatmasker:
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/repeatmasker/merrill-23.fasta.masked, results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/repeatmasker/merrill-23.fasta.tbl
+    jobid: 1
+    reason: Missing output files: results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/repeatmasker/merrill-23.fasta.masked
+    threads: 8
+    resources: tmpdir=<TBD>, mem_mb=8000, mem_mib=7630, time=240
+
+No wall time information given. This might or might not work on your cluster. If not, specify the resource runtime in your rule or as a reasonable default via --default-resources.
+Job 1 has been submitted with SLURM jobid 6756278 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/slurm_logs/rule_run_repeatmasker/6756278.log).
+[Wed Mar  5 11:07:07 2025]
+Error in rule run_isescan:
+    message: SLURM-job '6756277' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 2
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/isescan/output/merrill-23.fasta.features
+    log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/slurm_logs/rule_run_isescan/6756277.log (check log file(s) for error details)
+    conda-env: isescan
+    shell:
+        
+        mkdir -p results/repeat_analysis/isescan/proteome
+        mkdir -p results/repeat_analysis/isescan/hmm
+        mkdir -p results/repeat_analysis/isescan/output
+        
+        # Run ISEScan with optimized parameters for bacterial genomes
+        # ISEScan is already designed for bacteria, but we'll ensure optimal settings
+        isescan.py --seqfile data/genomes/merrill-23.fasta             --output results/repeat_analysis/isescan/output             --proteome results/repeat_analysis/isescan/proteome             --hmm results/repeat_analysis/isescan/hmm             --cpu 8             --nthread 8             --evalue 1e-5             --diamondopt " -c1 -b6 --min-score 30"
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 6756277
+
+[Wed Mar  5 11:07:07 2025]
+Error in rule run_repeatmasker:
+    message: SLURM-job '6756278' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 1
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/repeatmasker/merrill-23.fasta.masked, results/repeat_analysis/repeatmasker/merrill-23.fasta.out, results/repeat_analysis/repeatmasker/merrill-23.fasta.tbl
+    log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/slurm_logs/rule_run_repeatmasker/6756278.log (check log file(s) for error details)
+    conda-env: repeatmasker
+    shell:
+        
+        # Optimized for bacterial genomes
+        # First, ensure RepBase is properly configured for bacteria
+        RepeatMasker -xsmall -pa 8 -species bacteria -noint             -lib $(dirname $(which RepeatMasker))/Libraries/RepeatMaskerLib.embl             -dir results/repeat_analysis/repeatmasker             data/genomes/merrill-23.fasta
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 6756278
+
+[Wed Mar  5 11:07:27 2025]
+Error in rule run_red:
+    message: SLURM-job '6756276' failed, SLURM status is: 'FAILED'. For further error details see the cluster/cloud log and the log files of the involved rule(s).
+    jobid: 3
+    input: data/genomes/merrill-23.fasta
+    output: results/repeat_analysis/red/red_repeats.txt
+    log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/slurm_logs/rule_run_red/6756276.log (check log file(s) for error details)
+    conda-env: red
+    shell:
+        
+        # Run RED for de novo repeat detection
+        Red -gnm data/genomes/merrill-23.fasta -frp=0.01 -k=13 -tel=0 -itr=1 -o results/repeat_analysis/red -t 8
+        mv results/repeat_analysis/red/*_repeats.txt results/repeat_analysis/red/red_repeats.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    external_jobid: 6756276
+
+[Wed Mar  5 11:10:32 2025]
+Finished job 4.
+1 of 7 steps (14%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2025-03-05T110626.966817.snakemake.log
+WorkflowError:
+At least one job did not complete successfully.

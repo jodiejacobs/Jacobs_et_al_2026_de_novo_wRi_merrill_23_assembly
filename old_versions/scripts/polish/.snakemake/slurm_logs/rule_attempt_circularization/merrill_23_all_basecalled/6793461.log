@@ -1,0 +1,45 @@
+host: phoenix-06.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Mar  7 21:38:11 2025]
+rule attempt_circularization:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=240
+
+host: phoenix-06.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Mar  7 21:38:12 2025]
+localrule attempt_circularization:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled/wRi/links_gapfilled.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.wRi.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/wRi_final_polished_circular.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/assembly_final/merrill_23_all_basecalled/assembly_stats.txt
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=240
+
+WARNING: SPAdes version 4.1.0 is being used. It will work, but better results are usually obtained from Circlator using SPAdes version 3.7.1. Although 3.7.1 is not the latest version, we recommend it for Circlator.
+WARNING: SPAdes version 4.1.0 is being used. It will work, but better results are usually obtained from Circlator using SPAdes version 3.7.1. Although 3.7.1 is not the latest version, we recommend it for Circlator.
+WARNING: SPAdes version 4.1.0 is being used. It will work, but better results are usually obtained from Circlator using SPAdes version 3.7.1. Although 3.7.1 is not the latest version, we recommend it for Circlator.
+srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
+slurmstepd-phoenix-06: error: *** STEP 6793461.0 ON phoenix-06 CANCELLED AT 2025-03-08T01:38:25 DUE TO TIME LIMIT ***
+slurmstepd-phoenix-06: error: *** JOB 6793461 ON phoenix-06 CANCELLED AT 2025-03-08T01:38:25 DUE TO TIME LIMIT ***
+Will exit after finishing currently running jobs (scheduler).
+Will exit after finishing currently running jobs (scheduler).

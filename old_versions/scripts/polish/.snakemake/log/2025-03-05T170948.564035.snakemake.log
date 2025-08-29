@@ -1,0 +1,7 @@
+host: emerald.prism
+Building DAG of jobs...
+MissingInputException in rule align_short_reads in file /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/Snakefile, line 178:
+Missing input files for rule align_short_reads:
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam
+    affected files:
+        /private/groups/russelllab/jodie/references/dsim_r2.02_maskedY.fasta

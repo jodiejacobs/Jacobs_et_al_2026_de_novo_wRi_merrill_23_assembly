@@ -1,0 +1,48 @@
+host: phoenix-06.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:55:51 2025]
+rule close_gaps:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled_AN/wRi/links_gapfilled.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 4
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=30
+
+host: phoenix-06.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 4
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954
+Conda environments: ignored
+Select jobs to execute...
+Execute 1 jobs...
+
+[Mon Mar 10 14:55:53 2025]
+localrule close_gaps:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/polished_scaffolds/merrill_23_all_basecalled_AN/wRi/links_pilon.fasta
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/gapfilled/merrill_23_all_basecalled_AN/wRi/links_gapfilled.fasta
+    jobid: 0
+    reason: Forced execution
+    wildcards: sample=merrill_23_all_basecalled_AN
+    threads: 4
+    resources: mem_mb=10000, mem_mib=9537, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=30
+
+Skipping TGS-GapCloser step as requested. Using Pilon polished assembly directly.
+[Mon Mar 10 14:55:54 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.
+[Mon Mar 10 14:55:54 2025]
+Finished job 0.
+1 of 1 steps (100%) done
+Storing output in storage.

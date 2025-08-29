@@ -1,0 +1,11 @@
+prefix=/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/conda/77161951620539d80340d1efe7ed9ba9_
+exec_prefix=${prefix}
+includedir=${prefix}/include
+libdir=${exec_prefix}/lib
+
+Name: libidn2
+Description: Library implementing IDNA2008 and TR46
+Version: 2.3.7
+Cflags: -I${includedir}
+Libs: -L${libdir} -lidn2
+Libs.private:  -L/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/conda/77161951620539d80340d1efe7ed9ba9_/lib -lunistring -R/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/bacterial-repeat-analysis/.snakemake/conda/77161951620539d80340d1efe7ed9ba9_/lib

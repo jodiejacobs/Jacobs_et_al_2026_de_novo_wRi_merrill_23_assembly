@@ -1,0 +1,324 @@
+#Completed on 3/05/25
+#to run this script:
+#cd /private/groups/russelllab/jodie/merrill_23_wRi_genome/
+#conda activate snakemake_v8 
+#snakemake --executor slurm --default-resources slurm_partition=medium runtime=720 mem_mb=1000000 -j 10 -s Snakefile
+
+#Global Variables:
+
+import os  
+import glob
+
+data = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data'
+short_reads_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/data/short_reads'
+sample_numbers = ['24']
+
+samples = ["merrill_23_all_basecalled"]
+
+# Define short read sample patterns to capture all replicates
+short_read_samples = [
+    "WT-DsimwRi-line5A-0123",
+    "WT-DsimwRi-line5B-0123",
+    "WT-DsimwRi-line6A-0123",
+    "WT-DsimwRi-line6B-0123",
+    "WT-DsimwRi-line7A-0123", 
+    "WT-DsimwRi-line7B-0123",
+    "WT-DsimwRi-line8A-0123",
+    "WT-DsimwRi-line8B-0123"
+]
+
+# Get all the lanes for each sample
+lanes = ["L002", "L003"]
+
+conda: '/private/groups/russelllab/jodie/bootcamp2024/scripts/read_filtering.yaml'   
+
+rule all:
+        input:
+            expand('/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/raw/wRi/short_summary.specific.fasta', sample=samples),
+            expand('/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/polished/wRi/short_summary.specific.fasta', sample=samples)
+
+rule sort_bam:
+    input:
+        bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.bam'
+    output:
+        sorted_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.sorted.bam'
+    resources: 
+        mem_mb=100000,
+        runtime=200
+    threads: 16  
+    shell:
+        '''
+            samtools sort -@ 16 -o {output.sorted_bam} {input.bam}
+            samtools index  -@ 16 {output.sorted_bam}  
+        '''
+
+rule separate_bam:
+    input:
+        bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.sorted.bam'
+    output:
+        host_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.Dsim.bam',
+        wolbachia_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.wRi.bam'
+    resources: 
+        mem_mb=100000,
+        runtime=200
+    threads: 8  
+    shell:
+        '''
+            samtools view -@ 8 -b -f 4 {input.bam} > {output.wolbachia_bam}
+            samtools view -@ 8 -b -F 4 {input.bam} > {output.host_bam}
+        '''
+
+rule bam2fastq:
+    input:
+        host_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.Dsim.bam',
+        wolbachia_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.wRi.bam'
+    output:
+        host_fastq = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.Dsim.fastq.gz',
+        wolbachia_fastq = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.wRi.fastq.gz',
+    resources: 
+        mem_mb=100000,
+        runtime=200
+    threads: 8  
+    shell:
+        '''
+            samtools bam2fq -@ 8 {input.host_bam} | gzip > {output.host_fastq}
+            samtools bam2fq  -@ 8 {input.wolbachia_bam} | gzip > {output.wolbachia_fastq}
+        '''
+
+rule assembly:
+    input:
+        host_fastq = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.Dsim.fastq.gz',
+        wolbachia_fastq = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/{sample}.wRi.fastq.gz',
+    output:
+        host_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/Dsim/assembly.fasta',
+        wolbachia_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/wRi/assembly.fasta',
+    params:
+        host_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/Dsim/',
+        wolbachia_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/wRi/',
+    resources: 
+        mem_mb=100000,
+        runtime=200
+    threads: 16  
+    shell:
+        ''' 
+            mkdir -p {params.host_dir}
+            mkdir -p {params.wolbachia_dir}   
+            flye --nano-hq {input.host_fastq} -t 16 --out-dir {params.host_dir} --genome-size 180m
+            flye --nano-hq {input.wolbachia_fastq} -t 16 --out-dir {params.wolbachia_dir} --genome-size 1.3m
+        '''
+
+rule BUSCO:
+    input:
+        host_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/Dsim/assembly.fasta',
+        wolbachia_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/wRi/assembly.fasta',
+    output:
+        host_busco = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/raw/Dsim/short_summary.specific.fasta',
+        wolbachia_busco = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/raw/wRi/short_summary.specific.fasta',
+    params:
+        host_busco = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/raw/Dsim/',
+        wolbachia_busco = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/raw/wRi/',
+    resources: 
+        mem_mb=100000,
+        runtime=200
+    threads: 16  
+    shell:
+        ''' 
+            mkdir -p {params.host_busco}   
+            mkdir -p {params.wolbachia_busco}
+            busco -i {input.host_assembly} -o {params.host_busco} -l diptera_odb10 -m genome --cpu 16 
+            busco -i {input.wolbachia_assembly} -o {params.wolbachia_busco} -l rickettsiales_odb10 -m genome --cpu 16
+        '''
+
+# New rules for short read processing
+
+rule collect_short_reads:
+    output:
+        r1_fastqs = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R1.fastq.gz',
+        r2_fastqs = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R2.fastq.gz'
+    params:
+        short_reads_dir = short_reads_dir
+    resources:
+        mem_mb=10000,
+        runtime=120
+    threads: 4
+    shell:
+        '''
+        # Create output directory if it doesn't exist
+        mkdir -p /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/
+        
+        # Merge all R1 files
+        find {params.short_reads_dir} -name "*_R1_*.fastq.gz" | sort | xargs cat > {output.r1_fastqs}
+        
+        # Merge all R2 files
+        find {params.short_reads_dir} -name "*_R2_*.fastq.gz" | sort | xargs cat > {output.r2_fastqs}
+        '''
+
+rule trim_short_reads:
+    input:
+        r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R1.fastq.gz',
+        r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/merged_R2.fastq.gz'
+    output:
+        r1_trimmed = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz',
+        r2_trimmed = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz'
+    resources:
+        mem_mb=20000,
+        runtime=180
+    threads: 8
+    shell:
+        '''
+        # Trim adapters and low quality bases
+        trimmomatic PE -threads {threads} \
+            {input.r1} {input.r2} \
+            {output.r1_trimmed} /dev/null \
+            {output.r2_trimmed} /dev/null \
+            ILLUMINACLIP:/private/groups/russelllab/jodie/sequencing_data/TruSeq3-PE.fa:2:30:10 \
+            LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36
+        '''
+
+rule align_short_reads:
+    input:
+        r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R1.fastq.gz',
+        r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/trimmed_R2.fastq.gz',
+        dsim_ref = '/private/groups/russelllab/jodie/reference_genomes/fastas/Drosophila_simulans_ref/data/GCF_016746395.2/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna'
+    output:
+        bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam'
+    resources:
+        mem_mb=40000,
+        runtime=240
+    threads: 16
+    shell:
+        '''
+        # Align to Drosophila simulans reference
+        bwa mem -t {threads} {input.dsim_ref} {input.r1} {input.r2} | \
+            samtools view -@ {threads} -b | \
+            samtools sort -@ {threads} -o {output.bam}
+        
+        # Index the BAM file
+        samtools index -@ {threads} {output.bam}
+        '''
+
+rule separate_short_reads:
+    input:
+        bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/aligned_to_dsim.bam'
+    output:
+        host_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/dsim.bam',
+        wolbachia_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wri.bam'
+    resources:
+        mem_mb=10000,
+        runtime=120
+    threads: 8
+    shell:
+        '''
+        # Get mapped reads (host)
+        samtools view -@ {threads} -b -F 4 {input.bam} > {output.host_bam}
+        
+        # Get unmapped reads (wolbachia)
+        samtools view -@ {threads} -b -f 4 {input.bam} > {output.wolbachia_bam}
+        '''
+
+rule short_reads_bam2fastq:
+    input:
+        host_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/dsim.bam',
+        wolbachia_bam = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wri.bam'
+    output:
+        host_r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/dsim_R1.fastq.gz',
+        host_r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/dsim_R2.fastq.gz',
+        wolbachia_r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wri_R1.fastq.gz',
+        wolbachia_r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wri_R2.fastq.gz'
+    resources:
+        mem_mb=20000,
+        runtime=180
+    threads: 8
+    shell:
+        '''
+        # Convert host BAM to FASTQ (paired-end)
+        samtools collate -@ {threads} -O {input.host_bam} | \
+        samtools fastq -@ {threads} -1 {output.host_r1} -2 {output.host_r2} -0 /dev/null -s /dev/null -n
+        
+        # Convert wolbachia BAM to FASTQ (paired-end)
+        samtools collate -@ {threads} -O {input.wolbachia_bam} | \
+        samtools fastq -@ {threads} -1 {output.wolbachia_r1} -2 {output.wolbachia_r2} -0 /dev/null -s /dev/null -n
+        '''
+
+rule polish_with_short_reads:
+    input:
+        host_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/Dsim/assembly.fasta',
+        wolbachia_assembly = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/{sample}/wRi/assembly.fasta',
+        wolbachia_r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wri_R1.fastq.gz',
+        wolbachia_r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wri_R2.fastq.gz',
+        host_r1 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/dsim_R1.fastq.gz',
+        host_r2 = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/dsim_R2.fastq.gz'
+    output:
+        host_polished = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}/Dsim/assembly.fasta',
+        wolbachia_polished = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}/wRi/assembly.fasta'
+    params:
+        host_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}/Dsim/',
+        wolbachia_dir = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}/wRi/'
+    resources:
+        mem_mb=100000,
+        runtime=480
+    threads: 16
+    shell:
+        '''
+        # Create output directories
+        mkdir -p {params.host_dir}
+        mkdir -p {params.wolbachia_dir}
+        
+        # Index the reference assemblies
+        bwa index {input.host_assembly}
+        bwa index {input.wolbachia_assembly}
+        
+        # Align host short reads to host assembly
+        bwa mem -t {threads} {input.host_assembly} {input.host_r1} {input.host_r2} | \
+            samtools sort -@ {threads} -o {params.host_dir}/host_sorted.bam
+        
+        samtools index -@ {threads} {params.host_dir}/host_sorted.bam
+        
+        # Align Wolbachia short reads to Wolbachia assembly
+        bwa mem -t {threads} {input.wolbachia_assembly} {input.wolbachia_r1} {input.wolbachia_r2} | \
+            samtools sort -@ {threads} -o {params.wolbachia_dir}/wolbachia_sorted.bam
+        
+        samtools index -@ {threads} {params.wolbachia_dir}/wolbachia_sorted.bam
+        
+        # Polish host assembly with Pilon
+        pilon --genome {input.host_assembly} \
+              --frags {params.host_dir}/host_sorted.bam \
+              --output pilon_host \
+              --outdir {params.host_dir} \
+              --threads {threads} \
+              --changes --vcf
+        
+        # Polish Wolbachia assembly with Pilon
+        pilon --genome {input.wolbachia_assembly} \
+              --frags {params.wolbachia_dir}/wolbachia_sorted.bam \
+              --output pilon_wolbachia \
+              --outdir {params.wolbachia_dir} \
+              --threads {threads} \
+              --changes --vcf
+              
+        # Move outputs to expected file names
+        mv {params.host_dir}/pilon_host.fasta {output.host_polished}
+        mv {params.wolbachia_dir}/pilon_wolbachia.fasta {output.wolbachia_polished}
+        '''
+
+rule BUSCO_polished:
+    input:
+        host_polished = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}/Dsim/assembly.fasta',
+        wolbachia_polished = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/polished/{sample}/wRi/assembly.fasta'
+    output:
+        host_busco = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/polished/Dsim/short_summary.specific.fasta',
+        wolbachia_busco = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/polished/wRi/short_summary.specific.fasta'
+    params:
+        host_busco = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/polished/Dsim/',
+        wolbachia_busco = '/private/groups/russelllab/jodie/merrill_23_wRi_genome/busco/{sample}/polished/wRi/'
+    resources:
+        mem_mb=100000,
+        runtime=200
+    threads: 16
+    shell:
+        ''' 
+            mkdir -p {params.host_busco}   
+            mkdir -p {params.wolbachia_busco}
+            busco -i {input.host_polished} -o {params.host_busco} -l diptera_odb10 -m genome --cpu 16 
+            busco -i {input.wolbachia_polished} -o {params.wolbachia_busco} -l rickettsiales_odb10 -m genome --cpu 16
+        '''

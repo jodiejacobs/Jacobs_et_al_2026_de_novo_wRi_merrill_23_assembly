@@ -1,0 +1,30 @@
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: 69e6aaec-bb0c-471a-9402-65fdcf6fc179
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Conda environments: ignored
+Job stats:
+job                          count
+-------------------------  -------
+all                              1
+circularize_merged               1
+polish_merged_short_reads        1
+total                            3
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Tue Mar 11 09:15:26 2025]
+rule polish_merged_short_reads:
+    input: /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_assembly/wRi/merged.fasta, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R1.fastq.gz, /private/groups/russelllab/jodie/merrill_23_wRi_genome/short_reads/wRi_R2.fastq.gz
+    output: /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_polished/wRi/merged_pilon.fasta
+    jobid: 5
+    reason: Missing output files: /private/groups/russelllab/jodie/merrill_23_wRi_genome/merged_polished/wRi/merged_pilon.fasta
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=360
+
+No SLURM account given, trying to guess.
+Guessed SLURM account: standard
+Job 5 has been submitted with SLURM jobid 6869468 (log: /private/groups/russelllab/jodie/merrill_23_wRi_genome/de_novo_wRi_merrill_23_assembly/scripts/polish/.snakemake/slurm_logs/rule_polish_merged_short_reads/6869468.log).
+Terminating processes on user request, this might take some time.

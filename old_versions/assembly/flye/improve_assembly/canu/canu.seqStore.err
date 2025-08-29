@@ -1,0 +1,31 @@
+
+Found perl:
+   /private/home/jomojaco/mambaforge/envs/improve_assembly/bin/perl
+   This is perl 5, version 32, subversion 1 (v5.32.1) built for x86_64-linux-thread-multi
+
+Found java:
+   /private/home/jomojaco/mambaforge/envs/improve_assembly/lib/jvm/bin/java
+   openjdk version "23.0.1-internal" 2024-10-15
+
+Found canu:
+   /private/home/jomojaco/mambaforge/envs/improve_assembly/bin/canu
+   canu 2.2
+
+
+Creating library 'assembly' for Nanopore raw reads.
+
+               reads               bases
+---------- --------- ------ ------------ ------
+Loaded            18  90.0%      1453849  99.9%  /private/groups/russelllab/jodie/merrill_23_wRi_genome/flye/merge_bootcamp_data/assembly.fasta
+Short              2  10.0%         1354   0.1%
+
+
+All reads processed.
+
+               reads               bases
+---------- --------- ------ ------------ ------
+Loaded            18  90.0%      1453849  99.9%
+Short              2  10.0%         1354   0.1%
+
+
+Bye.

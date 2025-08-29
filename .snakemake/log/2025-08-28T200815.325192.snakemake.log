@@ -1,0 +1,32 @@
+None
+host: emerald.prism
+Building DAG of jobs...
+SLURM run ID: 6f32d412-c22c-4f11-a450-76e0fcd68114
+Using shell: /usr/bin/bash
+Provided remote nodes: 10
+Job stats:
+job                        count
+-----------------------  -------
+all                            1
+basecalling                    1
+separate_bam                   1
+sort_bam                       1
+wri_assembly                   1
+wri_bam2fastq                  1
+wri_polish                     1
+wri_prepare_short_reads        1
+total                          8
+
+Select jobs to execute...
+Execute 2 jobs...
+[Thu Aug 28 20:08:15 2025]
+rule basecalling:
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/pod5
+    output: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    jobid: 6
+    reason: Missing output files: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    threads: 25
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=gpu, runtime=360, slurm_extra=--gpus-per-node=4 --nodes=1 --exclude=phoenix-09 --mail-user=jomojaco@ucsc.edu --mail-type=ALL --output=logs/%x.%j.log
+
+No SLURM account given, trying to guess.
+Terminating processes on user request, this might take some time.

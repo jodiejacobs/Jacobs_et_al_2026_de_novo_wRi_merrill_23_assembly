@@ -1,0 +1,13 @@
+name: read_filtering
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - pycoqc
+  - samtools
+  - bedtools
+  - flye
+  - bwa 
+
+  #run:
+  #conda env create -f read_filtering.yaml 

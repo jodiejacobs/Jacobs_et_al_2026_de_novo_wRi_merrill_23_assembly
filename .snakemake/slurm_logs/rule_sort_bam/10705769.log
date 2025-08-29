@@ -1,0 +1,116 @@
+host: phoenix-24.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided remote nodes: 1
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Aug 29 06:44:02 2025]
+rule sort_bam:
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    output: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam, /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam.bai
+    jobid: 0
+    reason: Forced execution
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=<TBD>, slurm_partition=medium, runtime=200
+
+host: phoenix-24.prism
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Provided resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Aug 29 06:44:03 2025]
+localrule sort_bam:
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    output: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam, /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam.bai
+    jobid: 0
+    reason: Forced execution
+    threads: 16
+    resources: mem_mb=100000, mem_mib=95368, disk_mb=1000, disk_mib=954, tmpdir=/data/tmp, slurm_partition=medium, runtime=200
+
+[W::hts_set_opt] Cannot change block size for this format
+samtools sort: failed to read header from "/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam"
+RuleException:
+CalledProcessError in file "/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/Snakefile", line 62:
+Command 'set -euo pipefail;  
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+
+        samtools sort -@ 16 -o /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+        samtools index -@ 16 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam' returned non-zero exit status 1.
+[Fri Aug 29 06:44:04 2025]
+Error in rule sort_bam:
+    message: None
+    jobid: 0
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    output: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam, /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam.bai
+    shell:
+        
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+
+        samtools sort -@ 16 -o /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+        samtools index -@ 16 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam  
+        
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Fri Aug 29 06:44:04 2025]
+Error in rule sort_bam:
+    message: None
+    jobid: 0
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    output: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam, /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam.bai
+    shell:
+        
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+
+        samtools sort -@ 16 -o /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+        samtools index -@ 16 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam  
+        
+        (command exited with non-zero exit code)
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
+srun: error: phoenix-24: task 0: Exited with exit code 1
+[Fri Aug 29 06:44:04 2025]
+Error in rule sort_bam:
+    message: None
+    jobid: 0
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    output: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam, /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam.bai
+    shell:
+        
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+
+        samtools sort -@ 16 -o /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+        samtools index -@ 16 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam  
+        
+        (command exited with non-zero exit code)
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look below for error messages
+[Fri Aug 29 06:44:04 2025]
+Error in rule sort_bam:
+    message: None
+    jobid: 0
+    input: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+    output: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam, /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam.bai
+    shell:
+        
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+
+        samtools sort -@ 16 -o /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam
+        samtools index -@ 16 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam  
+        
+        (command exited with non-zero exit code)
+Storing output in storage.
+WorkflowError:
+At least one job did not complete successfully.
