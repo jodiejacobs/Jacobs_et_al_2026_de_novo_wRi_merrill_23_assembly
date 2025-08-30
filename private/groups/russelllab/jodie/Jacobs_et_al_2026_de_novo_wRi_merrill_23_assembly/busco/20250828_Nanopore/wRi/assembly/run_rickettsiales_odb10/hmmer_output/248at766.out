@@ -1,0 +1,17 @@
+#                                                                                   --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name               accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#       ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_1165:515623-517449|- -            609 248at766             -            472  9.5e-200  660.5  13.7   1   2  8.5e-135  5.4e-132  437.1   2.2     1   298     1   326     1   336 0.92 contig_1165_513 # 515623 # 517449 # -1 # ID=1_513;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.359
+contig_1165:515623-517449|- -            609 248at766             -            472  9.5e-200  660.5  13.7   2   2   2.2e-71   1.4e-68  228.0   4.0   290   472   407   608   397   608 0.87 contig_1165_513 # 515623 # 517449 # -1 # ID=1_513;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.359
+contig_1165:3401-5197|+     -            599 248at766             -            472  4.1e-179  592.5  14.9   1   2  2.5e-131  1.6e-128  425.7   3.4     1   298     1   326     1   347 0.92 contig_1165_4 # 3401 # 5197 # 1 # ID=1_4;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.347
+contig_1165:3401-5197|+     -            599 248at766             -            472  4.1e-179  592.5  14.9   2   2   2.7e-54   1.7e-51  171.7   3.8   296   472   410   598   401   598 0.85 contig_1165_4 # 3401 # 5197 # 1 # ID=1_4;partial=00;start_type=ATG;rbs_motif=GGAGG;rbs_spacer=5-10bp;gc_cont=0.347
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/248at766.hmm
+# Target file:     private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20250828_Nanopore/wRi/assembly/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20250828_Nanopore/wRi/assembly/run_rickettsiales_odb10/hmmer_output/248at766.out --cpu 1 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/248at766.hmm private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20250828_Nanopore/wRi/assembly/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly
+# Date:            Fri Aug 29 11:53:22 2025
+# [ok]

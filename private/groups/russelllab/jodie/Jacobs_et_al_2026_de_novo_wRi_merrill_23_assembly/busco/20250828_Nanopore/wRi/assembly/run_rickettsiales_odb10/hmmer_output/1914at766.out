@@ -1,0 +1,14 @@
+#                                                                                   --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name               accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#       ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_1165:919868-920848|+ -            327 1914at766            -            234   3.3e-94  311.0   4.7   1   1   1.9e-96   2.4e-93  308.2   4.7     1   234     2   292     2   292 0.90 contig_1165_926 # 919868 # 920848 # 1 # ID=1_926;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.371
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/1914at766.hmm
+# Target file:     private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20250828_Nanopore/wRi/assembly/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20250828_Nanopore/wRi/assembly/run_rickettsiales_odb10/hmmer_output/1914at766.out --cpu 1 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/1914at766.hmm private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20250828_Nanopore/wRi/assembly/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly
+# Date:            Fri Aug 29 11:53:22 2025
+# [ok]

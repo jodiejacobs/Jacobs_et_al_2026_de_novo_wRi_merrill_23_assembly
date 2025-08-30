@@ -183,6 +183,8 @@ rule wri_polish:
         # Index the deduplicated BAM
         sambamba index -t {threads} {params.wolbachia_dir}/wolbachia_dedup.bam
         
+        export _JAVA_OPTIONS="-Xmx32g"
+
         # Polish Wolbachia assembly with Pilon
         pilon --genome {input.wolbachia_assembly} \
               --bam {params.wolbachia_dir}/wolbachia_dedup.bam \
@@ -197,21 +199,28 @@ rule wri_polish:
 # OPTIONAL: QUALITY ASSESSMENT
 # ==============================================================================
 
-# rule wri_busco:
-#     input:
-#         wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/polished/{sample}_wRi_M23.assembly.fasta'
-#     output:
-#         wolbachia_busco = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/short_summary.specific.rickettsiales_odb10.txt'
-#     params:
-#         wolbachia_busco_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/'
-#     resources: 
-#         mem_mb=25000,
-#         runtime=120
-#     threads: 16  
-#     shell:
-#         ''' 
-#         source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
-#         conda activate assembly
-#         mkdir -p {params.wolbachia_busco_dir}
-#         busco -i {input.wolbachia_assembly} -o {params.wolbachia_busco_dir} -l rickettsiales_odb10 -m genome --cpu {threads}
-#         '''
+rule wri_busco:
+    input:
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.fasta',
+        wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta'
+    output:
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/assembly/short_summary.specific.rickettsiales_odb10.txt',
+        wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/polished/short_summary.specific.rickettsiales_odb10.txt'
+    params:
+        wolbachia_assembly_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/assembly/',
+        wolbachia_polished_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/polished/'
+    resources: 
+        mem_mb=25000,
+        runtime=120
+    threads: 16  
+    shell:
+        ''' 
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate busco
+
+        mkdir -p {params.wolbachia_assembly_dir}
+        mkdir -p {params.wolbachia_polished_dir}
+
+        busco -i {input.wolbachia_assembly} -o {params.wolbachia_assembly_dir} -l rickettsiales_odb10 -m genome --cpu {threads}
+        busco -i {input.wolbachia_polished} -o {params.wolbachia_polished_dir} -l rickettsiales_odb10 -m genome --cpu {threads}
+        '''

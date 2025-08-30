@@ -1,0 +1,19 @@
+#                                                                                           --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                       accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#               ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_1165_pilon:590423-591274|-   -            284 1687at766            -            231   2.3e-95  314.7  11.4   1   2   1.6e-95   6.6e-93  306.7   6.3     1   202     5   222     5   229 0.92 contig_1165_pilon_574 # 590423 # 591274 # -1 # ID=1_574;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.366
+contig_1165_pilon:590423-591274|-   -            284 1687at766            -            231   2.3e-95  314.7  11.4   2   2   4.6e-05     0.019   10.7   0.2   198   231   239   278   224   278 0.83 contig_1165_pilon_574 # 590423 # 591274 # -1 # ID=1_574;partial=00;start_type=ATG;rbs_motif=GGAG/GAGG;rbs_spacer=5-10bp;gc_cont=0.366
+contig_1165_pilon:241632-242861|-   -            410 1687at766            -            231   2.3e-06   23.5   0.0   1   2   1.2e-08   5.1e-06   22.4   0.0    11    86     4    79     1    92 0.84 contig_1165_pilon_235 # 241632 # 242861 # -1 # ID=1_235;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.401
+contig_1165_pilon:241632-242861|-   -            410 1687at766            -            231   2.3e-06   23.5   0.0   2   2      0.68   2.8e+02   -3.0   0.0    56    75   354   373   344   384 0.74 contig_1165_pilon_235 # 241632 # 242861 # -1 # ID=1_235;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.401
+contig_1165_pilon:1181429-1182655|- -            409 1687at766            -            231   6.4e-06   22.1   0.0   1   2   5.4e-08   2.2e-05   20.3   0.0    15    84     8    76     1    91 0.85 contig_1165_pilon_1165 # 1181429 # 1182655 # -1 # ID=1_1165;partial=00;start_type=ATG;rbs_motif=AGGA;rbs_spacer=5-10bp;gc_cont=0.367
+contig_1165_pilon:1181429-1182655|- -            409 1687at766            -            231   6.4e-06   22.1   0.0   2   2       0.3   1.3e+02   -1.8   0.0    49    76   345   372   331   383 0.75 contig_1165_pilon_1165 # 1181429 # 1182655 # -1 # ID=1_1165;partial=00;start_type=ATG;rbs_motif=AGGA;rbs_spacer=5-10bp;gc_cont=0.367
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/1687at766.hmm
+# Target file:     private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20250828_Nanopore/wRi/polished/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20250828_Nanopore/wRi/polished/run_rickettsiales_odb10/hmmer_output/1687at766.out --cpu 1 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/1687at766.hmm private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20250828_Nanopore/wRi/polished/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly
+# Date:            Fri Aug 29 11:49:10 2025
+# [ok]
