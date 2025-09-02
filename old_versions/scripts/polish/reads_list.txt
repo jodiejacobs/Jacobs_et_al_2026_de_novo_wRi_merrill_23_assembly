@@ -1,1 +1,0 @@
-/private/groups/russelllab/jodie/merrill_23_wRi_genome/scaffolded/merrill_23_all_basecalled/wRi//nanopore_reads.fastq
