@@ -181,6 +181,6 @@ The authors acknowledge the University of California Santa Cruz Genomics Institu
 
 ## Contact
 
-- **Corresponding Author**: Shelbi L Russell (srussell@ucsc.edu)
-- **Lead Author**: Jodie Jacobs (jomojaco@ucsc.edu)
+- **Corresponding Author**: Shelbi L Russell (shelbilrussell@gmail.com)
+- **Lead Author**: Jodie Jacobs (jacobs.jodiem@gmail.com)
 - **Lab Website**: [Russell Lab at UC Santa Cruz](https://russelllab.sites.ucsc.edu/)
