@@ -168,7 +168,7 @@ Nakamoto A, Loucks H, Wanke C, Cisneros A, Shanks C, Calicchio A, Enstrom A,
 Michelon C, Okamoto F, Heath H, Malukhina K, Russell P, Nag S, Gillespie T, 
 Sobolewski W, Truong Z, Russell SL. Complete de novo assembly of Wolbachia 
 endosymbiont of contemporary Drosophila simulans using long-read genome sequencing. 
-[Journal]. [Year].
+(preprint). 2025.
 ```
 
 ## Contributing
@@ -178,10 +178,6 @@ This pipeline was developed as part of ongoing research in the Russell Lab at UC
 ## Acknowledgments
 
 The authors acknowledge the University of California Santa Cruz Genomics Institute for providing computational resources and support for this project. The authors thank James Letcinger for the use of his computer for nanopore sequencing. Funding for this project was provided by NIH (T32 HG012344) awarded to JJ, CW, HL, AN, CS, and AS, NIH awards to SLR (R00GM135583, R35GM157189), and the NSF-GRFP awarded to AN.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
