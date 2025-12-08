@@ -1,0 +1,236 @@
+# Snakefile for host and Wolbachia strain identity verification
+
+configfile: "config.yaml"
+
+# Extract sample names and organisms from config
+SAMPLES = list(config["samples"].keys())
+ORGANISMS = list(config["references"].keys())
+
+rule all:
+    input:
+        expand("results/{sample}/summary_report.txt", sample=SAMPLES),
+        expand("results/{sample}/coverage_plot.pdf", sample=SAMPLES),
+        "results/combined_summary.tsv"
+
+# Step 1: Create metagenome reference with explicit prefixes
+rule create_metagenome:
+    input:
+        refs = lambda wildcards: [config["references"][org]["path"] for org in ORGANISMS]
+    output:
+        fasta = "resources/metagenome.fasta",
+        mmi = "resources/metagenome.mmi"
+    params:
+        ref_dict = config["references"]
+    log:
+        "logs/create_metagenome.log"
+    threads: 1
+    resources:
+        mem_mb = 8000,
+        time = "01:00:00"
+    run:
+        import gzip
+        import subprocess
+        
+        # Write metagenome fasta
+        with open(output.fasta, 'w') as outf, open(log[0], 'w') as logf:
+            for org, ref_info in params.ref_dict.items():
+                ref_path = ref_info['path']
+                print(f"Adding {org} from {ref_path}", file=logf)
+                
+                # Open file (handle gzip)
+                if ref_path.endswith('.gz'):
+                    inf = gzip.open(ref_path, 'rt')
+                else:
+                    inf = open(ref_path, 'r')
+                
+                # Process sequences
+                for line in inf:
+                    if line.startswith('>'):
+                        # Add organism prefix to sequence headers
+                        outf.write(f">{org}_{line[1:]}")
+                    else:
+                        outf.write(line)
+                
+                inf.close()
+        
+        # Index with minimap2
+        cmd = f"minimap2 -x map-ont -d {output.mmi} {output.fasta}"
+        with open(log[0], 'a') as logf:
+            subprocess.run(cmd, shell=True, stderr=logf, check=True)
+
+# Step 2: Align reads to metagenome
+rule align_to_metagenome:
+    input:
+        fastq = lambda wildcards: config["samples"][wildcards.sample],
+        mmi = "resources/metagenome.mmi"
+    output:
+        bam = "results/{sample}/aligned.bam",
+        bai = "results/{sample}/aligned.bam.bai"
+    log:
+        "logs/{sample}/align.log"
+    threads: 16
+    resources:
+        mem_mb = 32000,
+        time = "06:00:00"
+    shell:
+        """
+        minimap2 -ax map-ont -t {threads} {input.mmi} {input.fastq} 2> {log} | \
+            samtools view -bS - | \
+            samtools sort -@ 8 -o {output.bam}
+        
+        samtools index {output.bam}
+        """
+
+# Step 3: Get idxstats for all references
+rule get_idxstats:
+    input:
+        bam = "results/{sample}/aligned.bam",
+        bai = "results/{sample}/aligned.bam.bai"
+    output:
+        idxstats = "results/{sample}/idxstats.txt"
+    log:
+        "logs/{sample}/idxstats.log"
+    threads: 1
+    resources:
+        mem_mb = 4000,
+        time = "00:30:00"
+    shell:
+        """
+        samtools idxstats {input.bam} > {output.idxstats} 2> {log}
+        """
+
+# Step 4: Split BAM by organism
+rule split_bam_by_organism:
+    input:
+        bam = "results/{sample}/aligned.bam",
+        bai = "results/{sample}/aligned.bam.bai",
+        idxstats = "results/{sample}/idxstats.txt"
+    output:
+        split_bams = expand("results/{{sample}}/split/{org}.bam", 
+                           org=ORGANISMS),
+        split_bais = expand("results/{{sample}}/split/{org}.bam.bai",
+                           org=ORGANISMS)
+    params:
+        organisms = ORGANISMS,
+        outdir = "results/{sample}/split"
+    log:
+        "logs/{sample}/split_bam.log"
+    threads: 4
+    resources:
+        mem_mb = 16000,
+        time = "02:00:00"
+    shell:
+        """
+        mkdir -p {params.outdir}
+        
+        for org in {params.organisms}; do
+            echo "Extracting $org..." >> {log}
+            
+            # Get all contigs with this prefix
+            grep "^${{org}}_" {input.idxstats} | cut -f1 > {params.outdir}/${{org}}_contigs.txt
+            
+            # Check if any contigs found
+            if [ -s {params.outdir}/${{org}}_contigs.txt ]; then
+                # Extract reads mapping to these contigs
+                samtools view -b -h {input.bam} \
+                    $(cat {params.outdir}/${{org}}_contigs.txt | tr '\n' ' ') \
+                    > {params.outdir}/${{org}}.bam 2>> {log}
+                
+                samtools index {params.outdir}/${{org}}.bam
+            else
+                echo "No contigs found for $org, creating empty BAM" >> {log}
+                samtools view -bH {input.bam} > {params.outdir}/${{org}}.bam
+                samtools index {params.outdir}/${{org}}.bam
+            fi
+        done
+        """
+
+# Step 5: Get statistics for each organism
+rule get_organism_stats:
+    input:
+        bam = "results/{sample}/split/{org}.bam",
+        bai = "results/{sample}/split/{org}.bam.bai"
+    output:
+        flagstat = "results/{sample}/split/{org}.flagstat",
+        coverage = "results/{sample}/split/{org}.coverage"
+    log:
+        "logs/{sample}/stats_{org}.log"
+    threads: 1
+    resources:
+        mem_mb = 4000,
+        time = "00:30:00"
+    shell:
+        """
+        samtools flagstat {input.bam} > {output.flagstat} 2> {log}
+        samtools coverage {input.bam} > {output.coverage} 2>> {log}
+        """
+
+# Step 6: Generate summary report
+rule generate_summary:
+    input:
+        bam = "results/{sample}/aligned.bam",
+        idxstats = "results/{sample}/idxstats.txt",
+        flagstats = expand("results/{{sample}}/split/{org}.flagstat",
+                          org=ORGANISMS),
+        coverages = expand("results/{{sample}}/split/{org}.coverage",
+                          org=ORGANISMS)
+    output:
+        summary = "results/{sample}/summary_report.txt",
+        tsv = "results/{sample}/summary_data.tsv"
+    params:
+        organisms = ORGANISMS,
+        ref_dict = config["references"],
+        sample = "{sample}",
+        avg_read_length = config.get("avg_read_length", 10000)
+    log:
+        "logs/{sample}/summary.log"
+    threads: 1
+    resources:
+        mem_mb = 4000,
+        time = "00:30:00"
+    script:
+        "scripts/generate_summary.py"
+
+# Step 7: Create visualization
+rule plot_coverage:
+    input:
+        tsv = "results/{sample}/summary_data.tsv"
+    output:
+        pdf = "results/{sample}/coverage_plot.pdf"
+    params:
+        sample = "{sample}"
+    log:
+        "logs/{sample}/plot.log"
+    threads: 1
+    resources:
+        mem_mb = 4000,
+        time = "00:30:00"
+    script:
+        "scripts/plot_coverage.R"
+
+# Step 8: Combine all samples
+rule combine_summaries:
+    input:
+        expand("results/{sample}/summary_data.tsv", sample=SAMPLES)
+    output:
+        "results/combined_summary.tsv"
+    log:
+        "logs/combine_summaries.log"
+    threads: 1
+    resources:
+        mem_mb = 2000,
+        time = "00:10:00"
+    run:
+        import pandas as pd
+        
+        dfs = []
+        for f in input:
+            sample = f.split('/')[1]
+            df = pd.read_csv(f, sep='\t')
+            df['sample'] = sample
+            dfs.append(df)
+        
+        combined = pd.concat(dfs, ignore_index=True)
+        combined = combined[['sample', 'organism', 'description', 'mapped_reads', 
+                            'unmapped_reads', 'length', 'percentage', 'coverage']]
+        combined.to_csv(output[0], sep='\t', index=False)

@@ -1,0 +1,4 @@
+Check the host identity to confirm that we sequenced the correct flies 
+assembly1_data='/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.fastq.gz'
+assembly2_data='/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/20250828_Nanopore.wRiM23.fastq.gz'
+

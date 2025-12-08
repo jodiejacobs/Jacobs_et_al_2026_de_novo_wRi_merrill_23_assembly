@@ -1,0 +1,6 @@
+[M::main::2.420*0.53] loaded/built the index for 1967 target sequence(s)
+[M::mm_mapopt_update::2.811*0.60] mid_occ = 141
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1967
+[M::mm_idx_stat::3.080*0.63] distinct minimizers: 25878254 (54.92% are singletons); average occurrences: 2.006; average spacing: 5.356; total length: 278103248
+[M::worker_pipeline::89.002*13.60] mapped 480347 sequences
+[M::worker_pipeline::143.591*14.29] mapped 480498 sequences

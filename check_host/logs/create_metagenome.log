@@ -1,0 +1,12 @@
+Adding dmel from /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/check_host/reference/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.gz
+Adding dsim from /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/check_host/reference/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna.gz
+Adding wRi from /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/check_host/reference/GCF_000022285.1_ASM2228v1_genomic.fna.gz
+Adding wMel from /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/check_host/reference/GCF_016584425.1_ASM1658442v1_genomic.fna.gz
+[M::mm_idx_gen::3.861*1.51] collected minimizers
+[M::mm_idx_gen::5.535*1.65] sorted minimizers
+[M::main::8.058*1.23] loaded/built the index for 1967 target sequence(s)
+[M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1967
+[M::mm_idx_stat::8.320*1.22] distinct minimizers: 25878254 (54.92% are singletons); average occurrences: 2.006; average spacing: 5.356; total length: 278103248
+[M::main] Version: 2.24-r1122
+[M::main] CMD: minimap2 -x map-ont -d resources/metagenome.mmi resources/metagenome.fasta
+[M::main] Real time: 8.357 sec; CPU: 10.227 sec; Peak RSS: 1.874 GB

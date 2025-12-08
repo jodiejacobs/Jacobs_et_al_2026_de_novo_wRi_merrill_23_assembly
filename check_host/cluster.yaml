@@ -1,0 +1,21 @@
+# cluster.yaml
+
+__default__:
+  partition: "medium"
+  time: "01:00:00"
+  mem: "4000000"
+  cpus: 1
+
+create_metagenome:
+  time: "01:00:00"
+  mem: "4000000"
+
+align_to_metagenome:
+  time: "06:00:00"
+  mem: "8000000"
+  cpus: 16
+
+split_bam_by_organism:
+  time: "02:00:00"
+  mem: "16000000"
+  cpus: 4

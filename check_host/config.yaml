@@ -1,0 +1,31 @@
+# config.yaml
+
+# Sample definitions
+samples:
+  assembly1: "/private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.fastq.gz"
+  assembly2: "/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/20250828_Nanopore.all.fastq.gz"
+
+# Reference genomes with explicit prefix mapping
+references:
+  dmel:
+    path: "/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/check_host/reference/GCF_000001215.4_Release_6_plus_ISO1_MT_genomic.fna.gz"
+    description: "Drosophila melanogaster"
+  dsim:
+    path: "/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/check_host/reference/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna.gz"
+    description: "Drosophila simulans"
+  wRi:
+    path: "/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/check_host/reference/GCF_000022285.1_ASM2228v1_genomic.fna.gz"
+    description: "Wolbachia wRi"
+  wMel:
+    path: "/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/check_host/reference/GCF_016584425.1_ASM1658442v1_genomic.fna.gz"
+    description: "Wolbachia wMel"
+
+# Organism list (derived from references keys)
+organisms:
+  - "dmel"
+  - "dsim"
+  - "wRi"
+  - "wMel"
+
+# Average read length for coverage calculation (Nanopore typical range)
+avg_read_length: 10000
