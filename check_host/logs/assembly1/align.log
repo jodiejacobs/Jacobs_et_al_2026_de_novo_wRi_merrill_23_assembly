@@ -4,3 +4,17 @@
 [M::mm_idx_stat::3.080*0.63] distinct minimizers: 25878254 (54.92% are singletons); average occurrences: 2.006; average spacing: 5.356; total length: 278103248
 [M::worker_pipeline::89.002*13.60] mapped 480347 sequences
 [M::worker_pipeline::143.591*14.29] mapped 480498 sequences
+[M::worker_pipeline::199.222*14.58] mapped 483725 sequences
+[M::worker_pipeline::252.646*14.76] mapped 482300 sequences
+[M::worker_pipeline::306.512*14.87] mapped 481075 sequences
+[M::worker_pipeline::358.049*14.95] mapped 470907 sequences
+[M::worker_pipeline::437.150*14.92] mapped 461501 sequences
+[M::worker_pipeline::470.485*14.87] mapped 474505 sequences
+[M::worker_pipeline::527.646*14.93] mapped 488187 sequences
+[M::worker_pipeline::584.463*14.98] mapped 466520 sequences
+[M::worker_pipeline::634.665*15.00] mapped 508243 sequences
+[M::worker_pipeline::676.838*14.87] mapped 455592 sequences
+[M::worker_pipeline::681.036*14.78] mapped 145556 sequences
+[M::main] Version: 2.24-r1122
+[M::main] CMD: minimap2 -ax map-ont -t 16 resources/metagenome.mmi /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/basecalled/merrill_23_all_basecalled.fastq.gz
+[M::main] Real time: 681.143 sec; CPU: 10068.668 sec; Peak RSS: 9.702 GB

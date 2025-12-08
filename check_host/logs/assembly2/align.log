@@ -3,3 +3,13 @@
 [M::mm_idx_stat] kmer size: 15; skip: 10; is_hpc: 0; #seq: 1967
 [M::mm_idx_stat::1.816*1.00] distinct minimizers: 25878254 (54.92% are singletons); average occurrences: 2.006; average spacing: 5.356; total length: 278103248
 [M::worker_pipeline::82.468*13.64] mapped 104798 sequences
+[M::worker_pipeline::151.491*14.50] mapped 106577 sequences
+[M::worker_pipeline::189.888*14.63] mapped 104721 sequences
+[M::worker_pipeline::225.036*14.70] mapped 106616 sequences
+[M::worker_pipeline::257.319*14.71] mapped 104527 sequences
+[M::worker_pipeline::437.137*15.04] mapped 106813 sequences
+[M::worker_pipeline::633.423*15.15] mapped 85683 sequences
+[M::worker_pipeline::664.716*14.86] mapped 50309 sequences
+[M::main] Version: 2.24-r1122
+[M::main] CMD: minimap2 -ax map-ont -t 16 resources/metagenome.mmi /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/20250828_Nanopore.all.fastq.gz
+[M::main] Real time: 665.011 sec; CPU: 9875.101 sec; Peak RSS: 14.836 GB
