@@ -2,3 +2,7 @@ data/
 fast_assembly_3kb/
 .snakemake/
 polish/
+check_host/reference/
+check_host/resources/
+check_host/results/
+check_host/.snakemake/
