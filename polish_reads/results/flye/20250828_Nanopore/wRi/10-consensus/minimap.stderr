@@ -1,0 +1,12 @@
+[samfaipath] build FASTA index...
+[M::mm_idx_gen::0.051*1.05] collected minimizers
+[M::mm_idx_gen::0.064*3.17] sorted minimizers
+[M::main::0.064*3.17] loaded/built the index for 6 target sequence(s)
+[M::mm_mapopt_update::0.069*3.00] mid_occ = 28
+[M::mm_idx_stat] kmer size: 17; skip: 10; is_hpc: 0; #seq: 6
+[M::mm_idx_stat::0.072*2.92] distinct minimizers: 224966 (94.54% are singletons); average occurrences: 1.178; average spacing: 5.472; total length: 1450740
+[M::worker_pipeline::9.505*13.08] mapped 30121 sequences
+[M::main] Version: 2.24-r1155-dirty
+[M::main] CMD: flye-minimap2 -x map-ont -t 16 -k 17 -a -p 0.5 -N 10 --sam-hit-only -L -K 1G -z 1000 -Q --secondary-seq -I 64G /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/polish_reads/results/flye/20250828_Nanopore/wRi/00-assembly/draft_assembly.fasta /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/polish_reads/data/polished/merrill_23_all_basecalled_polished.wRiM23.fastq.gz
+[M::main] Real time: 9.524 sec; CPU: 124.305 sec; Peak RSS: 0.775 GB
+[bam_sort_core] merging from 0 files and 4 in-memory blocks...

@@ -1,0 +1,34 @@
+digraph {
+nodesep = 0.5;
+node [shape = circle, label = "", height = 0.3];
+"0" [style = "filled", fillcolor = "grey"];
+"1" [style = "filled", fillcolor = "grey"];
+"2" [style = "filled", fillcolor = "grey"];
+"3" [style = "filled", fillcolor = "grey"];
+"4" [style = "filled", fillcolor = "grey"];
+"5" [style = "filled", fillcolor = "grey"];
+"6" [style = "filled", fillcolor = "grey"];
+"7" [style = "filled", fillcolor = "grey"];
+"8" [style = "filled", fillcolor = "grey"];
+"9" [style = "filled", fillcolor = "grey"];
+"5" -> "2" [label = "id 1\l3.6k 16843x", color = "goldenrod" , penwidth = 3] ;
+"7" -> "3" [label = "id -1\l3.6k 16843x", color = "goldenrod" , penwidth = 3] ;
+"10" -> "11" [label = "id 4\l3.3k 109x", color = "black"] ;
+"10" -> "11" [label = "id -4\l3.3k 109x", color = "black"] ;
+"0" -> "12" [label = "id 5\l187k 25x", color = "black"] ;
+"13" -> "6" [label = "id -5\l187k 25x", color = "black"] ;
+"12" -> "14" [label = "id 6\l1.9k 84x", color = "darkgreen" , penwidth = 3] ;
+"15" -> "13" [label = "id -6\l1.9k 84x", color = "darkgreen" , penwidth = 3] ;
+"14" -> "16" [label = "id 8\l2.2k 48x", color = "darkgreen" , penwidth = 3] ;
+"17" -> "15" [label = "id -8\l2.2k 48x", color = "darkgreen" , penwidth = 3] ;
+"14" -> "9" [label = "id 9\l535k 29x", color = "black"] ;
+"8" -> "15" [label = "id -9\l535k 29x", color = "black"] ;
+"16" -> "18" [label = "id 10\l141k 27x", color = "black"] ;
+"19" -> "17" [label = "id -10\l141k 27x", color = "black"] ;
+"16" -> "18" [label = "id 11\l433k 31x", color = "black"] ;
+"19" -> "17" [label = "id -11\l433k 31x", color = "black"] ;
+"4" -> "10" [label = "id 17\l14k 270x", color = "darkgoldenrod1" , penwidth = 3] ;
+"11" -> "1" [label = "id -17\l14k 270x", color = "darkgoldenrod1" , penwidth = 3] ;
+"13" -> "19" [label = "id 18\l70k 61x", color = "darkgreen" , penwidth = 3] ;
+"18" -> "12" [label = "id -18\l70k 61x", color = "darkgreen" , penwidth = 3] ;
+}

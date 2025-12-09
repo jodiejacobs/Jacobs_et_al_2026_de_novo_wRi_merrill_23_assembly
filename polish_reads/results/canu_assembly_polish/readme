@@ -1,0 +1,10 @@
+Correct nanopore reads and assemble
+
+short_reads='/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/polish_reads/data/raw/short/20250828_Nanopore.wri.trimmed.filtered.fastq.gz'
+ONT_reads='/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/20250828_Nanopore.wRiM23.fastq.gz'
+
+canu -correct \
+  -p canu_assembly -d assembly \
+  genomeSize=1.3m \
+  -nanopore $ONT_reads \
+  -pacbio-corr $short_reads
