@@ -1,15 +1,15 @@
-#Completed on 08/28/2025
+#Completed on 12/18/15
 #to run this script:
 #cd /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/
 #conda activate snakemake
-# snakemake --executor slurm --default-resources slurm_partition=medium runtime=720 mem_mb=1000000 -j 10 -s Snakefile
+# snakemake --executor slurm --default-resources slurm_partition=medium runtime=720 mem_mb=1000000 -j 10 -s Snakefile_20251218
 
 #Global Variables:
 
 import os  
 import glob
 
-samples = ['20250828_Nanopore']
+samples = ['20251218_Merrill23_wRi']
 conda: '/private/groups/russelllab/jodie/bootcamp2024/scripts/read_filtering.yaml'   
 
 rule all:
@@ -22,7 +22,7 @@ rule all:
 
 rule basecalling:
     input:
-        pod5 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/pod5/'
+        pod5 = '/private/groups/russelllab/jodie/sequencing_data/20251218_Merrill23_wRi/20251218/pod5/'
     output:
         bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam'
     params:
@@ -33,19 +33,21 @@ rule basecalling:
         slurm_partition='gpu',
         mem_mb=100000,  # 100GB in MB
         runtime=360,    # 6 hours in minutes
-        slurm_extra='--gpus-per-node=4 --nodes=1 --exclude=phoenix-09 --mail-user=jomojaco@ucsc.edu --mail-type=ALL --output=logs/%x.%j.log'
+        slurm_extra='--gpus-per-node=4 --nodes=1 --exclude=phoenix-09 --mail-user=jomojaco@ucsc.edu --mail-type=ALL'
     shell:
         """
+        mkdir -p {params.outdir}
+
         # Dorado Basecalling:
         /private/home/jomojaco/dorado-0.7.3-linux-x64/bin/dorado basecaller hac {input.pod5} \
             --device cuda:all \
             --reference {params.genome} \
             --kit-name SQK-NBD114-24 > {output.bam}
         
-        # Dorado Demux:
-        /private/home/jomojaco/dorado-0.7.3-linux-x64/bin/dorado demux {output.bam} \
-            -o {params.outdir}/demux \
-            --kit-name SQK-NBD114-24
+        # # Dorado Demux:
+        # /private/home/jomojaco/dorado-0.7.3-linux-x64/bin/dorado demux {output.bam} \
+        #     -o {params.outdir}/demux \
+        #     --kit-name SQK-NBD114-24
         """
 
 rule sort_bam:
@@ -122,7 +124,108 @@ rule wri_assembly:
         source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
         conda activate assembly
         mkdir -p {params.wolbachia_dir}
-        flye --nano-hq {input.wolbachia_fastq} -t {threads} --out-dir {params.wolbachia_dir} --genome-size 1.3m
+        flye --nano-hq {input.wolbachia_fastq} -t {threads} --out-dir {params.wolbachia_dir} --genome-size 1.4m --min-overlap 1000 
+
+        '''
+
+rule scaffold_wri_assembly:
+    input:
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.fasta',
+        long_reads = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/basecalled/20251218_Merrill23_wRi.wRiM23.fastq.gz'
+    output:
+        wolbachia_scaffolded = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.scaffolded.fasta'
+    params:
+        ragtag_output = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/ragtag_output',
+        bridging_read = '0593f0bb-763c-4d1e-b4b7-bb684bf0f747'
+    resources: 
+        mem_mb=20000,
+        runtime=120
+    threads: 8  
+    shell:
+        ''' 
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+
+        mkdir -p {params.ragtag_output}
+
+        # Extract the specific bridging read
+        seqtk subseq {input.long_reads} <(echo "{params.bridging_read}") | \
+            seqtk seq -A > {params.ragtag_output}/bridging_read.fasta
+
+        # Scaffold with RagTag using the bridging read
+        ragtag.py scaffold \
+            -o {params.ragtag_output} \
+            -t {threads} \
+            -u \
+            -r \
+            {params.ragtag_output}/bridging_read.fasta \
+            {input.wolbachia_assembly}
+
+        # Check for circularity and trim overlap
+        SCAFFOLD={params.ragtag_output}/ragtag.scaffold.fasta
+        
+        samtools faidx $SCAFFOLD
+        SCAFFOLD_NAME=$(head -1 ${{SCAFFOLD}}.fai | cut -f1)
+        SCAFFOLD_LEN=$(head -1 ${{SCAFFOLD}}.fai | cut -f2)
+
+        # Extract ends to check for overlap
+        samtools faidx $SCAFFOLD ${{SCAFFOLD_NAME}}:1-10000 > {params.ragtag_output}/start.fasta
+        samtools faidx $SCAFFOLD ${{SCAFFOLD_NAME}}:$(($SCAFFOLD_LEN - 10000))-${{SCAFFOLD_LEN}} > {params.ragtag_output}/end.fasta
+
+        # Check for overlap
+        minimap2 -c -x asm5 {params.ragtag_output}/start.fasta {params.ragtag_output}/end.fasta 2>/dev/null > {params.ragtag_output}/overlap.paf || true
+
+        if [ -s {params.ragtag_output}/overlap.paf ]; then
+            OVERLAP_SIZE=$(awk '{{print $4-$3}}' {params.ragtag_output}/overlap.paf | sort -rn | head -1)
+            
+            if [ $OVERLAP_SIZE -gt 100 ]; then
+                # Trim overlap for circular chromosome
+                NEW_LEN=$(($SCAFFOLD_LEN - $OVERLAP_SIZE))
+                samtools faidx $SCAFFOLD ${{SCAFFOLD_NAME}}:1-${{NEW_LEN}} | \
+                    sed "s/^>.*/>wRi_{wildcards.sample}_circular/" > {output.wolbachia_scaffolded}
+            else
+                cp $SCAFFOLD {output.wolbachia_scaffolded}
+            fi
+        else
+            # No overlap, keep as is
+            cp $SCAFFOLD {output.wolbachia_scaffolded}
+        fi
+        '''
+
+rule create_bandage_graph:
+    input:
+        scaffolded_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.scaffolded.fasta'
+    output:
+        bandage_graph = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/scaffold.gfa'
+    resources:
+        mem_mb=4000,
+        runtime=10
+    threads: 1
+    shell:
+        '''
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+
+        # Index the scaffolded assembly
+        samtools faidx {input.scaffolded_assembly}
+
+        # Get scaffold info
+        SCAFFOLD_NAME=$(head -1 {input.scaffolded_assembly}.fai | cut -f1)
+        SCAFFOLD_LEN=$(head -1 {input.scaffolded_assembly}.fai | cut -f2)
+
+        # Create GFA file with header
+        cat > {output.bandage_graph} << EOF
+H	VN:Z:1.0
+S	${{SCAFFOLD_NAME}}	*	LN:i:${{SCAFFOLD_LEN}}
+EOF
+
+        # Check if circular (based on name)
+        if echo "$SCAFFOLD_NAME" | grep -q "circular"; then
+            # Add self-loop for circular chromosome
+            echo -e "L\t${{SCAFFOLD_NAME}}\t+\t${{SCAFFOLD_NAME}}\t+\t0M" >> {output.bandage_graph}
+        fi
+
+        echo "✓ Created Bandage graph: {output.bandage_graph}"
         '''
 
 rule wri_prepare_short_reads:
@@ -148,7 +251,7 @@ rule wri_prepare_short_reads:
 
 rule wri_polish:
     input:
-        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.fasta',
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.scaffolded.fasta',
         wolbachia_short_reads = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
     output:    
         wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta'
@@ -224,3 +327,5 @@ rule wri_busco:
         busco -i {input.wolbachia_assembly} -o {params.wolbachia_assembly_dir} -l rickettsiales_odb10 -m genome --cpu {threads}
         busco -i {input.wolbachia_polished} -o {params.wolbachia_polished_dir} -l rickettsiales_odb10 -m genome --cpu {threads}
         '''
+
+        
