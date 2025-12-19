@@ -9,4 +9,4 @@ check_host/.snakemake/
 results/
 polish_reads/results/
 data_20250828_wMel/
-
+compare_assemblies/
