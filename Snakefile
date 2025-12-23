@@ -2,7 +2,7 @@
 #to run this script:
 #cd /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/
 #conda activate snakemake
-# snakemake --executor slurm --default-resources slurm_partition=medium runtime=720 mem_mb=1000000 -j 10 -s Snakefile_20251218
+# snakemake --executor slurm --default-resources slurm_partition=medium runtime=720 mem_mb=1000000 -j 10 -s Snakefile
 
 #Global Variables:
 
@@ -228,6 +228,95 @@ EOF
         echo "✓ Created Bandage graph: {output.bandage_graph}"
         '''
 
+# ==============================================================================
+# LONG-READ POLISHING (NEW STEPS)
+# ==============================================================================
+
+rule wri_medaka_polish:
+    input:
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.scaffolded.fasta',
+        wolbachia_fastq = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/{sample}.wRiM23.fastq.gz'
+    output:
+        medaka_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi/consensus.fasta'
+    params:
+        medaka_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi',
+        model = 'r1041_e82_400bps_sup_v5.0.0'  # Adjust based on your basecalling model
+    resources:
+        mem_mb=50000,
+        runtime=120
+    threads: 16
+    shell:
+        '''
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+        
+        mkdir -p {params.medaka_dir}
+        
+        # Run medaka consensus
+        medaka_consensus \
+            -i {input.wolbachia_fastq} \
+            -d {input.wolbachia_assembly} \
+            -o {params.medaka_dir} \
+            -t {threads} \
+            -m {params.model}
+        '''
+
+rule wri_align_for_mpileup:
+    input:
+        medaka_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi/consensus.fasta',
+        wolbachia_fastq = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/{sample}.wRiM23.fastq.gz'
+    output:
+        aligned_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi/aligned_for_mpileup.sorted.bam',
+        bam_index = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi/aligned_for_mpileup.sorted.bam.bai'
+    resources:
+        mem_mb=30000,
+        runtime=60
+    threads: 16
+    shell:
+        '''
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+        
+        # Align reads to medaka-polished assembly
+        minimap2 -ax map-ont -t {threads} \
+            {input.medaka_polished} \
+            {input.wolbachia_fastq} | \
+            samtools sort -@ {threads} -o {output.aligned_bam}
+        
+        # Index the BAM
+        samtools index -@ {threads} {output.aligned_bam}
+        '''
+
+rule wri_mpileup_consensus:
+    input:
+        medaka_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi/consensus.fasta',
+        aligned_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi/aligned_for_mpileup.sorted.bam'
+    output:
+        mpileup_consensus = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi/mpileup_consensus.fasta'
+    params:
+        consensus_fq = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi/consensus.fq'
+    resources:
+        mem_mb=20000,
+        runtime=60
+    threads: 8
+    shell:
+        '''
+        source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
+        conda activate assembly
+        
+        # Generate consensus with mpileup and bcftools
+        samtools mpileup -uf {input.medaka_polished} {input.aligned_bam} | \
+            bcftools call -c | \
+            vcfutils.pl vcf2fq > {params.consensus_fq}
+        
+        # Convert fastq to fasta
+        seqtk seq -A {params.consensus_fq} > {output.mpileup_consensus}
+        '''
+
+# ==============================================================================
+# SHORT-READ POLISHING (ILLUMINA)
+# ==============================================================================
+
 rule wri_prepare_short_reads:
     input:
         wri_r1 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R1.fastq.gz',
@@ -251,7 +340,7 @@ rule wri_prepare_short_reads:
 
 rule wri_polish:
     input:
-        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.scaffolded.fasta',
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/medaka_polished/{sample}/wRi/mpileup_consensus.fasta',
         wolbachia_short_reads = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
     output:    
         wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta'
@@ -319,13 +408,8 @@ rule wri_busco:
     shell:
         ''' 
         source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
-        conda activate busco
-
-        mkdir -p {params.wolbachia_assembly_dir}
-        mkdir -p {params.wolbachia_polished_dir}
+        conda activate assembly
 
         busco -i {input.wolbachia_assembly} -o {params.wolbachia_assembly_dir} -l rickettsiales_odb10 -m genome --cpu {threads}
         busco -i {input.wolbachia_polished} -o {params.wolbachia_polished_dir} -l rickettsiales_odb10 -m genome --cpu {threads}
         '''
-
-        
