@@ -408,7 +408,7 @@ rule wri_busco:
     shell:
         ''' 
         source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
-        conda activate assembly
+        conda activate busco
 
         busco -i {input.wolbachia_assembly} -o {params.wolbachia_assembly_dir} -l rickettsiales_odb10 -m genome --cpu {threads}
         busco -i {input.wolbachia_polished} -o {params.wolbachia_polished_dir} -l rickettsiales_odb10 -m genome --cpu {threads}
