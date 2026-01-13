@@ -10,3 +10,8 @@ results/
 polish_reads/results/
 data_20250828_wMel/
 compare_assemblies/
+ragtag/
+trycycler/
+compare_assemblies/
+.temp*
+
