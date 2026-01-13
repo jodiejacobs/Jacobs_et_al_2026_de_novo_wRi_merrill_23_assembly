@@ -259,45 +259,37 @@ rule wri_polish:
         wolbachia_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}/wRi/'
     resources: 
         mem_mb=50000,
-        runtime=180  # Shorter runtime for smaller genome
+        runtime=180
     threads: 16
     shell:
         '''
         source $(dirname $(dirname $(which conda)))/etc/profile.d/conda.sh
         conda activate assembly
         
-        # Create output directory
         mkdir -p {params.wolbachia_dir}
         
-        # Index assembly for BWA
+        # Index the SCAFFOLDED assembly (not the original)
         bwa index {input.wolbachia_assembly}
         
-        # Align Wolbachia reads to Wolbachia assembly
+        # Align to SCAFFOLDED assembly
         bwa mem -t {threads} {input.wolbachia_assembly} {input.wolbachia_short_reads} | \
             sambamba view -f bam -S /dev/stdin | \
             sambamba sort -t {threads} -o {params.wolbachia_dir}/wolbachia_sorted.bam /dev/stdin
 
-        # Index the sorted BAM
         sambamba index -t {threads} {params.wolbachia_dir}/wolbachia_sorted.bam
-
-        # Mark duplicates for Wolbachia
         sambamba markdup -t {threads} {params.wolbachia_dir}/wolbachia_sorted.bam {params.wolbachia_dir}/wolbachia_dedup.bam
-        
-        # Index the deduplicated BAM
         sambamba index -t {threads} {params.wolbachia_dir}/wolbachia_dedup.bam
         
         export _JAVA_OPTIONS="-Xmx32g"
 
-        # Polish Wolbachia assembly with Pilon
         pilon --genome {input.wolbachia_assembly} \
               --bam {params.wolbachia_dir}/wolbachia_dedup.bam \
               --output {params.wolbachia_dir}/wolbachia_polished \
               --threads {threads}
               
-        # Copy polished assembly to final output location
         cp {params.wolbachia_dir}/wolbachia_polished.fasta {output.wolbachia_polished}
         '''
-
+        
 # ==============================================================================
 # OPTIONAL: QUALITY ASSESSMENT
 # ==============================================================================
