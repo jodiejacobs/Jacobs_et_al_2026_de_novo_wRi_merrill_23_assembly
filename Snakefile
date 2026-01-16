@@ -14,7 +14,9 @@ conda: '/private/groups/russelllab/jodie/bootcamp2024/scripts/read_filtering.yam
 
 rule all:
     input:
-        expand('/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta', sample=samples)
+        expand('/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta', sample=samples),
+        expand('/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/assembly/short_summary.specific.rickettsiales_odb10.txt', sample=samples),
+        expand('/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/polished/short_summary.specific.rickettsiales_odb10.txt', sample=samples)
 
 # ==============================================================================
 # SHARED PREPROCESSING STEPS
