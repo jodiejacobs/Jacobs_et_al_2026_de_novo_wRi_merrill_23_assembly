@@ -1,0 +1,15 @@
+#                                                                               --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name           accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#   ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_78:27025-27591|- -            189 2712at766            -            175   4.6e-77  254.0   2.2   1   1   7.3e-80   5.2e-77  253.9   2.2     1   175     1   187     1   187 0.94 contig_78_30 # 27025 # 27591 # -1 # ID=71_30;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.353
+contig_82:7195-7761|+   -            189 2712at766            -            175   4.6e-77  254.0   2.2   1   1   7.3e-80   5.2e-77  253.9   2.2     1   175     1   187     1   187 0.94 contig_82_10 # 7195 # 7761 # 1 # ID=75_10;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.354
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/2712at766.hmm
+# Target file:     private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/assembly/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/assembly/run_rickettsiales_odb10/hmmer_output/2712at766.out --cpu 1 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/2712at766.hmm private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/assembly/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly
+# Date:            Fri Jan 16 13:07:59 2026
+# [ok]

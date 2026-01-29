@@ -2,7 +2,7 @@
 #to run this script:
 #cd /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/
 #conda activate snakemake
-# snakemake --executor slurm --default-resources slurm_partition=medium runtime=720 mem_mb=1000000 -j 10 -s Snakefile
+# snakemake --executor slurm --default-resources slurm_partition=medium runtime=720 mem_mb=1000000 -j 10 -s Snakefile_20250828 -n -k 
 
 #Global Variables:
 
@@ -14,7 +14,7 @@ conda: '/private/groups/russelllab/jodie/bootcamp2024/scripts/read_filtering.yam
 
 rule all:
     input:
-        expand('/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta', sample=samples)
+        expand('/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/polished/{sample}_wRi_M23.assembly.fasta', sample=samples)
 
 # ==============================================================================
 # SHARED PREPROCESSING STEPS
@@ -22,12 +22,12 @@ rule all:
 
 rule basecalling:
     input:
-        pod5 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/pod5/'
+        pod5 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/pod5/'
     output:
-        bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam'
+        bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/aligned/aligned_basecalled.bam'
     params:
-        genome = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/reference/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna.gz',
-        outdir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/'
+        genome = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/reference/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna.gz',
+        outdir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/aligned/'
     threads: 25
     resources:
         slurm_partition='gpu',
@@ -50,10 +50,10 @@ rule basecalling:
 
 rule sort_bam:
     input:
-        bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.bam'
+        bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/aligned/aligned_basecalled.bam'
     output:
-        sorted_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam',
-        index = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam.bai'
+        sorted_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/aligned/aligned_basecalled.sorted.bam',
+        index = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/aligned/aligned_basecalled.sorted.bam.bai'
     resources: 
         mem_mb=100000,
         runtime=200
@@ -69,10 +69,10 @@ rule sort_bam:
 
 rule separate_bam:
     input:
-        bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/aligned_basecalled.sorted.bam',
+        bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/aligned/aligned_basecalled.sorted.bam',
     output:
-        host_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/{sample}.DsimM23.bam',
-        wolbachia_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/{sample}.wRiM23.bam'
+        host_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/aligned/{sample}.DsimM23.bam',
+        wolbachia_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/aligned/{sample}.wRiM23.bam'
     resources: 
         mem_mb=100000,
         runtime=200
@@ -92,9 +92,9 @@ rule separate_bam:
 
 rule wri_bam2fastq:
     input:
-        wolbachia_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/aligned/{sample}.wRiM23.bam'
+        wolbachia_bam = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/aligned/{sample}.wRiM23.bam'
     output:
-        wolbachia_fastq = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/{sample}.wRiM23.fastq.gz'
+        wolbachia_fastq = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/basecalled/{sample}.wRiM23.fastq.gz'
     resources: 
         mem_mb=25000,
         runtime=60
@@ -108,11 +108,11 @@ rule wri_bam2fastq:
 
 rule wri_assembly:
     input:
-        wolbachia_fastq = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/{sample}.wRiM23.fastq.gz'
+        wolbachia_fastq = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/basecalled/{sample}.wRiM23.fastq.gz'
     output:
-        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.fasta'
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/flye/{sample}/wRi/assembly.fasta'
     params:
-        wolbachia_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/'
+        wolbachia_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/flye/{sample}/wRi/'
     resources: 
         mem_mb=50000,
         runtime=180  # Shorter runtime for smaller genome
@@ -127,10 +127,10 @@ rule wri_assembly:
 
 rule wri_prepare_short_reads:
     input:
-        wri_r1 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R1.fastq.gz',
-        wri_r2 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R2.fastq.gz'
+        wri_r1 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/short_reads/Dmel_wMel.R1.fastq.gz',
+        wri_r2 = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/short_reads/Dmel_wMel.R2.fastq.gz'
     output:
-        wri_trimmed = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
+        wri_trimmed = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
     threads: 4
     resources:
         mem_mb=10000,
@@ -141,19 +141,19 @@ rule wri_prepare_short_reads:
         conda activate assembly
 
         # Create output directory
-        mkdir -p /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/
+        mkdir -p /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/short_reads/
         # Simply combine R1 and R2 for wRi without trimming
         zcat {input.wri_r1} {input.wri_r2} | gzip > {output.wri_trimmed}
         """
 
 rule wri_polish:
     input:
-        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.fasta',
-        wolbachia_short_reads = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/flye/{sample}/wRi/assembly.fasta',
+        wolbachia_short_reads = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/short_reads/{sample}.wri.trimmed.filtered.fastq.gz'
     output:    
-        wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta'
+        wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/polished/{sample}_wRi_M23.assembly.fasta'
     params:
-        wolbachia_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}/wRi/'
+        wolbachia_dir = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/polished/{sample}/wRi/'
     resources: 
         mem_mb=50000,
         runtime=180  # Shorter runtime for smaller genome
@@ -201,8 +201,8 @@ rule wri_polish:
 
 rule wri_busco:
     input:
-        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/{sample}/wRi/assembly.fasta',
-        wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/polished/{sample}_wRi_M23.assembly.fasta'
+        wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/flye/{sample}/wRi/assembly.fasta',
+        wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data_20250828_wMel/polished/{sample}_wRi_M23.assembly.fasta'
     output:
         wolbachia_assembly = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/assembly/short_summary.specific.rickettsiales_odb10.txt',
         wolbachia_polished = '/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/{sample}/wRi/polished/short_summary.specific.rickettsiales_odb10.txt'

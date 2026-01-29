@@ -1,0 +1,11 @@
+STUDY           PRJEB107302
+SAMPLE          ERS28645251
+ASSEMBLYNAME    wRi_Merrill_23_assembly
+ASSEMBLY_TYPE   isolate
+COVERAGE        57
+PROGRAM         Flye
+PLATFORM        OXFORD_NANOPORE
+MINGAPLENGTH    10
+MOLECULETYPE    genomic DNA
+FASTA           20251218_Merrill23_wRi_wRi_M23.assembly.fasta.gz
+CHROMOSOME_LIST chromosome_list.txt.gz

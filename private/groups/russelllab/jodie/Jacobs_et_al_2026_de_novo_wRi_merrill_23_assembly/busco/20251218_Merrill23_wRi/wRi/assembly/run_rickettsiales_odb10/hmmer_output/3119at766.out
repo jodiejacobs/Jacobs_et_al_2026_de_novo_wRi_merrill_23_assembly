@@ -1,0 +1,20 @@
+#                                                                               --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name           accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#   ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_64:2984-3577|-   -            198 3119at766            -            167   3.7e-68  224.6   4.1   1   2   5.6e-69   1.6e-66  219.3   0.7     1   143     3   152     3   165 0.94 contig_64_4 # 2984 # 3577 # -1 # ID=58_4;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.318
+contig_64:2984-3577|-   -            198 3119at766            -            167   3.7e-68  224.6   4.1   2   2    0.0011      0.31    6.9   0.1   140   166   170   196   166   197 0.90 contig_64_4 # 2984 # 3577 # -1 # ID=58_4;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.318
+contig_82:40257-41582|- -            442 3119at766            -            167     3e-17   59.0   1.1   1   2   2.9e-08   8.1e-06   21.8   0.2    26   116     3    92     1   118 0.63 contig_82_46 # 40257 # 41582 # -1 # ID=75_46;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.373
+contig_82:40257-41582|- -            442 3119at766            -            167     3e-17   59.0   1.1   2   2   1.8e-12     5e-10   35.5   0.0    14   140   163   297   154   314 0.76 contig_82_46 # 40257 # 41582 # -1 # ID=75_46;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.373
+contig_63:62980-64308|+ -            443 3119at766            -            167   1.1e-05   21.3   0.0   1   1   1.2e-07   3.3e-05   19.8   0.0    27    63   220   255   215   263 0.91 contig_63_66 # 62980 # 64308 # 1 # ID=57_66;partial=00;start_type=ATG;rbs_motif=AGxAG;rbs_spacer=11-12bp;gc_cont=0.359
+contig_89:10693-11577|- -            295 3119at766            -            167   7.6e-05   18.6   0.4   1   1   5.2e-07   0.00015   17.7   0.4    27   142     9   129     3   168 0.72 contig_89_10 # 10693 # 11577 # -1 # ID=78_10;partial=00;start_type=GTG;rbs_motif=None;rbs_spacer=None;gc_cont=0.350
+contig_68:5573-6667|+   -            365 3119at766            -            167    0.0034   13.2   0.2   1   1   4.9e-05     0.014   11.3   0.2    28    65     6    42     3   167 0.94 contig_68_5 # 5573 # 6667 # 1 # ID=61_5;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.380
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/3119at766.hmm
+# Target file:     private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/assembly/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/assembly/run_rickettsiales_odb10/hmmer_output/3119at766.out --cpu 1 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/3119at766.hmm private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/assembly/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly
+# Date:            Fri Jan 16 13:08:00 2026
+# [ok]

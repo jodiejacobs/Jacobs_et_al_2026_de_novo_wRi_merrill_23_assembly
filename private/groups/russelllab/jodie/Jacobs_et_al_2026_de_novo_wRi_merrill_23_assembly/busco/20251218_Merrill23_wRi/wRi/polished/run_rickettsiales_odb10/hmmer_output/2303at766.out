@@ -1,0 +1,18 @@
+#                                                                                                --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name                            accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#                    ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+wRi_Merrill23_polished:650740-651474|-   -            245 2303at766            -            199   1.1e-85  282.3  11.1   1   2   2.1e-12   8.9e-10   34.5   1.0     5    49     9    59     5    75 0.76 wRi_Merrill23_polished_633 # 650740 # 651474 # -1 # ID=1_633;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.358
+wRi_Merrill23_polished:650740-651474|-   -            245 2303at766            -            199   1.1e-85  282.3  11.1   2   2   6.8e-79   2.8e-76  251.6   4.3    41   198    78   244    61   244 0.93 wRi_Merrill23_polished_633 # 650740 # 651474 # -1 # ID=1_633;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.358
+wRi_Merrill23_polished:1223580-1224335|- -            252 2303at766            -            199   7.3e-13   44.6   0.1   1   2   1.9e-05    0.0081   11.8   0.0     4    38    16    54    14    64 0.65 wRi_Merrill23_polished_1173 # 1223580 # 1224335 # -1 # ID=1_1173;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.378
+wRi_Merrill23_polished:1223580-1224335|- -            252 2303at766            -            199   7.3e-13   44.6   0.1   2   2   3.2e-11   1.4e-08   30.7   0.0    31   135    87   202    74   211 0.82 wRi_Merrill23_polished_1173 # 1223580 # 1224335 # -1 # ID=1_1173;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.378
+wRi_Merrill23_polished:1019512-1020297|+ -            262 2303at766            -            199   1.3e-09   34.0   0.1   1   1   5.3e-12   2.2e-09   33.2   0.1    64   196   118   252    91   255 0.79 wRi_Merrill23_polished_978 # 1019512 # 1020297 # 1 # ID=1_978;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.361
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/2303at766.hmm
+# Target file:     private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/polished/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/polished/run_rickettsiales_odb10/hmmer_output/2303at766.out --cpu 1 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/2303at766.hmm private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/polished/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly
+# Date:            Fri Jan 16 13:08:19 2026
+# [ok]

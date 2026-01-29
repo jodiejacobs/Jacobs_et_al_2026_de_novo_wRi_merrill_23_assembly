@@ -1,0 +1,367 @@
+# BUSCO version is: 6.0.0 
+# The lineage dataset is: rickettsiales_odb10 (Creation date: 2024-01-08, number of genomes: 34, number of BUSCOs: 364)
+# Busco id	Status	Sequence	Gene Start	Gene End	Strand	Score	Length	OrthoDB url	Description
+3at766	Complete	wRi_Merrill23_polished	1165707	1157194	-	2071.8	1189	https://v10-1.orthodb.org/?query=3at766	DNA-directed RNA polymerase subunit beta'
+12at766	Missing
+14at766	Complete	wRi_Merrill23_polished	513426	509950	-	1381.8	897	https://v10-1.orthodb.org/?query=14at766	DNA polymerase III subunit alpha
+22at766	Complete	wRi_Merrill23_polished	970418	975151	+	1446.9	1184	https://v10-1.orthodb.org/?query=22at766	NAD-glutamate dehydrogenase
+43at766	Complete	wRi_Merrill23_polished	796073	793413	-	1153.6	682	https://v10-1.orthodb.org/?query=43at766	SecA, preprotein cross-linking domain
+47at766	Complete	wRi_Merrill23_polished	1006553	1009063	+	1040.9	704	https://v10-1.orthodb.org/?query=47at766	DNA mismatch repair protein MutS
+49at766	Complete	wRi_Merrill23_polished	620595	623360	+	1090.2	718	https://v10-1.orthodb.org/?query=49at766	Pyruvate, phosphate dikinase
+59at766	Complete	wRi_Merrill23_polished	726862	723563	-	714.7	623	https://v10-1.orthodb.org/?query=59at766	DNA helicase
+60at766	Complete	wRi_Merrill23_polished	835291	838602	+	1315.1	804	https://v10-1.orthodb.org/?query=60at766	Isoleucine--tRNA ligase
+100at766	Complete	wRi_Merrill23_polished	1043699	1046128	+	1031.9	611	https://v10-1.orthodb.org/?query=100at766	DNA gyrase subunit B
+101at766	Complete	wRi_Merrill23_polished	283465	286107	+	963.6	674	https://v10-1.orthodb.org/?query=101at766	Alanine--tRNA ligase
+117at766	Complete	wRi_Merrill23_polished	843490	841151	-	737.7	617	https://v10-1.orthodb.org/?query=117at766	Phenylalanine--tRNA ligase beta subunit
+119at766	Complete	wRi_Merrill23_polished	675478	677931	+	1112.8	681	https://v10-1.orthodb.org/?query=119at766	Lon protease
+129at766	Missing
+132at766	Complete	wRi_Merrill23_polished	289119	291524	+	1225.1	670	https://v10-1.orthodb.org/?query=132at766	CagE, TrbE, VirB component of type IV transporter system
+150at766	Complete	wRi_Merrill23_polished	1172217	1170142	-	1040.7	576	https://v10-1.orthodb.org/?query=150at766	Elongation factor G
+153at766	Complete	wRi_Merrill23_polished	1131729	1129213	-	1149.0	695	https://v10-1.orthodb.org/?query=153at766	Leucine--tRNA ligase
+162at766	Complete	wRi_Merrill23_polished	967829	970390	+	1184.4	704	https://v10-1.orthodb.org/?query=162at766	Clp, N-terminal
+170at766	Complete	wRi_Merrill23_polished	850714	848639	-	881.6	545	https://v10-1.orthodb.org/?query=170at766	Single hybrid motif
+172at766	Complete	wRi_Merrill23_polished	1096014	1093945	-	969.4	589	https://v10-1.orthodb.org/?query=172at766	NADH-quinone oxidoreductase
+176at766	Complete	wRi_Merrill23_polished	269653	271926	+	861.7	573	https://v10-1.orthodb.org/?query=176at766	Polyribonucleotide nucleotidyltransferase
+197at766	Complete	wRi_Merrill23_polished	333660	331639	-	765.1	554	https://v10-1.orthodb.org/?query=197at766	Helicase, C-terminal
+216at766	Complete	wRi_Merrill23_polished	999467	1001251	+	1000.2	520	https://v10-1.orthodb.org/?query=216at766	Ribonucleoside-diphosphate reductase
+222at766	Complete	wRi_Merrill23_polished	1040818	1038224	-	1046.1	665	https://v10-1.orthodb.org/?query=222at766	Aconitate hydratase
+246at766	Complete	wRi_Merrill23_polished	1208779	1206134	-	1079.3	705	https://v10-1.orthodb.org/?query=246at766	2-oxoglutarate dehydrogenase E1 component
+248at766	Complete	wRi_Merrill23_polished	1211469	1209652	-	658.4	472	https://v10-1.orthodb.org/?query=248at766	DNA mismatch repair protein MutL
+255at766	Complete	wRi_Merrill23_polished	874228	876024	+	979.8	536	https://v10-1.orthodb.org/?query=255at766	Elongation factor 4
+256at766	Complete	wRi_Merrill23_polished	964722	966551	+	956.9	533	https://v10-1.orthodb.org/?query=256at766	GTP-binding protein
+257at766	Missing
+283at766	Complete	wRi_Merrill23_polished	853818	855617	+	953.5	501	https://v10-1.orthodb.org/?query=283at766	Succinate dehydrogenase flavoprotein subunit
+286at766	Complete	wRi_Merrill23_polished	157679	160255	+	933.1	667	https://v10-1.orthodb.org/?query=286at766	DNA polymerase I
+300at766	Complete	wRi_Merrill23_polished	525598	523853	-	673.8	476	https://v10-1.orthodb.org/?query=300at766	ABC transporter type 1, transmembrane domain
+311at766	Complete	wRi_Merrill23_polished	891013	893484	+	1051.7	670	https://v10-1.orthodb.org/?query=311at766	Valine--tRNA ligase
+312at766	Complete	wRi_Merrill23_polished	656608	658158	+	880.7	475	https://v10-1.orthodb.org/?query=312at766	Cytochrome c oxidase subunit I
+322at766	Complete	wRi_Merrill23_polished	258661	260409	+	549.7	433	https://v10-1.orthodb.org/?query=322at766	Heat shock protein 70 family
+348at766	Complete	wRi_Merrill23_polished	183036	184937	+	884.0	503	https://v10-1.orthodb.org/?query=348at766	Threonine--tRNA ligase
+349at766	Complete	wRi_Merrill23_polished	227134	229056	+	971.0	543	https://v10-1.orthodb.org/?query=349at766	Chaperone protein DnaK
+350at766	Complete	wRi_Merrill23_polished	1178221	1176203	-	1041.0	490	https://v10-1.orthodb.org/?query=350at766	Type IV secretion system protein TraG/VirD4
+363at766	Missing
+364at766	Complete	wRi_Merrill23_polished	35161	37611	+	1006.9	666	https://v10-1.orthodb.org/?query=364at766	DNA topoisomerase I, type IA
+377at766	Missing
+382at766	Complete	wRi_Merrill23_polished	646233	647774	+	741.5	408	https://v10-1.orthodb.org/?query=382at766	ATP synthase subunit alpha
+383at766	Complete	wRi_Merrill23_polished	152148	153815	+	508.1	372	https://v10-1.orthodb.org/?query=383at766	Peptidase M24
+384at766	Complete	wRi_Merrill23_polished	715925	717571	+	626.8	387	https://v10-1.orthodb.org/?query=384at766	Methionine--tRNA ligase
+392at766	Complete	wRi_Merrill23_polished	1241061	1239166	-	880.5	530	https://v10-1.orthodb.org/?query=392at766	Histidine kinase/HSP90-like ATPase
+400at766	Complete	wRi_Merrill23_polished	933646	935115	+	666.2	420	https://v10-1.orthodb.org/?query=400at766	Glutamyl-tRNA(Gln) amidotransferase subunit A
+404at766	Complete	wRi_Merrill23_polished	1136496	1134958	-	556.4	356	https://v10-1.orthodb.org/?query=404at766	leucyl aminopeptidase
+406at766	Complete	wRi_Merrill23_polished	199145	201061	+	759.2	511	https://v10-1.orthodb.org/?query=406at766	DNA helicase
+421at766	Complete	wRi_Merrill23_polished	515508	517496	+	795.2	564	https://v10-1.orthodb.org/?query=421at766	DNA ligase
+430at766	Complete	wRi_Merrill23_polished	1215125	1217077	+	621.6	441	https://v10-1.orthodb.org/?query=430at766	RNA polymerase sigma-70
+431at766	Complete	wRi_Merrill23_polished	1083279	1081906	-	501.8	343	https://v10-1.orthodb.org/?query=431at766	Cysteine--tRNA ligase
+452at766	Complete	wRi_Merrill23_polished	1268088	1266763	-	374.4	327	https://v10-1.orthodb.org/?query=452at766	GTPase Der
+483at766	Missing
+496at766	Complete	wRi_Merrill23_polished	825647	827449	+	845.3	504	https://v10-1.orthodb.org/?query=496at766	Aspartate--tRNA(Asp/Asn) ligase
+498at766	Complete	wRi_Merrill23_polished	832189	833508	+	596.6	359	https://v10-1.orthodb.org/?query=498at766	tRNA-2-methylthio-N(6)-dimethylallyladenosine synthase
+503at766	Complete	wRi_Merrill23_polished	689080	690729	+	648.3	448	https://v10-1.orthodb.org/?query=503at766	GroEL-like apical domain superfamily
+514at766	Complete	wRi_Merrill23_polished	222957	221527	-	448.1	318	https://v10-1.orthodb.org/?query=514at766	UbiB domain
+538at766	Complete	wRi_Merrill23_polished	150205	152139	+	844.6	530	https://v10-1.orthodb.org/?query=538at766	tRNA uridine 5-carboxymethylaminomethyl modification enzyme MnmG
+540at766	Complete	wRi_Merrill23_polished	396812	398182	+	544.0	373	https://v10-1.orthodb.org/?query=540at766	Dihydrolipoyl dehydrogenase
+544at766	Complete	wRi_Merrill23_polished	288704	287169	-	736.6	446	https://v10-1.orthodb.org/?query=544at766	Lysine--tRNA ligase
+559at766	Complete	wRi_Merrill23_polished	30589	29312	-	664.0	356	https://v10-1.orthodb.org/?query=559at766	Serine hydroxymethyltransferase
+573at766	Complete	wRi_Merrill23_polished	1366	2646	+	429.7	321	https://v10-1.orthodb.org/?query=573at766	Folylpolyglutamate synthase
+584at766	Complete	wRi_Merrill23_polished	188240	186987	-	683.7	365	https://v10-1.orthodb.org/?query=584at766	NADH-ubiquinone oxidoreductase 51kDa subunit, FMN-binding domain
+592at766	Complete	wRi_Merrill23_polished	1098610	1099848	+	399.1	322	https://v10-1.orthodb.org/?query=592at766	Cell division protein FtsA
+595at766	Complete	wRi_Merrill23_polished	1236298	1235090	-	542.9	340	https://v10-1.orthodb.org/?query=595at766	5-aminolevulinate synthase
+605at766	Missing
+613at766	Missing
+620at766	Complete	wRi_Merrill23_polished	864598	865770	+	439.6	322	https://v10-1.orthodb.org/?query=620at766	poly(A) polymerase
+624at766	Complete	wRi_Merrill23_polished	991383	989932	-	783.4	408	https://v10-1.orthodb.org/?query=624at766	ATPase, F1/V1/A1 complex, alpha/beta subunit, N-terminal domain
+634at766	Missing
+646at766	Missing
+650at766	Complete	wRi_Merrill23_polished	674185	675462	+	513.3	316	https://v10-1.orthodb.org/?query=650at766	Zinc finger, ClpX C4-type
+652at766	Complete	wRi_Merrill23_polished	685045	686784	+	681.8	483	https://v10-1.orthodb.org/?query=652at766	Single-stranded-DNA-specific exonuclease RecJ
+678at766	Complete	wRi_Merrill23_polished	651669	653261	+	633.4	435	https://v10-1.orthodb.org/?query=678at766	HlyD family type I secretion periplasmic adaptor subunit
+686at766	Complete	wRi_Merrill23_polished	384880	383606	-	488.0	353	https://v10-1.orthodb.org/?query=686at766	peptidase M16
+697at766	Complete	wRi_Merrill23_polished	1191520	1193082	+	530.4	416	https://v10-1.orthodb.org/?query=697at766	Transcription termination/antitermination protein NusA
+710at766	Complete	wRi_Merrill23_polished	498935	500371	+	636.5	374	https://v10-1.orthodb.org/?query=710at766	isocitrate dehydrogenase
+712at766	Complete	wRi_Merrill23_polished	1142938	1144605	+	646.3	444	https://v10-1.orthodb.org/?query=712at766	Metallo-beta-lactamase
+740at766	Complete	wRi_Merrill23_polished	773027	774700	+	681.7	460	https://v10-1.orthodb.org/?query=740at766	Arginine--tRNA ligase
+757at766	Complete	wRi_Merrill23_polished	1186373	1184991	-	616.6	358	https://v10-1.orthodb.org/?query=757at766	Chromosomal replication initiator protein DnaA
+770at766	Complete	wRi_Merrill23_polished	1154174	1152876	-	531.3	344	https://v10-1.orthodb.org/?query=770at766	Serine--tRNA ligase
+786at766	Complete	wRi_Merrill23_polished	225275	227047	+	682.5	467	https://v10-1.orthodb.org/?query=786at766	RNA-binding domain, S1
+788at766	Complete	wRi_Merrill23_polished	1090155	1088038	-	569.1	532	https://v10-1.orthodb.org/?query=788at766	Glycine--tRNA ligase beta subunit
+794at766	Complete	wRi_Merrill23_polished	195620	194178	-	502.2	341	https://v10-1.orthodb.org/?query=794at766	NADH:quinone oxidoreductase/Mrp antiporter, membrane subunit
+803at766	Complete	wRi_Merrill23_polished	951961	950261	-	572.3	433	https://v10-1.orthodb.org/?query=803at766	Membrane protein insertase YidC
+805at766	Complete	wRi_Merrill23_polished	505220	504072	-	374.0	290	https://v10-1.orthodb.org/?query=805at766	Succinyl-diaminopimelate desuccinylase
+812at766	Complete	wRi_Merrill23_polished	379769	380986	+	475.5	308	https://v10-1.orthodb.org/?query=812at766	Queuine tRNA-ribosyltransferase
+823at766	Complete	wRi_Merrill23_polished	933256	932030	-	504.3	311	https://v10-1.orthodb.org/?query=823at766	Methylthiotransferase, N-terminal
+843at766	Complete	wRi_Merrill23_polished	1076678	1078099	+	664.8	416	https://v10-1.orthodb.org/?query=843at766	Aspartyl/glutamyl-tRNA(Asn/Gln) amidotransferase subunit B
+857at766	Missing
+872at766	Complete	wRi_Merrill23_polished	121834	123084	+	453.6	295	https://v10-1.orthodb.org/?query=872at766	Citrate synthase
+896at766	Complete	wRi_Merrill23_polished	975424	976800	+	483.0	347	https://v10-1.orthodb.org/?query=896at766	Signal transduction response regulator, receiver domain
+910at766	Complete	wRi_Merrill23_polished	920843	919407	-	626.5	383	https://v10-1.orthodb.org/?query=910at766	Fumarate hydratase class II
+931at766	Complete	wRi_Merrill23_polished	343098	341830	-	553.3	347	https://v10-1.orthodb.org/?query=931at766	Proline--tRNA ligase
+933at766	Complete	wRi_Merrill23_polished	197480	195624	-	730.5	510	https://v10-1.orthodb.org/?query=933at766	NADH-plastoquinone oxidoreductase, chain 5
+935at766	Complete	wRi_Merrill23_polished	323720	322236	-	416.2	283	https://v10-1.orthodb.org/?query=935at766	Peptidase S1C
+947at766	Missing
+968at766	Complete	wRi_Merrill23_polished	713258	711510	-	512.6	448	https://v10-1.orthodb.org/?query=968at766	DNA primase
+971at766	Complete	wRi_Merrill23_polished	368543	369739	+	648.8	376	https://v10-1.orthodb.org/?query=971at766	Cell division protein FtsZ
+977at766	Missing
+982at766	Complete	wRi_Merrill23_polished	777451	776279	-	728.9	363	https://v10-1.orthodb.org/?query=982at766	NADH-quinone oxidoreductase subunit D
+996at766	Complete	wRi_Merrill23_polished	804087	804995	+	294.2	224	https://v10-1.orthodb.org/?query=996at766	Porphobilinogen deaminase
+997at766	Complete	wRi_Merrill23_polished	165520	166767	+	665.3	358	https://v10-1.orthodb.org/?query=997at766	Cysteine desulfurase IscS
+1004at766	Complete	wRi_Merrill23_polished	980732	981721	+	537.5	281	https://v10-1.orthodb.org/?query=1004at766	ribonucleotide-diphosphate reductase subunit beta
+1015at766	Complete	wRi_Merrill23_polished	831093	830113	-	439.2	263	https://v10-1.orthodb.org/?query=1015at766	Pyruvate dehydrogenase E1 component subunit alpha
+1023at766	Complete	wRi_Merrill23_polished	944004	942925	-	514.4	279	https://v10-1.orthodb.org/?query=1023at766	Peptide chain release factor 1
+1090at766	Missing
+1132at766	Complete	wRi_Merrill23_polished	484077	485213	+	433.1	312	https://v10-1.orthodb.org/?query=1132at766	Pyridoxal phosphate-dependent transferase
+1135at766	Complete	wRi_Merrill23_polished	325672	324599	-	378.1	254	https://v10-1.orthodb.org/?query=1135at766	Protein HflK
+1146at766	Complete	wRi_Merrill23_polished	515293	513971	-	490.2	366	https://v10-1.orthodb.org/?query=1146at766	Glutamate--tRNA ligase
+1148at766	Complete	wRi_Merrill23_polished	1090998	1090159	-	393.8	239	https://v10-1.orthodb.org/?query=1148at766	Glycine--tRNA ligase alpha subunit
+1152at766	Complete	wRi_Merrill23_polished	398269	399105	+	296.5	229	https://v10-1.orthodb.org/?query=1152at766	Integrase, SAM-like, N-terminal
+1181at766	Missing
+1190at766	Complete	wRi_Merrill23_polished	757960	758823	+	486.1	255	https://v10-1.orthodb.org/?query=1190at766	Lipoyl synthase
+1210at766	Complete	wRi_Merrill23_polished	119665	120651	+	283.4	239	https://v10-1.orthodb.org/?query=1210at766	Integrase, SAM-like, N-terminal
+1222at766	Missing
+1231at766	Complete	wRi_Merrill23_polished	667389	668762	+	522.8	369	https://v10-1.orthodb.org/?query=1231at766	Dihydrolipoyl dehydrogenase
+1269at766	Missing
+1276at766	Complete	wRi_Merrill23_polished	474971	473922	-	304.3	257	https://v10-1.orthodb.org/?query=1276at766	Protein arginine methyltransferase NDUFAF7
+1288at766	Missing
+1297at766	Complete	wRi_Merrill23_polished	1107899	1106751	-	359.0	320	https://v10-1.orthodb.org/?query=1297at766	Ubiquinone biosynthesis hydroxylase UbiH/COQ6
+1304at766	Complete	wRi_Merrill23_polished	126076	124883	-	589.9	368	https://v10-1.orthodb.org/?query=1304at766	Aminotransferase
+1306at766	Complete	wRi_Merrill23_polished	851642	853072	+	519.9	357	https://v10-1.orthodb.org/?query=1306at766	Glutamate--tRNA ligase
+1310at766	Missing
+1331at766	Complete	wRi_Merrill23_polished	1021802	1020294	-	583.7	423	https://v10-1.orthodb.org/?query=1331at766	Protein translocase subunit SecD
+1333at766	Complete	wRi_Merrill23_polished	706302	707132	+	313.6	226	https://v10-1.orthodb.org/?query=1333at766	Putative pyruvate, phosphate dikinase regulatory protein
+1338at766	Complete	wRi_Merrill23_polished	261163	260417	-	236.0	171	https://v10-1.orthodb.org/?query=1338at766	Signal peptidase I
+1360at766	Complete	wRi_Merrill23_polished	282137	281253	-	319.9	238	https://v10-1.orthodb.org/?query=1360at766	Methionyl-tRNA formyltransferase
+1363at766	Complete	wRi_Merrill23_polished	735992	737362	+	473.1	364	https://v10-1.orthodb.org/?query=1363at766	Magnesium transporter MgtE
+1365at766	Complete	wRi_Merrill23_polished	922288	921266	-	426.9	273	https://v10-1.orthodb.org/?query=1365at766	GTPase Obg
+1379at766	Complete	wRi_Merrill23_polished	1255817	1256791	+	442.4	276	https://v10-1.orthodb.org/?query=1379at766	Holliday junction ATP-dependent DNA helicase RuvB
+1393at766	Complete	wRi_Merrill23_polished	476566	475736	-	329.9	206	https://v10-1.orthodb.org/?query=1393at766	2,3,4,5-tetrahydropyridine-2,6-dicarboxylate N-succinyltransferase
+1409at766	Complete	wRi_Merrill23_polished	6227	7294	+	561.1	301	https://v10-1.orthodb.org/?query=1409at766	Protein RecA
+1412at766	Complete	wRi_Merrill23_polished	640930	642258	+	473.3	354	https://v10-1.orthodb.org/?query=1412at766	Protein translocase subunit SecY
+1425at766	Complete	wRi_Merrill23_polished	781109	781987	+	377.3	234	https://v10-1.orthodb.org/?query=1425at766	Tetrahydrofolate dehydrogenase/cyclohydrolase
+1437at766	Complete	wRi_Merrill23_polished	1251842	1253092	+	508.8	334	https://v10-1.orthodb.org/?query=1437at766	Tyrosine--tRNA ligase
+1440at766	Complete	wRi_Merrill23_polished	863451	862357	-	492.1	303	https://v10-1.orthodb.org/?query=1440at766	Ribosome-binding ATPase YchF
+1446at766	Complete	wRi_Merrill23_polished	959648	957555	-	510.1	447	https://v10-1.orthodb.org/?query=1446at766	Cytochrome c-type biogenesis protein
+1454at766	Complete	wRi_Merrill23_polished	1156189	1157187	+	472.2	265	https://v10-1.orthodb.org/?query=1454at766	tRNA-dihydrouridine synthase
+1476at766	Complete	wRi_Merrill23_polished	1261755	1260289	-	483.4	421	https://v10-1.orthodb.org/?query=1476at766	NADH:quinone oxidoreductase/Mrp antiporter, membrane subunit
+1477at766	Complete	wRi_Merrill23_polished	1093961	1092936	-	559.9	312	https://v10-1.orthodb.org/?query=1477at766	NADH-quinone oxidoreductase subunit H
+1483at766	Complete	wRi_Merrill23_polished	527080	526289	-	271.0	208	https://v10-1.orthodb.org/?query=1483at766	Prolipoprotein diacylglyceryl transferase
+1490at766	Complete	wRi_Merrill23_polished	634025	634849	+	417.3	248	https://v10-1.orthodb.org/?query=1490at766	Ribosomal protein L2
+1503at766	Complete	wRi_Merrill23_polished	371061	371849	+	378.9	214	https://v10-1.orthodb.org/?query=1503at766	Succinate dehydrogenase iron-sulfur subunit
+1527at766	Complete	wRi_Merrill23_polished	117533	118534	+	278.9	261	https://v10-1.orthodb.org/?query=1527at766	AI-2E family transporter
+1528at766	Complete	wRi_Merrill23_polished	538388	539326	+	408.9	256	https://v10-1.orthodb.org/?query=1528at766	Pyridine nucleotide-disulphide oxidoreductase, class-II
+1530at766	Complete	wRi_Merrill23_polished	941269	940340	-	311.3	260	https://v10-1.orthodb.org/?query=1530at766	permease
+1541at766	Complete	wRi_Merrill23_polished	127667	128383	+	255.9	203	https://v10-1.orthodb.org/?query=1541at766	CBS domain
+1547at766	Complete	wRi_Merrill23_polished	375612	376382	+	311.8	197	https://v10-1.orthodb.org/?query=1547at766	DNA-binding response regulator
+1557at766	Complete	wRi_Merrill23_polished	955255	954377	-	267.9	205	https://v10-1.orthodb.org/?query=1557at766	Protein-export membrane protein SecF
+1561at766	Complete	wRi_Merrill23_polished	340978	339470	-	416.9	347	https://v10-1.orthodb.org/?query=1561at766	NADH:quinone oxidoreductase/Mrp antiporter, membrane subunit
+1564at766	Complete	wRi_Merrill23_polished	814097	814957	+	273.4	227	https://v10-1.orthodb.org/?query=1564at766	Elongation factor Ts
+1570at766	Complete	wRi_Merrill23_polished	813268	814116	+	345.1	213	https://v10-1.orthodb.org/?query=1570at766	Ribosomal protein S2
+1578at766	Complete	wRi_Merrill23_polished	778994	780277	+	445.4	332	https://v10-1.orthodb.org/?query=1578at766	CNNM, transmembrane domain
+1581at766	Complete	wRi_Merrill23_polished	1179244	1178252	-	537.2	285	https://v10-1.orthodb.org/?query=1581at766	Type IV secretion system protein VirB11
+1611at766	Complete	wRi_Merrill23_polished	803163	801991	-	515.8	306	https://v10-1.orthodb.org/?query=1611at766	Dihydrolipoyllysine-residue succinyltransferase component of 2-oxoglutarate dehydrogenase complex
+1619at766	Complete	wRi_Merrill23_polished	182118	180790	-	490.3	353	https://v10-1.orthodb.org/?query=1619at766	tRNA modification GTPase MnmE
+1621at766	Missing
+1637at766	Missing
+1655at766	Complete	wRi_Merrill23_polished	180486	179470	-	409.1	269	https://v10-1.orthodb.org/?query=1655at766	Ferredoxin--NADP reductase
+1658at766	Missing
+1673at766	Complete	wRi_Merrill23_polished	1019512	1020297	+	372.5	224	https://v10-1.orthodb.org/?query=1673at766	Enoyl-
+1675at766	Missing
+1683at766	Complete	wRi_Merrill23_polished	655828	656592	+	332.3	211	https://v10-1.orthodb.org/?query=1683at766	cytochrome c oxidase subunit II
+1687at766	Missing
+1689at766	Complete	wRi_Merrill23_polished	212976	214010	+	369.9	270	https://v10-1.orthodb.org/?query=1689at766	Aspartate-semialdehyde dehydrogenase
+1690at766	Complete	wRi_Merrill23_polished	130992	130270	-	321.0	218	https://v10-1.orthodb.org/?query=1690at766	Phosphoribosylaminoimidazole-succinocarboxamide synthase
+1696at766	Complete	wRi_Merrill23_polished	518398	517535	-	241.7	228	https://v10-1.orthodb.org/?query=1696at766	4-hydroxy-tetrahydrodipicolinate synthase
+1701at766	Missing
+1718at766	Complete	wRi_Merrill23_polished	7482	8174	+	258.8	183	https://v10-1.orthodb.org/?query=1718at766	phosphatidylserine decarboxylase
+1733at766	Missing
+1739at766	Missing
+1740at766	Complete	wRi_Merrill23_polished	487296	488303	+	407.4	276	https://v10-1.orthodb.org/?query=1740at766	tRNA N6-adenosine threonylcarbamoyltransferase
+1755at766	Missing
+1762at766	Complete	wRi_Merrill23_polished	1167378	1166725	-	274.1	178	https://v10-1.orthodb.org/?query=1762at766	Ribosomal protein L1
+1801at766	Complete	wRi_Merrill23_polished	879709	878711	-	526.8	290	https://v10-1.orthodb.org/?query=1801at766	Pyruvate dehydrogenase E1 component subunit beta
+1817at766	Complete	wRi_Merrill23_polished	175430	174729	-	292.4	208	https://v10-1.orthodb.org/?query=1817at766	ABC transporter, conserved site
+1841at766	Complete	wRi_Merrill23_polished	977876	977154	-	243.3	200	https://v10-1.orthodb.org/?query=1841at766	DNA repair protein RecO
+1853at766	Missing
+1875at766	Complete	wRi_Merrill23_polished	177815	178723	+	393.9	270	https://v10-1.orthodb.org/?query=1875at766	3-oxoacyl-
+1882at766	Complete	wRi_Merrill23_polished	732683	733441	+	235.7	185	https://v10-1.orthodb.org/?query=1882at766	ABC transporter, conserved site
+1891at766	Complete	wRi_Merrill23_polished	1137198	1136557	-	187.7	168	https://v10-1.orthodb.org/?query=1891at766	Intradiol ring-cleavage dioxygenase, core
+1893at766	Complete	wRi_Merrill23_polished	127162	126146	-	357.8	260	https://v10-1.orthodb.org/?query=1893at766	Uroporphyrinogen decarboxylase
+1894at766	Complete	wRi_Merrill23_polished	131067	131777	+	290.4	191	https://v10-1.orthodb.org/?query=1894at766	tRNA (guanine-N1-)-methyltransferase, bacteria
+1896at766	Missing
+1899at766	Complete	wRi_Merrill23_polished	1097942	1097130	-	331.5	188	https://v10-1.orthodb.org/?query=1899at766	Uracil-DNA glycosylase-like
+1914at766	Complete	wRi_Merrill23_polished	276377	277357	+	310.7	234	https://v10-1.orthodb.org/?query=1914at766	Malonyl CoA-acyl carrier protein transacylase
+1931at766	Complete	wRi_Merrill23_polished	1092943	1091948	-	409.7	278	https://v10-1.orthodb.org/?query=1931at766	Delta-aminolevulinic acid dehydratase
+1932at766	Complete	wRi_Merrill23_polished	643757	644824	+	362.2	258	https://v10-1.orthodb.org/?query=1932at766	DNA-directed RNA polymerase subunit alpha
+1940at766	Complete	wRi_Merrill23_polished	1063600	1064643	+	394.3	270	https://v10-1.orthodb.org/?query=1940at766	Phenylalanine--tRNA ligase alpha subunit
+1945at766	Complete	wRi_Merrill23_polished	154712	155356	+	206.6	171	https://v10-1.orthodb.org/?query=1945at766	hydrolase
+1983at766	Complete	wRi_Merrill23_polished	1195828	1196685	+	294.4	224	https://v10-1.orthodb.org/?query=1983at766	4-hydroxybenzoate octaprenyltransferase
+2000at766	Complete	wRi_Merrill23_polished	389073	389957	+	303.6	235	https://v10-1.orthodb.org/?query=2000at766	GTPase Era
+2005at766	Complete	wRi_Merrill23_polished	138640	138023	-	250.9	176	https://v10-1.orthodb.org/?query=2005at766	Octanoyltransferase
+2033at766	Complete	wRi_Merrill23_polished	1182226	1181546	-	199.3	170	https://v10-1.orthodb.org/?query=2033at766	Type IV secretion system protein VirB8
+2042at766	Complete	wRi_Merrill23_polished	1225047	1224322	-	223.1	192	https://v10-1.orthodb.org/?query=2042at766	Virulence factor BrkB
+2044at766	Complete	wRi_Merrill23_polished	1099972	1100763	+	395.4	224	https://v10-1.orthodb.org/?query=2044at766	Methionine aminopeptidase
+2045at766	Complete	wRi_Merrill23_polished	911758	911018	-	283.3	192	https://v10-1.orthodb.org/?query=2045at766	Transcriptional regulator TACO1-like
+2069at766	Complete	wRi_Merrill23_polished	1102257	1103138	+	371.1	242	https://v10-1.orthodb.org/?query=2069at766	Ribosomal RNA small subunit methyltransferase H
+2070at766	Complete	wRi_Merrill23_polished	352556	351579	-	343.6	250	https://v10-1.orthodb.org/?query=2070at766	Octaprenyl-diphosphate synthase
+2073at766	Complete	wRi_Merrill23_polished	247478	248098	+	274.1	166	https://v10-1.orthodb.org/?query=2073at766	3'-5' exonuclease
+2084at766	Complete	wRi_Merrill23_polished	350930	349932	-	371.3	268	https://v10-1.orthodb.org/?query=2084at766	Tryptophan--tRNA ligase
+2127at766	Complete	wRi_Merrill23_polished	741502	742059	+	245.6	148	https://v10-1.orthodb.org/?query=2127at766	dCTP deaminase
+2135at766	Complete	wRi_Merrill23_polished	635530	636144	+	273.4	177	https://v10-1.orthodb.org/?query=2135at766	K Homology domain
+2163at766	Complete	wRi_Merrill23_polished	904980	904219	-	268.9	201	https://v10-1.orthodb.org/?query=2163at766	Sec-independent protein translocase protein TatC
+2166at766	Complete	wRi_Merrill23_polished	8171	8941	+	274.0	197	https://v10-1.orthodb.org/?query=2166at766	CDP-alcohol phosphatidyltransferase
+2182at766	Complete	wRi_Merrill23_polished	1141644	1142762	+	403.7	289	https://v10-1.orthodb.org/?query=2182at766	Chaperone protein DnaJ
+2201at766	Missing
+2208at766	Complete	wRi_Merrill23_polished	194181	192817	-	367.0	326	https://v10-1.orthodb.org/?query=2208at766	NADH:quinone oxidoreductase/Mrp antiporter, membrane subunit
+2216at766	Complete	wRi_Merrill23_polished	755994	756608	+	258.0	180	https://v10-1.orthodb.org/?query=2216at766	RNA-binding S4 domain
+2263at766	Complete	wRi_Merrill23_polished	537802	538401	+	278.3	174	https://v10-1.orthodb.org/?query=2263at766	Peroxiredoxin, AhpC-type
+2295at766	Complete	wRi_Merrill23_polished	1248273	1249223	+	450.6	280	https://v10-1.orthodb.org/?query=2295at766	Malate dehydrogenase
+2303at766	Complete	wRi_Merrill23_polished	651474	650740	-	282.3	194	https://v10-1.orthodb.org/?query=2303at766	Short-chain dehydrogenase/reductase, conserved site
+2305at766	Complete	wRi_Merrill23_polished	324596	323724	-	340.6	243	https://v10-1.orthodb.org/?query=2305at766	Protein HflC
+2340at766	Complete	wRi_Merrill23_polished	814968	815711	+	318.0	201	https://v10-1.orthodb.org/?query=2340at766	Uridylate kinase
+2346at766	Complete	wRi_Merrill23_polished	198371	197784	-	188.1	159	https://v10-1.orthodb.org/?query=2346at766	NADH:ubiquinone/plastoquinone oxidoreductase, chain 6
+2381at766	Complete	wRi_Merrill23_polished	632400	633122	+	261.5	178	https://v10-1.orthodb.org/?query=2381at766	Ribosomal protein L3
+2404at766	Complete	wRi_Merrill23_polished	162148	161369	-	280.7	209	https://v10-1.orthodb.org/?query=2404at766	Exodeoxyribonuclease III
+2424at766	Complete	wRi_Merrill23_polished	1250018	1249251	-	324.0	223	https://v10-1.orthodb.org/?query=2424at766	TatD family
+2437at766	Complete	wRi_Merrill23_polished	495442	496044	+	194.1	138	https://v10-1.orthodb.org/?query=2437at766	Protein of unknown function DUF1013
+2456at766	Complete	wRi_Merrill23_polished	1229774	1228677	-	296.2	263	https://v10-1.orthodb.org/?query=2456at766	DNA-binding, RecF
+2458at766	Complete	wRi_Merrill23_polished	815719	816276	+	199.9	158	https://v10-1.orthodb.org/?query=2458at766	Ribosome recycling factor
+2461at766	Complete	wRi_Merrill23_polished	483921	483223	-	259.8	181	https://v10-1.orthodb.org/?query=2461at766	alpha/beta hydrolase
+2470at766	Complete	wRi_Merrill23_polished	758877	759593	+	302.7	201	https://v10-1.orthodb.org/?query=2470at766	Ubiquinone/menaquinone biosynthesis C-methyltransferase UbiE
+2492at766	Missing
+2493at766	Complete	wRi_Merrill23_polished	998332	999408	+	295.8	271	https://v10-1.orthodb.org/?query=2493at766	Tetratricopeptide repeat
+2505at766	Complete	wRi_Merrill23_polished	257244	256333	-	323.8	249	https://v10-1.orthodb.org/?query=2505at766	Signal recognition particle receptor FtsY
+2514at766	Missing
+2518at766	Complete	wRi_Merrill23_polished	379268	379768	+	218.9	130	https://v10-1.orthodb.org/?query=2518at766	NADH-quinone oxidoreductase subunit E
+2523at766	Complete	wRi_Merrill23_polished	182223	182732	+	269.3	128	https://v10-1.orthodb.org/?query=2523at766	4Fe-4S ferredoxin, iron-sulphur binding, conserved site
+2531at766	Complete	wRi_Merrill23_polished	1247198	1247704	+	287.7	132	https://v10-1.orthodb.org/?query=2531at766	NADH-quinone oxidoreductase subunit B
+2532at766	Complete	wRi_Merrill23_polished	1070610	1071437	+	317.4	215	https://v10-1.orthodb.org/?query=2532at766	cytochrome c oxidase subunit III
+2536at766	Complete	wRi_Merrill23_polished	659224	659661	+	147.4	110	https://v10-1.orthodb.org/?query=2536at766	Ribonuclease H
+2551at766	Complete	wRi_Merrill23_polished	829704	828781	-	255.9	221	https://v10-1.orthodb.org/?query=2551at766	Ribosomal large subunit pseudouridine synthase C
+2557at766	Complete	wRi_Merrill23_polished	348466	348993	+	193.0	133	https://v10-1.orthodb.org/?query=2557at766	Cytochrome c-like domain
+2561at766	Complete	wRi_Merrill23_polished	1233132	1233638	+	144.4	126	https://v10-1.orthodb.org/?query=2561at766	Ribosome maturation factor RimM
+2562at766	Complete	wRi_Merrill23_polished	673559	674185	+	334.4	178	https://v10-1.orthodb.org/?query=2562at766	ATP-dependent Clp protease proteolytic subunit
+2563at766	Complete	wRi_Merrill23_polished	215481	216245	+	243.2	177	https://v10-1.orthodb.org/?query=2563at766	RNA methyltransferase TrmH family
+2567at766	Complete	wRi_Merrill23_polished	1123789	1124247	+	188.0	120	https://v10-1.orthodb.org/?query=2567at766	Ribosomal protein L13
+2575at766	Missing
+2580at766	Complete	wRi_Merrill23_polished	335793	334909	-	287.2	230	https://v10-1.orthodb.org/?query=2580at766	tRNA dimethylallyltransferase
+2582at766	Complete	wRi_Merrill23_polished	303992	304540	+	167.5	151	https://v10-1.orthodb.org/?query=2582at766	RNA methyltransferase, RsmD
+2606at766	Complete	wRi_Merrill23_polished	637713	638246	+	225.4	151	https://v10-1.orthodb.org/?query=2606at766	Ribosomal protein L5
+2609at766	Complete	wRi_Merrill23_polished	118664	119299	+	179.5	162	https://v10-1.orthodb.org/?query=2609at766	Chromosomal replication initiator protein DnaA
+2619at766	Missing
+2632at766	Complete	wRi_Merrill23_polished	844096	844821	+	251.0	187	https://v10-1.orthodb.org/?query=2632at766	ATP synthase subunit a
+2649at766	Complete	wRi_Merrill23_polished	1299244	1298693	-	121.1	113	https://v10-1.orthodb.org/?query=2649at766	5-formyltetrahydrofolate cyclo-ligase
+2656at766	Complete	wRi_Merrill23_polished	1186700	1187437	+	220.3	186	https://v10-1.orthodb.org/?query=2656at766	Glutamine synthetase
+2657at766	Missing
+2660at766	Complete	wRi_Merrill23_polished	1264160	1263564	-	242.8	166	https://v10-1.orthodb.org/?query=2660at766	Ribonuclease HII
+2666at766	Complete	wRi_Merrill23_polished	192799	191927	-	174.6	169	https://v10-1.orthodb.org/?query=2666at766	Biotin--acetyl-CoA-carboxylase ligase
+2674at766	Complete	wRi_Merrill23_polished	1042176	1042871	+	279.4	181	https://v10-1.orthodb.org/?query=2674at766	DNA polymerase III subunit epsilon
+2678at766	Complete	wRi_Merrill23_polished	658160	659047	+	365.9	240	https://v10-1.orthodb.org/?query=2678at766	Protoheme IX farnesyltransferase
+2693at766	Complete	wRi_Merrill23_polished	1041336	1040833	-	134.6	115	https://v10-1.orthodb.org/?query=2693at766	Protein-export protein SecB
+2701at766	Complete	wRi_Merrill23_polished	639005	639550	+	215.4	161	https://v10-1.orthodb.org/?query=2701at766	Ribosomal protein L6, alpha-beta domain
+2707at766	Complete	wRi_Merrill23_polished	1071438	1071926	+	141.3	123	https://v10-1.orthodb.org/?query=2707at766	Crossover junction endodeoxyribonuclease RuvC
+2710at766	Complete	wRi_Merrill23_polished	385499	384882	-	204.7	154	https://v10-1.orthodb.org/?query=2710at766	Superoxide dismutase
+2711at766	Complete	wRi_Merrill23_polished	1025402	1024536	-	289.1	221	https://v10-1.orthodb.org/?query=2711at766	Ribosomal RNA adenine methylase transferase, conserved site
+2712at766	Complete	wRi_Merrill23_polished	1233701	1234267	+	254.0	175	https://v10-1.orthodb.org/?query=2712at766	Elongation factor P
+2715at766	Complete	wRi_Merrill23_polished	633125	633739	+	258.8	183	https://v10-1.orthodb.org/?query=2715at766	50S ribosomal protein L4
+2736at766	Complete	wRi_Merrill23_polished	642255	642896	+	168.9	166	https://v10-1.orthodb.org/?query=2736at766	Adenylate kinase
+2739at766	Complete	wRi_Merrill23_polished	375286	374303	-	281.1	262	https://v10-1.orthodb.org/?query=2739at766	Glycerol-3-phosphate dehydrogenase 
+2771at766	Complete	wRi_Merrill23_polished	216325	217047	+	251.0	182	https://v10-1.orthodb.org/?query=2771at766	membrane protein
+2777at766	Complete	wRi_Merrill23_polished	1262778	1263560	+	303.0	194	https://v10-1.orthodb.org/?query=2777at766	VirB9/CagX/TrbG, C-terminal
+2787at766	Complete	wRi_Merrill23_polished	714159	715334	+	417.7	235	https://v10-1.orthodb.org/?query=2787at766	Ubiquinone biosynthesis O-methyltransferase
+2790at766	Missing
+2809at766	Complete	wRi_Merrill23_polished	223649	222954	-	261.4	199	https://v10-1.orthodb.org/?query=2809at766	Zinc import ATP-binding protein ZnuC
+2825at766	Complete	wRi_Merrill23_polished	501778	502416	+	254.4	161	https://v10-1.orthodb.org/?query=2825at766	Endonuclease III
+2834at766	Complete	wRi_Merrill23_polished	518983	518501	-	212.9	118	https://v10-1.orthodb.org/?query=2834at766	Single-stranded DNA-binding protein
+2841at766	Missing
+2845at766	Complete	wRi_Merrill23_polished	639940	640452	+	240.4	150	https://v10-1.orthodb.org/?query=2845at766	Ribosomal protein S5
+2850at766	Complete	wRi_Merrill23_polished	706166	705456	-	282.4	187	https://v10-1.orthodb.org/?query=2850at766	Heme exporter protein C
+2887at766	Missing
+2903at766	Complete	wRi_Merrill23_polished	647784	648278	+	222.7	149	https://v10-1.orthodb.org/?query=2903at766	Transcription elongation factor GreA
+2904at766	Complete	wRi_Merrill23_polished	217048	217584	+	215.9	141	https://v10-1.orthodb.org/?query=2904at766	cytochrome c oxidase assembly protein
+2913at766	Complete	wRi_Merrill23_polished	859282	858665	-	263.9	176	https://v10-1.orthodb.org/?query=2913at766	Guanylate kinase
+2943at766	Complete	wRi_Merrill23_polished	1203430	1204188	+	207.6	195	https://v10-1.orthodb.org/?query=2943at766	Thioredoxin-like fold
+2960at766	Complete	wRi_Merrill23_polished	825015	824392	-	208.8	166	https://v10-1.orthodb.org/?query=2960at766	Cytochrome c biogenesis ATP-binding export protein CcmA
+2977at766	Complete	wRi_Merrill23_polished	949855	949373	-	147.4	126	https://v10-1.orthodb.org/?query=2977at766	Transcription antitermination protein NusB
+2996at766	Complete	wRi_Merrill23_polished	1172718	1172239	-	180.1	132	https://v10-1.orthodb.org/?query=2996at766	Ribosomal protein S7 domain
+3008at766	Complete	wRi_Merrill23_polished	1173098	1172724	-	176.3	108	https://v10-1.orthodb.org/?query=3008at766	Ribosomal protein S12, bacterial-type
+3020at766	Missing
+3058at766	Complete	wRi_Merrill23_polished	527536	527087	-	181.3	129	https://v10-1.orthodb.org/?query=3058at766	SsrA-binding protein
+3062at766	Complete	wRi_Merrill23_polished	176205	175423	-	257.0	196	https://v10-1.orthodb.org/?query=3062at766	ABC transporter permease
+3066at766	Complete	wRi_Merrill23_polished	1247697	1248269	+	238.9	140	https://v10-1.orthodb.org/?query=3066at766	NADH:ubiquinone oxidoreductase, 30kDa subunit
+3074at766	Complete	wRi_Merrill23_polished	700027	699431	-	214.7	155	https://v10-1.orthodb.org/?query=3074at766	Nucleoside triphosphate pyrophosphatase Maf-like protein
+3090at766	Complete	wRi_Merrill23_polished	1121749	1121186	-	246.6	164	https://v10-1.orthodb.org/?query=3090at766	Ribosomal RNA large subunit methyltransferase E
+3097at766	Missing
+3110at766	Complete	wRi_Merrill23_polished	912543	911872	-	210.3	171	https://v10-1.orthodb.org/?query=3110at766	Outer membrane protein assembly factor BamD
+3119at766	Complete	wRi_Merrill23_polished	944103	944696	+	224.6	166	https://v10-1.orthodb.org/?query=3119at766	GTP binding domain
+3127at766	Complete	wRi_Merrill23_polished	688511	687705	-	209.0	192	https://v10-1.orthodb.org/?query=3127at766	Aminomethyltransferase, folate-binding domain
+3140at766	Complete	wRi_Merrill23_polished	1246841	1247194	+	170.2	112	https://v10-1.orthodb.org/?query=3140at766	NADH-quinone oxidoreductase subunit A
+3157at766	Complete	wRi_Merrill23_polished	257819	258232	+	140.2	101	https://v10-1.orthodb.org/?query=3157at766	FeS cluster insertion, C-terminal, conserved site
+3184at766	Complete	wRi_Merrill23_polished	351517	350948	-	181.6	139	https://v10-1.orthodb.org/?query=3184at766	Protein GrpE
+3185at766	Complete	wRi_Merrill23_polished	257423	257806	+	239.1	124	https://v10-1.orthodb.org/?query=3185at766	Iron-sulfur cluster assembly scaffold protein IscU
+3207at766	Complete	wRi_Merrill23_polished	1072438	1071971	-	118.2	121	https://v10-1.orthodb.org/?query=3207at766	YqgF/RNase H-like domain
+3208at766	Complete	wRi_Merrill23_polished	640456	640926	+	159.9	113	https://v10-1.orthodb.org/?query=3208at766	Ribosomal protein L15
+3213at766	Complete	wRi_Merrill23_polished	1104184	1104795	+	189.7	159	https://v10-1.orthodb.org/?query=3213at766	Ribosomal protein L25
+3219at766	Complete	wRi_Merrill23_polished	817237	817863	+	194.8	172	https://v10-1.orthodb.org/?query=3219at766	Phosphatidate cytidylyltransferase
+3223at766	Complete	wRi_Merrill23_polished	915671	915129	-	229.5	157	https://v10-1.orthodb.org/?query=3223at766	CDP-diacylglycerol--glycerol-3-phosphate 3-phosphatidyltransferase
+3229at766	Complete	wRi_Merrill23_polished	309483	309830	+	162.0	101	https://v10-1.orthodb.org/?query=3229at766	(2Fe-2S) ferredoxin
+3233at766	Complete	wRi_Merrill23_polished	482310	482984	+	233.3	174	https://v10-1.orthodb.org/?query=3233at766	Lipoprotein-releasing system ATP-binding protein LolD
+3234at766	Complete	wRi_Merrill23_polished	534529	534053	-	132.0	118	https://v10-1.orthodb.org/?query=3234at766	signal peptidase II
+3246at766	Complete	wRi_Merrill23_polished	831149	831577	+	144.3	113	https://v10-1.orthodb.org/?query=3246at766	membrane protein
+3248at766	Complete	wRi_Merrill23_polished	131761	132138	+	172.7	110	https://v10-1.orthodb.org/?query=3248at766	Ribosomal protein L19
+3272at766	Complete	wRi_Merrill23_polished	1302262	1301747	-	217.2	131	https://v10-1.orthodb.org/?query=3272at766	Inorganic pyrophosphatase
+3314at766	Complete	wRi_Merrill23_polished	1167823	1167383	-	154.9	123	https://v10-1.orthodb.org/?query=3314at766	Ribosomal protein L11, C-terminal
+3319at766	Missing
+3322at766	Complete	wRi_Merrill23_polished	635143	635490	+	141.5	94	https://v10-1.orthodb.org/?query=3322at766	Ribosomal protein L22/L17
+3323at766	Missing
+3326at766	Complete	wRi_Merrill23_polished	638593	638988	+	128.4	107	https://v10-1.orthodb.org/?query=3326at766	Ribosomal protein S8
+3328at766	Complete	wRi_Merrill23_polished	1027622	1027996	+	136.0	88	https://v10-1.orthodb.org/?query=3328at766	Ferredoxin
+3333at766	Complete	wRi_Merrill23_polished	1251293	1251610	+	116.5	86	https://v10-1.orthodb.org/?query=3333at766	Ribosomal silencing factor RsfS
+3335at766	Complete	wRi_Merrill23_polished	643349	643735	+	147.6	106	https://v10-1.orthodb.org/?query=3335at766	Ribosomal protein S11
+3351at766	Complete	wRi_Merrill23_polished	642956	643324	+	147.2	97	https://v10-1.orthodb.org/?query=3351at766	Ribosomal protein S13
+3352at766	Complete	wRi_Merrill23_polished	1214675	1214986	+	118.2	81	https://v10-1.orthodb.org/?query=3352at766	NADH-ubiquinone oxidoreductase chain 4L/Mnh complex subunit C1-like
+3356at766	Complete	wRi_Merrill23_polished	1246454	1246822	+	138.9	94	https://v10-1.orthodb.org/?query=3356at766	HIT-like domain
+3372at766	Complete	wRi_Merrill23_polished	946315	946776	+	151.8	97	https://v10-1.orthodb.org/?query=3372at766	Deoxyuridine 5'-triphosphate nucleotidohydrolase
+3381at766	Complete	wRi_Merrill23_polished	1234342	1234971	+	172.0	172	https://v10-1.orthodb.org/?query=3381at766	inositol monophosphatase
+3395at766	Complete	wRi_Merrill23_polished	917441	917764	+	147.9	87	https://v10-1.orthodb.org/?query=3395at766	Glutaredoxin
+3421at766	Complete	wRi_Merrill23_polished	184950	185468	+	214.0	153	https://v10-1.orthodb.org/?query=3421at766	Translation initiation factor 3
+3456at766	Complete	wRi_Merrill23_polished	508845	508291	-	142.1	125	https://v10-1.orthodb.org/?query=3456at766	Ribosomal protein L9
+3461at766	Complete	wRi_Merrill23_polished	475445	475729	+	124.9	74	https://v10-1.orthodb.org/?query=3461at766	Protein of unknown function DUF2610
+3481at766	Complete	wRi_Merrill23_polished	671832	671236	-	168.4	139	https://v10-1.orthodb.org/?query=3481at766	BON domain
+3488at766	Complete	wRi_Merrill23_polished	288813	289109	+	147.1	89	https://v10-1.orthodb.org/?query=3488at766	Type IV secretion system protein VirB3
+3489at766	Complete	wRi_Merrill23_polished	1124258	1124713	+	185.9	119	https://v10-1.orthodb.org/?query=3489at766	Ribosomal protein S9
+3490at766	Complete	wRi_Merrill23_polished	636159	636572	+	170.7	117	https://v10-1.orthodb.org/?query=3490at766	Ribosomal protein L16
+3520at766	Complete	wRi_Merrill23_polished	688689	688979	+	128.4	86	https://v10-1.orthodb.org/?query=3520at766	GroES chaperonin family
+3523at766	Complete	wRi_Merrill23_polished	637030	637389	+	150.8	103	https://v10-1.orthodb.org/?query=3523at766	Ribosomal protein L14P
+3532at766	Complete	wRi_Merrill23_polished	282530	282165	-	165.0	97	https://v10-1.orthodb.org/?query=3532at766	Ribosomal protein L20
+3542at766	Complete	wRi_Merrill23_polished	634853	635137	+	132.2	83	https://v10-1.orthodb.org/?query=3542at766	Ribosomal protein S19, bacterial-type
+3561at766	Fragmented	wRi_Merrill23_polished	1059681	1059382	-	104.8	90	https://v10-1.orthodb.org/?query=3561at766	SspB-like superfamily
+3566at766	Complete	wRi_Merrill23_polished	886841	886434	-	139.7	113	https://v10-1.orthodb.org/?query=3566at766	tRNA-specific adenosine deaminase
+3575at766	Complete	wRi_Merrill23_polished	1270263	1269871	-	131.1	108	https://v10-1.orthodb.org/?query=3575at766	Zinc finger, DksA/TraR C4-type
+3605at766	Complete	wRi_Merrill23_polished	638263	638571	+	136.2	94	https://v10-1.orthodb.org/?query=3605at766	Ribosomal protein S14
+3622at766	Complete	wRi_Merrill23_polished	812862	812491	-	143.8	100	https://v10-1.orthodb.org/?query=3622at766	Preprotein translocase YajC
+3626at766	Complete	wRi_Merrill23_polished	191809	191408	-	123.5	98	https://v10-1.orthodb.org/?query=3626at766	Cytochrome c-type biogenesis protein CcmE
+3644at766	Complete	wRi_Merrill23_polished	757653	757967	+	109.4	68	https://v10-1.orthodb.org/?query=3644at766	Ribosomal protein L28/L24
+3665at766	Complete	wRi_Merrill23_polished	1104795	1105343	+	192.7	143	https://v10-1.orthodb.org/?query=3665at766	Peptidyl-tRNA hydrolase
+3666at766	Complete	wRi_Merrill23_polished	1067463	1067732	+	130.7	63	https://v10-1.orthodb.org/?query=3666at766	Ribosomal protein L27
+3670at766	Complete	wRi_Merrill23_polished	248215	248538	+	122.3	80	https://v10-1.orthodb.org/?query=3670at766	Thioredoxin
+3687at766	Complete	wRi_Merrill23_polished	644832	645260	+	168.5	112	https://v10-1.orthodb.org/?query=3687at766	Ribosomal protein L17
+3694at766	Complete	wRi_Merrill23_polished	568	26	-	121.4	120	https://v10-1.orthodb.org/?query=3694at766	ubiquinone-binding protein
+3713at766	Complete	wRi_Merrill23_polished	982980	983555	+	176.1	175	https://v10-1.orthodb.org/?query=3713at766	tRNA threonylcarbamoyl adenosine modification protein TsaB
+3732at766	Complete	wRi_Merrill23_polished	341833	341477	-	116.2	96	https://v10-1.orthodb.org/?query=3732at766	Holo-
+3778at766	Complete	wRi_Merrill23_polished	352887	352567	-	137.9	74	https://v10-1.orthodb.org/?query=3778at766	Ribosomal protein S16
+3796at766	Complete	wRi_Merrill23_polished	700268	700005	-	90.4	59	https://v10-1.orthodb.org/?query=3796at766	Translation initiation factor IF-1
+3797at766	Complete	wRi_Merrill23_polished	509128	508853	-	115.3	66	https://v10-1.orthodb.org/?query=3797at766	Ribosomal protein S18
+3819at766	Complete	wRi_Merrill23_polished	269366	269638	+	103.6	72	https://v10-1.orthodb.org/?query=3819at766	Ribosomal protein S15
+3896at766	Complete	wRi_Merrill23_polished	1213450	1213737	+	112.0	77	https://v10-1.orthodb.org/?query=3896at766	Na+/H+ antiporter subunit G
+3898at766	Complete	wRi_Merrill23_polished	276248	276045	-	70.0	51	https://v10-1.orthodb.org/?query=3898at766	Ribosomal protein L31
+3904at766	Complete	wRi_Merrill23_polished	844881	845108	+	81.3	58	https://v10-1.orthodb.org/?query=3904at766	ATP synthase subunit c
+3917at766	Complete	wRi_Merrill23_polished	481803	482270	+	126.3	106	https://v10-1.orthodb.org/?query=3917at766	FeS cluster biogenesis
+3919at766	Complete	wRi_Merrill23_polished	374283	373801	-	178.6	132	https://v10-1.orthodb.org/?query=3919at766	Phosphatidylglycerophosphatase A
+3934at766	Complete	wRi_Merrill23_polished	121484	121753	+	122.0	82	https://v10-1.orthodb.org/?query=3934at766	Ribosomal protein S20
+3939at766	Complete	wRi_Merrill23_polished	176532	176726	+	73.7	46	https://v10-1.orthodb.org/?query=3939at766	Zinc-binding ribosomal protein
+3975at766	Complete	wRi_Merrill23_polished	535527	535865	+	124.3	82	https://v10-1.orthodb.org/?query=3975at766	Glutaredoxin
+3976at766	Complete	wRi_Merrill23_polished	197793	197485	-	132.6	84	https://v10-1.orthodb.org/?query=3976at766	NADH-quinone oxidoreductase subunit K
+3992at766	Complete	wRi_Merrill23_polished	917207	917425	+	77.3	57	https://v10-1.orthodb.org/?query=3992at766	BolA protein
+3995at766	Complete	wRi_Merrill23_polished	1067150	1067452	+	109.1	82	https://v10-1.orthodb.org/?query=3995at766	Ribosomal protein L21
+4000at766	Complete	wRi_Merrill23_polished	632070	632390	+	112.4	86	https://v10-1.orthodb.org/?query=4000at766	Ribosomal protein S10
+4031at766	Complete	wRi_Merrill23_polished	636780	637016	+	117.3	74	https://v10-1.orthodb.org/?query=4031at766	Ribosomal protein S17/S11
+4053at766	Complete	wRi_Merrill23_polished	1261820	1262134	+	100.1	86	https://v10-1.orthodb.org/?query=4053at766	NADH dehydrogenase 
+4072at766	Missing

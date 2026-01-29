@@ -1,0 +1,21 @@
+#                                                                               --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name           accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#   ------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+contig_70:6831-9173|+   -            781 483at766             -            515    3e-194  642.6  19.5   1   4     1e-13   4.8e-11   38.1   0.1    11    69    29   102    21   117 0.78 contig_70_9 # 6831 # 9173 # 1 # ID=64_9;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.354
+contig_70:6831-9173|+   -            781 483at766             -            515    3e-194  642.6  19.5   2   4   8.7e-11   4.1e-08   28.4   0.0    76   107   145   176   127   183 0.86 contig_70_9 # 6831 # 9173 # 1 # ID=64_9;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.354
+contig_70:6831-9173|+   -            781 483at766             -            515    3e-194  642.6  19.5   3   4  3.9e-175  1.8e-172  570.7  10.7   106   509   285   751   276   757 0.89 contig_70_9 # 6831 # 9173 # 1 # ID=64_9;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.354
+contig_70:6831-9173|+   -            781 483at766             -            515    3e-194  642.6  19.5   4   4      0.12        55   -1.7   0.0   500   515   765   780   750   780 0.74 contig_70_9 # 6831 # 9173 # 1 # ID=64_9;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.354
+contig_72:15698-17719|+ -            674 483at766             -            515   1.2e-09   33.6   4.6   1   2   1.1e-11   5.2e-09   31.4   0.7    70   255   269   464   263   474 0.69 contig_72_19 # 15698 # 17719 # 1 # ID=66_19;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.361
+contig_72:15698-17719|+ -            674 483at766             -            515   1.2e-09   33.6   4.6   2   2     0.003       1.4    3.6   0.2   343   383   514   554   469   579 0.76 contig_72_19 # 15698 # 17719 # 1 # ID=66_19;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.361
+contig_72:33976-35889|- -            638 483at766             -            515   4.7e-09   31.6   0.2   1   2   0.00028      0.13    7.0   0.0    80   126    31    75    25    83 0.84 contig_72_40 # 33976 # 35889 # -1 # ID=66_40;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.382
+contig_72:33976-35889|- -            638 483at766             -            515   4.7e-09   31.6   0.2   2   2   5.8e-09   2.7e-06   22.4   0.2   335   430   474   564   437   600 0.79 contig_72_40 # 33976 # 35889 # -1 # ID=66_40;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.382
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/483at766.hmm
+# Target file:     private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/assembly/prodigal_output/predicted_genes/predicted.faa
+# Option settings: hmmsearch --domtblout private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/assembly/run_rickettsiales_odb10/hmmer_output/483at766.out --cpu 1 /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco_downloads/lineages/rickettsiales_odb10/hmms/483at766.hmm private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/busco/20251218_Merrill23_wRi/wRi/assembly/prodigal_output/predicted_genes/predicted.faa 
+# Current dir:     /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly
+# Date:            Fri Jan 16 13:08:01 2026
+# [ok]
