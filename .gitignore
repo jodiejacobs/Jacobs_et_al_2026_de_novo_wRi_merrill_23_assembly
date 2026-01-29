@@ -14,4 +14,7 @@ ragtag/
 trycycler/
 compare_assemblies/
 .temp*
-
+*.gz
+*.jar
+ena_submission/webin_output/*
+*.tmp*
