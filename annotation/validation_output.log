@@ -1,0 +1,4 @@
+INFO : Your application version is 9.0.0
+INFO : A new application version is available. Please download the latest version 9.0.3 from https://github.com/enasequence/webin-cli/releases
+ERROR: Submission validation failed because of a user error. Manifest name : wRi_Merrill23_polished. See reports for details : /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/ena_submission/genome/wRi_Merrill23_polished/validate. All information is available in the output directory : /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/ena_submission
+INFO : Creating report file: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/ena_submission/./webin-cli.report

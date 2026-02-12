@@ -1,0 +1,23 @@
+<ANALYSIS_SET>
+  <ANALYSIS alias="webin-genome-wRi_Merrill_23_assembly">
+    <TITLE>Genome assembly: wRi_Merrill_23_assembly</TITLE>
+    <STUDY_REF accession="PRJEB107302" />
+    <SAMPLE_REF accession="SAMEA121099908" />
+    <ANALYSIS_TYPE>
+      <SEQUENCE_ASSEMBLY>
+        <NAME>wRi_Merrill_23_assembly</NAME>
+        <TYPE>clone or isolate</TYPE>
+        <PARTIAL>false</PARTIAL>
+        <COVERAGE>57</COVERAGE>
+        <PROGRAM>Flye</PROGRAM>
+        <PLATFORM>OXFORD_NANOPORE</PLATFORM>
+        <MIN_GAP_LENGTH>10</MIN_GAP_LENGTH>
+        <MOL_TYPE>genomic DNA</MOL_TYPE>
+      </SEQUENCE_ASSEMBLY>
+    </ANALYSIS_TYPE>
+    <FILES>
+      <FILE filename="webin-cli/genome/wRi_Merrill_23_assembly/chromosome_list.txt.gz" filetype="chromosome_list" checksum_method="MD5" checksum="ee97128d53a359a01bd7096394a9c2f7" />
+      <FILE filename="webin-cli/genome/wRi_Merrill_23_assembly/20251218_Merrill23_wRi_wRi_M23.assembly.fasta.gz" filetype="fasta" checksum_method="MD5" checksum="1c4bf3a5501d6a14be6fdae084288292" />
+    </FILES>
+  </ANALYSIS>
+</ANALYSIS_SET>

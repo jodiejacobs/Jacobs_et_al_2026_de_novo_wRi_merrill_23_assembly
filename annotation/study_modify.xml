@@ -1,0 +1,24 @@
+<PROJECT_SET>
+  <PROJECT accession="PRJEB107302" alias="a17a0122-f7b3-4913-b7df-5afaf2c416ee" center_name="UCSC">
+      <IDENTIFIERS>
+         <PRIMARY_ID>PRJEB107302</PRIMARY_ID>
+         <SUBMITTER_ID namespace="UCSC">a17a0122-f7b3-4913-b7df-5afaf2c416ee</SUBMITTER_ID>
+      </IDENTIFIERS>
+      <NAME>Complete de novo assembly of Wolbachia endosymbiont of contemporary Drosophila simulans using long-read genome sequencing.</NAME>
+      <TITLE>De novo assembly of Wolbachia in Drosophila simulans</TITLE>
+      <DESCRIPTION>We present a contemporary high-quality, complete de novo assembly of Wolbachia pipientis (wRi Merrill 23), an alphaproteobacterial endosymbiont of Drosophila simulans. This assembly was generated using long read sequencing of wRi-infected D. simulans embryos collected from the Merrill College at the University of California, Santa Cruz in October 2023.</DESCRIPTION>
+      <SUBMISSION_PROJECT>
+         <SEQUENCING_PROJECT/>
+      </SUBMISSION_PROJECT>
+      <PROJECT_ATTRIBUTES>
+         <PROJECT_ATTRIBUTE>
+            <TAG>locus_tag_prefix</TAG>
+            <VALUE>WRI</VALUE>
+         </PROJECT_ATTRIBUTE>
+         <PROJECT_ATTRIBUTE>
+            <TAG>ENA-FIRST-PUBLIC</TAG>
+            <VALUE>2024-01-01</VALUE>
+         </PROJECT_ATTRIBUTE>
+      </PROJECT_ATTRIBUTES>
+  </PROJECT>
+</PROJECT_SET>

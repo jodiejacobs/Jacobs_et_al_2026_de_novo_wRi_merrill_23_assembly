@@ -1,0 +1,7 @@
+2026-02-12T11:39:59 INFO : Submission has not been validated previously.
+2026-02-12T11:40:06 INFO : Submission(s) validated successfully.
+2026-02-12T11:40:06 INFO : Connecting to FTP server : webin2.ebi.ac.uk
+2026-02-12T11:40:12 INFO : Uploading file: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/annotation/wRi_Merrill_23_annotated.embl.gz
+2026-02-12T11:40:14 INFO : Uploading file: /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/annotation/gff/chromosome_list.txt.gz
+2026-02-12T11:40:15 INFO : Files have been uploaded to webin2.ebi.ac.uk. 
+2026-02-12T11:40:16 INFO : The submission has been completed successfully. The following analysis accession was assigned to the submission: ERZ28976196

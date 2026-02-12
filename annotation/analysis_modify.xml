@@ -1,0 +1,37 @@
+<ANALYSIS_SET>
+  <ANALYSIS accession="ERZ28844888" alias="webin-genome-wRi_Merrill_23_assembly" center_name="UCSC">
+      <IDENTIFIERS>
+         <PRIMARY_ID>ERZ28844888</PRIMARY_ID>
+         <SUBMITTER_ID namespace="UCSC">webin-genome-wRi_Merrill_23_assembly</SUBMITTER_ID>
+      </IDENTIFIERS>
+      <TITLE>Genome assembly: wRi_Merrill_23_assembly</TITLE>
+      <STUDY_REF accession="PRJEB107302"/>
+      <SAMPLE_REF accession="ERS28645251"/>
+      <ANALYSIS_TYPE>
+         <SEQUENCE_ASSEMBLY>
+            <NAME>wRi_Merrill_23_assembly</NAME>
+            <TYPE>clone or isolate</TYPE>
+            <PARTIAL>false</PARTIAL>
+            <COVERAGE>57</COVERAGE>
+            <PROGRAM>Flye</PROGRAM>
+            <PLATFORM>OXFORD_NANOPORE</PLATFORM>
+            <MIN_GAP_LENGTH>10</MIN_GAP_LENGTH>
+            <MOL_TYPE>genomic DNA</MOL_TYPE>
+         </SEQUENCE_ASSEMBLY>
+      </ANALYSIS_TYPE>
+      <FILES>
+         <FILE checksum="ee97128d53a359a01bd7096394a9c2f7" checksum_method="MD5"
+               filename="analysis/ERZ288/ERZ28844888/chromosome_list.txt.gz"
+               filetype="chromosome_list"/>
+         <FILE checksum="683bbc7d900ab9be2765fbcda54936eb" checksum_method="MD5"
+               filename="analysis/ERZ288/ERZ28844888/20251218_Merrill23_wRi_wRi_M23.assembly.fasta.gz"
+               filetype="fasta"/>
+      </FILES>
+      <ANALYSIS_ATTRIBUTES>
+         <ANALYSIS_ATTRIBUTE>
+            <TAG>ENA-FIRST-PUBLIC</TAG>
+            <VALUE>2026-02-11</VALUE>
+         </ANALYSIS_ATTRIBUTE>
+      </ANALYSIS_ATTRIBUTES>
+  </ANALYSIS>
+</ANALYSIS_SET>

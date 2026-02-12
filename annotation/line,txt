@@ -1,0 +1,63 @@
+FT   CDS             complement(59146..61482)
+FT                   /gene="mshA_1"
+FT                   /locus_tag="M23_00054"
+FT                   /EC_number="2.4.1.250"
+FT                   /inference="ab initio prediction:Prodigal:002006"
+FT                   /inference="protein motif:HAMAP:MF_01695"
+FT                   /codon_start=1
+FT                   /transl_table=11
+FT                   /product="D-inositol-3-phosphate glycosyltransferase"
+FT                   /translation="MKILKVIHGYPPYYSAGSEVYSQTLAHELANNNEVQIFTRHENSF
+FT                   LPDFHYTIALDCSDSRILLNLINIPTTKYRYKFINEEVNIKFKRIIDNFQPDLIHFGHL
+FT                   NHLSITLPEVAFKENIPTIFTLHDFWLMCPRGRFIQRNSEDLLRLCDGQKDQKCATQCY
+FT                   KGHFTGDEEFLNSDLNYWEQWVATRMKQTKKVVDYIDYFIAPSKFLMDKFTQDFNVPIN
+FT                   KISYLDYGFDLNRLKNRNRVQEKGFIFGYIGTHTPEKGVDLLLKAFSRLSSKAKLRIWG
+FT                   AAREETKTLKAIADQFPHAVKERIEWMGSYNNKNIVTDVFNKVDAIVVPSIWGENSPLV
+FT                   IHEAQQLSVPVITADYGGMAEYVRDGINGLLFKHRDTNSLSEKMQVLSTDQELYSELTQ
+FT                   RGYLYTKNGNVPSISEHTEKLNKIYRNVIENKGKSVATKPGPM23TFDTNPDYCNFACV
+FT                   MCECFSPYSKVKEEKKAKGIKPKIMSIETIRKVIKEADGTPLREIIPSTMGEPLMYKSF
+FT                   DEIINLCHEFGLKLNLTTNGSFPIKGARKWAELLVPILSDVKISWNGATKETHERIMKG
+FT                   SKWEVVTENLKTFLEVRDKYFSDTGERCTVTLQLTFLESNLHELYDIVEMAIKNGIDRV
+FT                   KGHHLWAHFKEIKDLSMRRDELAISRWNTEVGRLYELRDNMLLPNGKKIKLENFTILSQ
+FT                   EGIKDLAPGGQCPFLGKEAWINNEGKFSPCCAPDELRKTLGDFGNVNEVKLEEIWQSSE
+FT                   YLNLQKNYLNYELCKTCNMRKPLVN"
+FT   CDS             complement(61439..62398)
+FT                   /gene="galE_1"
+FT                   /locus_tag="M23_00055"
+FT                   /EC_number="5.1.3.2"
+FT                   /inference="ab initio prediction:Prodigal:002006"
+FT                   /inference="similar to AA sequence:UniProtKB:Q7WTB1"
+FT                   /codon_start=1
+FT                   /transl_table=11
+FT                   /product="UDP-glucose 4-epimerase"
+FT                   /db_xref="COG:COG1087"
+FT                   /translation="MGILITGAAGLIGSALVEKLEKQGYEVISCDIRFRDNPLSFFSED
+FT                   IMPLLAKCTGVIHLAAISRVIHGELYPELCQKVNVDGTIQFLEFCKSLPNKPWFIYASS
+FT                   REVYGEQKELPVAESASINPINNYAKGKAFIEEQVINLKGSNFNVAILRFSNVYGGLLD
+FT                   HSSRVIPALCINALKGDPIRIEGKECVFDFTYLDDVIEGIYLTVKYLQNEKSSLPAIHL
+FT                   TTNSPCTLENLAKTILKVTESDSRIDFYPPRNFDVTKFHGDFTRAKELLGWSPKHSLKV
+FT                   GLGKFIKSLQNNTQEYPNNIDMVIYENIKSYSWLPSLL"
+FT   CDS             complement(62530..63291)
+FT                   /gene="glmU_1"
+FT                   /locus_tag="M23_00056"
+FT                   /inference="ab initio prediction:Prodigal:002006"
+FT                   /inference="similar to AA sequence:UniProtKB:Q8DQ18"
+FT                   /codon_start=1
+FT                   /transl_table=11
+FT                   /product="Bifunctional protein GlmU"
+FT                   /db_xref="COG:COG1207"
+FT                   /translation="MDNTLIILAAGKSSRMNSQYSKTLHLVGNFTLLEHIIHNAKPLSL
+FT                   KSLSIVISKPFLKELERFSTLKDIIDKYNIKLIIQENITGTGTAVKIALESLERLSDQD
+FT                   IVLIQYGDTPFISSDTVMRMTDCLKCNNKNLVLLGFNSQDKQYGRLVIDDNDNVQKVLK
+FT                   SEDEILLANSGIMVSYAKDLYTLIKEVKFNDSTNECCLNDIIPIAASNNLRAGYVVADE
+FT                   KEAMGVNNKEDLVKAERYFQANRRRQPTLLS"
+FT   CDS             63985..67512
+FT                   /gene="rapA_1"
+FT                   /locus_tag="M23_00057"
+FT                   /EC_number="3.6.4.-"
+FT                   /inference="ab initio prediction:Prodigal:002006"
+FT                   /inference="protein motif:HAMAP:MF_01821"
+FT                   /codon_start=1
+FT                   /transl_table=11
+FT                   /product="RNA polymerase-associated protein RapA"
+FT                   /translation="MTIYGRTWWGKKWLQSFDGIDYDNRLPRGRTCANTGRAFGIKING

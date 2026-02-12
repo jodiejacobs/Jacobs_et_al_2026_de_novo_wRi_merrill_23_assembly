@@ -1,0 +1,33 @@
+<SUBMISSION_SET>
+  <SUBMISSION>
+    <ACTIONS>
+      <ACTION>
+        <ADD />
+      </ACTION>
+    </ACTIONS>
+    <SUBMISSION_ATTRIBUTES>
+      <SUBMISSION_ATTRIBUTE>
+        <TAG>ENA-SUBMISSION-TOOL</TAG>
+        <VALUE>WebinCli:9.0.0</VALUE>
+      </SUBMISSION_ATTRIBUTE>
+      <SUBMISSION_ATTRIBUTE>
+        <TAG>ENA-MANIFEST-FILE</TAG>
+        <VALUE><![CDATA[STUDY           PRJEB107302
+SAMPLE          ERS28645251
+ASSEMBLYNAME    wRi_Merrill23_polished
+ASSEMBLY_TYPE   isolate
+COVERAGE        57
+PROGRAM         Flye
+PLATFORM        OXFORD_NANOPORE
+MINGAPLENGTH    10
+MOLECULETYPE    genomic DNA
+FLATFILE        /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/annotation/wRi_Merrill_23_annotated.embl.gz
+CHROMOSOME_LIST /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/annotation/gff/chromosome_list.txt.gz]]></VALUE>
+      </SUBMISSION_ATTRIBUTE>
+      <SUBMISSION_ATTRIBUTE>
+        <TAG>ENA-MANIFEST-FILE-MD5</TAG>
+        <VALUE>07f8e3dffe8132cac052af6761b736a3</VALUE>
+      </SUBMISSION_ATTRIBUTE>
+    </SUBMISSION_ATTRIBUTES>
+  </SUBMISSION>
+</SUBMISSION_SET>

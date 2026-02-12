@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="receipt.xsl"?>
+<RECEIPT receiptDate="2026-02-12T19:40:15.873Z" submissionFile="submission-UCSC_1770925215873.xml" success="true">
+  <ANALYSIS accession="ERZ28976196" alias="webin-genome-wRi_Merrill23_polished" status="PRIVATE" />
+  <SUBMISSION accession="ERA35686520" alias="SUBMISSION-12-02-2026-19:40:15:672" />
+  <MESSAGES />
+  <ACTIONS>ADD</ACTIONS>
+</RECEIPT>

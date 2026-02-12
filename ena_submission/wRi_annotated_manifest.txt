@@ -1,11 +1,11 @@
 STUDY           PRJEB107302
 SAMPLE          ERS28645251
-ASSEMBLYNAME    wRi_Merrill_23_assembly_annotated
+ASSEMBLYNAME    wRi_Merrill23_polished
 ASSEMBLY_TYPE   isolate
 COVERAGE        57
 PROGRAM         Flye
 PLATFORM        OXFORD_NANOPORE
 MINGAPLENGTH    10
 MOLECULETYPE    genomic DNA
-FLATFILE        wRi_Merrill_23_annotated.embl.gz
-CHROMOSOME_LIST chromosome_list.txt.gz
+FLATFILE        /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/annotation/wRi_Merrill_23_annotated.embl.gz
+CHROMOSOME_LIST /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/annotation/gff/chromosome_list.txt.gz

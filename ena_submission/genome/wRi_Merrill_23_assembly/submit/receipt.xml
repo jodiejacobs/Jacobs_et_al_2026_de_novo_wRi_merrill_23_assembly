@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="receipt.xsl"?>
+<RECEIPT receiptDate="2026-02-02T17:02:59.891Z" submissionFile="submission-UCSC_1770051779891.xml" success="false">
+  <ANALYSIS alias="webin-genome-wRi_Merrill_23_assembly" status="PRIVATE" />
+  <SUBMISSION alias="SUBMISSION-02-02-2026-17:02:59:786" />
+  <MESSAGES>
+    <ERROR>In analysis, alias: "webin-genome-wRi_Merrill_23_assembly". The object being added already exists in the submission account with accession: "ERZ28844888".</ERROR>
+  </MESSAGES>
+  <ACTIONS>ADD</ACTIONS>
+</RECEIPT>
