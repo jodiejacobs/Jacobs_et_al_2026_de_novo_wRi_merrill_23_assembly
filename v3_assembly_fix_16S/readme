@@ -1,0 +1,51 @@
+# Fix the 16S region of the merrill23 wRi assembly
+
+## Attempt #1
+
+- Introduce N's at the beginning of the assembly
+- Rotate the assembly to start at the dnaA genes with circlator
+- Fill N's with TGS GapCloser
+- Polish with pilon using short reads from the original assembly
+- Check the 16S region with blast and coverage with short reads
+
+```
+# Create conda environments with necessary tools
+mamba create -n 16S_fix -c bioconda -c conda-forge tgsgapcloser pilon blast samtools bwa  
+mamba create -n circlator_py312 python=3.12 -c bioconda -c conda-forge \
+    bwa \
+    prodigal \
+    "samtools>=0.1.9,<=1.3" \
+    mummer \
+    spades=3.7.1\
+    setuptools
+
+mamba activate circlator_py312
+pip install circlator
+circlator progcheck
+
+#File paths 
+assembly="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/ena_submission/20251218_Merrill23_wRi_wRi_M23.assembly.fasta"
+short_reads="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/20251218_Merrill23_wRi.wri.trimmed.filtered.fastq.gz"
+long_reads="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/20251218_Merrill23_wRi.wRiM23.fastq.gz"
+
+# Introduce N's at the beginning of the assembly
+awk 'NR==1{print} NR==2{for(i=1;i<=1520;i++)printf "N"; print $0} NR>2{print $0}' $assembly | fold -w 80 > assembly_with_Ns.fasta
+
+# Rotate the assembly to start at the dnaA gene with circlator
+mamba activate circlator_py312
+circlator all --threads 16 assembly_with_Ns.fasta $short_reads circlator_output  
+
+# Fill N's with TGS GapCloser
+tgsgapcloser -i circlator_output/06.fixstart.fasta -l $long_reads -o gapclosed_assembly.fasta -t 16
+
+# Polish with pilon using short reads from the original assembly
+bwa index gapclosed_assembly.fasta
+bwa mem -t 16 gapclosed_assembly.fasta $short_reads | samtools sort -o aligned_reads.bam
+samtools index aligned_reads.bam
+pilon --genome gapclosed_assembly.fasta --frags aligned_reads.bam --output pilon_polished --threads 16
+
+# Check the 16S region with blast
+blastn -query gapclosed_assembly.fasta -db 16S_blast_db -outfmt 6 -out blast_results.txt
+
+```
+
