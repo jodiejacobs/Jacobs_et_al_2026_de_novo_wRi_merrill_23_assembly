@@ -20,6 +20,13 @@ Strategy:
 ```bash
 mamba activate 16S_fix
 
+# File paths
+assembly="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/ena_submission/20251218_Merrill23_wRi_wRi_M23.assembly.fasta"
+short_reads="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/20251218_Merrill23_wRi.wri.trimmed.filtered.fastq.gz"
+long_reads="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/merge/20251218_Merrill23_wRi.plus_bootcamp.wRiM23.fastq.gz"
+flye_assembly="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/20251218_Merrill23_wRi/wRi_merged_bootcamp/assembly.fasta"
+
+
 # Rotate circlator output so Ns are internal (TGS-GapCloser requires flanks on both sides)
 # NOTE: Ns must be in the middle, not at start or end
 python3 << 'EOF'
@@ -338,12 +345,6 @@ INIT=$(find /private/groups/russelllab/jodie/miniforge3/envs/circlator_py312 -na
 sed -i 's/from pkg_resources import get_distribution/from importlib.metadata import version as get_distribution/' $INIT
 
 circlator progcheck
-
-# File paths
-assembly="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/ena_submission/20251218_Merrill23_wRi_wRi_M23.assembly.fasta"
-short_reads="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/20251218_Merrill23_wRi.wri.trimmed.filtered.fastq.gz"
-long_reads="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/merge/20251218_Merrill23_wRi.plus_bootcamp.wRiM23.fastq.gz"
-flye_assembly="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/20251218_Merrill23_wRi/wRi_merged_bootcamp/assembly.fasta"
 
 # Introduce N's at the beginning of the assembly (1520 Ns = length of wRi 16S)
 awk 'NR==1{print} NR==2{for(i=1;i<=1520;i++)printf "N"; print $0} NR>2{print $0}' $assembly | fold -w 80 > assembly_with_Ns.fasta
