@@ -1,51 +1,359 @@
 # Fix the 16S region of the merrill23 wRi assembly
 
-## Attempt #1
+## Attempt #2 — Direct insertion from Flye assembly (SUCCESSFUL)
 
-- Introduce N's at the beginning of the assembly
-- Rotate the assembly to start at the dnaA genes with circlator
-- Fill N's with TGS GapCloser
-- Polish with pilon using short reads from the original assembly
-- Check the 16S region with blast and coverage with short reads
+Strategy:
+- Identify the 16S in an independent Flye assembly of the same sample
+- Determine the true extent of the missing region by mapping assembly flanks to the Flye contig
+- Extract the entire missing region from the Flye assembly
+- Insert it directly at the N gap position
+- Polish with pilon using short reads
+- Verify with blast
 
+### Key findings
+- The 16S was present at 100% identity in `contig_44` of the Flye assembly (coords 765419-766923, reverse complement)
+- The missing region in the polished assembly was **144,486 bp** (contig_44:728866-873352), not just the 1520bp 16S
+- Both flanks confirmed on **+ strand** by mapping left/right flanks to Flye contig_44
+- Assembly left flank (before Ns) matches contig_44:728750-728866
+- Assembly right flank (after Ns) matches contig_44:873250-873352
+- Assembly wraps: very end of assembly matches contig_44:77250-77350; assembly start matches contig_44:77350+
+```bash
+mamba activate 16S_fix
+
+# Rotate circlator output so Ns are internal (TGS-GapCloser requires flanks on both sides)
+# NOTE: Ns must be in the middle, not at start or end
+python3 << 'EOF'
+with open("circlator_output/06.fixstart.fasta") as f:
+    header = f.readline().strip()
+    seq = f.read().replace('\n', '')
+
+n_len = 1520
+real_seq = seq[n_len:]
+mid = len(real_seq) // 2
+rotated = real_seq[mid:] + 'N' * n_len + real_seq[:mid]
+
+print(f"Original length: {len(seq)}")
+print(f"Rotated length: {len(rotated)}")
+print(f"N position in rotated: {rotated.find('N')}")
+
+with open("rotated_for_gapclosing.fasta", "w") as f:
+    f.write(header + "\n")
+    for i in range(0, len(rotated), 60):
+        f.write(rotated[i:i+60] + "\n")
+print("Done: rotated_for_gapclosing.fasta")
+EOF
+
+# Verify Ns are internal
+grep -v ">" rotated_for_gapclosing.fasta | tr -d '\n' | grep -ob 'N\+' | awk -F: '{print "start="$1, "length="length($2)}'
+
+# Find 16S in the Flye assembly
+blastn -query wRi_16S.fasta \
+    -subject $flye_assembly \
+    -outfmt 6 -evalue 1e-5 -perc_identity 75 \
+    -out blast_16S_vs_flye.txt && cat blast_16S_vs_flye.txt
+# Result: contig_44  100%  coords 766923-765419 (reverse complement)
+
+# Extract 16S from Flye assembly (reverse complement with -i flag)
+samtools faidx $flye_assembly contig_44:765419-766923 | samtools faidx - -i > wRi_16S_from_flye.fasta
+
+# Confirm orientation by mapping assembly flanks to Flye assembly
+# Extract 500bp flanks around the N gap
+python3 -c "
+with open('rotated_for_gapclosing.fasta') as f:
+    f.readline()
+    seq = f.read().replace('\n','')
+left = seq[651015:651515]
+right = seq[653035:653535]
+with open('left_flank.fasta', 'w') as f:
+    f.write('>left_flank\n' + left + '\n')
+with open('right_flank.fasta', 'w') as f:
+    f.write('>right_flank\n' + right + '\n')
+"
+
+minimap2 -ax asm5 $flye_assembly left_flank.fasta right_flank.fasta | \
+    samtools view -F 4 | \
+    awk '{print "query="$1, "ref="$3, "pos="$4, "end="$4+length($10), "strand=", ($2 % 32 >= 16) ? "-" : "+", "mapq="$5}'
+# Result:
+# left_flank  contig_44  pos=728366  end=728866  strand=+  mapq=60
+# right_flank contig_44  pos=873352  end=873852  strand=+  mapq=60
+
+# Confirmed: missing region is contig_44:728866-873352 (144,486 bp), + strand
+# Extract full missing region from Flye assembly
+samtools faidx $flye_assembly contig_44:728866-873352 > missing_region.fasta
+grep -v ">" missing_region.fasta | tr -d '\n' | wc -c
+
+# Insert missing region at N gap
+python3 << 'EOF'
+with open("rotated_for_gapclosing.fasta") as f:
+    header = f.readline().strip()
+    seq = f.read().replace('\n', '')
+
+with open("missing_region.fasta") as f:
+    f.readline()
+    insert_seq = f.read().replace('\n', '')
+
+# Find N gap
+n_start = seq.find('N' * 100)
+n_end = n_start
+while n_end < len(seq) and seq[n_end] == 'N':
+    n_end += 1
+
+print(f"N gap: {n_start} - {n_end} (length {n_end - n_start})")
+print(f"Insert length: {len(insert_seq)} bp")
+
+new_seq = seq[:n_start] + insert_seq + seq[n_end:]
+
+print(f"Original length: {len(seq)}")
+print(f"New length: {len(new_seq)}")
+print(f"Ns remaining: {new_seq.count('N')}")
+
+with open("assembly_region_inserted.fasta", "w") as f:
+    f.write(header + "\n")
+    for i in range(0, len(new_seq), 60):
+        f.write(new_seq[i:i+60] + "\n")
+print("Done: assembly_region_inserted.fasta")
+EOF
+
+# Verify 16S is now present
+blastn -query wRi_16S.fasta \
+    -subject assembly_region_inserted.fasta \
+    -outfmt 6 -evalue 1e-5 -perc_identity 75 | cat
+
+# Polish inserted region with pilon using short reads
+bwa index assembly_region_inserted.fasta
+bwa mem -t 16 assembly_region_inserted.fasta $short_reads | samtools sort -o aligned_reads.bam
+samtools index aligned_reads.bam
+pilon --genome assembly_region_inserted.fasta --frags aligned_reads.bam --output pilon_polished --threads 16
+
+# Final verification
+blastn -query wRi_16S.fasta \
+    -subject pilon_polished.fasta \
+    -outfmt 6 -evalue 1e-5 -perc_identity 75 \
+    -out blast_16S_vs_final.txt && cat blast_16S_vs_final.txt
+
+# File paths
+inserted_assembly="assembly_region_inserted.fasta"
+insertion_start=651515   # where missing region was inserted
+insertion_end=$((651515 + 144486))  # end of inserted region
+
+# Index the assembly
+samtools faidx $inserted_assembly
+bwa index $inserted_assembly
+
+# 1. Map long reads
+minimap2 -ax map-ont \
+    --secondary=no \
+    -t 16 \
+    $inserted_assembly \
+    $long_reads | \
+    samtools view -F 4 -b | \
+    samtools sort -o long_reads_vs_inserted.bam
+samtools index long_reads_vs_inserted.bam
+
+# 2. Map short reads
+bwa mem -t 16 $inserted_assembly $short_reads | \
+    samtools view -F 4 -b | \
+    samtools sort -o short_reads_vs_inserted.bam
+samtools index short_reads_vs_inserted.bam
+
+# 3. Overall coverage stats
+samtools coverage long_reads_vs_inserted.bam
+samtools coverage short_reads_vs_inserted.bam
+
+insertion_start=651515
+insertion_end=$((651515 + 144486))
+echo "insertion_start=$insertion_start insertion_end=$insertion_end"
+
+# 4. Check bridging long reads at left junction (reads spanning insertion_start +/- 5kb)
+samtools view long_reads_vs_inserted.bam \
+    "wRi_Merrill23_polished:$((insertion_start - 5000))-$((insertion_start + 5000))" | \
+    awk -v junc=$insertion_start '{
+        start=$4; end=$4+length($10);
+        if (start < junc-1000 && end > junc+1000)
+            print "BRIDGES_LEFT_JUNCTION\t"$1"\tstart="start"\tend="end"\tlen="length($10)
+    }' | head -20
+
+# 5. Check bridging long reads at right junction
+samtools view long_reads_vs_inserted.bam \
+    "wRi_Merrill23_polished:$((insertion_end - 5000))-$((insertion_end + 5000))" | \
+    awk -v junc=$insertion_end '{
+        start=$4; end=$4+length($10);
+        if (start < junc-1000 && end > junc+1000)
+            print "BRIDGES_RIGHT_JUNCTION\t"$1"\tstart="start"\tend="end"\tlen="length($10)
+    }' | head -20
+
+# 6. Short read coverage depth across whole assembly (for plotting)
+samtools depth -a short_reads_vs_inserted.bam > short_read_depth.txt
+samtools depth -a long_reads_vs_inserted.bam > long_read_depth.txt
+
+wc -l short_read_depth.txt long_read_depth.txt
+python3 << 'EOF'
+import matplotlib
+matplotlib.use('Agg')
+import matplotlib.pyplot as plt
+import matplotlib.patches as mpatches
+import numpy as np
+
+insertion_start = 651515
+insertion_end   = 651515 + 144486
+
+# 16S position within inserted assembly
+contig44_insert_start = 728866
+assembly_16S_start = insertion_start + (765419 - contig44_insert_start)
+assembly_16S_end   = insertion_start + (766923 - contig44_insert_start)
+print(f"16S in assembly: {assembly_16S_start} - {assembly_16S_end}")
+
+def load_depth(path, binsize=1000):
+    pos, depth = [], []
+    with open(path) as f:
+        for line in f:
+            _, p, d = line.strip().split()
+            pos.append(int(p))
+            depth.append(int(d))
+    pos   = np.array(pos)
+    depth = np.array(depth)
+    bins  = np.arange(0, pos[-1], binsize)
+    binned_depth = [depth[(pos >= b) & (pos < b + binsize)].mean() for b in bins]
+    return bins, np.array(binned_depth)
+
+def add_regions(ax, insertion_start, insertion_end, sixS_start, sixS_end):
+    ax.axvspan(insertion_start/1e6, insertion_end/1e6,
+               alpha=0.1, color='red', label='Inserted region (144kb)')
+    ax.axvline(insertion_start/1e6, color='red', linestyle='--', linewidth=1, alpha=0.8)
+    ax.axvline(insertion_end/1e6,   color='red', linestyle='--', linewidth=1, alpha=0.8)
+    ax.axvspan(sixS_start/1e6, sixS_end/1e6,
+               alpha=0.6, color='gold', label='16S rRNA')
+
+fig, axes = plt.subplots(3, 1, figsize=(16, 12))
+
+# Whole assembly - short reads
+bins, depth = load_depth('short_read_depth.txt')
+axes[0].fill_between(bins/1e6, depth, alpha=0.7, color='#2196F3')
+add_regions(axes[0], insertion_start, insertion_end, assembly_16S_start, assembly_16S_end)
+axes[0].set_ylabel('Mean depth')
+axes[0].set_title('Short read coverage — whole assembly')
+axes[0].set_xlabel('Position (Mb)')
+axes[0].legend(fontsize=8)
+
+# Whole assembly - long reads
+bins, depth = load_depth('long_read_depth.txt')
+axes[1].fill_between(bins/1e6, depth, alpha=0.7, color='#4CAF50')
+add_regions(axes[1], insertion_start, insertion_end, assembly_16S_start, assembly_16S_end)
+axes[1].set_ylabel('Mean depth')
+axes[1].set_title('Long read coverage — whole assembly')
+axes[1].set_xlabel('Position (Mb)')
+axes[1].legend(fontsize=8)
+
+# Zoomed - short reads around insertion +/- 50kb
+zoom_start = max(0, insertion_start - 50000)
+zoom_end   = insertion_end + 50000
+
+with open('short_read_depth.txt') as f:
+    data  = [line.strip().split() for line in f]
+pos   = np.array([int(d[1]) for d in data])
+depth = np.array([int(d[2]) for d in data])
+
+mask = (pos >= zoom_start) & (pos <= zoom_end)
+axes[2].fill_between(pos[mask]/1e6, depth[mask], alpha=0.7, color='#2196F3')
+add_regions(axes[2], insertion_start, insertion_end, assembly_16S_start, assembly_16S_end)
+axes[2].set_ylabel('Depth')
+axes[2].set_title('Short read coverage — zoomed around insertion (+/- 50kb)')
+axes[2].set_xlabel('Position (Mb)')
+axes[2].legend(fontsize=8)
+
+plt.tight_layout()
+plt.savefig('coverage_verification.png', dpi=150, bbox_inches='tight')
+print("Saved: coverage_verification.png")
+EOF
 ```
+
+# Plot IGV to confirm placement
+```
+insertion_start=651515
+insertion_end=$((651515 + 144486))
+assembly_16S_start=$((651515 + 765419 - 728866))
+assembly_16S_end=$((651515 + 766923 - 728866))
+padding=10000
+
+# Create a BED file of regions of interest
+cat << EOF > regions_of_interest.bed
+wRi_Merrill23_polished	$((insertion_start - padding))	$((insertion_start + padding))	left_junction
+wRi_Merrill23_polished	$((insertion_end - padding))	$((insertion_end + padding))	right_junction
+wRi_Merrill23_polished	$((assembly_16S_start - padding))	$((assembly_16S_end + padding))	16S_rRNA
+wRi_Merrill23_polished	$((insertion_start - padding))	$((insertion_end + padding))	full_insertion
+EOF
+
+cat regions_of_interest.bed
+
+# Generate IGV report - long reads
+create_report \
+    regions_of_interest.bed \
+    --fasta assembly_region_inserted.fasta \
+    --tracks long_reads_vs_inserted.bam short_reads_vs_inserted.bam \
+    --output igv_report.html
+```
+
+
+## End 
+
+
+## Attempt #1 — TGS-GapCloser (FAILED)
+
+Strategy:
+- Introduce N's at the beginning of the assembly where the 16S should be
+- Rotate the assembly to start at the dnaA gene with circlator
+- Fill N's with TGS-GapCloser using targeted long reads
+- Polish with pilon using short reads
+- Check the 16S region with blast
+
+### Why it failed
+- TGS-GapCloser `gap_total=0` because Ns were at position 0 (no upstream flank to anchor reads)
+- After rotation fix, TGS-GapCloser found the gap but failed overlap check (`contig overlap check failed`)
+- Root cause: the missing region is **144kb** (not just 1520bp) — only 1520 Ns were introduced but the true gap is much larger
+- TGS-GapCloser cannot bridge a gap larger than the reads can span when flanking sequence is also missing
+
+### Troubleshooting notes
+- circlator has a `pkg_resources` bug on Python 3.13; use Python 3.12
+- circlator `__init__.py` must be patched: replace `from pkg_resources import get_distribution` with `from importlib.metadata import version as get_distribution`
+- SPAdes 4.x causes SIGILL on Emerald (AVX instruction incompatibility); use `spades=3.15.5`
+- wMel 16S too divergent from wRi for read mapping; use wRi 16S from CP001391 (coords 1289969-1291473)
+- Rotation script had a bug placing Ns at the end instead of the middle; fixed by splitting `real_seq` at midpoint and concatenating as `real_seq[mid:] + Ns + real_seq[:mid]`
+- racon causes SIGILL on Emerald; use `--ne` flag to skip racon polishing
+```bash
 # Create conda environments with necessary tools
-mamba create -n 16S_fix -c bioconda -c conda-forge tgsgapcloser pilon blast samtools bwa  
+mamba create -n 16S_fix -c bioconda -c conda-forge tgsgapcloser pilon blast samtools bwa racon seqtk minimap2 entrez-direct
 mamba create -n circlator_py312 python=3.12 -c bioconda -c conda-forge \
     bwa \
     prodigal \
-    "samtools>=0.1.9,<=1.3" \
+    "samtools=1.3" \
     mummer \
-    spades=3.7.1\
+    "spades=3.15.5" \
     setuptools
 
 mamba activate circlator_py312
 pip install circlator
+
+# Patch circlator pkg_resources bug
+INIT=$(find /private/groups/russelllab/jodie/miniforge3/envs/circlator_py312 -name "__init__.py" -path "*/circlator/*")
+sed -i 's/from pkg_resources import get_distribution/from importlib.metadata import version as get_distribution/' $INIT
+
 circlator progcheck
 
-#File paths 
+# File paths
 assembly="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/ena_submission/20251218_Merrill23_wRi_wRi_M23.assembly.fasta"
 short_reads="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/20251218_Merrill23_wRi.wri.trimmed.filtered.fastq.gz"
-long_reads="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/20251218_Merrill23_wRi.wRiM23.fastq.gz"
+long_reads="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/basecalled/merge/20251218_Merrill23_wRi.plus_bootcamp.wRiM23.fastq.gz"
+flye_assembly="/private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/flye/20251218_Merrill23_wRi/wRi_merged_bootcamp/assembly.fasta"
 
-# Introduce N's at the beginning of the assembly
+# Introduce N's at the beginning of the assembly (1520 Ns = length of wRi 16S)
 awk 'NR==1{print} NR==2{for(i=1;i<=1520;i++)printf "N"; print $0} NR>2{print $0}' $assembly | fold -w 80 > assembly_with_Ns.fasta
 
 # Rotate the assembly to start at the dnaA gene with circlator
 mamba activate circlator_py312
-circlator all --threads 16 assembly_with_Ns.fasta $short_reads circlator_output  
+circlator all --threads 16 assembly_with_Ns.fasta $short_reads circlator_output
+mamba activate 16S_fix
 
-# Fill N's with TGS GapCloser
-tgsgapcloser -i circlator_output/06.fixstart.fasta -l $long_reads -o gapclosed_assembly.fasta -t 16
-
-# Polish with pilon using short reads from the original assembly
-bwa index gapclosed_assembly.fasta
-bwa mem -t 16 gapclosed_assembly.fasta $short_reads | samtools sort -o aligned_reads.bam
-samtools index aligned_reads.bam
-pilon --genome gapclosed_assembly.fasta --frags aligned_reads.bam --output pilon_polished --threads 16
-
-# Check the 16S region with blast
-blastn -query gapclosed_assembly.fasta -db 16S_blast_db -outfmt 6 -out blast_results.txt
-
+# Fetch wRi 16S reference from NCBI for validation
+# wRi 16S coords in CP001391: 1289969-1291473
+efetch -db nuccore -id CP001391 -seq_start 1289969 -seq_stop 1291473 -format fasta > wRi_16S.fasta
 ```
-
