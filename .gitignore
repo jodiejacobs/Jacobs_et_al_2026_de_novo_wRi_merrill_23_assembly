@@ -18,4 +18,5 @@ compare_assemblies/
 *.jar
 ena_submission/
 *.tmp*
+v3_assembly_fix_16S/
 
