@@ -121,16 +121,18 @@ with open("assembly_region_inserted.fasta", "w") as f:
 print("Done: assembly_region_inserted.fasta")
 EOF
 
-# Verify 16S is now present
-blastn -query wRi_16S.fasta \
-    -subject assembly_region_inserted.fasta \
-    -outfmt 6 -evalue 1e-5 -perc_identity 75 | cat
-
-# Polish inserted region with pilon using short reads
+# Polish inserted region with pilon using paired short reads
 bwa index assembly_region_inserted.fasta
-bwa mem -t 16 assembly_region_inserted.fasta $short_reads | samtools sort -o aligned_reads.bam
-samtools index aligned_reads.bam
-pilon --genome assembly_region_inserted.fasta --frags aligned_reads.bam --output pilon_polished --threads 16
+bwa mem -t 16 assembly_region_inserted.fasta \
+    /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R1.fastq.gz \
+    /private/groups/russelllab/jodie/Jacobs_et_al_2026_de_novo_wRi_merrill_23_assembly/data/short_reads/wRi_R2.fastq.gz | \
+    samtools sort -o aligned_reads_paired.bam
+samtools index aligned_reads_paired.bam
+
+pilon --genome assembly_region_inserted.fasta \
+    --frags aligned_reads_paired.bam \
+    --output pilon_polished \
+    --fix all
 
 # Final verification
 blastn -query wRi_16S.fasta \
@@ -288,6 +290,7 @@ wRi_Merrill23_polished	$((insertion_start - padding))	$((insertion_start + paddi
 wRi_Merrill23_polished	$((insertion_end - padding))	$((insertion_end + padding))	right_junction
 wRi_Merrill23_polished	$((assembly_16S_start - padding))	$((assembly_16S_end + padding))	16S_rRNA
 wRi_Merrill23_polished	$((insertion_start - padding))	$((insertion_end + padding))	full_insertion
+
 EOF
 
 cat regions_of_interest.bed

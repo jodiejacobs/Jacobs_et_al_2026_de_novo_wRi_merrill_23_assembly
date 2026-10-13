@@ -1,0 +1,3 @@
+# Basecaller:
+ srun --partition=gpu --cpus-per-task=16 --time=06:00:00 --gpus-per-node=4 --nodes=1 --mem=100gb  /private/home/jomojaco/dorado-0.7.3-linux-x64/bin/dorado basecaller hac pod_5/  --device cuda:all --reference /private/groups/russelllab/jodie/merrill_23_wRi_genome/nanopore_data/Drosophila_simulans_ref/data/GCF_016746395.2/GCF_016746395.2_Prin_Dsim_3.1_genomic.fna  --kit-name SQK-NBD114-24 > basecalled/20250113_basecalled.bam
+

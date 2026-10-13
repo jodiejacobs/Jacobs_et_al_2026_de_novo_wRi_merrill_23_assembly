@@ -67,7 +67,6 @@ echo "Contig name: $contig_name"
 assembly_length=$(samtools view -H long_reads_vs_polished.bam | grep "^@SQ" | grep -oP "LN:\K[0-9]+")
 
 cat << EOF > regions_of_interest.bed
-${contig_name}	1	${assembly_length}	whole_assembly
 ${contig_name}	$((insertion_start - padding))	$((insertion_start + padding))	left_junction
 ${contig_name}	$((insertion_end - padding))	$((insertion_end + padding))	right_junction
 ${contig_name}	$((assembly_16S_start - padding))	$((assembly_16S_end + padding))	16S_rRNA
